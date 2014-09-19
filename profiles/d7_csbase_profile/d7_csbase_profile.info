@@ -1,0 +1,74 @@
+ name  = CS Base Profile
+ description = The base profile for all Centresource Drupal 7 Projects.
+ core  = 7.x
+
+; -----------------------------------------------------------------------------
+;                                  Modules
+; -----------------------------------------------------------------------------
+; List the modules (core, contrib and/or features) to be enabled in the
+; ;dependencies[] array. Any ;dependencies of the listed modules will be detected
+; and enabled automatically.
+; -----------------------------------------------------------------------------
+
+; Core
+
+ dependencies[] = block
+ dependencies[] = contextual
+ dependencies[] = dblog
+ dependencies[] = field_ui
+ dependencies[] = file
+ dependencies[] = help
+ dependencies[] = image
+ dependencies[] = list
+ dependencies[] = menu
+ dependencies[] = number
+ dependencies[] = options
+ dependencies[] = overlay
+ dependencies[] = path
+ dependencies[] = rdf
+ dependencies[] = shortcut
+ dependencies[] = taxonomy
+ dependencies[] = toolbar
+
+; Contrib
+
+ dependencies[] = ctools
+ dependencies[] = diff
+ dependencies[] = eva
+ dependencies[] = features
+ dependencies[] = strongarm
+
+; Features
+
+ dependencies[] = d7_basic_page
+ dependencies[] = d7_base_feature
+ dependencies[] = d7_base_wysiwyg
+ dependencies[] = d7_views_feature
+
+; Variables
+
+ variables[admin_theme]                     = seven
+ variables[block_cache]                     = 1
+ variables[configurable_timezones]          = "0"
+ variables[date_default_timezone]           = "America/Chicago"
+ variables[error_level]                     = 0
+;variables[maintenance_theme]               = "maintenance"
+ variables[node_admin_theme]                = 1
+ variables[page_compression]                = 0
+ variables[pathauto_node_pattern]           = [node:title]
+ variables[site_default_country]            = US
+ variables[site_mail]                       = sysadmin@centresource.com
+ variables[theme_default]                   = "bartik"
+ variables[update_check_frequency]          = "7"
+ variables[update_notification_threshold]   = "security"
+ variables[update_notify_emails][0]         = sysadmin@centresource.com
+
+; -----------------------------------------------------------------------------
+;                                  Default Users
+; -----------------------------------------------------------------------------
+
+ users[client][uid]       = 2
+ users[client][name]      = client
+ users[client][mail]      = client@centresource.com
+ users[client][roles]     = client
+ users[client][status]    = 1
