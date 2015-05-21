@@ -72,4 +72,7 @@ function d7_csbase_profile_install() {
     ->execute();
   variable_set('admin_theme', 'adminimal_theme');
   variable_set('node_admin_theme', '1');
+
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
 }
