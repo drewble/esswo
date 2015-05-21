@@ -47,7 +47,7 @@
 
 ; Variables
 
- variables[admin_theme]                     = seven
+ variables[admin_theme]                     = adminimal
  variables[block_cache]                     = 1
  variables[configurable_timezones]          = "0"
  variables[date_default_timezone]           = "America/Chicago"
@@ -58,7 +58,7 @@
  variables[pathauto_node_pattern]           = [node:title]
  variables[site_default_country]            = US
  variables[site_mail]                       = sysadmin@centresource.com
- variables[theme_default]                   = "bartik"
+ variables[theme_default]                   = "cs_profile"
  variables[update_check_frequency]          = "7"
  variables[update_notification_threshold]   = "security"
  variables[update_notify_emails][0]         = sysadmin@centresource.com
