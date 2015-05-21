@@ -31,6 +31,8 @@
 
 ; Contrib
 
+ dependencies[] = adminimal
+ dependencies[] = cs_profile
  dependencies[] = ctools
  dependencies[] = diff
  dependencies[] = eva
