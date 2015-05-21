@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CS Base Feature feature.
+ */
+
+include_once('d7_base_feature.features.inc');

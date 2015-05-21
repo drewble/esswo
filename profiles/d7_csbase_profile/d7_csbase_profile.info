@@ -28,7 +28,6 @@
  dependencies[] = rdf
  dependencies[] = shortcut
  dependencies[] = taxonomy
- dependencies[] = toolbar
 
 ; Contrib
 

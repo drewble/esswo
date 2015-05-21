@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Code for the Hero feature.
+ */
+
+include_once 'd7_tpl_hero.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function d7_tpl_hero_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__hero'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--hero',
+    'path' => drupal_get_path('module', 'd7_tpl_hero') . '/templates',
+   );
+  return $theme;
+}

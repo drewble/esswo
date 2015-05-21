@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Module for defining custom hooks. Good place to add custom module code.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function d7_csbase_menu() {
+  // Adds Homepage
+  $items['home'] = array(
+    'title' => 'Home',
+    'page callback' => 'get_homepage',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  return $items;
+}
+
+function get_homepage()
+{
+  return '';
+}
+

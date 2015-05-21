@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Code for the d7_news feature.
+ */
+
+include_once('d7_news.features.inc');
+
+function d7_news_preprocess_node(&$variables) {
+  if ($variables['type'] == 'news') {
+    drupal_add_css(drupal_get_path('module', 'news') .'/news.css');
+  }
+}
+
+function d7_news_views_pre_render(&$view) {
+  if($view->name == 'news') {
+    drupal_add_css(drupal_get_path('module', 'news') .'/news.css');
+  }
+}

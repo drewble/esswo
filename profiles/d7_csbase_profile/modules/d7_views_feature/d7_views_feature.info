@@ -1,0 +1,14 @@
+name = Views Feature
+description = Installs basic Views elements and permissions.
+core = 7.x
+package = Features
+php = 5.2.4
+version = unknown
+project = d7_views_feature
+dependencies[] = features
+dependencies[] = views
+dependencies[] = views_ui
+datestamp = 1360004179
+features[features_api][] = api:1
+features[user_permission][] = access all views
+features[user_permission][] = administer views

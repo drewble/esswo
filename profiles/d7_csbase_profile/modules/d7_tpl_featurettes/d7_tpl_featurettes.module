@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Code for the Featurettes feature.
+ */
+
+include_once 'd7_tpl_featurettes.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function d7_tpl_featurettes_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__featurettes'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--featurettes',
+    'path' => drupal_get_path('module', 'd7_tpl_featurettes') . '/templates',
+   );
+  return $theme;
+}

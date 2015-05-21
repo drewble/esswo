@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TPL Base feature.
+ */
+
+include_once 'd7_tpl_base.features.inc';

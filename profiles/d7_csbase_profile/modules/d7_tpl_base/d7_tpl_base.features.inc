@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * d7_tpl_base.features.inc
+ */
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function d7_tpl_base_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
