@@ -31,8 +31,6 @@
 
 ; Contrib
 
- dependencies[] = adminimal
- dependencies[] = cs_profile
  dependencies[] = ctools
  dependencies[] = diff
  dependencies[] = eva
@@ -49,7 +47,7 @@
 
 ; Variables
 
- variables[admin_theme]                     = adminimal
+ variables[admin_theme]                     = adminimal_theme
  variables[block_cache]                     = 1
  variables[configurable_timezones]          = "0"
  variables[date_default_timezone]           = "America/Chicago"
