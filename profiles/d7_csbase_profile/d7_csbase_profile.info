@@ -47,7 +47,7 @@
 
 ; Variables
 
- variables[admin_theme]                     = adminimal_theme
+ variables[admin_theme]                     = adminimal
  variables[block_cache]                     = 1
  variables[configurable_timezones]          = "0"
  variables[date_default_timezone]           = "America/Chicago"
