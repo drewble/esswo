@@ -43,6 +43,7 @@
  dependencies[] = d7_base_feature
  dependencies[] = d7_base_wysiwyg
  dependencies[] = d7_views_feature
+ dependencies[] = cs_pantheon
 
 ; Variables
 

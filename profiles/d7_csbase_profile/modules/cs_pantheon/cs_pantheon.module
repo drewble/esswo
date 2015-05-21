@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the cs_pantheon feature.
+ */
+
+include_once 'cs_pantheon.features.inc';
