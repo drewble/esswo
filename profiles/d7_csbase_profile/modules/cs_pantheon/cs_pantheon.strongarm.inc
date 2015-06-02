@@ -14,7 +14,7 @@ function cs_pantheon_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_admin_theme';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['node_admin_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -55,9 +55,9 @@ function cs_pantheon_strongarm() {
     'mothership_css_reset' => 0,
     'mothership_css_reset_html5' => 0,
     'mothership_css_normalize' => 1,
-    'mothership_css_layout' => 1,
-    'mothership_css_default' => 1,
-    'mothership_css_mothershipstyles' => 1,
+    'mothership_css_layout' => 0,
+    'mothership_css_default' => 0,
+    'mothership_css_mothershipstyles' => 0,
     'mothership_css_nuke_theme' => 0,
     'mothership_css_nuke_admin' => 0,
     'mothership_css_nuke_module_contrib' => 0,
