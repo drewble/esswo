@@ -28,6 +28,8 @@ function adminimal_preprocess_html(&$vars) {
   // Add default styles.
   drupal_add_css($adminimal_path . '/css/reset.css', array('group' => CSS_THEME, 'media' => 'all', 'weight' => -999));
   drupal_add_css($adminimal_path . '/css/style.css', array('group' => CSS_THEME, 'media' => 'all', 'weight' => 1));
+  // Custom for Essential Worship
+  drupal_add_css($adminimal_path . '/css/essential-worship.css', array('group' => CSS_THEME, 'media' => 'all', 'weight' => 2));
 
   // Add conditional CSS for IE8 and below.
   drupal_add_css($adminimal_path . '/css/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE), 'weight' => 999, 'preprocess' => FALSE));
@@ -138,7 +140,7 @@ function adminimal_adminimal_block_content($variables) {
 
 /**
  * Implements theme_tablesort_indicator().
- * 
+ *
  * Use our own image versions, so they show up as black and not gray on gray.
  */
 function adminimal_tablesort_indicator($variables) {

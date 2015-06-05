@@ -211,11 +211,11 @@
  * @endcode
  */
 $databases = array (
-  'default' => 
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
-      'database' => 'cs_profile',
+      'database' => 'essential-worship',
       'username' => 'root',
       'password' => 'root',
       'host' => '127.0.0.1',
