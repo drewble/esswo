@@ -24,3 +24,12 @@ function get_homepage()
   return '';
 }
 
+/**
+ * Implements hook_form_FORMID_alter().
+ */
+function d7_csbase_form_song_node_form_alter(&$form, &$form_state, $form_id) {
+  // Add Prefix text to link fields
+  $form['field_itunes_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'https://itunes.apple.com/';
+  $form['field_multitracks_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.multitracks.com/';
+  $form['field_praisecharts_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.praisecharts.com/';
+}

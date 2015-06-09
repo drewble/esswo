@@ -927,7 +927,7 @@ html.js .toggle-enable.disabled div {
 }
 
 html.js .toggle-enable div {
-  border-radius: 0 !important;  
+  border-radius: 0 !important;
   background: #fff;
 }
 
@@ -2667,7 +2667,7 @@ body.adminimal-theme .views-display-top ul#views-display-menu-tabs li a.active {
   color: #0073BC;
 }
 
-body.adminimal-theme .views-display-top ul#views-display-menu-tabs li a:hover, 
+body.adminimal-theme .views-display-top ul#views-display-menu-tabs li a:hover,
 body.adminimal-theme .views-display-top ul#views-display-menu-tabs li a:focus {
 	color: #FFF;
 	background-color: #0074BD;
@@ -2824,4 +2824,13 @@ body.adminimal-theme .custom_css_not_found .css_path {
 /* Fix SemanticViews module see #2340681 */
 body.page-admin-structure-views-view #views-ui-edit-display-form #edit-options #edit-style-options-row fieldset#edit-style-options-row--2 {
   float: left;
+}
+
+/* Custom EWO styles */
+
+/* Song Editing */
+.group-buy-from .field-prefix {
+  float: left;
+  margin-right: 3px;
+  line-height: 2.5em;
 }

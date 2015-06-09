@@ -94,7 +94,7 @@ function cs_pantheon_strongarm() {
     'mothership_classes_node_links_inline' => 0,
     'mothership_classes_node_links_links' => 0,
     'mothership_classes_field_field' => 0,
-    'mothership_classes_field_name' => 1,
+    'mothership_classes_field_name' => 0,
     'mothership_classes_field_type' => 0,
     'mothership_classes_field_label' => 1,
     'mothership_classes_field_freeform' => '',

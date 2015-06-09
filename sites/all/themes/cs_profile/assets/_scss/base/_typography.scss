@@ -55,3 +55,7 @@ h3 {
 .btn, button {
   @include btn;
 }
+
+.field-name-field-lyrics-chords {
+  white-space: pre;
+}
