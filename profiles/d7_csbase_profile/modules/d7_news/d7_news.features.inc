@@ -29,9 +29,9 @@ function d7_news_views_api($module = NULL, $api = NULL) {
 function d7_news_node_info() {
   $items = array(
     'news_article' => array(
-      'name' => t('News Article'),
+      'name' => t('Insight Article'),
       'base' => 'node_content',
-      'description' => t('Use <em>News Articles</em> for time-sensitive content like news and press releases.'),
+      'description' => t('Add a new <em>Insight Article</em> to website.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

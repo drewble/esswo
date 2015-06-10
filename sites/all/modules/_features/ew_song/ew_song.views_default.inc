@@ -153,6 +153,7 @@ function ew_song_views_default_views() {
 
   /* Display: Main Song Page */
   $handler = $view->new_display('page', 'Main Song Page', 'page');
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'songs';
   $export['songs'] = $view;
 

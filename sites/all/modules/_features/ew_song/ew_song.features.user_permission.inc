@@ -14,6 +14,7 @@ function ew_song_user_default_permissions() {
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'media_internet',
@@ -31,21 +32,30 @@ function ew_song_user_default_permissions() {
   // Exported permission: 'create song content'.
   $permissions['create song content'] = array(
     'name' => 'create song content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any song content'.
   $permissions['delete any song content'] = array(
     'name' => 'delete any song content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own song content'.
   $permissions['delete own song content'] = array(
     'name' => 'delete own song content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
@@ -87,14 +97,20 @@ function ew_song_user_default_permissions() {
   // Exported permission: 'edit any song content'.
   $permissions['edit any song content'] = array(
     'name' => 'edit any song content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own song content'.
   $permissions['edit own song content'] = array(
     'name' => 'edit own song content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
