@@ -26,6 +26,7 @@ function ew_song_field_group_info() {
       0 => 'field_itunes_link',
       1 => 'field_multitracks_link',
       2 => 'field_praisecharts_link',
+      3 => 'field_loopcommunity_link',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -51,7 +52,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Categories',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_key',
       1 => 'field_tempo',
@@ -115,6 +116,7 @@ function ew_song_field_group_info() {
     'children' => array(
       0 => 'title_field',
       1 => 'field_artist_worship_leader',
+      2 => 'field_song_resources',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
@@ -182,6 +184,7 @@ function ew_song_field_group_info() {
       7 => 'field_bpm',
       8 => 'field_theme',
       9 => 'field_church',
+      10 => 'field_loopcommunity_link',
     ),
     'format_type' => 'div',
     'format_settings' => array(
