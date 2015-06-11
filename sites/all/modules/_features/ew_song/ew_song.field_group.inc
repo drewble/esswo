@@ -21,7 +21,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Buy From',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(
       0 => 'field_itunes_link',
       1 => 'field_multitracks_link',
@@ -51,13 +51,14 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Categories',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'field_key',
       1 => 'field_tempo',
       2 => 'field_bpm',
       3 => 'field_theme',
       4 => 'field_church',
+      5 => 'field_services',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -82,7 +83,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Chords/Sheets',
-    'weight' => '9',
+    'weight' => '11',
     'children' => array(
       0 => 'field_song_resources',
     ),
@@ -212,7 +213,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Track',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(
       0 => 'field_spotify',
       1 => 'field_mp3',
@@ -241,7 +242,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Videos',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_videos',
     ),

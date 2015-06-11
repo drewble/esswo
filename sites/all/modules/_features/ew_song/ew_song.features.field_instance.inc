@@ -46,7 +46,7 @@ function ew_song_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -176,7 +176,7 @@ function ew_song_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_church',
-    'label' => 'Church',
+    'label' => 'Ministries/Churches',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -336,7 +336,7 @@ function ew_song_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_key',
-    'label' => 'Key',
+    'label' => 'Recommended Key',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -473,7 +473,7 @@ function ew_song_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 21,
     ),
   );
 
@@ -593,6 +593,107 @@ function ew_song_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-song-field_scripture'
+  $field_instances['node-song-field_scripture'] = array(
+    'bundle' => 'song',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_scripture',
+    'label' => 'Scripture',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-song-field_services'
+  $field_instances['node-song-field_services'] = array(
+    'bundle' => 'song',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_services',
+    'label' => 'Services',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 19,
+    ),
+  );
+
   // Exported field_instance: 'node-song-field_song_resources'
   $field_instances['node-song-field_song_resources'] = array(
     'bundle' => 'song',
@@ -651,6 +752,69 @@ function ew_song_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-song-field_songwriters'
+  $field_instances['node-song-field_songwriters'] = array(
+    'bundle' => 'song',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_songwriters',
+    'label' => 'Songwriters',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-song-field_spotify'
   $field_instances['node-song-field_spotify'] = array(
     'bundle' => 'song',
@@ -691,7 +855,7 @@ function ew_song_field_default_field_instances() {
         'referenceable_type' => 'track',
       ),
       'type' => 'spotifyfield',
-      'weight' => 8,
+      'weight' => 20,
     ),
   );
 
@@ -896,7 +1060,7 @@ function ew_song_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 13,
+      'weight' => 20,
     ),
   );
 
@@ -957,15 +1121,18 @@ function ew_song_field_default_field_instances() {
   t('Artist/Worship Leader');
   t('BPM');
   t('CCLI License');
-  t('Church');
   t('Header Image');
-  t('Key');
   t('Lyrics/Chords');
   t('Media');
+  t('Ministries/Churches');
   t('Mp3');
   t('MultiTracks Link');
   t('PraiseCharts Link');
+  t('Recommended Key');
+  t('Scripture');
+  t('Services');
   t('Song Resources');
+  t('Songwriters');
   t('Spotify');
   t('Subtitle');
   t('Tempo');

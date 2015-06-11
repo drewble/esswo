@@ -96,7 +96,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_bpm_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_bpm_tid']['vocabulary'] = 'bpm';
   $handler->display->display_options['filters']['field_bpm_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Key (field_key) */
+  /* Filter criterion: Content: Recommended Key (field_key) */
   $handler->display->display_options['filters']['field_key_tid']['id'] = 'field_key_tid';
   $handler->display->display_options['filters']['field_key_tid']['table'] = 'field_data_field_key';
   $handler->display->display_options['filters']['field_key_tid']['field'] = 'field_key_tid';
