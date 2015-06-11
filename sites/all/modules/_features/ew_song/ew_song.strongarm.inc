@@ -63,16 +63,16 @@ function ew_song_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '13',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '12',
         ),
         'flag' => array(
-          'weight' => '13',
+          'weight' => '10',
         ),
       ),
       'display' => array(),

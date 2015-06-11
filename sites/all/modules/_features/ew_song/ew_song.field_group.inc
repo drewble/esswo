@@ -21,7 +21,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Buy From',
-    'weight' => '9',
+    'weight' => '6',
     'children' => array(
       0 => 'field_itunes_link',
       1 => 'field_multitracks_link',
@@ -51,7 +51,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Categories',
-    'weight' => '14',
+    'weight' => '11',
     'children' => array(
       0 => 'field_key',
       1 => 'field_tempo',
@@ -83,7 +83,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Chords/Sheets',
-    'weight' => '11',
+    'weight' => '8',
     'children' => array(
       0 => 'field_song_resources',
     ),
@@ -113,9 +113,8 @@ function ew_song_field_group_info() {
     'label' => 'Header',
     'weight' => '0',
     'children' => array(
-      0 => 'field_header_image',
-      1 => 'field_subtitle',
-      2 => 'title_field',
+      0 => 'title_field',
+      1 => 'field_artist_worship_leader',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
@@ -142,9 +141,7 @@ function ew_song_field_group_info() {
     'label' => 'Left',
     'weight' => '2',
     'children' => array(
-      0 => 'field_chord_charts',
-      1 => 'field_lead_sheets',
-      2 => 'field_lyrics_chords',
+      0 => 'field_lyrics_chords',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -213,7 +210,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Track',
-    'weight' => '10',
+    'weight' => '7',
     'children' => array(
       0 => 'field_spotify',
       1 => 'field_mp3',
@@ -242,7 +239,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Videos',
-    'weight' => '12',
+    'weight' => '9',
     'children' => array(
       0 => 'field_videos',
     ),
