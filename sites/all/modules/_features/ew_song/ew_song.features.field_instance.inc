@@ -190,69 +190,6 @@ function ew_song_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-song-field_header_image'
-  $field_instances['node-song-field_header_image'] = array(
-    'bundle' => 'song',
-    'deleted' => 0,
-    'description' => 'This will default to {CHANGEME}, but can be changed for each page.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_header_image',
-    'label' => 'Header Image',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => 'header-images',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'private' => 'private',
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 0,
-          'upload' => 'upload',
-        ),
-      ),
-      'type' => 'media_generic',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-song-field_itunes_link'
   $field_instances['node-song-field_itunes_link'] = array(
     'bundle' => 'song',
@@ -1121,7 +1058,6 @@ function ew_song_field_default_field_instances() {
   t('Artist/Worship Leader');
   t('BPM');
   t('CCLI License');
-  t('Header Image');
   t('Lyrics/Chords');
   t('Media');
   t('Ministries/Churches');
@@ -1137,7 +1073,6 @@ function ew_song_field_default_field_instances() {
   t('Subtitle');
   t('Tempo');
   t('Theme');
-  t('This will default to {CHANGEME}, but can be changed for each page.');
   t('Title');
   t('iTunes Link');
 
