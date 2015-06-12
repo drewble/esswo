@@ -83,7 +83,7 @@ function ew_song_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Downloads (Chords/Sheets)',
+    'label' => 'Song Resources',
     'weight' => '9',
     'children' => array(
       0 => 'field_song_resources',
@@ -92,7 +92,7 @@ function ew_song_field_group_info() {
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Downloads (Chords/Sheets)',
+      'label' => 'Song Resources',
       'instance_settings' => array(
         'required_fields' => 0,
         'classes' => '',
