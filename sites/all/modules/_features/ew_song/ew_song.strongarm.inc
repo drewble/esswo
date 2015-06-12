@@ -72,7 +72,7 @@ function ew_song_strongarm() {
           'weight' => '13',
         ),
         'flag' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
       ),
       'display' => array(),

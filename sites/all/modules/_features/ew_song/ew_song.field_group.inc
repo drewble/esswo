@@ -21,7 +21,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Buy From',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_itunes_link',
       1 => 'field_multitracks_link',
@@ -83,14 +83,16 @@ function ew_song_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Chords/Sheets',
-    'weight' => '8',
+    'label' => 'Downloads (Chords/Sheets)',
+    'weight' => '9',
     'children' => array(
       0 => 'field_song_resources',
+      1 => 'field_chords_pdf_',
+      2 => 'field_lead_sheets',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'label' => 'Chords/Sheets',
+      'label' => 'Downloads (Chords/Sheets)',
       'instance_settings' => array(
         'required_fields' => 0,
         'classes' => '',
@@ -213,7 +215,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Track',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_spotify',
       1 => 'field_mp3',
@@ -242,18 +244,19 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Videos',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_videos',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Videos',
       'instance_settings' => array(
-        'description' => '',
+        'required_fields' => 0,
         'classes' => 'group-videos field-group-tab',
-        'required_fields' => 1,
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_videos|node|song|form'] = $field_group;

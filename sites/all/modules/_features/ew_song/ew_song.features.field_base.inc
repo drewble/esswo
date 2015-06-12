@@ -34,7 +34,7 @@ function ew_song_field_default_field_bases() {
   // Exported field_base: 'field_artist_worship_leader'
   $field_bases['field_artist_worship_leader'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_artist_worship_leader',
@@ -54,7 +54,9 @@ function ew_song_field_default_field_bases() {
           ),
         ),
         'sort' => array(
-          'type' => 'none',
+          'direction' => 'ASC',
+          'property' => 'title',
+          'type' => 'property',
         ),
         'target_bundles' => array(
           'artist_worship_leader' => 'artist_worship_leader',
@@ -111,6 +113,29 @@ function ew_song_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_chords_pdf_'
+  $field_bases['field_chords_pdf_'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_chords_pdf_',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
   );
 
   // Exported field_base: 'field_church'
@@ -192,6 +217,29 @@ function ew_song_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_lead_sheets'
+  $field_bases['field_lead_sheets'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_lead_sheets',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
   );
 
   // Exported field_base: 'field_loopcommunity_link'
@@ -429,6 +477,27 @@ function ew_song_field_default_field_bases() {
     'type' => 'spotifyfield',
   );
 
+  // Exported field_base: 'field_subtitle'
+  $field_bases['field_subtitle'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_subtitle',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_tempo'
   $field_bases['field_tempo'] = array(
     'active' => 1,
@@ -484,7 +553,7 @@ function ew_song_field_default_field_bases() {
   // Exported field_base: 'field_videos'
   $field_bases['field_videos'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 4,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_videos',

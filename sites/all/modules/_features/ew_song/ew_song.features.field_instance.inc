@@ -15,7 +15,7 @@ function ew_song_field_default_field_instances() {
     'bundle' => 'song',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => '<em>This field is actually what ties the song to the artist on the website.</em>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -36,17 +36,17 @@ function ew_song_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_artist_worship_leader',
-    'label' => 'Artist/Worship Leader',
+    'label' => 'Artist/Worship Leader Reference',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'multiselect',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 1,
+      'type' => 'multiselect',
+      'weight' => 6,
     ),
   );
 
@@ -149,6 +149,64 @@ function ew_song_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-song-field_chords_pdf_'
+  $field_instances['node-song-field_chords_pdf_'] = array(
+    'bundle' => 'song',
+    'deleted' => 0,
+    'description' => '<br><em>This is not shown on the website and will be used by Planning Center.</em>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_chords_pdf_',
+    'label' => 'Chord Charts',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'chord-charts',
+      'file_extensions' => 'txt pdf doc xls csv png jpg gif jpeg mp3 mp4 m4a ppt docx xlsx pptx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 11,
     ),
   );
 
@@ -287,6 +345,64 @@ function ew_song_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-song-field_lead_sheets'
+  $field_instances['node-song-field_lead_sheets'] = array(
+    'bundle' => 'song',
+    'deleted' => 0,
+    'description' => '<br><em>This is not shown on the website and will be used by Planning Center.</em>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_lead_sheets',
+    'label' => 'Lead Sheets',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'lead-sheets',
+      'file_extensions' => 'txt pdf doc xls csv png jpg gif jpeg mp3 mp4 m4a ppt docx xlsx pptx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-song-field_loopcommunity_link'
   $field_instances['node-song-field_loopcommunity_link'] = array(
     'bundle' => 'song',
@@ -341,7 +457,7 @@ function ew_song_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -533,7 +649,7 @@ function ew_song_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -591,7 +707,7 @@ function ew_song_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -700,7 +816,7 @@ function ew_song_field_default_field_instances() {
   $field_instances['node-song-field_song_resources'] = array(
     'bundle' => 'song',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<br><em>This is the zip file that the website user will download.</em>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -721,7 +837,7 @@ function ew_song_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_song_resources',
-    'label' => 'Song Resources',
+    'label' => 'Song Resources (zip)',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -863,6 +979,69 @@ function ew_song_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-song-field_subtitle'
+  $field_instances['node-song-field_subtitle'] = array(
+    'bundle' => 'song',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_subtitle',
+    'label' => 'Subtitle (Artist/Worship Leaders)',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-song-field_tempo'
   $field_instances['node-song-field_tempo'] = array(
     'bundle' => 'song',
@@ -945,7 +1124,7 @@ function ew_song_field_default_field_instances() {
   $field_instances['node-song-field_videos'] = array(
     'bundle' => 'song',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<em>You may add up to 4 videos. Once they are added, you can drag and drop in terms of order of importance.</em>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -997,7 +1176,7 @@ function ew_song_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 20,
+      'weight' => 23,
     ),
   );
 
@@ -1079,9 +1258,15 @@ function ew_song_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Artist/Worship Leader');
+  t('<br><em>This is not shown on the website and will be used by Planning Center.</em>');
+  t('<br><em>This is the zip file that the website user will download.</em>');
+  t('<em>This field is actually what ties the song to the artist on the website.</em>');
+  t('<em>You may add up to 4 videos. Once they are added, you can drag and drop in terms of order of importance.</em>');
+  t('Artist/Worship Leader Reference');
   t('BPM');
   t('CCLI License');
+  t('Chord Charts');
+  t('Lead Sheets');
   t('LoopCommunity Link');
   t('Lyrics/Chords');
   t('Media');
@@ -1092,10 +1277,11 @@ function ew_song_field_default_field_instances() {
   t('Recommended Key');
   t('Scripture');
   t('Services');
-  t('Song Resources');
+  t('Song Resources (zip)');
   t('Song Title');
   t('Songwriters');
   t('Spotify');
+  t('Subtitle (Artist/Worship Leaders)');
   t('Tempo');
   t('Theme');
   t('iTunes Link');
