@@ -8,20 +8,25 @@ function ewo_preprocess_html(&$vars) {
   //  kpr($vars['content']);
 }
 */
-/*
+
 function ewo_preprocess_page(&$vars,$hook) {
-  //typekit
-  //drupal_add_js('http://use.typekit.com/XXX.js', 'external');
-  //drupal_add_js('try{Typekit.load();}catch(e){}', array('type' => 'inline'));
-
-  //webfont
-  //drupal_add_css('http://cloud.webtype.com/css/CXXXX.css','external');
-
   //googlefont
-  //  drupal_add_css('http://fonts.googleapis.com/css?family=Bree+Serif','external');
+  drupal_add_css('http://fonts.googleapis.com/css?family=Ropa+Sans','external');
+  drupal_add_css('http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic','external');
 
+  // Variables set for fallback
+  $vars['bgImg'] = '';
+  // if a node
+  if (isset($vars['node'])) {
+    $node = $vars['node'];
+    // Background Image functionality
+    // If the image field is set
+    if (isset($node->field_header_image) && !empty($node->field_header_image)) {
+      $vars['bgImg'] = $node->field_header_image['und'][0];
+    }
+  }
 }
-*/
+
 /*
 function ewo_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);

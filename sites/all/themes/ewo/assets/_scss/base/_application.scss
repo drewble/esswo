@@ -22,10 +22,10 @@
  * ---------------------------------------------------------------------------
  */
 
-.header-primary {}
+.outer-container {
+  @include outer-container;
+}
 
-.nav-primary {}
-
-.content-primary {}
-
-.footer-primary {}
+.page {
+  margin-top: 30px;
+}

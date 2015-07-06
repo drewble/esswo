@@ -1,0 +1,65 @@
+//
+//  Header
+//
+
+header {
+  background-color: rgba(48, 46, 46, .9);
+  height: auto;
+  left: 0;
+  position: fixed;
+  top:0;
+  width: 100%;
+  // Logo
+  h1 {
+    line-height: 1em;
+    margin: 29px 25px;
+
+    @include tablet {
+      float: left;
+    }
+
+    a {
+      @include sprite(0 0);
+      padding-top: 27px;
+      width: 369px;
+    }
+  }
+}
+
+body.admin-menu {
+  header {
+    top:29px;
+  }
+}
+
+// Nav
+header {
+  nav {
+    @include tablet {
+      float: right;
+    }
+
+    ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      list-style: none;
+    }
+
+    a {
+      color: #b5b5b6;
+      display: inline-block;
+      padding: 31px 14px;
+      position: relative;
+      text-decoration: none;
+
+      &.active, &:hover {
+        @include border-btm;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,44 +1,48 @@
 body {
   color: $base;
-  font-family: 'Arial', sans-serif;
+  font-family: $font;
   font-size: 100%;
-  line-height: 2em;
+  line-height: em(24);
 }
 
 // General Content Styles
-.page, .page p {
-  a {
-    color: #ccc;
-    &:hover {
-      color: #aaa;
-    }
+a {
+  color: $red;
+
+  &:hover {
+    color: $gray;
   }
 }
+
 .page p {
   margin-bottom: 3em;
 }
 
 // Typography Basics - from Gridless http://thatcoolguy.github.com/gridless-boilerplate/
 h1, h2, h3, h4, h5, h6 {
-    font-size: 1em;
+    font: 1em $header;
 }
+
 h1 {
-    font-size: 4.25em; /* 68px */
+    font-size: em(60);
     line-height: 1.1471em;
     margin: 0 0 0.3824em;
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 2.625em; /* 42px */
-    line-height: 1.2381em;
-    margin: 0 0 0.619em;
+  font-size: em(24);
+  line-height: 1.2381em;
+  margin: 0 0 0.619em;
 }
 
 h3 {
-    font-size: 1.625em; /* 26px */
-    line-height: 1em;
-    margin: 0 0 1em;
+  color: $red;
+  font-size: em(20);
+  line-height: 1em;
+  margin: 0 0 1em;
 }
+
 .page blockquote, blockquote {
   clear: both;
   float: left;
@@ -46,14 +50,11 @@ h3 {
   padding: 0 0 0 1%;
   margin: 1% 6% 3% 0;
   width: 45%;
+
   p {
     font-size: 1.4em;
     margin:0;
   }
-}
-
-.btn, button {
-  @include btn;
 }
 
 .field-name-field-lyrics-chords {

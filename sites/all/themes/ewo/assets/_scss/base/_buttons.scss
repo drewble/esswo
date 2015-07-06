@@ -1,0 +1,14 @@
+@mixin btn {
+  border: 1px solid #fff;
+  color: #fff;
+  display: block;
+  font-size: em(14);
+  padding: 7px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include transition (all .3s);
+}
+
+.btn, button {
+  @include btn;
+}

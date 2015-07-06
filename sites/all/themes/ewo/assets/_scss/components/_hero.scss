@@ -1,0 +1,12 @@
+//
+//  Hero
+//
+
+.hero {
+  padding: 12% 0 4%;
+  text-align: center;
+
+  &.with-img {
+    padding: 14% 0 6%;
+  }
+}

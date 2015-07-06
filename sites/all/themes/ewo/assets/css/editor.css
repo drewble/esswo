@@ -16,37 +16,36 @@ img, object, video {
   max-width: 100%; }
 
 body {
-  color: #333333;
-  font-family: 'Arial', sans-serif;
+  color: #1a1717;
+  font-family: "Titillium Web", sans-serif;
   font-size: 100%;
-  line-height: 2em; }
+  line-height: 1.5em; }
 
-.page a, .page p a {
-  color: #ccc; }
-  .page a:hover, .page p a:hover {
-    color: #aaa; }
+a {
+  color: #e44345; }
+  a:hover {
+    color: #322e2f; }
 
 .page p {
   margin-bottom: 3em; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1em; }
+  font: 1em "Ropa Sans", sans-serif; }
 
 h1 {
-  font-size: 4.25em;
-  /* 68px */
+  font-size: 3.75em;
   line-height: 1.1471em;
-  margin: 0 0 0.3824em; }
+  margin: 0 0 0.3824em;
+  text-transform: uppercase; }
 
 h2 {
-  font-size: 2.625em;
-  /* 42px */
+  font-size: 1.5em;
   line-height: 1.2381em;
   margin: 0 0 0.619em; }
 
 h3 {
-  font-size: 1.625em;
-  /* 26px */
+  color: #e44345;
+  font-size: 1.25em;
   line-height: 1em;
   margin: 0 0 1em; }
 
@@ -61,24 +60,20 @@ h3 {
     font-size: 1.4em;
     margin: 0; }
 
+.field-name-field-lyrics-chords {
+  white-space: pre; }
+
 .btn, button {
-  background-color: #ccc;
+  border: 1px solid #fff;
   color: #fff;
   display: block;
-  font-size: 1.1em;
-  font-weight: 700;
+  font-size: 0.875em;
   padding: 7px 30px;
-  border-radius: 5px;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s; }
-  .btn:hover, button:hover {
-    background-color: #aaa; }
-
-.field-name-field-lyrics-chords {
-  white-space: pre; }
 
 /* Tables */
 table {
@@ -104,17 +99,20 @@ td, th {
   position: relative; }
 
 ul.primary {
-  height: 23px;
   margin-left: 0;
   padding-left: 1%; }
   ul.primary li {
-    display: inline;
+    display: inline-block;
     margin: 0;
     padding: 0; }
     ul.primary li a {
+      background-color: #ecf0f1;
+      border-bottom: 1px solid #ecf0f1;
       border-radius: 3px 3px 0 0;
+      color: #1a1717;
+      display: inline-block;
       font-size: .8em;
-      padding: 7px; }
+      padding: 5px 10px; }
 
 /* Fonts (pulled in separately for wysiwyg)
  * -----------------------------------------------------------------------------*/

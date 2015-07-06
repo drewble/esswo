@@ -3,53 +3,48 @@
 //kpr($theme_hook_suggestions);
 //template naming
 //page--[CONTENT TYPE].tpl.php
+
+// GNAR Background Image for Nodes
+if (!empty($bgImg)) {
+  $bgImgUrl = file_create_url($bgImg['uri']);
+}
 ?>
 <?php if( theme_get_setting('mothership_poorthemers_helper') ){ ?>
 <!-- page.tpl.php-->
 <?php } ?>
 
+<?php if(!empty($bgImg)): ?>
+<style type="text/css">
+  .hero {
+    background: url(<?php print $bgImgUrl; ?>) no-repeat scroll center center;
+    background-size: cover;
+  }
+</style>
+<?php endif; ?>
+
 <?php print $mothership_poorthemers_helper; ?>
 
 <header role="banner">
-  <div class="siteinfo">
-    <?php if ($logo): ?>
-      <figure>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-      </figure>
-    <?php endif; ?>
-
-    <?php if($site_name OR $site_slogan ): ?>
-    <hgroup>
-      <?php if($site_name): ?>
-        <h1><?php print $site_name; ?></h1>
-      <?php endif; ?>
-      <?php if ($site_slogan): ?>
-        <h2><?php print $site_slogan; ?></h2>
-      <?php endif; ?>
-    </hgroup>
-    <?php endif; ?>
-  </div>
+  <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">Essential Worship</a></h1>
 
   <?php if($page['header']): ?>
-    <div class="header-region">
-      <?php print render($page['header']); ?>
-    </div>
+    <?php print render($page['header']); ?>
   <?php endif; ?>
 
 </header>
 
-<div class="page">
+<div class="hero<?php if(!empty($bgImg)): ?> with-img<?php endif; ?>">
+  <?php print render($page['hero']); ?>
+  <?php print render($title_prefix); ?>
+  <?php if ($title): ?>
+    <h1><?php print $title; ?></h1>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
+</div>
 
-  <div role="main" id="main-content">
-    <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-      <h1><?php print $title; ?></h1>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>
+<div class="page outer-container">
 
-    <?php print $breadcrumb; ?>
+  <div role="main" id="main-content<?php if ($page['sidebar']): ?> with-side<?php endif; ?>">
 
     <?php if ($action_links): ?>
       <ul class="action-links"><?php print render($action_links); ?></ul>
@@ -75,17 +70,12 @@
 
   </div><!-- /main-->
 
-  <?php if ($page['sidebar_first']): ?>
-    <div class="sidebar-first">
-    <?php print render($page['sidebar_first']); ?>
+  <?php if ($page['sidebar']): ?>
+    <div class="sidebar">
+    <?php print render($page['sidebar']); ?>
     </div>
   <?php endif; ?>
 
-  <?php if ($page['sidebar_second']): ?>
-    <div class="sidebar-second">
-      <?php print render($page['sidebar_second']); ?>
-    </div>
-  <?php endif; ?>
 </div><!-- /page-->
 
 <footer role="contentinfo">
