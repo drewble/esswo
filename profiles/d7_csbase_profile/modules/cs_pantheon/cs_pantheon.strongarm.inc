@@ -122,7 +122,7 @@ function cs_pantheon_strongarm() {
     'mothership_classes_form_placeholder_link' => '',
     'mothership_classes_form_placeholder_email' => '',
     'mothership_classes_menu_items_mlid' => 1,
-    'mothership_classes_menu_wrapper' => 1,
+    'mothership_classes_menu_wrapper' => 0,
     'mothership_classes_menu_items_firstlast' => 1,
     'mothership_classes_menu_items_active' => 0,
     'mothership_classes_menu_collapsed' => 0,
