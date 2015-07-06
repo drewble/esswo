@@ -143,7 +143,7 @@ function cs_pantheon_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'cs_profile';
+  $strongarm->value = 'ewo';
   $export['theme_default'] = $strongarm;
 
   return $export;

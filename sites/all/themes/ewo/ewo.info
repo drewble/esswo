@@ -1,5 +1,5 @@
-name = cs_profile - a mothership subtheme
-description = Hi im cs_profile - a mothership subtheme based on mothership - you should really rename me :)
+name = EWO Essential Worship - a mothership subtheme
+description = Hi I'm EWO - a mothership subtheme based on mothership
 screenshot = screenshot.png
 engine = phptemplate
 core = 7.x
