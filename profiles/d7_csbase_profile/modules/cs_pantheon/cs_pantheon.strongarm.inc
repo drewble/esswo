@@ -20,7 +20,14 @@ function cs_pantheon_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'theme_cs_profile_settings';
+  $strongarm->name = 'theme_default';
+  $strongarm->value = 'ewo';
+  $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_ewo_settings';
   $strongarm->value = array(
     'toggle_logo' => 1,
     'toggle_name' => 1,
@@ -29,7 +36,7 @@ function cs_pantheon_strongarm() {
     'toggle_comment_user_picture' => 1,
     'toggle_comment_user_verification' => 1,
     'toggle_favicon' => 1,
-    'default_logo' => 1,
+    'default_logo' => 0,
     'logo_path' => '',
     'logo_upload' => '',
     'default_favicon' => 1,
@@ -94,7 +101,7 @@ function cs_pantheon_strongarm() {
     'mothership_classes_node_links_inline' => 0,
     'mothership_classes_node_links_links' => 0,
     'mothership_classes_field_field' => 0,
-    'mothership_classes_field_name' => 0,
+    'mothership_classes_field_name' => 1,
     'mothership_classes_field_type' => 0,
     'mothership_classes_field_label' => 1,
     'mothership_classes_field_freeform' => '',
@@ -115,7 +122,7 @@ function cs_pantheon_strongarm() {
     'mothership_classes_form_placeholder_link' => '',
     'mothership_classes_form_placeholder_email' => '',
     'mothership_classes_menu_items_mlid' => 1,
-    'mothership_classes_menu_wrapper' => 0,
+    'mothership_classes_menu_wrapper' => 1,
     'mothership_classes_menu_items_firstlast' => 1,
     'mothership_classes_menu_items_active' => 0,
     'mothership_classes_menu_collapsed' => 0,
@@ -137,14 +144,7 @@ function cs_pantheon_strongarm() {
     'mothership_viewport' => 1,
     'mothership_viewport_maximumscale' => 0,
   );
-  $export['theme_cs_profile_settings'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'theme_default';
-  $strongarm->value = 'ewo';
-  $export['theme_default'] = $strongarm;
+  $export['theme_ewo_settings'] = $strongarm;
 
   return $export;
 }
