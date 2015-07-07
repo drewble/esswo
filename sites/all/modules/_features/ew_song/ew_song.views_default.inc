@@ -162,7 +162,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['pager']['options']['offset'] = '1';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -180,6 +180,19 @@ function ew_song_views_default_views() {
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'songs:entity_view_2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: URL */
+  $handler->display->display_options['fields']['field_videos_2']['id'] = 'field_videos_2';
+  $handler->display->display_options['fields']['field_videos_2']['table'] = 'field_data_field_videos';
+  $handler->display->display_options['fields']['field_videos_2']['field'] = 'field_videos';
+  $handler->display->display_options['fields']['field_videos_2']['ui_name'] = 'URL';
+  $handler->display->display_options['fields']['field_videos_2']['label'] = '';
+  $handler->display->display_options['fields']['field_videos_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_videos_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_videos_2']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_videos_2']['type'] = 'file_url_plain';
+  $handler->display->display_options['fields']['field_videos_2']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['field_videos_2']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_videos_2']['delta_offset'] = '0';
   /* Field: Video description */
   $handler->display->display_options['fields']['field_videos_1']['id'] = 'field_videos_1';
   $handler->display->display_options['fields']['field_videos_1']['table'] = 'field_data_field_videos';
@@ -194,6 +207,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_videos_1']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_videos_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_videos_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_videos_1']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_videos_1']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_videos_1']['delta_offset'] = '0';
   /* Field: Final 2 Videos */
@@ -204,7 +218,9 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_videos']['label'] = '';
   $handler->display->display_options['fields']['field_videos']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_videos']['alter']['text'] = '[field_videos]
+<a href="[field_videos_2]">Play Video</a>
 <span class="vid-description">[field_videos_1]</span>';
+  $handler->display->display_options['fields']['field_videos']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_videos']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_videos']['element_class'] = 'video';
   $handler->display->display_options['fields']['field_videos']['element_label_colon'] = FALSE;
@@ -215,9 +231,11 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_videos']['settings'] = array(
     'file_view_mode' => 'rss',
   );
+  $handler->display->display_options['fields']['field_videos']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_videos']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_videos']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_videos']['delta_offset'] = '1';
+  $handler->display->display_options['fields']['field_videos']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -269,6 +287,18 @@ function ew_song_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: URL */
+  $handler->display->display_options['fields']['field_videos_2']['id'] = 'field_videos_2';
+  $handler->display->display_options['fields']['field_videos_2']['table'] = 'field_data_field_videos';
+  $handler->display->display_options['fields']['field_videos_2']['field'] = 'field_videos';
+  $handler->display->display_options['fields']['field_videos_2']['ui_name'] = 'URL';
+  $handler->display->display_options['fields']['field_videos_2']['label'] = '';
+  $handler->display->display_options['fields']['field_videos_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_videos_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_videos_2']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_videos_2']['type'] = 'file_url_plain';
+  $handler->display->display_options['fields']['field_videos_2']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_videos_2']['delta_offset'] = '0';
   /* Field: Video description */
   $handler->display->display_options['fields']['field_videos_1']['id'] = 'field_videos_1';
   $handler->display->display_options['fields']['field_videos_1']['table'] = 'field_data_field_videos';
@@ -293,6 +323,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_videos']['label'] = '';
   $handler->display->display_options['fields']['field_videos']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_videos']['alter']['text'] = '[field_videos]
+<a href="[field_videos_2]">Play Video</a>
 <span class="vid-description">[field_videos_1]</span>';
   $handler->display->display_options['fields']['field_videos']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_videos']['element_class'] = 'video';
@@ -307,6 +338,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_videos']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_videos']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_videos']['delta_offset'] = '1';
+  $handler->display->display_options['fields']['field_videos']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
