@@ -10,12 +10,15 @@ function ewo_preprocess_html(&$vars) {
 */
 
 function ewo_preprocess_page(&$vars,$hook) {
+  $path = drupal_get_path('theme', 'ewo');
   //googlefont
   drupal_add_css('http://fonts.googleapis.com/css?family=Ropa+Sans','external');
   drupal_add_css('http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic','external');
 
   // Variables set for fallback
   $vars['bgImg'] = '';
+  $vars['subtitle'] = '';
+  $vars['resources'] = '';
   // if a node
   if (isset($vars['node'])) {
     $node = $vars['node'];
@@ -23,6 +26,17 @@ function ewo_preprocess_page(&$vars,$hook) {
     // If the image field is set
     if (isset($node->field_header_image) && !empty($node->field_header_image)) {
       $vars['bgImg'] = $node->field_header_image['und'][0];
+    }
+    // If Song
+    if ($node->type == 'song') {
+      drupal_add_css('http://fonts.googleapis.com/css?family=Roboto+Mono','external');
+      drupal_add_js($path .'/assets/js/song.js', array('group' => JS_THEME));
+      if (!empty($node->field_subtitle)) {
+        $vars['subtitle'] = $node->field_subtitle[LANGUAGE_NONE][0]['safe_value'];
+      }
+      if (!empty($node->field_song_resources)) {
+        $vars['resources'] = file_create_url($node->field_song_resources[LANGUAGE_NONE][0]['uri']);
+      }
     }
   }
 }

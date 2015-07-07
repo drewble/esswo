@@ -8,6 +8,7 @@ dependencies[] = audio_js
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = entityreference
+dependencies[] = eva
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = link

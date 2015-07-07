@@ -1,0 +1,128 @@
+//
+//  Song Node
+//
+
+.hero {
+  position: relative;
+}
+
+.bread {
+  left: 0;
+  position: absolute;
+  top: 164px;
+}
+
+// Videos
+.node-song .view-display-id-entity_view_1 {
+  @include clearfix;
+  margin-bottom: 80px;
+
+  .view-header {
+    margin-bottom: 20px;
+
+    @include tablet {
+      float: left;
+      margin-bottom: 0;
+      margin-right: 2%;
+      width: 49%;
+    }
+
+     & + div {
+      margin-bottom: 20px;
+
+      @include tablet {
+        float: left;
+        width: 49%;
+      }
+
+      .vid-description {
+        top:39%;
+      }
+
+      & + div {
+
+        @include tablet {
+          float: left;
+          width: 49%;
+        }
+      }
+    }
+  }
+}
+
+.video {
+  position: relative;
+
+  .vid-description {
+    background-color: $red;
+    color: #fff;
+    left: 0;
+    padding: .8% 2% 1%;
+    position: absolute;
+    top: 46%;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+// Lyrics
+.node-song {
+  .group-left, .group-right {
+    @include tablet {
+      float: left;
+      width: 49%;
+    }
+  }
+  .group-left {
+
+    @include tablet {
+      margin-left: 2%;
+    }
+    .field-type-text-long {
+      font: em(14)/1.5em 'Roboto Mono', monospace;
+      white-space: pre;
+    }
+  }
+}
+
+// Spotify
+.node-song {
+  .field-type-spotifyfield {
+    @include clearfix;
+    background-color: $light;
+    padding: 3% 3% 2%;
+
+    iframe {
+      float: left;
+      margin-right: 2%;
+      width: 87%;
+    }
+  }
+}
+#spotify-add {
+  color: $base;
+  float: left;
+  font-size: em(12);
+  line-height: 1.4em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 11%;
+
+  span {
+    border: 1px solid $base;
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5%;
+    padding: 19% 0 28%;
+  }
+
+  &:hover {
+    span {
+      background-color: $base;
+      color: #fff;
+    }
+  }
+}

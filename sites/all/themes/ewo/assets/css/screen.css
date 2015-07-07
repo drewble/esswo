@@ -70,16 +70,24 @@ h3 {
   white-space: pre; }
 
 .btn, button {
-  border: 1px solid #fff;
-  color: #fff;
-  display: block;
+  border: 2px solid #524b4c;
+  color: #524b4c;
+  display: inline-block;
   font-size: 0.875em;
-  padding: 7px 30px;
+  padding: 0 15px 0 0;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s; }
+  .btn:before, button:before {
+    border-right: 2px solid #524b4c;
+    content: "s";
+    display: inline-block;
+    margin-right: 15px;
+    padding: 11px 20px; }
+  .btn:hover:before, button:hover:before {
+    background-color: #e44345; }
 
 form small, form .description {
   color: #5f5f5f; }
@@ -105,11 +113,11 @@ textarea {
   padding: 9px; }
 
 input[type="submit"] {
-  border: 1px solid #fff;
-  color: #fff;
-  display: block;
+  border: 2px solid #524b4c;
+  color: #524b4c;
+  display: inline-block;
   font-size: 0.875em;
-  padding: 7px 30px;
+  padding: 0 15px 0 0;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
@@ -118,6 +126,14 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
   margin-top: 10px; }
+  input[type="submit"]:before {
+    border-right: 2px solid #524b4c;
+    content: "s";
+    display: inline-block;
+    margin-right: 15px;
+    padding: 11px 20px; }
+  input[type="submit"]:hover:before {
+    background-color: #e44345; }
 
 /* Tables */
 table {
@@ -192,6 +208,12 @@ ul.primary {
 .page {
   margin-top: 30px; }
 
+.bread {
+  float: left;
+  font: 0.75em "Ropa Sans", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase; }
+
 /* Components
  * -----------------------------------------------------------------------------*/
 header {
@@ -200,7 +222,8 @@ header {
   left: 0;
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 1; }
   header h1 {
     line-height: 1em;
     margin: 29px 25px; }
@@ -232,9 +255,9 @@ header nav a {
   color: #b5b5b6;
   display: inline-block;
   padding: 31px 14px;
-  position: relative;
   text-decoration: none; }
   header nav a.active, header nav a:hover {
+    position: relative;
     color: #fff; }
     header nav a.active:after, header nav a:hover:after {
       background-color: #e44345;
@@ -248,10 +271,127 @@ header nav a {
       width: 34px; }
 
 .hero {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
   padding: 12% 0 4%;
   text-align: center; }
+  .hero:after {
+    content: "";
+    display: table;
+    clear: both; }
   .hero.with-img {
+    max-width: none;
     padding: 14% 0 6%; }
+  .hero h1 {
+    margin: 0 auto;
+    width: 74%; }
+  .hero h2 {
+    font: 1em "Titillium Web", sans-serif; }
+  .hero .btns {
+    margin-top: 33px;
+    padding: 39px;
+    position: relative; }
+    .hero .btns:before {
+      background-color: #e44345;
+      content: " ";
+      display: block;
+      height: 4px;
+      left: 50%;
+      margin-left: -90px;
+      position: absolute;
+      top: 0;
+      width: 180px; }
+    .hero .btns a {
+      margin: 0 15px; }
 
 /* Pages
  * -----------------------------------------------------------------------------*/
+.hero {
+  position: relative; }
+
+.bread {
+  left: 0;
+  position: absolute;
+  top: 164px; }
+
+.node-song .view-display-id-entity_view_1 {
+  margin-bottom: 80px; }
+  .node-song .view-display-id-entity_view_1:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .node-song .view-display-id-entity_view_1 .view-header {
+    margin-bottom: 20px; }
+    @media screen and (min-width: 768px) {
+      .node-song .view-display-id-entity_view_1 .view-header {
+        float: left;
+        margin-bottom: 0;
+        margin-right: 2%;
+        width: 49%; } }
+    .node-song .view-display-id-entity_view_1 .view-header + div {
+      margin-bottom: 20px; }
+      @media screen and (min-width: 768px) {
+        .node-song .view-display-id-entity_view_1 .view-header + div {
+          float: left;
+          width: 49%; } }
+      .node-song .view-display-id-entity_view_1 .view-header + div .vid-description {
+        top: 39%; }
+      @media screen and (min-width: 768px) {
+        .node-song .view-display-id-entity_view_1 .view-header + div + div {
+          float: left;
+          width: 49%; } }
+
+.video {
+  position: relative; }
+  .video .vid-description {
+    background-color: #e44345;
+    color: #fff;
+    left: 0;
+    padding: .8% 2% 1%;
+    position: absolute;
+    top: 46%; }
+  .video img {
+    display: block; }
+
+@media screen and (min-width: 768px) {
+  .node-song .group-left, .node-song .group-right {
+    float: left;
+    width: 49%; } }
+@media screen and (min-width: 768px) {
+  .node-song .group-left {
+    margin-left: 2%; } }
+.node-song .group-left .field-type-text-long {
+  font: 0.58333 "Roboto Mono", monospace;
+  white-space: pre; }
+
+.node-song .field-type-spotifyfield {
+  background-color: #ecf0f1;
+  padding: 3% 3% 2%; }
+  .node-song .field-type-spotifyfield:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .node-song .field-type-spotifyfield iframe {
+    float: left;
+    margin-right: 2%;
+    width: 87%; }
+
+#spotify-add {
+  color: #1a1717;
+  float: left;
+  font-size: 0.75em;
+  line-height: 1.4em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 11%; }
+  #spotify-add span {
+    border: 1px solid #1a1717;
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5%;
+    padding: 19% 0 28%; }
+  #spotify-add:hover span {
+    background-color: #1a1717;
+    color: #fff; }

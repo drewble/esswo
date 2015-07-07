@@ -3,10 +3,31 @@
 //
 
 .hero {
+  @include outer-container;
   padding: 12% 0 4%;
   text-align: center;
 
   &.with-img {
+    max-width: none;
     padding: 14% 0 6%;
   }
+
+  h1 {
+    margin: 0 auto;
+    width: 74%;
+  }
+
+  h2 {
+    font:1em $font;
+  }
+
+  .btns {
+    @include border-top;
+
+    a {
+      margin: 0 15px;
+    }
+  }
 }
+
+

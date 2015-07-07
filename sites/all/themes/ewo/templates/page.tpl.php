@@ -34,12 +34,27 @@ if (!empty($bgImg)) {
 </header>
 
 <div class="hero<?php if(!empty($bgImg)): ?> with-img<?php endif; ?>">
+  <?php if(isset($node)): ?>
+    <?php if($node->type == 'song'): ?>
+    <a class="bread" href="/songs">Find Another Song</a>
+    <?php endif; ?>
+  <?php endif; ?>
   <?php print render($page['hero']); ?>
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <h1><?php print $title; ?></h1>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
+
+  <?php if(!empty($subtitle)): ?>
+    <h2><?php print $subtitle; ?></h2>
+  <?php endif; ?>
+  <?php if(!empty($resources)): ?>
+    <div class="btns">
+      <a class="btn" id="planning">Add to Planning Center</a>
+      <a class="btn" href="<?php print $resources; ?>">Download Song Resources</a>
+    </div>
+  <?php endif; ?>
 </div>
 
 <div class="page outer-container">

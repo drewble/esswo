@@ -143,22 +143,23 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Left',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_lyrics_chords',
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Left',
       'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-left field-group-div',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
-        'speed' => 'fast',
-        'classes' => 'group-left field-group-div',
-        'id' => '',
+        'speed' => 'none',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_left|node|song|default'] = $field_group;
@@ -190,16 +191,17 @@ function ew_song_field_group_info() {
     ),
     'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Right',
       'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-right field-group-div',
         'description' => '',
-        'show_label' => 1,
+        'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
-        'speed' => 'fast',
-        'classes' => 'group-right field-group-div',
-        'id' => '',
+        'speed' => 'none',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_right|node|song|default'] = $field_group;

@@ -53,11 +53,25 @@ module.exports = function(grunt) {
           dest: 'img'
         }]
       }
+    },
+    grunticon: {
+      myIcons: {
+        files: [{
+          expand: true,
+          cwd: 'img/svg',
+          src: ['*.svg', '*.png'],
+          dest: "img/icons"
+        }],
+        options: {
+          enhanceSVG: true
+        }
+      }
     }
   });
-  grunt.registerTask('default', ['sass:dist', 'coffee:dist', 'imagemin', 'watch']);
+  grunt.registerTask('default', ['sass:dist', 'coffee:dist', 'imagemin', 'grunticon:myIcons', 'watch']);
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-grunticon');
 };

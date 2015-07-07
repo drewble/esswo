@@ -1,12 +1,32 @@
 @mixin btn {
-  border: 1px solid #fff;
-  color: #fff;
-  display: block;
+  border: 2px solid $btn;
+  color: $btn;
+  display: inline-block;
   font-size: em(14);
-  padding: 7px 30px;
+  padding: 0 15px 0 0;
   text-decoration: none;
   text-transform: uppercase;
   @include transition (all .3s);
+
+  &:before {
+    border-right: 2px solid $btn;
+    content: "s";
+    display: inline-block;
+    margin-right: 15px;
+    padding: 11px 20px;
+  }
+
+  &:hover {
+    &:before {
+      background-color: $red;
+    }
+  }
+}
+
+@mixin white-btn {
+  @include btn;
+  border:1px solid #fff;
+  color: #fff;
 }
 
 .btn, button {

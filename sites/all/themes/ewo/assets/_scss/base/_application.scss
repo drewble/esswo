@@ -29,3 +29,10 @@
 .page {
   margin-top: 30px;
 }
+
+.bread {
+  float: left;
+  font:em(12) $header;
+  text-decoration: none;
+  text-transform: uppercase;
+}
