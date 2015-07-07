@@ -15,10 +15,12 @@ img, object, video {
   height: auto;
   max-width: 100%; }
 
+html, body {
+  font-size: 100%; }
+
 body {
   color: #1a1717;
   font-family: "Titillium Web", sans-serif;
-  font-size: 100%;
   line-height: 1.5em; }
 
 a {

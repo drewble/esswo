@@ -97,3 +97,19 @@ if (!empty($bgImg)) {
   <?php print render($page['footer']); ?>
 </footer>
 
+<?php if(isset($node)): ?>
+    <?php if($node->type == 'song'): ?>
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  </div>
+                  <div class="modal-body">
+                      <iframe width="570" height="370" frameborder="0" allowfullscreen=""></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <?php endif; ?>
+<?php endif; ?>

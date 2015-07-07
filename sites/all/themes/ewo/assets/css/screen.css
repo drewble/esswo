@@ -21,10 +21,12 @@ img, object, video {
   height: auto;
   max-width: 100%; }
 
+html, body {
+  font-size: 100%; }
+
 body {
   color: #1a1717;
   font-family: "Titillium Web", sans-serif;
-  font-size: 100%;
   line-height: 1.5em; }
 
 a {
@@ -330,7 +332,7 @@ header nav a {
         margin-right: 2%;
         width: 49%; } }
     .node-song .view-display-id-entity_view_1 .view-header + div {
-      margin-bottom: 20px; }
+      margin-bottom: 25px; }
       @media screen and (min-width: 768px) {
         .node-song .view-display-id-entity_view_1 .view-header + div {
           float: left;
@@ -353,6 +355,30 @@ header nav a {
     top: 46%; }
   .video img {
     display: block; }
+  .video a {
+    background: rgba(0, 0, 0, 0.6);
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+    width: 100%; }
+    .video a:hover {
+      background: rgba(0, 0, 0, 0.3); }
+    .video a:after {
+      background: url(../img/sprite.png) no-repeat scroll 0 0;
+      background-position: 0 -27px;
+      display: block;
+      height: 0;
+      overflow: hidden;
+      content: " ";
+      left: 50%;
+      margin-left: -23px;
+      padding-top: 46px;
+      position: absolute;
+      top: 40%;
+      width: 46px; }
 
 @media screen and (min-width: 768px) {
   .node-song .group-left, .node-song .group-right {

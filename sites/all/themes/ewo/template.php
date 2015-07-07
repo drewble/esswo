@@ -30,6 +30,9 @@ function ewo_preprocess_page(&$vars,$hook) {
     // If Song
     if ($node->type == 'song') {
       drupal_add_css('http://fonts.googleapis.com/css?family=Roboto+Mono','external');
+      drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap-theme.min.css', array('group' => CSS_DEFAULT));
+      drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap.min.css', array('group' => CSS_DEFAULT));
+      drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));
       drupal_add_js($path .'/assets/js/song.js', array('group' => JS_THEME));
       if (!empty($node->field_subtitle)) {
         $vars['subtitle'] = $node->field_subtitle[LANGUAGE_NONE][0]['safe_value'];

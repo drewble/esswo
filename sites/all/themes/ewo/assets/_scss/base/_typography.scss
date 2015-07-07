@@ -1,7 +1,9 @@
+html, body {
+  font-size: 100%;
+}
 body {
   color: $base;
   font-family: $font;
-  font-size: 100%;
   line-height: em(24);
 }
 

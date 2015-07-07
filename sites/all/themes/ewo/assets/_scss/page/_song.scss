@@ -28,7 +28,7 @@
     }
 
      & + div {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
 
       @include tablet {
         float: left;
@@ -64,6 +64,32 @@
 
   img {
     display: block;
+  }
+
+  a {
+    background: rgba(0,0,0,.6);
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+    width: 100%;
+
+    &:hover {
+      background: rgba(0,0,0,.3);
+    }
+
+    &:after {
+      @include sprite(0 -27px);
+      content: " ";
+      left: 50%;
+      margin-left: -23px;
+      padding-top: 46px;
+      position: absolute;
+      top: 40%;
+      width: 46px;
+    }
   }
 }
 
@@ -101,6 +127,7 @@
     }
   }
 }
+
 #spotify-add {
   color: $base;
   float: left;
