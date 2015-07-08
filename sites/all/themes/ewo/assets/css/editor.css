@@ -26,7 +26,8 @@ body {
 a {
   color: #e44345; }
   a:hover {
-    color: #322e2f; }
+    color: #322e2f;
+    text-decoration: none; }
 
 .page p {
   margin-bottom: 3em; }
@@ -83,7 +84,8 @@ h3 {
     margin-right: 15px;
     padding: 11px 20px; }
   .btn:hover:before, button:hover:before {
-    background-color: #e44345; }
+    background-color: #e44345;
+    text-decoration: none; }
 
 /* Tables */
 table {

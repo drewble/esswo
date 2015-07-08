@@ -167,6 +167,41 @@ function ew_song_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_purchase_options|node|song|default';
+  $field_group->group_name = 'group_purchase_options';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'song';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_right';
+  $field_group->data = array(
+    'label' => 'Purchase Options',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_itunes_link',
+      1 => 'field_multitracks_link',
+      2 => 'field_praisecharts_link',
+      3 => 'field_loopcommunity_link',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Purchase Options',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-purchase-options field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h2',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_purchase_options|node|song|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_right|node|song|default';
   $field_group->group_name = 'group_right';
   $field_group->entity_type = 'node';
@@ -177,17 +212,9 @@ function ew_song_field_group_info() {
     'label' => 'Right',
     'weight' => '2',
     'children' => array(
-      0 => 'field_spotify',
-      1 => 'field_mp3',
-      2 => 'field_itunes_link',
-      3 => 'field_multitracks_link',
-      4 => 'field_praisecharts_link',
-      5 => 'field_key',
-      6 => 'field_tempo',
-      7 => 'field_bpm',
-      8 => 'field_theme',
-      9 => 'field_church',
-      10 => 'field_loopcommunity_link',
+      0 => 'songs_entity_view_3',
+      1 => 'group_song',
+      2 => 'group_purchase_options',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -205,6 +232,39 @@ function ew_song_field_group_info() {
     ),
   );
   $export['group_right|node|song|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_song|node|song|default';
+  $field_group->group_name = 'group_song';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'song';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_right';
+  $field_group->data = array(
+    'label' => 'Song',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_spotify',
+      1 => 'field_mp3',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Song',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-song field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_song|node|song|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

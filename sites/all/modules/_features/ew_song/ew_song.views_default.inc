@@ -371,6 +371,176 @@ function ew_song_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'song',
   );
+
+  /* Display: Node Categories */
+  $handler = $view->new_display('entity_view', 'Node Categories', 'entity_view_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Recommended Key */
+  $handler->display->display_options['fields']['field_key']['id'] = 'field_key';
+  $handler->display->display_options['fields']['field_key']['table'] = 'field_data_field_key';
+  $handler->display->display_options['fields']['field_key']['field'] = 'field_key';
+  $handler->display->display_options['fields']['field_key']['label'] = '';
+  $handler->display->display_options['fields']['field_key']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_key']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_key']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_key']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_key']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_key']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Tempo */
+  $handler->display->display_options['fields']['field_tempo']['id'] = 'field_tempo';
+  $handler->display->display_options['fields']['field_tempo']['table'] = 'field_data_field_tempo';
+  $handler->display->display_options['fields']['field_tempo']['field'] = 'field_tempo';
+  $handler->display->display_options['fields']['field_tempo']['label'] = '';
+  $handler->display->display_options['fields']['field_tempo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tempo']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_tempo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tempo']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_tempo']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_tempo']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: BPM */
+  $handler->display->display_options['fields']['field_bpm']['id'] = 'field_bpm';
+  $handler->display->display_options['fields']['field_bpm']['table'] = 'field_data_field_bpm';
+  $handler->display->display_options['fields']['field_bpm']['field'] = 'field_bpm';
+  $handler->display->display_options['fields']['field_bpm']['label'] = '';
+  $handler->display->display_options['fields']['field_bpm']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_bpm']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_bpm']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bpm']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_bpm']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_bpm']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
+  $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_theme']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_theme']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_theme']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Services */
+  $handler->display->display_options['fields']['field_services']['id'] = 'field_services';
+  $handler->display->display_options['fields']['field_services']['table'] = 'field_data_field_services';
+  $handler->display->display_options['fields']['field_services']['field'] = 'field_services';
+  $handler->display->display_options['fields']['field_services']['label'] = '';
+  $handler->display->display_options['fields']['field_services']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_services']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_services']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_services']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_services']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_services']['empty'] = 'N/A';
+  $handler->display->display_options['fields']['field_services']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Scripture */
+  $handler->display->display_options['fields']['field_scripture']['id'] = 'field_scripture';
+  $handler->display->display_options['fields']['field_scripture']['table'] = 'field_data_field_scripture';
+  $handler->display->display_options['fields']['field_scripture']['field'] = 'field_scripture';
+  $handler->display->display_options['fields']['field_scripture']['label'] = '';
+  $handler->display->display_options['fields']['field_scripture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_scripture']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_scripture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_scripture']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_scripture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scripture']['type'] = 'text_plain';
+  /* Field: Content: Songwriters */
+  $handler->display->display_options['fields']['field_songwriters']['id'] = 'field_songwriters';
+  $handler->display->display_options['fields']['field_songwriters']['table'] = 'field_data_field_songwriters';
+  $handler->display->display_options['fields']['field_songwriters']['field'] = 'field_songwriters';
+  $handler->display->display_options['fields']['field_songwriters']['label'] = '';
+  $handler->display->display_options['fields']['field_songwriters']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_songwriters']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_songwriters']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_songwriters']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_songwriters']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_songwriters']['type'] = 'text_plain';
+  /* Field: Content: Ministries/Churches */
+  $handler->display->display_options['fields']['field_church']['id'] = 'field_church';
+  $handler->display->display_options['fields']['field_church']['table'] = 'field_data_field_church';
+  $handler->display->display_options['fields']['field_church']['field'] = 'field_church';
+  $handler->display->display_options['fields']['field_church']['label'] = '';
+  $handler->display->display_options['fields']['field_church']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_church']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_church']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_church']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_church']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_church']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_church']['delta_offset'] = '0';
+  /* Field: Content: CCLI License */
+  $handler->display->display_options['fields']['field_ccli_license']['id'] = 'field_ccli_license';
+  $handler->display->display_options['fields']['field_ccli_license']['table'] = 'field_data_field_ccli_license';
+  $handler->display->display_options['fields']['field_ccli_license']['field'] = 'field_ccli_license';
+  $handler->display->display_options['fields']['field_ccli_license']['label'] = '';
+  $handler->display->display_options['fields']['field_ccli_license']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_ccli_license']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_ccli_license']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ccli_license']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_ccli_license']['element_default_classes'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="key-tempo">
+<span><h4>Recommended Key</h4>[field_key]</span>
+<span><h4>Tempo/BPM</h4>[field_tempo]/[field_bpm]</span>
+</div>
+<div class="theme">
+<div><span>Theme:</span>[field_theme]<br></div>
+<div><span>Service:</span>[field_services]<br></div>
+<div><span>Scripture:</span>[field_scripture]<br></div>
+</div>
+<div class="song-info">
+<div><span>Songwriters:</span>[field_songwriters]<br></div>
+<div><span>Ministry:</span>[field_church]<br></div>
+<div><span>CCLI#:</span>[field_ccli_license]<br></div>
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'song' => 'song',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'song',
+  );
   $export['songs'] = $view;
 
   return $export;

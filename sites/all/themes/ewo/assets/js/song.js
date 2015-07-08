@@ -2,7 +2,7 @@
   (function($) {
     return $(function() {
       var hash;
-      $('<a id="spotify-add" href=""><span>+</span>Add to Spotify</a>').appendTo('.field-type-spotifyfield');
+      $('<a id="spotify-add" href=""><span>+</span>Add to Spotify</a>').appendTo('.group-song');
       $('.video > a').click(function() {
         var src, src_vid, vid;
         window.location.hash = $(this).next().text();
@@ -13,12 +13,15 @@
         $('#myModal iframe').attr('src', vid);
         return false;
       });
-      $('#myModal button').click(function() {
+      $('#myModal button').on('click', function() {
         return $('#myModal iframe').removeAttr('src');
       });
       if (window.location.hash) {
         hash = window.location.hash.substr(1);
-        return $('.vid-description:contains("' + hash + '")').prev().click();
+        $('.vid-description:contains("' + hash + '")').prev().click();
+      }
+      if ($('.field-type-spotifyfield').length) {
+        return $('.field-type-spotifyfield + div').remove();
       }
     });
   })(jQuery);

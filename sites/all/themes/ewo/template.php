@@ -89,16 +89,16 @@ function ewo_preprocess_block(&$vars, $hook) {
 
 }
 */
-/*
-function ewo_preprocess_node(&$vars,$hook) {
-  //  kpr($vars['content']);
 
-  // add a nodeblock
-  // in .info define a region : regions[block_in_a_node] = block_in_a_node
-  // in node.tpl  <?php if($noderegion){ ?> <?php print render($noderegion); ?><?php } ?>
-  //$vars['block_in_a_node'] = block_get_blocks_by_region('block_in_a_node');
-}
-*/
+// function ewo_preprocess_node(&$vars,$hook) {
+//   if ($vars['type'] == 'song') {
+//     // sdpm($vars);
+//     // if (!empty($vars['field_spotify'])) {
+//     //   unset($vars['field_mp3']);
+//     // }
+//   }
+// }
+
 /*
 function ewo_preprocess_comment(&$vars,$hook) {
   //  kpr($vars['content']);

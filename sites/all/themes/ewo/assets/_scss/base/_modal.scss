@@ -1,0 +1,50 @@
+//
+//  Modal Styling (Bootstrap Overrides)
+//
+
+.modal.in .modal-dialog {
+  @include transform(translate(0, 23%));
+}
+
+.modal-backdrop {
+  background-color: rgba(255,255,255,.9);
+}
+
+.modal-content {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.modal-header {
+  border: none;
+  min-height: 0;
+  padding: 0;
+  position: absolute;
+  right: -18px;
+  top: -15px;
+  z-index: 10;
+
+  button {
+    background-color: $red;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 33px;
+    line-height: 1em;
+    padding:0 9px 4px;
+
+    &:hover {
+      background-color: #fff;
+      color: $red;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.modal-body {
+  padding:0;
+}

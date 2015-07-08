@@ -113,19 +113,50 @@
   }
 }
 
-// Spotify
+// Spotify/MP3
 .node-song {
-  .field-type-spotifyfield {
+  .group-song {
     @include clearfix;
     background-color: $light;
-    padding: 3% 3% 2%;
+    margin-bottom: 70px;
+    padding: 3%;
 
-    iframe {
+    iframe, .field-type-file {
       float: left;
       margin-right: 2%;
+      position: relative;
       width: 87%;
     }
   }
+}
+
+// Audio JS Overrides
+.audiojs-default {
+  .audiojs {
+    height: 75px;
+    width: auto;
+
+    .play-pause {
+      width: 36px;
+    }
+
+    .scrubber {
+      width: 87%;
+    }
+
+    .time {
+      border: none;
+      clear: both;
+    }
+  }
+}
+
+.audiojs-label {
+  bottom: 6px;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
 }
 
 #spotify-add {
@@ -150,6 +181,48 @@
     span {
       background-color: $base;
       color: #fff;
+    }
+  }
+}
+
+// Categories
+.node-song {
+  .view-display-id-entity_view_3 {
+    margin-bottom: 70px;
+
+    .key-tempo {
+      span {
+        background-color: $light;
+        border-bottom:2px solid $base;
+        border-right:2px solid $base;
+        display: block;
+        float: left;
+        font-size: em(32);
+        padding:2% 0 5%;
+        text-align: center;
+        text-transform: uppercase;
+        width: 32%;
+
+        & + span {
+          border-right:none;
+          width: 68%;
+        }
+
+        h4 {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .theme {
+      clear: both;
+      padding: 7%;
+    }
+
+    .song-info {
+      background-color: #3d3738;
+      color: #fff;
+      padding: 2%;
     }
   }
 }

@@ -19,6 +19,7 @@
   &:hover {
     &:before {
       background-color: $red;
+      text-decoration: none;
     }
   }
 }

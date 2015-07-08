@@ -4,7 +4,7 @@
   $ ->
 
     # Spotify Button
-    $('<a id="spotify-add" href=""><span>+</span>Add to Spotify</a>').appendTo('.field-type-spotifyfield');
+    $('<a id="spotify-add" href=""><span>+</span>Add to Spotify</a>').appendTo('.group-song');
 
     # Video Modal
     $('.video > a').click ->
@@ -16,11 +16,16 @@
       $('#myModal iframe').attr 'src', vid
       return false
 
-    $('#myModal button').click ->
+    $('#myModal button').on('click', ->
       $('#myModal iframe').removeAttr 'src'
+    )
 
     if window.location.hash
       hash = window.location.hash.substr(1)
       $('.vid-description:contains("' + hash + '")').prev().click()
+
+    # Remove MP3 if Spotify Link is present - SHOULD BE MOVED TO PHP
+    if $('.field-type-spotifyfield').length
+      $('.field-type-spotifyfield + div').remove()
 
 ) jQuery

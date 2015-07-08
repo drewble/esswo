@@ -106,7 +106,7 @@ if (!empty($bgImg)) {
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                   </div>
                   <div class="modal-body">
-                      <iframe width="570" height="370" frameborder="0" allowfullscreen=""></iframe>
+                      <iframe width="600" height="395" frameborder="0" allowfullscreen=""></iframe>
                   </div>
               </div>
           </div>
