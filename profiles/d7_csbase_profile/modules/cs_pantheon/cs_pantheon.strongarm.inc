@@ -123,7 +123,7 @@ function cs_pantheon_strongarm() {
     'mothership_classes_form_placeholder_email' => '',
     'mothership_classes_menu_items_mlid' => 1,
     'mothership_classes_menu_wrapper' => 0,
-    'mothership_classes_menu_items_firstlast' => 1,
+    'mothership_classes_menu_items_firstlast' => 0,
     'mothership_classes_menu_items_active' => 0,
     'mothership_classes_menu_collapsed' => 0,
     'mothership_classes_menu_leaf' => 1,
@@ -143,6 +143,7 @@ function cs_pantheon_strongarm() {
     'mothership_mobile' => 1,
     'mothership_viewport' => 1,
     'mothership_viewport_maximumscale' => 0,
+    'jquery_update_jquery_version' => '',
   );
   $export['theme_ewo_settings'] = $strongarm;
 

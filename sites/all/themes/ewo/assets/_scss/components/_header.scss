@@ -61,5 +61,23 @@ header {
         color: #fff;
       }
     }
+
+    li:last-child a {
+        color: #288899;
+        font-size: 12px;
+        line-height: 1.4em;
+        padding: 0 14px;
+        position: relative;
+        top: 9px;
+        width: 87px;
+
+        &:hover {
+          color: #fff;
+          
+          &:after {
+            display: none;
+          }
+        }
+    }
   }
 }

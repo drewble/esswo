@@ -363,6 +363,18 @@ header nav a {
       margin-left: -17px;
       position: absolute;
       width: 34px; }
+header nav li:last-child a {
+  color: #288899;
+  font-size: 12px;
+  line-height: 1.4em;
+  padding: 0 14px;
+  position: relative;
+  top: 9px;
+  width: 87px; }
+  header nav li:last-child a:hover {
+    color: #fff; }
+    header nav li:last-child a:hover:after {
+      display: none; }
 
 .hero {
   max-width: 68em;
@@ -524,6 +536,9 @@ footer nav li {
 
 /* Pages
  * -----------------------------------------------------------------------------*/
+.front .hero h1 {
+  display: none; }
+
 .node-type-song .hero {
   position: relative; }
 .node-type-song .bread {
