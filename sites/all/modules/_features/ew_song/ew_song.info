@@ -117,6 +117,7 @@ features[variable][] = menu_parent_song
 features[variable][] = node_options_song
 features[variable][] = node_preview_song
 features[variable][] = node_submitted_song
+features[variable][] = pathauto_node_song_pattern
 features[variable][] = save_continue_song
 features[variable][] = scheduler_expand_fieldset_song
 features[variable][] = scheduler_publish_enable_song
