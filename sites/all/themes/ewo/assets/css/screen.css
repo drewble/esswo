@@ -74,6 +74,7 @@ h3 {
   white-space: pre; }
 
 .btn, button {
+  background-color: transparent;
   border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
@@ -88,10 +89,12 @@ h3 {
   transition: all 0.3s; }
   .btn:hover, button:hover {
     background-color: #e44345;
-    border-color: #524b4c;
+    border-color: #e44345;
+    color: #fff;
     text-decoration: none; }
 
 .white-btn {
+  background-color: transparent;
   border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
@@ -108,10 +111,12 @@ h3 {
   color: #fff; }
   .white-btn:hover {
     background-color: #e44345;
-    border-color: #524b4c;
+    border-color: #e44345;
+    color: #fff;
     text-decoration: none; }
 
 .icon-btn {
+  background-color: transparent;
   border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
@@ -129,7 +134,8 @@ h3 {
   min-width: 0; }
   .icon-btn:hover {
     background-color: #e44345;
-    border-color: #524b4c;
+    border-color: #e44345;
+    color: #fff;
     text-decoration: none; }
   .icon-btn:before {
     border-right: 2px solid #524b4c;
@@ -167,6 +173,7 @@ textarea {
   padding: 9px; }
 
 input[type="submit"] {
+  background-color: transparent;
   border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
@@ -179,12 +186,12 @@ input[type="submit"] {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-  border: none;
   cursor: pointer;
   margin-top: 10px; }
   input[type="submit"]:hover {
     background-color: #e44345;
-    border-color: #524b4c;
+    border-color: #e44345;
+    color: #fff;
     text-decoration: none; }
 
 /* Tables */
@@ -422,6 +429,7 @@ header nav .login.active-trail a {
   padding: 4% 0;
   text-align: center; }
   .pre-footer a {
+    background-color: transparent;
     border: 2px solid #d7d5d5;
     color: #524b4c;
     display: inline-block;
@@ -442,7 +450,8 @@ header nav .login.active-trail a {
     left: 10px; }
     .pre-footer a:hover {
       background-color: #e44345;
-      border-color: #524b4c;
+      border-color: #e44345;
+      color: #fff;
       text-decoration: none; }
     .pre-footer a:before {
       border-right: 2px solid #524b4c;
@@ -542,8 +551,44 @@ footer nav li {
 
 /* Pages
  * -----------------------------------------------------------------------------*/
-.front .hero h1 {
-  display: none; }
+.front .hero {
+  max-width: none;
+  padding: 0; }
+  .front .hero:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .front .hero h1 {
+    display: none; }
+  .front .hero h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase; }
+  .front .hero h2 {
+    color: #e44345;
+    font-size: 42px;
+    margin-bottom: 0;
+    text-transform: uppercase; }
+  .front .hero h4 {
+    color: #ecf0f1;
+    font: 13px "Titillium Web", sans-serif;
+    font-style: italic;
+    margin: 0 0 30px; }
+.front .feature {
+  float: left;
+  position: relative;
+  width: 50%; }
+.front .file-image {
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 0; }
+.front .group-info {
+  padding: 59% 11% 9%;
+  position: relative;
+  text-align: left;
+  z-index: 1; }
 
 .node-type-song .hero {
   position: relative; }

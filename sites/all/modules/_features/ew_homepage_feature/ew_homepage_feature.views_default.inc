@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * d7_tpl_hero.views_default.inc
+ * ew_homepage_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function d7_tpl_hero_views_default_views() {
+function ew_homepage_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'hero';
+  $view->name = 'homepage_feature';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Hero';
+  $view->human_name = 'Homepage Feature';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -28,13 +28,12 @@ function d7_tpl_hero_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'feature';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'full';
   $handler->display->display_options['row_options']['links'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -60,12 +59,12 @@ function d7_tpl_hero_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'hero' => 'hero',
+    'homepage_feature' => 'homepage_feature',
   );
 
-  /* Display: Latest 1 */
-  $handler = $view->new_display('block', 'Latest 1', 'block');
-  $export['hero'] = $view;
+  /* Display: Homepage Area (2) */
+  $handler = $view->new_display('block', 'Homepage Area (2)', 'block');
+  $export['homepage_feature'] = $view;
 
   return $export;
 }

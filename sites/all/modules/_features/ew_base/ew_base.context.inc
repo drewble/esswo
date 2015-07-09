@@ -26,16 +26,22 @@ function ew_base_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-songs-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-songs-page',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
         'views-featured-block' => array(
           'module' => 'views',
           'delta' => 'featured-block',
           'region' => 'header',
+          'weight' => '-10',
+        ),
+        'views-homepage_feature-block' => array(
+          'module' => 'views',
+          'delta' => 'homepage_feature-block',
+          'region' => 'hero',
+          'weight' => '-10',
+        ),
+        'views--exp-songs-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-songs-page',
+          'region' => 'content',
           'weight' => '-10',
         ),
       ),

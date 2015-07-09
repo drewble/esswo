@@ -15,16 +15,9 @@ if ($id_node) {
 
 hide($content['comments']);
 hide($content['links']);
-
-$icon = file_create_url($content['field_icon_image'][0]['#item']['uri']);
 ?>
 
 <!-- node.tpl.php -->
-<?php print $mothership_poorthemers_helper; ?>
-<div class="bullet-icon bullet-icon-1">
-  <img src="<?php print $icon ?>" alt="">
-</div>
-<div class="bullet-content">
-  <h2><?php print $node->title; ?></h2>
-  <p><?php print $content['field_small_blurb'][0]['#markup']; ?></p>
+<div class="content">
+  <?php print render($content);?>
 </div>

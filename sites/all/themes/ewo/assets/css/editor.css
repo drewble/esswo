@@ -68,6 +68,7 @@ h3 {
   white-space: pre; }
 
 .btn, button {
+  background-color: transparent;
   border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
@@ -82,10 +83,12 @@ h3 {
   transition: all 0.3s; }
   .btn:hover, button:hover {
     background-color: #e44345;
-    border-color: #524b4c;
+    border-color: #e44345;
+    color: #fff;
     text-decoration: none; }
 
 .white-btn {
+  background-color: transparent;
   border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
@@ -102,10 +105,12 @@ h3 {
   color: #fff; }
   .white-btn:hover {
     background-color: #e44345;
-    border-color: #524b4c;
+    border-color: #e44345;
+    color: #fff;
     text-decoration: none; }
 
 .icon-btn {
+  background-color: transparent;
   border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
@@ -123,7 +128,8 @@ h3 {
   min-width: 0; }
   .icon-btn:hover {
     background-color: #e44345;
-    border-color: #524b4c;
+    border-color: #e44345;
+    color: #fff;
     text-decoration: none; }
   .icon-btn:before {
     border-right: 2px solid #524b4c;
