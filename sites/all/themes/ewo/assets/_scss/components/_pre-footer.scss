@@ -6,4 +6,19 @@
   background-color: $light;
   padding: 4% 0;
   text-align: center;
+
+  a {
+    @include icon-btn;
+    padding:0 103px 0 0;
+    position: relative;
+    left: 10px;
+
+    &:before {
+      margin-right: 103px;
+    }
+
+    span.a2a_img {
+      display: none;
+    }
+  }
 }

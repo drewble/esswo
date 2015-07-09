@@ -118,7 +118,9 @@ h3 {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-  padding: 0 15px 0 0; }
+  border-color: #524b4c;
+  padding: 0 15px 0 0;
+  min-width: 0; }
   .icon-btn:hover {
     background-color: #e44345;
     border-color: #524b4c;

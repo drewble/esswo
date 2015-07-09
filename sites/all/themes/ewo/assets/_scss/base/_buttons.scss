@@ -19,7 +19,9 @@
 
 @mixin icon-btn {
   @include btn;
+  border-color:$btn;
   padding: 0 15px 0 0;
+  min-width: 0;
   
   &:before {
     border-right: 2px solid $btn;

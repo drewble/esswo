@@ -5,7 +5,7 @@
 footer {
   background-color: $gray;
   color: $light;
-  padding: 5% 0;
+  padding: 5% 0 3%;
 
   .outer-container {
     // Who We Are
@@ -17,7 +17,9 @@ footer {
       }
     }
   }
+}
 
+footer {
   h2 {
     @include border-btm;
 
@@ -27,19 +29,83 @@ footer {
       width: 200px;
     }
   }
+}
 
+footer {
   nav {
     @include tablet {
       float: left;
-      width: 20%;
+      width: 27%;
     }
     ul, li {
       margin: 0;
       padding:0;
     }
 
+    a {
+      border:1px solid #4a4647;
+      border-left-color:transparent;
+      color: $light;
+      display: block;
+      float: left;
+      font-size: 12px;
+      height: 0;
+      overflow: hidden;
+      padding-top:58px;
+      text-transform: uppercase;
+      width: 58px;
+
+      &:hover {
+        background-color:$red;
+        color: #fff;
+      }
+    }
+
     li {
+      display: block;
+      float: left;
       list-style: none;
+      text-align: center;
+
+      &:first-child {
+        float: none;
+
+        a {
+          border-bottom-color:transparent;
+          border-left-color:#4a4647;
+          float: none;
+          height: 134px;
+          width: 289px;
+        }
+
+        & + li a {
+          border-left-color:#4a4647;
+        }
+      }
+    }
+  }
+}
+
+.footer-btm {
+  clear: both;
+  color: #7c7a7a;
+  font-size: 12px;
+  padding-top: 80px;
+
+  span {
+    float: left;
+
+    & + span {
+      float: right;
+    }
+  }
+
+  a {
+    color: #7c7a7a;
+    margin-left: 20px;
+
+    &:hover {
+      color: #fff;
     }
   }
 }

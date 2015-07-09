@@ -105,6 +105,10 @@ if (!empty($bgImg)) {
 <footer role="contentinfo">
   <div class="outer-container">
     <?php print render($page['footer']); ?>
+    <div class="footer-btm">
+      <span>&copy; <?php print date('Y'); ?> ESSENTIAL WORSHIP</span>
+      <span><a href="/">Terms of Use</a><a href="/">Privacy Policy</a></span>
+    </div>
   </div>
 </footer>
 
