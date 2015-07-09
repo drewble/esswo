@@ -27,6 +27,45 @@ function ew_song_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function ew_song_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: 571x200.
+  $styles['571x200'] = array(
+    'label' => '571x200',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 571,
+          'height' => 200,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 571x428.
+  $styles['571x428'] = array(
+    'label' => '571x428',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 571,
+          'height' => 428,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function ew_song_node_info() {
