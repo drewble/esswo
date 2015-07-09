@@ -40,6 +40,9 @@ function ewo_preprocess_page(&$vars,$hook) {
       if (!empty($node->field_song_resources)) {
         $vars['resources'] = file_create_url($node->field_song_resources[LANGUAGE_NONE][0]['uri']);
       }
+      
+      // Link Changes
+      $vars['links'] = $vars['page']['content']['system_main']['nodes'][1]['links']['#links'];
     }
   }
 }

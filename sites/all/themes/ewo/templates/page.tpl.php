@@ -87,11 +87,20 @@ if (!empty($bgImg)) {
 
   <?php if ($page['sidebar']): ?>
     <div class="sidebar">
-    <?php print render($page['sidebar']); ?>
+      <?php print render($page['sidebar']); ?>
     </div>
   <?php endif; ?>
 
 </div><!-- /page-->
+
+<?php if ($page['pre_footer'] || isset($links)): ?>
+    <div class="pre-footer">
+      <?php print render($page['pre_footer']); ?>
+      <?php if (isset($links)): ?>
+        <?php print $links['addtoany']['title']; ?>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
 
 <footer role="contentinfo">
   <div class="outer-container">

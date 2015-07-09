@@ -18,7 +18,7 @@
     max-width:none;
   }
 
-  .tabs {
+  .tabs, .drupal-messages {
     @include outer-container;
   }
 }

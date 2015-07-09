@@ -296,6 +296,7 @@ ul.primary {
     clear: both; }
 
 .page {
+  margin-bottom: 70px;
   margin-top: 30px; }
 
 .bread {
@@ -395,6 +396,11 @@ header nav a {
     .hero .btns a {
       margin: 0 15px; }
 
+.pre-footer {
+  background-color: #ecf0f1;
+  padding: 4% 0;
+  text-align: center; }
+
 footer {
   background-color: #322e2f;
   color: #ecf0f1;
@@ -440,11 +446,11 @@ footer {
   top: 164px; }
 .node-type-song .page {
   max-width: none; }
-.node-type-song .tabs {
+.node-type-song .tabs, .node-type-song .drupal-messages {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto; }
-  .node-type-song .tabs:after {
+  .node-type-song .tabs:after, .node-type-song .drupal-messages:after {
     content: "";
     display: table;
     clear: both; }
