@@ -94,7 +94,9 @@ if (!empty($bgImg)) {
 </div><!-- /page-->
 
 <footer role="contentinfo">
-  <?php print render($page['footer']); ?>
+  <div class="outer-container">
+    <?php print render($page['footer']); ?>
+  </div>
 </footer>
 
 <?php if(isset($node)): ?>

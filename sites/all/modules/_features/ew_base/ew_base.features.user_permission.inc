@@ -28,6 +28,15 @@ function ew_base_user_default_permissions() {
     'module' => 'oauth_common',
   );
 
+  // Exported permission: 'administer addtoany'.
+  $permissions['administer addtoany'] = array(
+    'name' => 'administer addtoany',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'addtoany',
+  );
+
   // Exported permission: 'administer consumers'.
   $permissions['administer consumers'] = array(
     'name' => 'administer consumers',
@@ -62,6 +71,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'mailchimp',
+  );
+
+  // Exported permission: 'administer menu attributes'.
+  $permissions['administer menu attributes'] = array(
+    'name' => 'administer menu attributes',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'menu_attributes',
   );
 
   // Exported permission: 'administer oauth'.

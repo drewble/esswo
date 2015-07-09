@@ -50,7 +50,8 @@ h1 {
 h2 {
   font-size: 1.5em;
   line-height: 1.2381em;
-  margin: 0 0 0.619em; }
+  margin: 0 0 0.619em;
+  text-transform: uppercase; }
 
 h3 {
   color: #e44345;
@@ -73,25 +74,72 @@ h3 {
   white-space: pre; }
 
 .btn, button {
-  border: 2px solid #524b4c;
+  border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
   font-size: 0.875em;
-  padding: 0 15px 0 0;
+  min-width: 200px;
+  padding: 11px 15px;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s; }
-  .btn:before, button:before {
+  .btn:hover, button:hover {
+    background-color: #e44345;
+    border-color: #524b4c;
+    text-decoration: none; }
+
+.white-btn {
+  border: 2px solid #d7d5d5;
+  color: #524b4c;
+  display: inline-block;
+  font-size: 0.875em;
+  min-width: 200px;
+  padding: 11px 15px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #fff;
+  color: #fff; }
+  .white-btn:hover {
+    background-color: #e44345;
+    border-color: #524b4c;
+    text-decoration: none; }
+
+.icon-btn {
+  border: 2px solid #d7d5d5;
+  color: #524b4c;
+  display: inline-block;
+  font-size: 0.875em;
+  min-width: 200px;
+  padding: 11px 15px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 0 15px 0 0; }
+  .icon-btn:hover {
+    background-color: #e44345;
+    border-color: #524b4c;
+    text-decoration: none; }
+  .icon-btn:before {
     border-right: 2px solid #524b4c;
     content: "s";
     display: inline-block;
     margin-right: 15px;
     padding: 11px 20px; }
-  .btn:hover:before, button:hover:before {
-    background-color: #e44345;
-    text-decoration: none; }
+  .icon-btn:hover {
+    background-color: transparent; }
+    .icon-btn:hover:before {
+      background-color: #e44345;
+      text-decoration: none; }
 
 form small, form .description {
   color: #5f5f5f; }
@@ -117,11 +165,13 @@ textarea {
   padding: 9px; }
 
 input[type="submit"] {
-  border: 2px solid #524b4c;
+  border: 2px solid #d7d5d5;
   color: #524b4c;
   display: inline-block;
   font-size: 0.875em;
-  padding: 0 15px 0 0;
+  min-width: 200px;
+  padding: 11px 15px;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all 0.3s;
@@ -130,14 +180,9 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
   margin-top: 10px; }
-  input[type="submit"]:before {
-    border-right: 2px solid #524b4c;
-    content: "s";
-    display: inline-block;
-    margin-right: 15px;
-    padding: 11px 20px; }
-  input[type="submit"]:hover:before {
+  input[type="submit"]:hover {
     background-color: #e44345;
+    border-color: #524b4c;
     text-decoration: none; }
 
 /* Tables */
@@ -350,15 +395,74 @@ header nav a {
     .hero .btns a {
       margin: 0 15px; }
 
+footer {
+  background-color: #322e2f;
+  color: #ecf0f1;
+  padding: 5% 0; }
+  @media screen and (min-width: 768px) {
+    footer .outer-container div:first-child {
+      float: left;
+      margin-right: 7%;
+      width: 66%; } }
+  footer h2 {
+    position: relative; }
+    footer h2:after {
+      background-color: #e44345;
+      bottom: 0;
+      content: " ";
+      display: block;
+      height: 4px;
+      left: 50%;
+      margin-left: -17px;
+      position: absolute;
+      width: 34px; }
+    footer h2:after {
+      margin: 1.5% 0 4%;
+      position: static;
+      width: 200px; }
+  @media screen and (min-width: 768px) {
+    footer nav {
+      float: left;
+      width: 20%; } }
+  footer nav ul, footer nav li {
+    margin: 0;
+    padding: 0; }
+  footer nav li {
+    list-style: none; }
+
 /* Pages
  * -----------------------------------------------------------------------------*/
-.hero {
+.node-type-song .hero {
   position: relative; }
-
-.bread {
+.node-type-song .bread {
   left: 0;
   position: absolute;
   top: 164px; }
+.node-type-song .page {
+  max-width: none; }
+.node-type-song .tabs {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .node-type-song .tabs:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.node-song {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .node-song:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .node-song h2 {
+    border-bottom: 2px solid;
+    font-size: 24px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    width: 215px; }
 
 .node-song .view-display-id-entity_view_1 {
   margin-bottom: 80px; }
@@ -503,10 +607,30 @@ header nav a {
       width: 68%; }
     .node-song .view-display-id-entity_view_3 .key-tempo span h4 {
       font-size: 13px; }
-  .node-song .view-display-id-entity_view_3 .theme {
+  .node-song .view-display-id-entity_view_3 .theme, .node-song .view-display-id-entity_view_3 .song-info {
     clear: both;
-    padding: 7%; }
+    padding: 5% 9%; }
+    .node-song .view-display-id-entity_view_3 .theme div, .node-song .view-display-id-entity_view_3 .song-info div {
+      margin: 10px 0; }
+      .node-song .view-display-id-entity_view_3 .theme div span, .node-song .view-display-id-entity_view_3 .song-info div span {
+        display: inline-block;
+        font-size: 12px;
+        text-transform: uppercase; }
+        @media screen and (min-width: 768px) {
+          .node-song .view-display-id-entity_view_3 .theme div span, .node-song .view-display-id-entity_view_3 .song-info div span {
+            width: 133px; } }
   .node-song .view-display-id-entity_view_3 .song-info {
     background-color: #3d3738;
-    color: #fff;
-    padding: 2%; }
+    color: #fff; }
+    .node-song .view-display-id-entity_view_3 .song-info div {
+      font-size: 14px;
+      margin: 2px 0; }
+
+.node-song .field-type-link-field {
+  float: left;
+  margin: 4% 4% 0 0;
+  width: 46%; }
+  .node-song .field-type-link-field a {
+    width: 100%; }
+
+/*# sourceMappingURL=screen.css.map */

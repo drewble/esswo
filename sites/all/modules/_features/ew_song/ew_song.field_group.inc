@@ -189,7 +189,7 @@ function ew_song_field_group_info() {
         'id' => '',
         'classes' => 'group-purchase-options field-group-div',
         'description' => '',
-        'show_label' => '0',
+        'show_label' => '1',
         'label_element' => 'h2',
         'effect' => 'none',
         'speed' => 'none',

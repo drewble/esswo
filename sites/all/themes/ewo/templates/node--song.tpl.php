@@ -47,7 +47,5 @@ hide($content['field_mp3']);
     <?php endif; ?>
   </div>
 
-  <?php print render($content['links']); ?>
-
   <?php print render($content['comments']); ?>
 </article>

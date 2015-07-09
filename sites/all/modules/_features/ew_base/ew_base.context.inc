@@ -71,6 +71,18 @@ function ew_base_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => '1',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+        'menu-menu-get-in-touch' => array(
+          'module' => 'menu',
+          'delta' => 'menu-get-in-touch',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
       ),
     ),
   );

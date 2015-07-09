@@ -270,7 +270,7 @@ function ew_song_field_default_field_instances() {
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
-        'class' => 'itunes',
+        'class' => 'itunes btn',
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
@@ -423,7 +423,7 @@ function ew_song_field_default_field_instances() {
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
-        'class' => 'loop-community',
+        'class' => 'loop-community btn',
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
@@ -615,7 +615,7 @@ function ew_song_field_default_field_instances() {
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
-        'class' => 'multitracks',
+        'class' => 'multitracks btn',
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
@@ -673,7 +673,7 @@ function ew_song_field_default_field_instances() {
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
-        'class' => 'praise-charts',
+        'class' => 'praise-charts btn',
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',

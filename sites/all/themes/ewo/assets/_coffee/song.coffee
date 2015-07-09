@@ -8,7 +8,7 @@
 
     # Video Modal
     $('.video > a').click ->
-      window.location.hash = $(this).next().text()
+      window.location.hash = $(this).next().text().replace(/\s/g, '+');
       src = $(this).attr('href')
       src_vid = src.substring src.indexOf('=') + 1
       vid = 'https://www.youtube.com/embed/' + src_vid + '?autoplay=1'
@@ -16,12 +16,12 @@
       $('#myModal iframe').attr 'src', vid
       return false
 
-    $('#myModal button').on('click', ->
+    $('#myModal button').on 'click', ->
+      window.location.hash = ''
       $('#myModal iframe').removeAttr 'src'
-    )
 
     if window.location.hash
-      hash = window.location.hash.substr(1)
+      hash = window.location.hash.substr(1).replace('+', ' ');
       $('.vid-description:contains("' + hash + '")').prev().click()
 
     # Remove MP3 if Spotify Link is present - SHOULD BE MOVED TO PHP

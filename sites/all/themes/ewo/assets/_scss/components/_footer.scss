@@ -1,0 +1,45 @@
+//
+//  Footer
+//
+
+footer {
+  background-color: $gray;
+  color: $light;
+  padding: 5% 0;
+
+  .outer-container {
+    // Who We Are
+    div:first-child {
+      @include tablet {
+        float: left;
+        margin-right: 7%;
+        width: 66%;
+      }
+    }
+  }
+
+  h2 {
+    @include border-btm;
+
+    &:after {
+      margin: 1.5% 0 4%;
+      position: static;
+      width: 200px;
+    }
+  }
+
+  nav {
+    @include tablet {
+      float: left;
+      width: 20%;
+    }
+    ul, li {
+      margin: 0;
+      padding:0;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+}

@@ -2,14 +2,38 @@
 //  Song Node
 //
 
-.hero {
-  position: relative;
+// General
+.node-type-song {
+  .hero {
+    position: relative;
+  }
+
+  .bread {
+    left: 0;
+    position: absolute;
+    top: 164px;
+  }
+
+  .page {
+    max-width:none;
+  }
+
+  .tabs {
+    @include outer-container;
+  }
 }
 
-.bread {
-  left: 0;
-  position: absolute;
-  top: 164px;
+.node-song {
+
+  @include outer-container;
+
+  h2 {
+    border-bottom:2px solid;
+    font-size: 24px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    width:215px;
+  }
 }
 
 // Videos
@@ -214,15 +238,47 @@
       }
     }
 
-    .theme {
+    .theme, .song-info {
       clear: both;
-      padding: 7%;
+      padding: 5% 9%;
+
+      div {
+        margin: 10px 0;
+
+        span {
+          display: inline-block;
+          font-size: 12px;
+          text-transform: uppercase;
+
+          @include tablet {
+              width: 133px;
+          }
+        }
+      }
     }
 
     .song-info {
       background-color: #3d3738;
       color: #fff;
-      padding: 2%;
+
+      div {
+        font-size: 14px;
+        margin: 2px 0;
+      }
     }
   }
 }
+
+// Purchase Links
+.node-song {
+  .field-type-link-field {
+    float: left;
+    margin: 4% 4% 0 0;
+    width: 46%;
+
+    a {
+      width: 100%;
+    }
+  }
+}
+
