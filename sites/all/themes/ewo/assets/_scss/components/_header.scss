@@ -63,6 +63,7 @@ header {
     }
 
     .login {
+      a {
         color: #288899;
         font-size: 12px;
         line-height: 1.4em;
@@ -78,6 +79,18 @@ header {
             display: none;
           }
         }
+      }
+      &.active-trail a {
+        color:#288899;
+
+        &:hover {
+          color: #fff;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
     }
   }
 }

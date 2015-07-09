@@ -363,7 +363,7 @@ header nav a {
       margin-left: -17px;
       position: absolute;
       width: 34px; }
-header nav .login {
+header nav .login a {
   color: #288899;
   font-size: 12px;
   line-height: 1.4em;
@@ -371,10 +371,16 @@ header nav .login {
   position: relative;
   top: 9px;
   width: 87px; }
-  header nav .login:hover {
+  header nav .login a:hover {
     color: #fff; }
-    header nav .login:hover:after {
+    header nav .login a:hover:after {
       display: none; }
+header nav .login.active-trail a {
+  color: #288899; }
+  header nav .login.active-trail a:hover {
+    color: #fff; }
+  header nav .login.active-trail a:after {
+    display: none; }
 
 .hero {
   max-width: 68em;
