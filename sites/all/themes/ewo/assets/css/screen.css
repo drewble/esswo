@@ -791,4 +791,7 @@ footer nav li {
   .node-song .field-type-link-field a {
     width: 100%; }
 
+#views-exposed-form-songs-page .views-exposed-widget small {
+  display: none; }
+
 /*# sourceMappingURL=screen.css.map */

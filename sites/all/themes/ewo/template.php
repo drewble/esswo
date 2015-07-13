@@ -47,6 +47,27 @@ function ewo_preprocess_page(&$vars,$hook) {
   }
 }
 
+
+function ewo_form_alter(&$form, &$form_state, $form_id) {
+  $path = drupal_get_path('theme', 'ewo');
+  if ($form_id == 'views_exposed_form') {
+    if ($form['#id'] == 'views-exposed-form-songs-page') {
+      drupal_add_css($path .'/assets/js/vendor/chosen/chosen.min.css', array('group' => CSS_DEFAULT));
+      drupal_add_js($path .'/assets/js/vendor/chosen/chosen.jquery.min.js', array('group' => JS_LIBRARY));
+      drupal_add_js($path .'/assets/js/chosen-inst.js', array('group' => JS_THEME));
+
+      // Set Default Values
+      $form['title']['#attributes']['placeholder'] = 'Find a Song...';
+      $form['field_key_tid']['#options']['All'] = '';
+      $form['field_tempo_tid']['#options']['All'] = '';
+      $form['field_theme_tid']['#options']['All'] = '';
+      $form['field_services_tid']['#options']['All'] = '';
+      $form['field_church_tid']['#options']['All'] = '';
+    }
+  }
+}
+
+
 /*
 function ewo_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);
@@ -131,13 +152,6 @@ function ewo_preprocess_field(&$vars,$hook) {
 /*
 function ewo_preprocess_maintenance_page(){
   //  kpr($vars['content']);
-}
-*/
-/*
-function ewo_form_alter(&$form, &$form_state, $form_id) {
-  //if ($form_id == '') {
-  //....
-  //}
 }
 */
 

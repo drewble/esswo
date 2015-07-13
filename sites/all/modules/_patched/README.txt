@@ -1,0 +1,1 @@
+Using dev version of Views (release date: 2015-Jun-23) because of fix for AJAX views exposed filters in separate block. Once 7.x-3.12 gets released, it should include this fix and we can stop using the dev version
