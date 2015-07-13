@@ -2,28 +2,83 @@
 form small, form .description {
   color: #5f5f5f;
 }
+
 label, label.required {
   display: block;
   font-weight: 700;
 }
+
 label.required:after {
   content: "*";
   color: #c41230;
   margin-left: 3px;
 }
+
 input[type="text"], input[type="password"], input[type="email"] {
-  border: 1px solid;
-  border-radius: 5px;
+  background-color: $light;
+  border:none;
+  color: $base;
+  font: em(28) $header;
   margin: 10px 0;
-  padding: 9px 34px 9px 10px;
+  padding: 2% 3%;
+  text-transform: uppercase;
+
+  @include placeholder {
+    color: #b9babb;
+  }
 }
+
 textarea {
   border:none;
   border-radius:5px 5px 0 0;
   padding: 9px;
 }
+
 input[type="submit"] {
   @include btn;
   cursor: pointer;
   margin-top: 10px;
+}
+
+#edit-field-tempo-tid-wrapper {
+  border-right: 2px solid $light;
+  padding-right:20px;
+  margin-right: 20px;
+}
+
+// Chosen Overrides
+.chosen-container {
+  .chosen-single, &.chosen-with-drop .chosen-single {
+    background:$light;
+    border:none;
+    border-radius:0;
+    box-shadow: none;
+    font-size: em(12);
+    height: auto;
+    padding: 14px 16px;
+    text-transform: uppercase;
+
+    // Dropdown icon
+    div {
+      right: 3px;
+      top:13px;
+      width: 16px;
+    }
+  }
+
+  &.chosen-with-drop .chosen-single {
+    font-weight: bold;
+  }
+
+  .chosen-drop {
+    border: none;
+    background: $light;
+    box-shadow: 0;
+  }
+}
+
+.chosen-search {
+  input {
+    text-transform: none;
+  }
 }

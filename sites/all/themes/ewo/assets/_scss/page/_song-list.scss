@@ -2,11 +2,87 @@
 //  Song Listing
 //
 
-// Exposed Form
-#views-exposed-form-songs-page {
-	.views-exposed-widget {
-		small {
+/////// Exposed Form
+
+// General 
+.placeholder {
+	#views-exposed-form-songs-page {
+		label {
 			display: none;
 		}
 	}
 }
+
+#views-exposed-form-songs-page {
+	.views-exposed-widget {
+		padding:0 10px 0 0;
+
+		small {
+			display: none;
+		}
+	}
+
+	// Submit
+	.views-submit-button {
+		height:0;
+		overflow:hidden;
+		position: absolute;
+		visibility:hidden;
+		z-index: -10;
+	}
+}
+
+#edit-field-key-tid,
+#edit-field-tempo-tid {
+	width:100px;
+}
+
+#edit-field-theme-tid,
+#edit-field-services-tid,
+#edit-field-church-tid {
+	width:240px;
+}
+
+// Title
+#views-exposed-form-songs-page {
+	#edit-title-wrapper {
+		margin-bottom: 15px;
+		position: relative;
+		width:100%;
+
+		input {
+			padding:2% 3% 2% 5%;
+			width: 100%;
+		}
+
+		.icon {
+			left: 20px;
+			position: absolute;
+			top:34px;
+		}
+	}
+
+	#edit-field-tempo-tid-wrapper {
+	  border-right: 2px solid #ecf0f1;
+	  padding: 0 25px 0 0;
+	  margin-right: 20px;
+	}
+}
+
+#edit-field-key-tid-wrapper {
+	width: 190px;
+
+	.views-widget > span {
+		float: left;
+		font-size: 12px;
+		margin-right: 20px;
+		position: relative;
+		top:12px;
+	  text-transform: uppercase;
+	}
+}
+
+#edit-field-church-tid-wrapper {
+	padding-right:0;
+}
+// End exposed form

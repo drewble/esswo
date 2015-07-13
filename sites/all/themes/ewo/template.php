@@ -57,6 +57,8 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
       drupal_add_js($path .'/assets/js/chosen-inst.js', array('group' => JS_THEME));
 
       // Set Default Values
+      $form['title']['#prefix'] = '<span class="icon icon-icons_add"></span>';
+      $form['field_key_tid']['#prefix'] = '<span>Filter by</span>';
       $form['title']['#attributes']['placeholder'] = 'Find a Song...';
       $form['field_key_tid']['#options']['All'] = '';
       $form['field_tempo_tid']['#options']['All'] = '';

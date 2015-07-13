@@ -81,10 +81,18 @@ function ew_song_strongarm() {
             'weight' => '0',
             'visible' => TRUE,
           ),
+          'teaser' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
         ),
         'songs_entity_view_2' => array(
           'default' => array(
             'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),
@@ -92,6 +100,10 @@ function ew_song_strongarm() {
           'default' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '7',
+            'visible' => FALSE,
           ),
         ),
       ),
