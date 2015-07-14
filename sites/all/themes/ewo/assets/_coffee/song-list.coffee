@@ -34,8 +34,14 @@
   	$('#views-exposed-form-songs-page #edit-title-wrapper small').click ->
   		$('#edit-title').blur()
 
-  	$('.play-btn').click ->
-  		$(this).siblings('.play-audio').addClass('show')
-  		return false
+  	$('.audio-btn a:first-child').click ->
+  		$(this).addClass 'open'
+  		$(this).parent().siblings('.play-audio').addClass('show')
+  		$('#remove').click ->
+	  		$(this).prev().removeClass 'open'
+	  		$(this).parent().siblings('.play-audio').removeClass('show')
+	  		return false
+	  	return false
+
 
 ) jQuery

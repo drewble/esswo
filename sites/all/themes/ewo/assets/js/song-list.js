@@ -28,8 +28,14 @@
           $('#views-exposed-form-songs-page #edit-title-wrapper small').click(function() {
             return $('#edit-title').blur();
           });
-          return $('.play-btn').click(function() {
-            $(this).siblings('.play-audio').addClass('show');
+          return $('.audio-btn a:first-child').click(function() {
+            $(this).addClass('open');
+            $(this).parent().siblings('.play-audio').addClass('show');
+            $('#remove').click(function() {
+              $(this).prev().removeClass('open');
+              $(this).parent().siblings('.play-audio').removeClass('show');
+              return false;
+            });
             return false;
           });
         });

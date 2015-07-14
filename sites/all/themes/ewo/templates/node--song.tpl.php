@@ -36,7 +36,12 @@ hide($content['field_mp3']);
   <?php endif; ?>
 
   <div class="content">
-    <a href="#" class="play-btn">Play</a>
+    <?php if (!$page): ?>
+      <div class="audio-btn">
+        <a href="#">X</a>
+        <a href="#" id="remove">X</a>
+      </div>
+    <?php endif; ?>
     <?php print render($content);?>
     <?php if (!$page): ?>
       <div class="play-audio">

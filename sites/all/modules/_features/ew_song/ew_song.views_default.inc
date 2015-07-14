@@ -80,7 +80,7 @@ function ew_song_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Recommended Key (field_key) */
+  /* Filter criterion: Content: Key (field_key) */
   $handler->display->display_options['filters']['field_key_tid']['id'] = 'field_key_tid';
   $handler->display->display_options['filters']['field_key_tid']['table'] = 'field_data_field_key';
   $handler->display->display_options['filters']['field_key_tid']['field'] = 'field_key_tid';
@@ -137,7 +137,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_theme_tid']['vocabulary'] = 'theme';
   $handler->display->display_options['filters']['field_theme_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Services (field_services) */
+  /* Filter criterion: Content: Service (field_services) */
   $handler->display->display_options['filters']['field_services_tid']['id'] = 'field_services_tid';
   $handler->display->display_options['filters']['field_services_tid']['table'] = 'field_data_field_services';
   $handler->display->display_options['filters']['field_services_tid']['field'] = 'field_services_tid';
@@ -156,7 +156,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_services_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_services_tid']['vocabulary'] = 'services';
   $handler->display->display_options['filters']['field_services_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Ministries/Churches (field_church) */
+  /* Filter criterion: Content: Ministry (field_church) */
   $handler->display->display_options['filters']['field_church_tid']['id'] = 'field_church_tid';
   $handler->display->display_options['filters']['field_church_tid']['table'] = 'field_data_field_church';
   $handler->display->display_options['filters']['field_church_tid']['field'] = 'field_church_tid';
@@ -175,6 +175,23 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_church_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_church_tid']['vocabulary'] = 'church';
   $handler->display->display_options['filters']['field_church_tid']['hierarchy'] = 1;
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = 'All';
+  $handler->display->display_options['filters']['flagged']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['flagged']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['flagged']['expose']['label'] = 'New';
+  $handler->display->display_options['filters']['flagged']['expose']['operator'] = 'flagged_op';
+  $handler->display->display_options['filters']['flagged']['expose']['identifier'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
 
   /* Display: Main Song Page */
   $handler = $view->new_display('page', 'Main Song Page', 'page');
@@ -185,8 +202,44 @@ function ew_song_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<a href="/songs"><span>X</span> Clear All Filters</a>';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/songs" class="clear-filters"><span>X</span> Clear All Filters</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['empty'] = TRUE;
+  $handler->display->display_options['header']['result']['content'] = '<div class="result-summary">
+<p>Showing @start-@end of @total</p>
+<a href="#" id="view-new">View New</a>
+<a href="#" id="view-all">View All</a>
+</div>';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Result summary */
+  $handler->display->display_options['empty']['result']['id'] = 'result';
+  $handler->display->display_options['empty']['result']['table'] = 'views';
+  $handler->display->display_options['empty']['result']['field'] = 'result';
+  $handler->display->display_options['empty']['result']['empty'] = TRUE;
+  $handler->display->display_options['empty']['result']['content'] = '<div class="result-summary">
+<p>Showing @start-@end of @total</p>
+<a href="#" id="view-new">View New</a>
+<a href="#" id="view-all">View All</a>
+</div>';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'hello?';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: new */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'new';
+  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   $handler->display->display_options['path'] = 'songs';
 
   /* Display: Node Videos Small */
@@ -422,7 +475,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Recommended Key */
+  /* Field: Content: Key */
   $handler->display->display_options['fields']['field_key']['id'] = 'field_key';
   $handler->display->display_options['fields']['field_key']['table'] = 'field_data_field_key';
   $handler->display->display_options['fields']['field_key']['field'] = 'field_key';
@@ -466,7 +519,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_theme']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_theme']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_theme']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Services */
+  /* Field: Content: Service */
   $handler->display->display_options['fields']['field_services']['id'] = 'field_services';
   $handler->display->display_options['fields']['field_services']['table'] = 'field_data_field_services';
   $handler->display->display_options['fields']['field_services']['field'] = 'field_services';
@@ -500,7 +553,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_songwriters']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_songwriters']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_songwriters']['type'] = 'text_plain';
-  /* Field: Content: Ministries/Churches */
+  /* Field: Content: Ministry */
   $handler->display->display_options['fields']['field_church']['id'] = 'field_church';
   $handler->display->display_options['fields']['field_church']['table'] = 'field_data_field_church';
   $handler->display->display_options['fields']['field_church']['field'] = 'field_church';

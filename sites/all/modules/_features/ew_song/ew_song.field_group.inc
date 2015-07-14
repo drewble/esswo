@@ -52,7 +52,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Categories',
-    'weight' => '12',
+    'weight' => '11',
     'children' => array(
       0 => 'field_key',
       1 => 'field_tempo',
@@ -131,6 +131,38 @@ function ew_song_field_group_info() {
     ),
   );
   $export['group_header|node|song|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_key|node|song|teaser';
+  $field_group->group_name = 'group_key';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'song';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Key',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_key',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Key',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-key field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_key|node|song|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -236,6 +268,73 @@ function ew_song_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_song_categories|node|song|teaser';
+  $field_group->group_name = 'group_song_categories';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'song';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Song Categories',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_theme',
+      1 => 'field_church',
+      2 => 'field_services',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Song Categories',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-song-categories field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_song_categories|node|song|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_song_info|node|song|teaser';
+  $field_group->group_name = 'group_song_info';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'song';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Song Info',
+    'weight' => '0',
+    'children' => array(
+      0 => 'title_field',
+      1 => 'field_subtitle',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Song Info',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-song-info field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_song_info|node|song|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_song|node|song|default';
   $field_group->group_name = 'group_song';
   $field_group->entity_type = 'node';
@@ -294,6 +393,38 @@ function ew_song_field_group_info() {
     ),
   );
   $export['group_song|node|song|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tempo|node|song|teaser';
+  $field_group->group_name = 'group_tempo';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'song';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tempo',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_tempo',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Tempo',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-tempo field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_tempo|node|song|teaser'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

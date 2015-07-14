@@ -72,7 +72,7 @@ function ew_song_strongarm() {
           'weight' => '13',
         ),
         'flag' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
       ),
       'display' => array(
@@ -82,7 +82,7 @@ function ew_song_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '8',
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),
@@ -92,7 +92,7 @@ function ew_song_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '9',
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),
@@ -102,7 +102,7 @@ function ew_song_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '7',
+            'weight' => '8',
             'visible' => FALSE,
           ),
         ),
