@@ -64,13 +64,16 @@ header {
 
     .login {
       a {
+        background-position: 0 5px;
+        background-size: 23px;
         color: #288899;
         font-size: 12px;
+        height: 30px;
         line-height: 1.4em;
-        padding: 0 14px;
+        padding: 0 29px;
         position: relative;
         top: 9px;
-        width: 87px;
+        width: 102px;
 
         &:hover {
           color: #fff;

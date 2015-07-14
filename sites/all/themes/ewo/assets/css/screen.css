@@ -418,13 +418,16 @@ header nav a {
       position: absolute;
       width: 34px; }
 header nav .login a {
+  background-position: 0 5px;
+  background-size: 23px;
   color: #288899;
   font-size: 12px;
+  height: 30px;
   line-height: 1.4em;
-  padding: 0 14px;
+  padding: 0 29px;
   position: relative;
   top: 9px;
-  width: 87px; }
+  width: 102px; }
   header nav .login a:hover {
     color: #fff; }
     header nav .login a:hover:after {
@@ -841,7 +844,36 @@ footer nav li {
 .placeholder #views-exposed-form-songs-page label {
   display: none; }
 
+.page-songs .hero {
+  background: url(../img/songs.jpg) no-repeat scroll 0 0;
+  background-size: cover;
+  color: #fff;
+  max-width: none;
+  padding: 14% 0 6%; }
+  .page-songs .hero h1 {
+    position: relative;
+    padding-bottom: 40px; }
+    .page-songs .hero h1:after {
+      background-color: #e44345;
+      bottom: 0;
+      content: " ";
+      display: block;
+      height: 4px;
+      left: 50%;
+      margin-left: -17px;
+      position: absolute;
+      width: 34px; }
+    .page-songs .hero h1:after {
+      margin-left: -67px;
+      bottom: 20px;
+      width: 134px; }
+  .page-songs .hero h2 {
+    margin: 0 auto;
+    text-transform: none;
+    width: 38%; }
+
 .page-songs #main-content {
+  margin-top: 60px;
   position: relative; }
   .page-songs #main-content .view-header p {
     margin: 0; }

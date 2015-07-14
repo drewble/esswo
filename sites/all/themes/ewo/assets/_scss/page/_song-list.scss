@@ -14,7 +14,35 @@
 }
 
 .page-songs {
+	.hero {
+		background:url(../img/songs.jpg) no-repeat scroll 0 0;
+		background-size:cover;
+		color:#fff;
+		max-width: none;
+		padding:14% 0 6%;
+
+		h1 {
+			@include border-btm;
+			padding-bottom: 40px;
+
+			&:after {
+				margin-left: -67px;
+				bottom:20px;
+				width: 134px;
+			}
+		}
+
+		h2 {
+			margin: 0 auto;
+		  text-transform: none;
+		  width: 38%;
+		}
+	}
+}
+
+.page-songs {
 	#main-content {
+		margin-top: 60px;
 		position:relative;
 
 		.view-header {

@@ -45,13 +45,19 @@ function ewo_preprocess_page(&$vars,$hook) {
       $vars['links'] = $vars['page']['content']['system_main']['nodes'][1]['links']['#links'];
     }
   }
+
+  // Song page
+  if ($vars['theme_hook_suggestions'][0] == 'page__songs') {
+    $vars['subtitle'] = 'Browse our collection of worship songs for any key, tempo, theme,
+ministry or service to find the perfect song.';
+  }
 }
 
 
 // function ewo_preprocess_node(&$vars,$hook) {
 //   if ($vars['type'] == 'song') {
 //     if ($vars['teaser'] == TRUE) {
-      
+
 //     }
 //   }
 // }
