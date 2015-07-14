@@ -26,12 +26,6 @@ function ew_base_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-featured-block' => array(
-          'module' => 'views',
-          'delta' => 'featured-block',
-          'region' => 'header',
-          'weight' => '-10',
-        ),
         'views-homepage_feature-block' => array(
           'module' => 'views',
           'delta' => 'homepage_feature-block',
@@ -43,6 +37,30 @@ function ew_base_context_default_contexts() {
           'delta' => '-exp-songs-page',
           'region' => 'content',
           'weight' => '-10',
+        ),
+        'views-popular_content-block' => array(
+          'module' => 'views',
+          'delta' => 'popular_content-block',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+        'views-new_content-block' => array(
+          'module' => 'views',
+          'delta' => 'new_content-block',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+        'views-banners-banner_sidebar_top' => array(
+          'module' => 'views',
+          'delta' => 'banners-banner_sidebar_top',
+          'region' => 'content',
+          'weight' => '-7',
+        ),
+        'views-news-news_front' => array(
+          'module' => 'views',
+          'delta' => 'news-news_front',
+          'region' => 'content',
+          'weight' => '-6',
         ),
       ),
     ),

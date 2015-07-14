@@ -53,3 +53,16 @@ $header:'Ropa Sans', sans-serif;
     width: 34px;
   }
 }
+
+@mixin new {
+  &:before {
+    border:2px solid $blue;
+    border-radius:20px;
+    content:" ";
+    display: block;
+    height: 7px;
+    float: left;
+    margin: 8px 7px 0 0;
+    width: 7px;
+  }
+}

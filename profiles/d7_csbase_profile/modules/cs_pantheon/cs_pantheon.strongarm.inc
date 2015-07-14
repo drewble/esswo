@@ -90,7 +90,7 @@ function cs_pantheon_strongarm() {
     'mothership_classes_region' => 1,
     'mothership_classes_region_freeform' => '',
     'mothership_classes_block' => 1,
-    'mothership_classes_block_id' => 1,
+    'mothership_classes_block_id' => 0,
     'mothership_classes_block_id_as_class' => 0,
     'mothership_classes_block_contentdiv' => 1,
     'mothership_classes_block_freeform' => '',

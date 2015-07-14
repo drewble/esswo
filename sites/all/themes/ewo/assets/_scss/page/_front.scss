@@ -58,3 +58,139 @@
 	  z-index: 1;
 	}
 }
+
+/////// Content
+
+// Song Search
+.front {
+	#views-exposed-form-songs-page {
+		height: 94px;
+		margin: 60px 0 50px;
+	  overflow: hidden;
+	}
+}
+
+// 3 Across
+#block-views-popular-content-block,
+#block-views-new-content-block,
+#block-views-banners-banner-sidebar-top {
+	@include desk {
+		@include span-columns(2.666666666);
+	}
+
+	.title {
+		@include border-btm;
+		padding: 10px 0;
+		
+		&:after {
+			background-color: $base;
+			left: 0;
+			margin-left: 0;
+			width: 80%;
+		}
+
+		span {
+			float: left;
+		  margin-right: 7px;
+		}
+	}
+
+
+}
+
+.popular-content, .new-content, #block-views-news-news-front {
+	ul, li {
+		margin:0;
+		padding:0;
+	}
+
+	li {
+		list-style:none;
+		margin: 20px 0;
+
+		h2 {
+			font-size: 20px;
+			margin-bottom: 5px;
+			text-transform: none;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		h3 {
+			color: #3d3738;
+			font-size: 14px;
+		}
+	}
+}
+
+#block-views-new-content-block {
+	.title {
+		@include new;
+	}
+}
+
+#block-views-banners-banner-sidebar-top {
+	@include omega;
+
+	.views-field-field-banner-image {
+		a {
+			background-color:$light;
+			display: block;
+		}
+
+		img {
+			display: block;
+			@include transform(scale(.92));
+			@include transition(all .3s);
+
+			&:hover {
+				left:0;
+				@include transform(scale(1));
+				top:0;
+			}
+		}
+	}
+}
+
+#block-views-news-news-front {
+	clear:left;
+	padding: 40px 0;
+	width:100%;
+
+	> ul {
+		li {
+			overflow: hidden;
+			position: relative;
+
+			&:hover {
+				.field-type-image {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.field-type-image {
+		display: none;
+		left: 0;
+		position:absolute;
+		width: 100%;
+		z-index: 0;
+
+		img {
+			display: block;
+		  margin-top: -10%;
+		}
+	}
+
+	.news-copy {
+		overflow: hidden;
+		padding: 40px 0;
+		position:relative;
+		text-align: center;
+	}
+}
+
+

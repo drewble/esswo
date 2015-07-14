@@ -99,6 +99,10 @@ function d7_news_strongarm() {
             'weight' => '4',
             'visible' => TRUE,
           ),
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

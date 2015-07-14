@@ -9,9 +9,16 @@
   }
 
   .bread {
+    color: $base;
+    height: 13px;
     left: 0;
     position: absolute;
     top: 164px;
+    width: 146px;
+
+    &:hover {
+      color: $red;
+    }
   }
 
   .page {

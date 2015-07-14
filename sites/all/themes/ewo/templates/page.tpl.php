@@ -36,7 +36,7 @@ if (!empty($bgImg)) {
 <div class="hero<?php if(!empty($bgImg)): ?> with-img<?php endif; ?>">
   <?php if(isset($node)): ?>
     <?php if($node->type == 'song'): ?>
-    <a class="bread" href="/songs">Find Another Song</a>
+    <a class="bread icon icon-icons_arrow" href="/songs">Find Another Song</a>
     <?php endif; ?>
   <?php endif; ?>
   <?php print render($page['hero']); ?>
