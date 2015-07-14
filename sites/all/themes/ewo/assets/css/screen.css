@@ -182,6 +182,9 @@ input[type="text"], input[type="password"], input[type="email"] {
     color: #b9babb; }
   input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder {
     color: #b9babb; }
+  input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    background-color: #fff;
+    box-shadow: 0 0 5px #aaa; }
 
 textarea {
   border: none;
@@ -838,16 +841,113 @@ footer nav li {
 .placeholder #views-exposed-form-songs-page label {
   display: none; }
 
+.page-songs #main-content {
+  position: relative; }
+  .page-songs #main-content .view-header p {
+    margin: 0; }
+  .page-songs #main-content .view-header .clear-filters {
+    color: #9d9c9c;
+    font: 0.75em "Ropa Sans", sans-serif;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: -20px; }
+    .page-songs #main-content .view-header .clear-filters span {
+      color: #cfd2d3;
+      font: 13px "Titillium Web", sans-serif; }
+    .page-songs #main-content .view-header .clear-filters:hover {
+      color: #1a1717; }
+
+.page-songs .result-summary {
+  background-color: #322e2f;
+  margin: 2% 0;
+  padding: 1.5%; }
+  .page-songs .result-summary:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .page-songs .result-summary p {
+    color: #ecf0f1;
+    float: left;
+    font: 12px "Ropa Sans", sans-serif;
+    text-transform: uppercase; }
+  .page-songs .result-summary a {
+    color: #ecf0f1;
+    display: inline-block;
+    font: 12px "Ropa Sans", sans-serif;
+    float: right;
+    text-decoration: none; }
+    .page-songs .result-summary a:before {
+      content: "|";
+      display: inline-block;
+      margin: 0 3px;
+      padding: 0 3px; }
+    .page-songs .result-summary a:hover {
+      color: #e44345; }
+      .page-songs .result-summary a:hover:before {
+        color: #ecf0f1; }
+    .page-songs .result-summary a + a:before {
+      content: ""; }
+
 #views-exposed-form-songs-page .views-exposed-widget {
-  padding: 0 10px 0 0; }
+  padding: 0 15px 0 0; }
   #views-exposed-form-songs-page .views-exposed-widget small {
     display: none; }
+#views-exposed-form-songs-page #edit-field-church-tid-wrapper {
+  padding-right: 0; }
 #views-exposed-form-songs-page .views-submit-button {
   height: 0;
   overflow: hidden;
   position: absolute;
   visibility: hidden;
   z-index: -10; }
+
+#views-exposed-form-songs-page #edit-title-wrapper {
+  margin-bottom: 15px;
+  padding-right: 0;
+  position: relative;
+  width: 100%; }
+  #views-exposed-form-songs-page #edit-title-wrapper input {
+    padding: 2% 3% 2% 5%;
+    width: 100%; }
+  #views-exposed-form-songs-page #edit-title-wrapper .icon {
+    left: 20px;
+    position: absolute;
+    top: 34px; }
+  #views-exposed-form-songs-page #edit-title-wrapper p {
+    color: #9d9c9c;
+    display: none;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 3em;
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px; }
+    #views-exposed-form-songs-page #edit-title-wrapper p span {
+      border-right: 1px solid;
+      display: inline-block;
+      margin-right: 15px;
+      padding-right: 13px; }
+  #views-exposed-form-songs-page #edit-title-wrapper.active p {
+    display: block; }
+    #views-exposed-form-songs-page #edit-title-wrapper.active p small {
+      color: #cfd2d3;
+      content: "X";
+      cursor: pointer;
+      display: inline-block;
+      font-size: 26px;
+      font-style: normal;
+      line-height: 1.8em;
+      position: relative;
+      top: 3px; }
+      #views-exposed-form-songs-page #edit-title-wrapper.active p small:hover {
+        color: #1a1717; }
+#views-exposed-form-songs-page #edit-field-tempo-tid-wrapper {
+  border-right: 2px solid #ecf0f1;
+  padding: 0 25px 0 0;
+  margin-right: 20px; }
 
 #edit-field-key-tid,
 #edit-field-tempo-tid {
@@ -858,22 +958,6 @@ footer nav li {
 #edit-field-church-tid {
   width: 240px; }
 
-#views-exposed-form-songs-page #edit-title-wrapper {
-  margin-bottom: 15px;
-  position: relative;
-  width: 100%; }
-  #views-exposed-form-songs-page #edit-title-wrapper input {
-    padding: 2% 3% 2% 5%;
-    width: 100%; }
-  #views-exposed-form-songs-page #edit-title-wrapper .icon {
-    left: 20px;
-    position: absolute;
-    top: 34px; }
-#views-exposed-form-songs-page #edit-field-tempo-tid-wrapper {
-  border-right: 2px solid #ecf0f1;
-  padding: 0 25px 0 0;
-  margin-right: 20px; }
-
 #edit-field-key-tid-wrapper {
   width: 190px; }
   #edit-field-key-tid-wrapper .views-widget > span {
@@ -883,8 +967,5 @@ footer nav li {
     position: relative;
     top: 12px;
     text-transform: uppercase; }
-
-#edit-field-church-tid-wrapper {
-  padding-right: 0; }
 
 /*# sourceMappingURL=screen.css.map */

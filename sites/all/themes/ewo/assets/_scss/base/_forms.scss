@@ -26,6 +26,11 @@ input[type="text"], input[type="password"], input[type="email"] {
   @include placeholder {
     color: #b9babb;
   }
+
+  &:focus {
+    background-color:#fff;
+    box-shadow:0 0 5px #aaa;
+  }
 }
 
 textarea {

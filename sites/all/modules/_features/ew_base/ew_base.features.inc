@@ -28,20 +28,20 @@ function ew_base_views_api($module = NULL, $api = NULL) {
  */
 function ew_base_flag_default_flags() {
   $flags = array();
-  // Exported flag: "Homepage Feature".
-  $flags['homepage_feature'] = array(
+  // Exported flag: "New".
+  $flags['new'] = array(
     'entity_type' => 'node',
-    'title' => 'Homepage Feature',
+    'title' => 'New',
     'global' => 1,
     'types' => array(
       0 => 'artist_worship_leader',
       1 => 'song',
     ),
-    'flag_short' => 'Feature on Homepage',
-    'flag_long' => 'This will make the item show up in the featured "hero" area on the homepage.',
+    'flag_short' => 'Mark as New',
+    'flag_long' => '',
     'flag_message' => '',
-    'unflag_short' => 'Un-Feature on Homepage',
-    'unflag_long' => 'This will remove the item from the featured "hero" area on the homepage.',
+    'unflag_short' => 'Not New',
+    'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
@@ -58,11 +58,11 @@ function ew_base_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
+    'api_version' => 3,
     'module' => 'ew_base',
     'locked' => array(
       0 => 'name',
     ),
-    'api_version' => 3,
   );
   return $flags;
 

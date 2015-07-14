@@ -91,16 +91,6 @@ function ew_base_user_default_permissions() {
     'module' => 'oauth_common',
   );
 
-  // Exported permission: 'flag homepage_feature'.
-  $permissions['flag homepage_feature'] = array(
-    'name' => 'flag homepage_feature',
-    'roles' => array(
-      'client' => 'client',
-      'developer' => 'developer',
-    ),
-    'module' => 'flag',
-  );
-
   // Exported permission: 'oauth authorize any consumers'.
   $permissions['oauth authorize any consumers'] = array(
     'name' => 'oauth authorize any consumers',
@@ -117,16 +107,6 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'oauth_common',
-  );
-
-  // Exported permission: 'unflag homepage_feature'.
-  $permissions['unflag homepage_feature'] = array(
-    'name' => 'unflag homepage_feature',
-    'roles' => array(
-      'client' => 'client',
-      'developer' => 'developer',
-    ),
-    'module' => 'flag',
   );
 
   // Exported permission: 'use flag import'.

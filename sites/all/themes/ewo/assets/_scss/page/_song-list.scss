@@ -4,7 +4,7 @@
 
 /////// Exposed Form
 
-// General 
+// General
 .placeholder {
 	#views-exposed-form-songs-page {
 		label {
@@ -13,13 +13,92 @@
 	}
 }
 
+.page-songs {
+	#main-content {
+		position:relative;
+
+		.view-header {
+
+			p {
+				margin:0;
+			}
+
+			.clear-filters {
+				color: #9d9c9c;
+				font: em(12) $header;
+				position:absolute;
+				right: 0;
+				text-decoration: none;
+				text-transform: uppercase;
+				top:-20px;
+
+				span {
+					color: #cfd2d3;
+					font: 13px $font;
+				}
+
+				&:hover {
+					color: $base;
+				}
+			}
+		}
+	}
+}
+
+.page-songs {
+	.result-summary {
+		@include clearfix;
+		background-color: $gray;
+		margin: 2% 0;
+		padding:1.5%;
+
+		p {
+			color: #ecf0f1;
+			float: left;
+			font: 12px $header;
+			text-transform: uppercase;
+		}
+
+		a {
+			color: #ecf0f1;
+			display: inline-block;
+			font: 12px $header;
+			float: right;
+			text-decoration: none;
+
+			&:before {
+				content: "|";
+				display: inline-block;
+				margin:0 3px;
+				padding:0 3px;
+			}
+
+			&:hover {
+				color: $red;
+
+				&:before {
+					color: #ecf0f1;
+				}
+			}
+
+			& + a:before {
+				content:"";
+			}
+		}
+	}
+}
+
 #views-exposed-form-songs-page {
 	.views-exposed-widget {
-		padding:0 10px 0 0;
+		padding:0 15px 0 0;
 
 		small {
 			display: none;
 		}
+	}
+
+	#edit-field-church-tid-wrapper {
+		padding-right:0;
 	}
 
 	// Submit
@@ -32,21 +111,11 @@
 	}
 }
 
-#edit-field-key-tid,
-#edit-field-tempo-tid {
-	width:100px;
-}
-
-#edit-field-theme-tid,
-#edit-field-services-tid,
-#edit-field-church-tid {
-	width:240px;
-}
-
 // Title
 #views-exposed-form-songs-page {
 	#edit-title-wrapper {
 		margin-bottom: 15px;
+		padding-right: 0;
 		position: relative;
 		width:100%;
 
@@ -60,6 +129,45 @@
 			position: absolute;
 			top:34px;
 		}
+
+		p {
+			color: #9d9c9c;
+			display: none;
+			font-size: 14px;
+			font-style: italic;
+			line-height:3em;
+			margin:0;
+			position: absolute;
+			right: 20px;
+			top:20px;
+
+			span {
+				border-right:1px solid;
+				display: inline-block;
+				margin-right: 15px;
+				padding-right: 13px;
+			}
+		}
+
+		&.active p {
+			display: block;
+
+			small {
+				color: #cfd2d3;
+				content: "X";
+				cursor: pointer;
+				display: inline-block;
+				font-size: 26px;
+				font-style: normal;
+				line-height:1.8em;
+				position:relative;
+				top:3px;
+
+				&:hover {
+					color: $base;
+				}
+			}
+		}
 	}
 
 	#edit-field-tempo-tid-wrapper {
@@ -68,6 +176,20 @@
 	  margin-right: 20px;
 	}
 }
+
+// Key, Tempo
+#edit-field-key-tid,
+#edit-field-tempo-tid {
+	width:100px;
+}
+
+// Theme, Services, Church
+#edit-field-theme-tid,
+#edit-field-services-tid,
+#edit-field-church-tid {
+	width:240px;
+}
+
 
 #edit-field-key-tid-wrapper {
 	width: 190px;
@@ -80,9 +202,5 @@
 		top:12px;
 	  text-transform: uppercase;
 	}
-}
-
-#edit-field-church-tid-wrapper {
-	padding-right:0;
 }
 // End exposed form
