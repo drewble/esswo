@@ -968,4 +968,59 @@ footer nav li {
     top: 12px;
     text-transform: uppercase; }
 
+#edit-flagged-wrapper {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: -10; }
+
+.view-id-songs.view-display-id-page ul, .view-id-songs.view-display-id-page li {
+  margin: 0;
+  padding: 0; }
+.view-id-songs.view-display-id-page li {
+  list-style: none; }
+
+.view-id-songs.view-display-id-page .play-btn {
+  border: 2px solid #1a1717;
+  border-radius: 30px;
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  text-indent: -9999px;
+  width: 30px; }
+  .view-id-songs.view-display-id-page .play-btn:after {
+    border: 10px solid #1a1717;
+    border-bottom: 6px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 6px solid transparent;
+    content: " ";
+    display: block;
+    left: 10px;
+    position: absolute;
+    top: 7px; }
+  .view-id-songs.view-display-id-page .play-btn:hover {
+    border-color: #e44345; }
+    .view-id-songs.view-display-id-page .play-btn:hover:after {
+      border-left-color: #e44345; }
+
+.play-audio {
+  background-color: #ecf0f1;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 2%;
+  position: relative;
+  visibility: hidden;
+  width: 100%;
+  z-index: -10; }
+  .play-audio.show {
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+    position: static;
+    visibility: visible; }
+  .play-audio iframe {
+    width: 100%; }
+
 /*# sourceMappingURL=screen.css.map */

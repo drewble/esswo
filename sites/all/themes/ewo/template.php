@@ -48,6 +48,15 @@ function ewo_preprocess_page(&$vars,$hook) {
 }
 
 
+// function ewo_preprocess_node(&$vars,$hook) {
+//   if ($vars['type'] == 'song') {
+//     if ($vars['teaser'] == TRUE) {
+      
+//     }
+//   }
+// }
+
+
 function ewo_form_alter(&$form, &$form_state, $form_id) {
   $path = drupal_get_path('theme', 'ewo');
   if ($form_id == 'views_exposed_form') {
@@ -114,18 +123,7 @@ function ewo_preprocess_block(&$vars, $hook) {
   }
 
 }
-*/
 
-// function ewo_preprocess_node(&$vars,$hook) {
-//   if ($vars['type'] == 'song') {
-//     // sdpm($vars);
-//     // if (!empty($vars['field_spotify'])) {
-//     //   unset($vars['field_mp3']);
-//     // }
-//   }
-// }
-
-/*
 function ewo_preprocess_comment(&$vars,$hook) {
   //  kpr($vars['content']);
 }

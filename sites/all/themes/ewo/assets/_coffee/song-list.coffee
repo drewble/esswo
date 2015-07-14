@@ -1,5 +1,18 @@
 # namespace jQuery
 (($) ->
+
+	Drupal.behaviors.songList = attach: (context, settings) ->
+		# Sort Flagged/Un-flagged
+		$('#view-all', context).on 'click', ->
+			$('#edit-flagged').val('All')
+			$('#edit-submit-songs').click()
+			return false
+
+		$('#view-new', context).on 'click', ->
+			$('#edit-flagged').val('1')
+			$('#edit-submit-songs').click()
+			return false
+
   # Document.ready
   $ ->
 
@@ -8,7 +21,7 @@
 			# Get Label Text
 			label = $(this).parents('.views-widget').prev().text().trim()
 			# Set Default Placeholder Text to Label, Activate Chosen and force click on change
-			$(this).attr('data-placeholder',label).chosen().on 'change', (evt, params) ->
+			$(this).not('#edit-flagged').attr('data-placeholder',label).chosen().on 'change', (evt, params) ->
 	  		$('#edit-submit-songs').click()
 
 	  # Title Active State
@@ -20,5 +33,9 @@
 
   	$('#views-exposed-form-songs-page #edit-title-wrapper small').click ->
   		$('#edit-title').blur()
+
+  	$('.play-btn').click ->
+  		$(this).siblings('.play-audio').addClass('show')
+  		return false
 
 ) jQuery
