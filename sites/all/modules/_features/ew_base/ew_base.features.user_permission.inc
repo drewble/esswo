@@ -91,6 +91,16 @@ function ew_base_user_default_permissions() {
     'module' => 'oauth_common',
   );
 
+  // Exported permission: 'flag new'.
+  $permissions['flag new'] = array(
+    'name' => 'flag new',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'oauth authorize any consumers'.
   $permissions['oauth authorize any consumers'] = array(
     'name' => 'oauth authorize any consumers',
@@ -107,6 +117,16 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'unflag new'.
+  $permissions['unflag new'] = array(
+    'name' => 'unflag new',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'flag',
   );
 
   // Exported permission: 'use flag import'.
