@@ -21,10 +21,10 @@ input[type="text"], input[type="password"], input[type="email"] {
   font: em(28) $header;
   margin: 10px 0;
   padding: 2% 3%;
-  text-transform: uppercase;
 
   @include placeholder {
     color: #b9babb;
+    text-transform: uppercase;
   }
 
   &:focus {

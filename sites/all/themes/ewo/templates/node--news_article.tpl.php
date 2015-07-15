@@ -40,18 +40,14 @@ if (!$page) {
 
   <div class="content">
     <?php if (!$page) { ?>
+      <a class="news-copy" href="<?php print $node_url; ?>" rel="bookmark">
+        <span><?php echo trim(format_date($node->created, "custom", "F j, Y")); ?></span><?php print render($content['field_tags']);?>
+        <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+        <span class="author"><?php print t('posted by'); ?> <?php print $node->name; ?></span>
+      </a>
       <?php print render($content['field_news_main_image']);?>
-      <div class="news-copy">
-        <?php print $date; ?> | <?php print render($content['field_tags']);?>
-        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
-        <span class="author"><?php print t('posted by'); ?> <?php print $name; ?></span>
-      </div>
     <?php } else { ?>
       <?php print render($content);?>
     <?php } ?>
   </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
 </article>
