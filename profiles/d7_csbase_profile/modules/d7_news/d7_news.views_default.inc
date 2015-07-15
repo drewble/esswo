@@ -337,6 +337,7 @@ function d7_news_views_default_views() {
   /* Display: Latest 3 - Front */
   $handler = $view->new_display('block', 'Latest 3 - Front', 'news_front');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Latest Insights';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
