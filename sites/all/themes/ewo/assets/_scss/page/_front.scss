@@ -193,7 +193,11 @@
 				}
 
 				& + .field-type-image {
-					display: block;
+					opacity: 1;
+					
+					img {
+						@include transform(scale(1));
+					}
 				}
 			}
 
@@ -221,8 +225,8 @@
 	}
 
 	.field-type-image {
-		display: none;
 		left: 0;
+		opacity: 0;
 		position:absolute;
 		top:0;
 		width: 100%;
@@ -231,6 +235,8 @@
 		img {
 			display: block;
 		  margin-top: -10%;
+		  @include transform(scale(1.1));
+			@include transition(all .9s);
 		}
 	}
 
