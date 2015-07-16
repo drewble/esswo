@@ -89,6 +89,7 @@ function ew_song_field_group_info() {
       0 => 'field_song_resources',
       1 => 'field_chords_pdf_',
       2 => 'field_lead_sheets',
+      3 => 'field_lyric_file',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

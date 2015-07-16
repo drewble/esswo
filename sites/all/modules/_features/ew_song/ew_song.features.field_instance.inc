@@ -168,7 +168,7 @@ function ew_song_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_chords_pdf_',
-    'label' => 'Chord Charts',
+    'label' => 'Chord Chart',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -359,7 +359,7 @@ function ew_song_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_lead_sheets',
-    'label' => 'Lead Sheets',
+    'label' => 'Number Chart',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -449,6 +449,64 @@ function ew_song_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-song-field_lyric_file'
+  $field_instances['node-song-field_lyric_file'] = array(
+    'bundle' => 'song',
+    'deleted' => 0,
+    'description' => '<br><em>This is not shown on the website and will be used by Planning Center.</em>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_lyric_file',
+    'label' => 'Lyric File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'lyric-files',
+      'file_extensions' => 'txt pdf doc xls csv png jpg gif jpeg mp3 mp4 m4a ppt docx xlsx pptx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 13,
     ),
   );
 
@@ -795,9 +853,9 @@ function ew_song_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'multiselect',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'multiselect',
       'weight' => 19,
     ),
   );
@@ -1245,15 +1303,16 @@ function ew_song_field_default_field_instances() {
   t('Artist/Worship Leader Reference');
   t('BPM');
   t('CCLI License');
-  t('Chord Charts');
+  t('Chord Chart');
   t('Key');
-  t('Lead Sheets');
   t('LoopCommunity Link');
+  t('Lyric File');
   t('Lyrics/Chords');
   t('Media');
   t('Ministry');
   t('Mp3');
   t('MultiTracks Link');
+  t('Number Chart');
   t('PraiseCharts Link');
   t('Scripture');
   t('Service');

@@ -44,7 +44,7 @@
  */
 foreach ($items as $delta => $item) {
   $link_suffix = $items[$delta]['#element']['url'];
-  $items[$delta]['#element']['url'] = 'http://www.multitracks.com/' . $link_suffix;
+  $items[$delta]['#element']['url'] = 'http://www.multitracks.com/afe/esstw/?t=/' . $link_suffix;
   $items[$delta]['#element']['display_url'] = $items[$delta]['#element']['url'];
 }
 ?>

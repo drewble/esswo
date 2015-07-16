@@ -44,7 +44,7 @@
  */
 foreach ($items as $delta => $item) {
   $link_suffix = $items[$delta]['#element']['url'];
-  $items[$delta]['#element']['url'] = 'https://itunes.apple.com/' . $link_suffix;
+  $items[$delta]['#element']['url'] = 'https://geo.itunes.apple.com/us/album/' . $link_suffix;
   $items[$delta]['#element']['display_url'] = $items[$delta]['#element']['url'];
 }
 ?>
