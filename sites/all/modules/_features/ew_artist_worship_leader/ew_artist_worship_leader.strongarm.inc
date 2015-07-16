@@ -162,7 +162,7 @@ function ew_artist_worship_leader_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_artist_worship_leader_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'worship-leaders/[node:title]';
   $export['pathauto_node_artist_worship_leader_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
