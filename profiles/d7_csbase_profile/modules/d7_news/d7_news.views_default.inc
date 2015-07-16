@@ -22,7 +22,7 @@ function d7_news_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Latest News';
+  $handler->display->display_options['title'] = 'Insights';
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -97,7 +97,7 @@ function d7_news_views_default_views() {
   /* Display: Page (Context by Date) */
   $handler = $view->new_display('page', 'Page (Context by Date)', 'news_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'News';
+  $handler->display->display_options['title'] = 'Insights';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Main Image */
@@ -202,7 +202,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['arguments']['created_year_month']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['created_year_month']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['created_year_month']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'news';
+  $handler->display->display_options['path'] = 'insights';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'News';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -210,7 +210,7 @@ function d7_news_views_default_views() {
   /* Display: Page (Context by Term) */
   $handler = $view->new_display('page', 'Page (Context by Term)', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'News';
+  $handler->display->display_options['title'] = 'Insights';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Main Image */
@@ -279,16 +279,6 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['text'] = 'Comments ([comment_count])';
-  $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comments';
-  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -307,7 +297,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'news/term/%';
+  $handler->display->display_options['path'] = 'insights/term/%';
   $handler->display->display_options['menu']['title'] = 'News';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -319,7 +309,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
-  $handler->display->display_options['path'] = 'news.xml';
+  $handler->display->display_options['path'] = 'insights.xml';
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
     'news_page' => 'news_page',
@@ -333,6 +323,7 @@ function d7_news_views_default_views() {
     'block_4' => 0,
     'block_5' => 0,
   );
+  $handler->display->display_options['sitename_title'] = 0;
 
   /* Display: Latest 3 - Front */
   $handler = $view->new_display('block', 'Latest 3 - Front', 'news_front');

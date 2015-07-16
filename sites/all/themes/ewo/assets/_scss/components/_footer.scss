@@ -9,7 +9,7 @@ footer {
 
   .outer-container {
     // Who We Are
-    div:first-child {
+    & > div:first-child {
       @include tablet {
         float: left;
         margin-right: 7%;
@@ -37,50 +37,75 @@ footer {
       float: left;
       width: 27%;
     }
-    ul, li {
+    > ul, > ul li {
       margin: 0;
       padding:0;
     }
 
-    a {
-      border:1px solid #4a4647;
-      border-left-color:transparent;
-      color: $light;
-      display: block;
-      float: left;
-      font-size: 12px;
-      height: 0;
-      overflow: hidden;
-      padding-top:58px;
-      text-transform: uppercase;
-      width: 58px;
+    > ul {
+      li {
+        display: block;
+        float: left;
+        list-style: none;
+        text-align: center;
 
-      &:hover {
-        background-color:$red;
-        color: #fff;
-      }
-    }
-
-    li {
-      display: block;
-      float: left;
-      list-style: none;
-      text-align: center;
-
-      &:first-child {
-        float: none;
-
-        a {
-          border-bottom-color:transparent;
-          border-left-color:#4a4647;
+        &:first-child {
           float: none;
-          height: 134px;
-          width: 289px;
-        }
 
-        & + li a {
-          border-left-color:#4a4647;
+          a {
+            background-size: 30px;
+            background-position: 127px 27px;
+            border-bottom-color:transparent;
+            border-left-color:#4a4647;
+            float: none;
+            height: 113px;
+            text-decoration: none;
+            width: 289px;
+          }
+
+          & + li a {
+            border-left-color:#4a4647;
+          }
         }
+      }
+
+      .icon {
+        background-position: 16px 16px;
+        background-size: 23px;
+        border:1px solid #4a4647;
+        border-left-color:transparent;
+        color: $light;
+        display: block;
+        float: left;
+        font-size: 12px;
+        height: 0;
+        overflow: hidden;
+        padding-top:58px;
+        text-transform: uppercase;
+        width: 58px;
+
+        &:hover {
+          background-color:$red;
+          color: #fff;
+        }
+      }
+
+      .icon-icons_yt {
+        background-position: 15px 20px;
+      }
+
+      .icon-icons_fbook {
+        background-position:22px 17px;
+        background-size: 11px;
+      }
+
+      .icon-icons_twitter {
+        background-position:17px 19px;
+        background-size: 22px;
+      }
+
+      .icon-icons_insta {
+        background-size: 20px;
       }
     }
   }

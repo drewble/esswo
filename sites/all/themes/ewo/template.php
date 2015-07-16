@@ -85,6 +85,33 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
 }
 
 
+function ewo_preprocess_field(&$vars,$hook) {
+  // If it is a link field
+  if ($vars['element']['#field_name'] == 'field_link') {
+    // Check the Title to see if the icon class should be added
+    if ($vars['items'][0]['#element']['title'] == 'Watch the Song Session' || $vars['items'][0]['#element']['title'] == 'Watch the Tutorial' || $vars['items'][0]['#element']['title'] == 'Watch the Live Video' || $vars['items'][0]['#element']['title'] == 'Watch the Story') {
+      $vars['items'][0]['#element']['attributes']['class'] = 'white-btn icon-btn feature-btn icon-icons_watch';
+    }
+    if ($vars['items'][0]['#element']['title'] == 'Download Song Resources') {
+      $vars['items'][0]['#element']['attributes']['class'] = 'white-btn icon-btn feature-btn icon-icons_download';
+    }
+    if ($vars['items'][0]['#element']['title'] == 'Check it Out') {
+      $vars['items'][0]['#element']['attributes']['class'] = 'white-btn icon-btn feature-btn icon-icons_arrow';
+    }
+    if ($vars['items'][0]['#element']['title'] == 'Listen Now') {
+      $vars['items'][0]['#element']['attributes']['class'] = 'white-btn icon-btn feature-btn icon-icons_listen';
+    }
+    if ($vars['items'][0]['#element']['title'] == 'Find Out More') {
+      $vars['items'][0]['#element']['attributes']['class'] = 'white-btn icon-btn feature-btn icon-icons_more';
+    }
+    if ($vars['items'][0]['#element']['title'] == 'Join the Gathering') {
+      $vars['items'][0]['#element']['attributes']['class'] = 'white-btn icon-btn feature-btn icon-icons_join';
+    }
+  } 
+}
+
+
+
 /*
 function ewo_preprocess_region(&$vars,$hook) {
   //  kpr($vars['content']);
@@ -132,27 +159,6 @@ function ewo_preprocess_block(&$vars, $hook) {
 
 function ewo_preprocess_comment(&$vars,$hook) {
   //  kpr($vars['content']);
-}
-*/
-/*
-function ewo_preprocess_field(&$vars,$hook) {
-  //  kpr($vars['content']);
-  //add class to a specific field
-  switch ($vars['element']['#field_name']) {
-    case 'field_ROCK':
-      $vars['classes_array'][] = 'classname1';
-    case 'field_ROLL':
-      $vars['classes_array'][] = 'classname1';
-      $vars['classes_array'][] = 'classname2';
-      $vars['classes_array'][] = 'classname1';
-    case 'field_FOO':
-      $vars['classes_array'][] = 'classname1';
-    case 'field_BAR':
-      $vars['classes_array'][] = 'classname1';
-    default:
-      break;
-  }
-
 }
 */
 /*

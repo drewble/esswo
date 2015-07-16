@@ -93,11 +93,14 @@ if (!empty($bgImg)) {
 
 </div><!-- /page-->
 
-<?php if ($page['pre_footer'] || isset($links)): ?>
+<?php if ($page['pre_footer'] || isset($links) || $is_front): ?>
     <div class="pre-footer">
       <?php print render($page['pre_footer']); ?>
       <?php if (isset($links)): ?>
         <?php print $links['addtoany']['title']; ?>
+      <?php endif; ?>
+      <?php if ($is_front): ?>
+        <a href="/insights" class="icon-btn icon-icons_insights">View All Insights</a>
       <?php endif; ?>
     </div>
   <?php endif; ?>

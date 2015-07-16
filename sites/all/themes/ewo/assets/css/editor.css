@@ -83,29 +83,6 @@ h3 {
   transition: all 0.3s; }
   .btn:hover, button:hover {
     background-color: #e44345;
-    border-color: #e44345;
-    color: #fff;
-    text-decoration: none; }
-
-.white-btn {
-  background-color: transparent;
-  border: 2px solid #d7d5d5;
-  color: #524b4c;
-  display: inline-block;
-  font-size: 0.875em;
-  min-width: 200px;
-  padding: 11px 15px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  border: 1px solid #fff;
-  color: #fff; }
-  .white-btn:hover {
-    background-color: #e44345;
-    border-color: #e44345;
     color: #fff;
     text-decoration: none; }
 
@@ -123,25 +100,50 @@ h3 {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  background-position: 12px 15px;
+  background-size: 22px;
   border-color: #524b4c;
-  padding: 0 15px 0 0;
-  min-width: 0; }
+  line-height: 3.2em;
+  padding: 0 19px 0 0;
+  min-width: 250px; }
   .icon-btn:hover {
     background-color: #e44345;
-    border-color: #e44345;
     color: #fff;
     text-decoration: none; }
   .icon-btn:before {
     border-right: 2px solid #524b4c;
-    content: "s";
-    display: inline-block;
+    content: " ";
+    display: block;
+    float: left;
     margin-right: 15px;
-    padding: 11px 20px; }
+    padding: 22px 23px;
+    position: relative;
+    z-index: -1; }
   .icon-btn:hover {
     background-color: transparent; }
     .icon-btn:hover:before {
       background-color: #e44345;
       text-decoration: none; }
+
+.icon-icons_listen,
+.icon-icons_download,
+.icon-icons_arrow,
+.icon-icons_more {
+  background-position: 13px 13px;
+  background-size: 19px; }
+
+.icon-icons_arrow {
+  background-position: 13px 15px; }
+
+.icon-icons_join {
+  background-position: 10px 13px;
+  background-size: 27px; }
+
+.white-btn {
+  border: 1px solid #fff;
+  color: #fff; }
+  .white-btn:before {
+    border-color: #fff; }
 
 .icon {
   display: block;
