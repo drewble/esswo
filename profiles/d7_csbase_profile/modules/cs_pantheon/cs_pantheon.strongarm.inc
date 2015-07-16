@@ -82,7 +82,7 @@ function cs_pantheon_strongarm() {
     'mothership_classes_body_toolbar' => 0,
     'mothership_classes_body_pagenode' => 1,
     'mothership_classes_body_nodetype' => 0,
-    'mothership_classes_body_path' => 0,
+    'mothership_classes_body_path' => 1,
     'mothership_classes_body_path_first' => 0,
     'mothership_classes_body_status' => 0,
     'mothership_classes_body_freeform' => '',

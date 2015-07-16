@@ -64,20 +64,50 @@ function ew_artist_worship_leader_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__artist_worship_leader';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '6',
+        ),
+        'flag' => array(
+          'weight' => '8',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'songs_entity_view_4' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__artist_worship_leader'] = $strongarm;
@@ -101,6 +131,13 @@ function ew_artist_worship_leader_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_enable_node__artist_worship_leader';
+  $strongarm->value = TRUE;
+  $export['metatag_enable_node__artist_worship_leader'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_artist_worship_leader';
   $strongarm->value = array(
     0 => 'status',
@@ -120,6 +157,13 @@ function ew_artist_worship_leader_strongarm() {
   $strongarm->name = 'node_submitted_artist_worship_leader';
   $strongarm->value = 0;
   $export['node_submitted_artist_worship_leader'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_artist_worship_leader_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_artist_worship_leader_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

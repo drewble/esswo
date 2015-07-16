@@ -40,44 +40,41 @@
 	}
 }
 
-.page-songs {
-	#main-content {
-		margin-top: 60px;
-		position:relative;
+.song-listing {
+	margin-top: 60px;
+	position:relative;
 
-		.view-header {
+	.view-header {
+		p {
+			margin:0;
+		}
 
-			p {
-				margin:0;
+		.clear-filters {
+			color: #9d9c9c;
+			font: em(12) $header;
+			position:absolute;
+			right: 0;
+			text-decoration: none;
+			text-transform: uppercase;
+			top:-20px;
+
+			span {
+				color: #cfd2d3;
+				font: 13px $font;
 			}
 
-			.clear-filters {
-				color: #9d9c9c;
-				font: em(12) $header;
-				position:absolute;
-				right: 0;
-				text-decoration: none;
-				text-transform: uppercase;
-				top:-20px;
-
-				span {
-					color: #cfd2d3;
-					font: 13px $font;
-				}
-
-				&:hover {
-					color: $base;
-				}
+			&:hover {
+				color: $base;
 			}
 		}
-		.view-empty {
-		  text-align: center;
-		  padding: 4%;
-		}
+	}
+	.view-empty {
+	  text-align: center;
+	  padding: 4%;
 	}
 }
 
-.page-songs {
+.song-listing {
 	.result-summary {
 		@include clearfix;
 		background-color: $gray;
@@ -250,7 +247,7 @@
 /////// Listing
 
 // General
-.view-id-songs.view-display-id-page {
+.song-listing {
 	ul, li {
 		margin:0;
 		padding:0;
@@ -273,7 +270,7 @@
 }
 
 // Play Button
-.view-id-songs.view-display-id-page {
+.song-listing {
 	.audio-btn {
 		margin: 4% 2%;
 		padding:0;
@@ -332,7 +329,7 @@
 }
 
 // Title, Artist
-.view-id-songs.view-display-id-page {
+.song-listing {
 	.group-song-info {
 		padding-left:0;
 
@@ -358,7 +355,7 @@
 }
 
 // Title, Artist
-.view-id-songs.view-display-id-page {
+.song-listing {
 	.group-key,
 	.group-tempo {
 		border-right:1px solid $light;
@@ -374,7 +371,7 @@
 }
 
 // Song Categories
-.view-id-songs.view-display-id-page {
+.song-listing {
 	.group-song-categories {
 		font-size: 14px;
 

@@ -30,7 +30,8 @@ a {
     text-decoration: none; }
 
 .page p {
-  margin-bottom: 3em; }
+  margin-bottom: 1em;
+  margin-top: 0; }
 
 h1, h2, h3, h4, h5, h6 {
   font: 1em "Ropa Sans", sans-serif; }
@@ -104,23 +105,23 @@ h3 {
   background-size: 22px;
   border-color: #524b4c;
   line-height: 3.2em;
-  padding: 0 19px 0 0;
-  min-width: 250px; }
+  min-width: 250px;
+  padding: 0 19px 0 0; }
   .icon-btn:hover {
     background-color: #e44345;
     color: #fff;
     text-decoration: none; }
   .icon-btn:before {
+    background: inherit;
     border-right: 2px solid #524b4c;
     content: " ";
     display: block;
     float: left;
     margin-right: 15px;
-    padding: 22px 23px;
-    position: relative;
-    z-index: -1; }
+    padding: 22px 23px; }
   .icon-btn:hover {
-    background-color: transparent; }
+    background-color: transparent;
+    color: #524b4c; }
     .icon-btn:hover:before {
       background-color: #e44345;
       text-decoration: none; }
@@ -139,11 +140,17 @@ h3 {
   background-position: 10px 13px;
   background-size: 27px; }
 
+.icon-icons_insights {
+  background-position: 13px 12px;
+  background-size: 17px; }
+
 .white-btn {
   border: 1px solid #fff;
   color: #fff; }
   .white-btn:before {
     border-color: #fff; }
+  .white-btn:hover {
+    color: #fff; }
 
 .icon {
   display: block;

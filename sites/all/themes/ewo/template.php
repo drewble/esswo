@@ -27,6 +27,9 @@ function ewo_preprocess_page(&$vars,$hook) {
     if (isset($node->field_header_image) && !empty($node->field_header_image)) {
       $vars['bgImg'] = $node->field_header_image['und'][0];
     }
+    if (!empty($node->field_subtitle)) {
+      $vars['subtitle'] = $node->field_subtitle[LANGUAGE_NONE][0]['safe_value'];
+    }
     // If Song
     if ($node->type == 'song') {
       drupal_add_css('http://fonts.googleapis.com/css?family=Roboto+Mono','external');
@@ -34,15 +37,17 @@ function ewo_preprocess_page(&$vars,$hook) {
       drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap.min.css', array('group' => CSS_DEFAULT));
       drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));
       drupal_add_js($path .'/assets/js/song.js', array('group' => JS_THEME));
-      if (!empty($node->field_subtitle)) {
-        $vars['subtitle'] = $node->field_subtitle[LANGUAGE_NONE][0]['safe_value'];
-      }
       if (!empty($node->field_song_resources)) {
         $vars['resources'] = file_create_url($node->field_song_resources[LANGUAGE_NONE][0]['uri']);
       }
       
       // Link Changes
       $vars['links'] = $vars['page']['content']['system_main']['nodes'][1]['links']['#links'];
+    }
+
+    // Worship Leader
+    if ($node->type == 'artist_worship_leader') {
+      drupal_add_js($path .'/assets/js/song-list.js', array('group' => JS_THEME));
     }
   }
 
@@ -107,7 +112,16 @@ function ewo_preprocess_field(&$vars,$hook) {
     if ($vars['items'][0]['#element']['title'] == 'Join the Gathering') {
       $vars['items'][0]['#element']['attributes']['class'] = 'white-btn icon-btn feature-btn icon-icons_join';
     }
-  } 
+  }
+  if ($vars['element']['#field_name'] == 'field_website') {
+    $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_web';
+  }
+  if ($vars['element']['#field_name'] == 'field_facebook') {
+    $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_fbook';
+  }
+  if ($vars['element']['#field_name'] == 'field_twitter') {
+    $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_twitter';
+  }
 }
 
 
