@@ -29,8 +29,8 @@ function get_homepage()
  */
 function d7_csbase_form_song_node_form_alter(&$form, &$form_state, $form_id) {
   // Add Prefix text to link fields
-  $form['field_itunes_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'https://itunes.apple.com/';
-  $form['field_multitracks_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.multitracks.com/';
-  $form['field_praisecharts_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.praisecharts.com/';
+  $form['field_itunes_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'https://geo.itunes.apple.com/us/album/';
+  $form['field_multitracks_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.multitracks.com/afe/esstw/?t=/';
+  $form['field_praisecharts_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.praisecharts.com/detail/arrangement/';
   $form['field_loopcommunity_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://loopcommunity.com/';
 }
