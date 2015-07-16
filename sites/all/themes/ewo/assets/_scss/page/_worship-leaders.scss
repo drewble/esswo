@@ -11,10 +11,15 @@
 
 	li {
 		list-style:none;
+		margin-bottom: 3%;
 		position: relative;
 
 		@include tablet {
 			@include span-columns(4);
+		}
+
+		&:nth-child(2n) {
+			@include omega;
 		}
 	}
 }
@@ -27,13 +32,14 @@
 	}
 
 	.node-artist-worship-leader h2 {
+		margin-bottom: 0;
 		position: relative;
 
 		a {
 			color: #fff;
 			display: block;
 			font-size: 34px;
-			padding: 17.5% 0;
+			padding: 17.5% 0 10.2%;
 			text-align: center;
 			text-decoration: none;
 			@include border-btm;
@@ -60,7 +66,6 @@
 			}
 
 			&:hover {
-				padding:17.5% 0 10.5%;
 
 				&:before {
 					background: rgba(0,0,0,.4);

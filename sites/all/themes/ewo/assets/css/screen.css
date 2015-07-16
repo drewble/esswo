@@ -1370,6 +1370,7 @@ footer nav > ul .icon-icons_insta {
   padding: 0; }
 #block-views-worship-leaders-block-1 li {
   list-style: none;
+  margin-bottom: 3%;
   position: relative; }
   @media screen and (min-width: 768px) {
     #block-views-worship-leaders-block-1 li {
@@ -1379,18 +1380,21 @@ footer nav > ul .icon-icons_insta {
       width: 48.21067%; }
       #block-views-worship-leaders-block-1 li:last-child {
         margin-right: 0; } }
+  #block-views-worship-leaders-block-1 li:nth-child(2n) {
+    margin-right: 0; }
 
 .path-worship-leaders .field-type-image {
   left: 0;
   position: absolute;
   top: 0; }
 .path-worship-leaders .node-artist-worship-leader h2 {
+  margin-bottom: 0;
   position: relative; }
   .path-worship-leaders .node-artist-worship-leader h2 a {
     color: #fff;
     display: block;
     font-size: 34px;
-    padding: 17.5% 0;
+    padding: 17.5% 0 10.2%;
     text-align: center;
     text-decoration: none;
     position: relative; }
@@ -1419,18 +1423,16 @@ footer nav > ul .icon-icons_insta {
       width: 124px; }
     .path-worship-leaders .node-artist-worship-leader h2 a span {
       position: relative; }
-    .path-worship-leaders .node-artist-worship-leader h2 a:hover {
-      padding: 17.5% 0 10.5%; }
-      .path-worship-leaders .node-artist-worship-leader h2 a:hover:before {
-        background: rgba(0, 0, 0, 0.4);
-        content: " ";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%; }
-      .path-worship-leaders .node-artist-worship-leader h2 a:hover .white-btn {
-        display: block; }
+    .path-worship-leaders .node-artist-worship-leader h2 a:hover:before {
+      background: rgba(0, 0, 0, 0.4);
+      content: " ";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+    .path-worship-leaders .node-artist-worship-leader h2 a:hover .white-btn {
+      display: block; }
 
 @media screen and (min-width: 1024px) {
   .node-artist-worship-leader .field-type-text-with-summary {
