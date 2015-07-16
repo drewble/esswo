@@ -98,7 +98,7 @@
 
 }
 
-.popular-content, .new-content, #block-views-news-news-front {
+.popular-content, .new-content, .news-listing {
 	ul, li {
 		margin:0;
 		padding:0;
@@ -155,10 +155,9 @@
 }
 
 #block-views-news-news-front {
-	clear:left;
-	padding: 40px 0;
-	width:100%;
-
+	clear: both;
+	padding-top: 50px;
+	
 	> .title {
 		@include border-btm;
 		font-size: 14px;
@@ -172,6 +171,12 @@
 			width: 84px;
 		}
 	}
+}
+
+.news-listing {
+	clear:left;
+	padding: 40px 0;
+	width:100%;
 
 	> ul {
 		li {

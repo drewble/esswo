@@ -739,19 +739,19 @@ footer nav > ul .icon-icons_insta {
     float: left;
     margin-right: 7px; }
 
-.popular-content ul, .popular-content li, .new-content ul, .new-content li, #block-views-news-news-front ul, #block-views-news-news-front li {
+.popular-content ul, .popular-content li, .new-content ul, .new-content li, .news-listing ul, .news-listing li {
   margin: 0;
   padding: 0; }
-.popular-content li, .new-content li, #block-views-news-news-front li {
+.popular-content li, .new-content li, .news-listing li {
   list-style: none;
   margin: 20px 0; }
-  .popular-content li h2, .new-content li h2, #block-views-news-news-front li h2 {
+  .popular-content li h2, .new-content li h2, .news-listing li h2 {
     font-size: 20px;
     margin-bottom: 5px;
     text-transform: none; }
-    .popular-content li h2 a, .new-content li h2 a, #block-views-news-news-front li h2 a {
+    .popular-content li h2 a, .new-content li h2 a, .news-listing li h2 a {
       text-decoration: none; }
-  .popular-content li h3, .new-content li h3, #block-views-news-news-front li h3 {
+  .popular-content li h3, .new-content li h3, .news-listing li h3 {
     color: #3d3738;
     font-size: 14px; }
 
@@ -790,9 +790,8 @@ footer nav > ul .icon-icons_insta {
       top: 0; }
 
 #block-views-news-news-front {
-  clear: left;
-  padding: 40px 0;
-  width: 100%; }
+  clear: both;
+  padding-top: 50px; }
   #block-views-news-news-front > .title {
     position: relative;
     font-size: 14px;
@@ -813,51 +812,56 @@ footer nav > ul .icon-icons_insta {
       bottom: -10px;
       margin-left: -42px;
       width: 84px; }
-  #block-views-news-news-front > ul li {
+
+.news-listing {
+  clear: left;
+  padding: 40px 0;
+  width: 100%; }
+  .news-listing > ul li {
     border-bottom: 1px solid #c4c3c3;
     margin: 0;
     overflow: hidden;
     position: relative; }
-    #block-views-news-news-front > ul li:first-child:last-child {
+    .news-listing > ul li:first-child:last-child {
       border-bottom: none; }
-  #block-views-news-news-front > ul a {
+  .news-listing > ul a {
     color: #1a1717;
     text-decoration: none; }
-    #block-views-news-news-front > ul a:hover {
+    .news-listing > ul a:hover {
       color: #fff; }
-      #block-views-news-news-front > ul a:hover h2 {
+      .news-listing > ul a:hover h2 {
         color: #fff; }
-      #block-views-news-news-front > ul a:hover + .field-type-image {
+      .news-listing > ul a:hover + .field-type-image {
         opacity: 1; }
-        #block-views-news-news-front > ul a:hover + .field-type-image img {
+        .news-listing > ul a:hover + .field-type-image img {
           -webkit-transform: scale(1);
           -moz-transform: scale(1);
           -ms-transform: scale(1);
           -o-transform: scale(1);
           transform: scale(1); }
-    #block-views-news-news-front > ul a .field-type-taxonomy-term-reference {
+    .news-listing > ul a .field-type-taxonomy-term-reference {
       border-left: 1px solid #3b3738;
       display: inline-block;
       line-height: .9em;
       padding-left: 7px;
       margin-left: 7px; }
-  #block-views-news-news-front > ul h2 {
+  .news-listing > ul h2 {
     color: #e44345;
     font-size: 36px;
     margin: 7px 0 2px;
     text-transform: uppercase; }
-  #block-views-news-news-front > ul .author {
+  .news-listing > ul .author {
     color: #7c7a7a;
     font-size: 14px;
     font-style: italic; }
-  #block-views-news-news-front .field-type-image {
+  .news-listing .field-type-image {
     left: 0;
     opacity: 0;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 0; }
-    #block-views-news-news-front .field-type-image img {
+    .news-listing .field-type-image img {
       display: block;
       margin-top: -10%;
       -webkit-transform: scale(1.1);
@@ -868,7 +872,7 @@ footer nav > ul .icon-icons_insta {
       -webkit-transition: all 0.9s;
       -moz-transition: all 0.9s;
       transition: all 0.9s; }
-  #block-views-news-news-front .news-copy {
+  .news-listing .news-copy {
     display: block;
     overflow: hidden;
     padding: 40px 0;
