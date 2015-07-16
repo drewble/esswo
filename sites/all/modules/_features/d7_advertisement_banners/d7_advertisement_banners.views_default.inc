@@ -119,7 +119,7 @@ function d7_advertisement_banners_views_default_views() {
   $handler->display->display_options['filters']['field_banner_space_tid']['table'] = 'field_data_field_banner_space';
   $handler->display->display_options['filters']['field_banner_space_tid']['field'] = 'field_banner_space_tid';
   $handler->display->display_options['filters']['field_banner_space_tid']['value'] = array(
-    8 => '8',
+    192 => '192',
   );
   $handler->display->display_options['filters']['field_banner_space_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_banner_space_tid']['vocabulary'] = 'banner_space';
