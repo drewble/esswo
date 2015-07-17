@@ -291,6 +291,39 @@ ul.primary {
       font-size: .8em;
       padding: 5px 10px; }
 
+.pager {
+  margin: 15px 0;
+  padding: 0;
+  text-align: center; }
+  .pager li {
+    border-radius: 20px;
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 2px 10px;
+    position: relative; }
+    .pager li.current {
+      background-color: #ecf0f1;
+      color: #1a1717; }
+    .pager li:first-child.current:before {
+      color: #ecf0f1;
+      content: "<";
+      display: inline-block;
+      left: -23px;
+      position: absolute;
+      top: 2px; }
+    .pager li.next {
+      padding: 2px 0; }
+      .pager li.next a {
+        color: #b5b5b6; }
+        .pager li.next a:hover {
+          color: #1a1717; }
+  .pager a {
+    color: #b5b5b6;
+    text-decoration: none; }
+    .pager a:hover {
+      color: #1a1717; }
+
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 23%);
   -moz-transform: translate(0, 23%);
@@ -395,8 +428,12 @@ header {
       display: block;
       height: 0;
       overflow: hidden;
-      padding-top: 27px;
-      width: 369px; }
+      padding-top: 13px;
+      width: 191px; }
+      @media screen and (min-width: 768px) {
+        header h1 a {
+          padding-top: 27px;
+          width: 369px; } }
 
 body.admin-menu header {
   top: 29px; }
@@ -512,7 +549,7 @@ header nav .login.active-trail a {
   background-color: #ecf0f1;
   padding: 4% 0;
   text-align: center; }
-  .pre-footer a {
+  .pre-footer .icon-btn {
     background-color: transparent;
     border: 2px solid #d7d5d5;
     color: #524b4c;
@@ -532,11 +569,11 @@ header nav .login.active-trail a {
     line-height: 3.2em;
     min-width: 250px;
     padding: 0 19px 0 0; }
-    .pre-footer a:hover {
+    .pre-footer .icon-btn:hover {
       background-color: #e44345;
       color: #fff;
       text-decoration: none; }
-    .pre-footer a:before {
+    .pre-footer .icon-btn:before {
       background: inherit;
       border-right: 2px solid #524b4c;
       content: " ";
@@ -544,16 +581,16 @@ header nav .login.active-trail a {
       float: left;
       margin-right: 15px;
       padding: 22px 23px; }
-    .pre-footer a:hover {
+    .pre-footer .icon-btn:hover {
       background-color: transparent;
       color: #524b4c; }
-      .pre-footer a:hover:before {
+      .pre-footer .icon-btn:hover:before {
         background-color: #e44345;
         text-decoration: none; }
-    .pre-footer a.icon-icons_insights {
+    .pre-footer .icon-btn.icon-icons_insights {
       background-position: 13px 12px;
       background-size: 17px; }
-    .pre-footer a span.a2a_img {
+    .pre-footer .icon-btn span.a2a_img {
       display: none; }
 
 footer {
@@ -1255,15 +1292,17 @@ footer nav > ul .icon-icons_insta {
   visibility: hidden;
   z-index: -10; }
 
-.song-listing ul, .song-listing li {
+.song-listing > ul, .song-listing > ul li {
   margin: 0;
   padding: 0; }
-.song-listing li {
+.song-listing > ul li {
   border-bottom: 1px dashed #ecf0f1;
   list-style: none;
   padding: 3% 0 1%; }
-  .song-listing li:first-child {
+  .song-listing > ul li:first-child {
     padding-top: 0; }
+  .song-listing > ul li:last-child {
+    border-bottom: 1px solid #1a1717; }
 .song-listing .audio-btn,
 .song-listing .field-group-div {
   float: left;
@@ -1454,5 +1493,40 @@ footer nav > ul .icon-icons_insta {
 .node-artist-worship-leader .song-listing {
   clear: left;
   padding-top: 10px; }
+
+#block-views-worship-leaders-block-2 > ul, #block-views-worship-leaders-block-2 > ul li {
+  margin: 0;
+  padding: 0; }
+#block-views-worship-leaders-block-2 > ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 1%;
+  position: relative; }
+#block-views-worship-leaders-block-2 > ul a {
+  display: block; }
+  #block-views-worship-leaders-block-2 > ul a:hover:before {
+    background: rgba(0, 0, 0, 0.4);
+    content: " ";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+  #block-views-worship-leaders-block-2 > ul a:hover:after {
+    border: 1px solid #fff;
+    color: #fff;
+    content: "Purchase Album";
+    left: 26%;
+    padding: 2%;
+    position: absolute;
+    top: 42%; }
+    #block-views-worship-leaders-block-2 > ul a:hover:after:before {
+      border-color: #fff; }
+    #block-views-worship-leaders-block-2 > ul a:hover:after:hover {
+      color: #fff; }
+#block-views-worship-leaders-block-2 img {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+  display: block; }
 
 /*# sourceMappingURL=screen.css.map */

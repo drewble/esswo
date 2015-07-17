@@ -248,18 +248,22 @@
 
 // General
 .song-listing {
-	ul, li {
+	> ul, > ul li {
 		margin:0;
 		padding:0;
 	}
 
-	li {
+	> ul li {
 		border-bottom:1px dashed $light;
 		list-style:none;
 		padding:3% 0 1%;
 
 		&:first-child {
 			padding-top:0;
+		}
+
+		&:last-child {
+			border-bottom:1px solid $base;
 		}
 	}
 	.audio-btn,

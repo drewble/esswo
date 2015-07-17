@@ -84,22 +84,22 @@ function ew_artist_worship_leader_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'flag' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(
         'songs_entity_view_4' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'teaser' => array(

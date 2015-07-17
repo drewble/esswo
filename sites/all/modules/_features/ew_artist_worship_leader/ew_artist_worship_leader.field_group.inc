@@ -23,9 +23,9 @@ function ew_artist_worship_leader_field_group_info() {
     'label' => 'Links',
     'weight' => '1',
     'children' => array(
-      0 => 'field_website',
-      1 => 'field_facebook',
-      2 => 'field_twitter',
+      0 => 'field_facebook',
+      1 => 'field_twitter',
+      2 => 'field_website',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -57,9 +57,9 @@ function ew_artist_worship_leader_field_group_info() {
     'label' => 'Links',
     'weight' => '5',
     'children' => array(
-      0 => 'field_website',
-      1 => 'field_facebook',
-      2 => 'field_twitter',
+      0 => 'field_facebook',
+      1 => 'field_twitter',
+      2 => 'field_website',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

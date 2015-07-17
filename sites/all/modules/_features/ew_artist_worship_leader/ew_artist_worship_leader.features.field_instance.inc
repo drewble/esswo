@@ -10,6 +10,116 @@
 function ew_artist_worship_leader_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'multifield-field_album-field_cover'
+  $field_instances['multifield-field_album-field_cover'] = array(
+    'bundle' => 'field_album',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'multifield',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_cover',
+    'label' => 'Cover',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'multifield-field_album-field_itunes_album_link'
+  $field_instances['multifield-field_album-field_itunes_album_link'] = array(
+    'bundle' => 'field_album',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'multifield',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_itunes_album_link',
+    'label' => 'iTunes Album  Link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '',
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => 'Purchase Album',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-artist_worship_leader-body'
   $field_instances['node-artist_worship_leader-body'] = array(
     'bundle' => 'artist_worship_leader',
@@ -78,6 +188,43 @@ function ew_artist_worship_leader_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-artist_worship_leader-field_album'
+  $field_instances['node-artist_worship_leader-field_album'] = array(
+    'bundle' => 'artist_worship_leader',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_album',
+    'label' => 'Albums',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'multifield',
+      'settings' => array(),
+      'type' => 'multifield_default',
+      'weight' => 6,
     ),
   );
 
@@ -150,7 +297,7 @@ function ew_artist_worship_leader_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -211,7 +358,7 @@ function ew_artist_worship_leader_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -273,7 +420,7 @@ function ew_artist_worship_leader_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -334,7 +481,7 @@ function ew_artist_worship_leader_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -507,6 +654,8 @@ function ew_artist_worship_leader_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('<em>Required dimensions: 570wx231h</em>');
+  t('Albums');
+  t('Cover');
   t('Facebook');
   t('First Name');
   t('Header Image');
@@ -515,6 +664,7 @@ function ew_artist_worship_leader_field_default_field_instances() {
   t('Twitter');
   t('Website');
   t('Worship Leader Description');
+  t('iTunes Album  Link');
 
   return $field_instances;
 }

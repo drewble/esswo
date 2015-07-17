@@ -116,4 +116,48 @@
 	}
 }
 
+// Node Albums
+#block-views-worship-leaders-block-2 {
+	> ul, > ul li {
+		margin: 0;
+		padding:0;
+	}
+
+	> ul li {
+		display: inline-block;
+		list-style:none;
+	  margin: 0 1%;
+	  position: relative;
+	}
+
+	> ul a {
+		display: block;
+
+		&:hover {
+			&:before {
+				background: rgba(0,0,0,.4);
+				content: " ";
+				display: block;
+				height: 100%;
+				left: 0;
+				position:absolute;
+				top:0;
+				width: 100%;
+			}
+			&:after  {
+				@include white-btn;
+				content: "Purchase Album";
+				left: 26%;
+				padding: 2%;
+			  position: absolute;
+			  top: 42%;
+			}
+		}
+	}
+
+	img {
+	  box-shadow: 0 0 4px rgba(0,0,0,.7);
+	  display: block;
+	}
+}
 

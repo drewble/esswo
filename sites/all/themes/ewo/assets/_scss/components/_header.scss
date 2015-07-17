@@ -10,6 +10,7 @@ header {
   top:0;
   width: 100%;
   z-index: 10;
+
   // Logo
   h1 {
     line-height: 1em;
@@ -21,8 +22,13 @@ header {
 
     a {
       @include sprite(0 0);
-      padding-top: 27px;
-      width: 369px;
+      padding-top: 13px;
+      width: 191px;
+
+      @include tablet {
+        padding-top: 27px;
+        width: 369px;
+      }
     }
   }
 }

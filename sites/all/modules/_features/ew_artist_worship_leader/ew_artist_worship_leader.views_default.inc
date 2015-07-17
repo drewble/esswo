@@ -63,6 +63,46 @@ function ew_artist_worship_leader_views_default_views() {
 
   /* Display: Worship Leaders Page */
   $handler = $view->new_display('block', 'Worship Leaders Page', 'block_1');
+
+  /* Display: Albums */
+  $handler = $view->new_display('block', 'Albums', 'block_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Albums */
+  $handler->display->display_options['fields']['field_album']['id'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['table'] = 'field_data_field_album';
+  $handler->display->display_options['fields']['field_album']['field'] = 'field_album';
+  $handler->display->display_options['fields']['field_album']['label'] = '';
+  $handler->display->display_options['fields']['field_album']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_album']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_album']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_album']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_album']['click_sort_column'] = 'field_cover_fid';
+  $handler->display->display_options['fields']['field_album']['settings'] = array(
+    'view_mode' => 'default',
+  );
+  $handler->display->display_options['fields']['field_album']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_album']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_album']['multi_type'] = 'ul';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $export['worship_leaders'] = $view;
 
   return $export;
