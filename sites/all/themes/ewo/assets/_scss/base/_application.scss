@@ -29,6 +29,11 @@
 .page {
   margin-bottom: 70px;
   margin-top: 30px;
+  padding:0 4%;
+
+  @include desk {
+
+  }
 }
 
 .bread {

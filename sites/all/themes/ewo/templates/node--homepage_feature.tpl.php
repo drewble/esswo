@@ -15,9 +15,12 @@ if ($id_node) {
 
 hide($content['comments']);
 hide($content['links']);
+hide($content['field_background_image']);
+
+$featureImgUrl = file_create_url($content['field_background_image'][0]['file']['#item']['uri']);
 ?>
 
 <!-- node.tpl.php -->
-<div class="content">
+<div class="content" style="background-image:url(<?php print $featureImgUrl; ?>);">
   <?php print render($content);?>
 </div>

@@ -5,7 +5,11 @@
 footer {
   background-color: $gray;
   color: $light;
-  padding: 5% 0 3%;
+  padding: 5% 4% 3%;
+
+  @include desk {
+    padding:5% 0 3%;
+  }
 
   .outer-container {
     // Who We Are
@@ -13,6 +17,10 @@ footer {
       @include tablet {
         float: left;
         margin-right: 7%;
+        width: 49%;
+      }
+
+      @include desk {
         width: 66%;
       }
     }
@@ -33,10 +41,18 @@ footer {
 
 footer {
   nav {
+    margin-top:50px;
+
     @include tablet {
       float: left;
+      width: 44%;
+    }
+
+    @include desk {
+      margin-top: 0;
       width: 27%;
     }
+
     > ul, > ul li {
       margin: 0;
       padding:0;
@@ -118,16 +134,27 @@ footer {
   padding-top: 80px;
 
   span {
-    float: left;
+    display: block;
+
+    @include tablet {
+      float: left;
+    }
 
     & + span {
-      float: right;
+      @include tablet {
+        float: right;
+      }
     }
   }
 
   a {
     color: #7c7a7a;
-    margin-left: 20px;
+    margin-right: 20px;
+
+    @include tablet {
+      margin-left: 20px;
+      margin-right: 0;
+    }
 
     &:hover {
       color: #fff;

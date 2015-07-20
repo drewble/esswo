@@ -27,6 +27,7 @@ if (!empty($bgImg)) {
 <header role="banner">
   <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">Essential Worship</a></h1>
 
+  <button>Menu</button>
   <?php if($page['header']): ?>
     <?php print render($page['header']); ?>
   <?php endif; ?>

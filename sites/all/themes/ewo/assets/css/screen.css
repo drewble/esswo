@@ -111,7 +111,7 @@ h3 {
   background-size: 22px;
   border-color: #524b4c;
   line-height: 3.2em;
-  min-width: 250px;
+  min-width: 277px;
   padding: 0 19px 0 0; }
   .icon-btn:hover {
     background-color: #e44345;
@@ -392,10 +392,15 @@ ul.primary {
     border: none;
     border-radius: 50px;
     color: #fff;
+    cursor: pointer;
+    display: inline-block;
     font-size: 33px;
     line-height: 1em;
+    min-width: 0;
     padding: 0 9px 4px;
-    min-width: 0; }
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s; }
     .modal-header button:hover {
       background-color: #fff;
       color: #e44345; }
@@ -483,7 +488,8 @@ ul.primary {
 
 .page {
   margin-bottom: 70px;
-  margin-top: 30px; }
+  margin-top: 30px;
+  padding: 0 4%; }
 
 .bread {
   float: left;
@@ -502,75 +508,147 @@ header {
   width: 100%;
   z-index: 10; }
   header h1 {
+    float: left;
     line-height: 1em;
     margin: 29px 25px; }
-    @media screen and (min-width: 768px) {
-      header h1 {
-        float: left; } }
     header h1 a {
       background: url(../img/sprite.png) no-repeat scroll 0 0;
       background-position: 0 0;
       display: block;
       height: 0;
       overflow: hidden;
+      background-size: cover;
       padding-top: 13px;
       width: 191px; }
       @media screen and (min-width: 768px) {
         header h1 a {
+          background-size: initial;
           padding-top: 27px;
           width: 369px; } }
+  header button {
+    border: none;
+    color: #fff;
+    display: inline-block;
+    float: right;
+    margin: 24px 20px;
+    min-width: 0;
+    padding: 0; }
+    @media screen and (min-width: 1024px) {
+      header button {
+        display: none; } }
 
 body.admin-menu header {
   top: 29px; }
 
-@media screen and (min-width: 768px) {
-  header nav {
-    float: right; } }
-header nav ul, header nav li {
-  margin: 0;
-  padding: 0; }
-header nav li {
-  display: inline-block;
-  list-style: none; }
-header nav a {
-  color: #b5b5b6;
-  display: inline-block;
-  padding: 31px 14px;
-  text-decoration: none; }
-  header nav a.active, header nav a:hover {
-    position: relative;
-    color: #fff; }
-    header nav a.active:after, header nav a:hover:after {
-      background-color: #e44345;
-      bottom: 0;
-      content: " ";
-      display: block;
-      height: 4px;
-      left: 50%;
-      margin-left: -17px;
-      position: absolute;
-      width: 34px; }
-header nav .login a {
-  background-position: 0 5px;
-  background-size: 23px;
-  color: #288899;
-  font-size: 12px;
-  height: 30px;
-  line-height: 1.4em;
-  padding: 0 29px;
-  position: relative;
-  top: 9px;
-  width: 102px; }
-  header nav .login a:hover {
-    color: #fff; }
-    header nav .login a:hover:after {
+header nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  z-index: -2; }
+  @media screen and (min-width: 1024px) {
+    header nav {
+      background-color: transparent;
+      height: auto;
+      float: right;
+      opacity: 1;
+      position: static;
+      visibility: visible;
+      width: auto; } }
+  header nav.show {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10; }
+  header nav .close-menu {
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 33px;
+    line-height: 1em;
+    min-width: 0;
+    padding: 0 9px 4px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    float: right;
+    margin: 18px 20px; }
+    header nav .close-menu:hover {
+      background-color: #fff;
+      color: #e44345; }
+    header nav .close-menu:before {
       display: none; }
-header nav .login.active-trail a {
-  color: #288899; }
-  header nav .login.active-trail a:hover {
-    color: #fff; }
-  header nav .login.active-trail a:after {
-    display: none; }
+    @media screen and (min-width: 1024px) {
+      header nav .close-menu {
+        display: none; } }
+  header nav ul, header nav li {
+    margin: 0;
+    padding: 0; }
+  header nav li {
+    display: block;
+    list-style: none; }
+    @media screen and (min-width: 1024px) {
+      header nav li {
+        display: inline-block; } }
+  header nav a {
+    color: #b5b5b6;
+    display: block;
+    padding: 28px 14px;
+    text-decoration: none; }
+    @media screen and (min-width: 1024px) {
+      header nav a {
+        display: inline-block;
+        padding: 31px 14px; } }
+    header nav a.active, header nav a:hover {
+      background-color: #e44345;
+      color: #fff; }
+      @media screen and (min-width: 1024px) {
+        header nav a.active, header nav a:hover {
+          position: relative; }
+          header nav a.active:after, header nav a:hover:after {
+            background-color: #e44345;
+            bottom: 0;
+            content: " ";
+            display: block;
+            height: 4px;
+            left: 50%;
+            margin-left: -17px;
+            position: absolute;
+            width: 34px; } }
+  header nav .login a {
+    background-position: 0 5px;
+    background-size: 23px;
+    color: #288899;
+    font-size: 12px;
+    height: 30px;
+    line-height: 1.4em;
+    margin: 0 14px;
+    padding: 9px 29px;
+    position: relative;
+    top: 9px;
+    width: auto; }
+    @media screen and (min-width: 1024px) {
+      header nav .login a {
+        margin: 0;
+        padding: 0 29px;
+        width: 102px; } }
+    header nav .login a:hover {
+      background-color: transparent;
+      color: #fff; }
+      header nav .login a:hover:after {
+        display: none; }
+  header nav .login.active-trail a {
+    color: #288899; }
+    header nav .login.active-trail a:hover {
+      color: #fff; }
+    header nav .login.active-trail a:after {
+      display: none; }
 
 .hero {
   max-width: 68em;
@@ -652,7 +730,7 @@ header nav .login.active-trail a {
     background-size: 22px;
     border-color: #524b4c;
     line-height: 3.2em;
-    min-width: 250px;
+    min-width: 277px;
     padding: 0 19px 0 0; }
     .pre-footer .icon-btn:hover {
       background-color: #e44345;
@@ -681,11 +759,17 @@ header nav .login.active-trail a {
 footer {
   background-color: #322e2f;
   color: #ecf0f1;
-  padding: 5% 0 3%; }
+  padding: 5% 4% 3%; }
+  @media screen and (min-width: 1024px) {
+    footer {
+      padding: 5% 0 3%; } }
   @media screen and (min-width: 768px) {
     footer .outer-container > div:first-child {
       float: left;
       margin-right: 7%;
+      width: 49%; } }
+  @media screen and (min-width: 1024px) {
+    footer .outer-container > div:first-child {
       width: 66%; } }
 
 footer h2 {
@@ -705,58 +789,64 @@ footer h2 {
     position: static;
     width: 200px; }
 
-@media screen and (min-width: 768px) {
-  footer nav {
+footer nav {
+  margin-top: 50px; }
+  @media screen and (min-width: 768px) {
+    footer nav {
+      float: left;
+      width: 44%; } }
+  @media screen and (min-width: 1024px) {
+    footer nav {
+      margin-top: 0;
+      width: 27%; } }
+  footer nav > ul, footer nav > ul li {
+    margin: 0;
+    padding: 0; }
+  footer nav > ul li {
+    display: block;
     float: left;
-    width: 27%; } }
-footer nav > ul, footer nav > ul li {
-  margin: 0;
-  padding: 0; }
-footer nav > ul li {
-  display: block;
-  float: left;
-  list-style: none;
-  text-align: center; }
-  footer nav > ul li:first-child {
-    float: none; }
-    footer nav > ul li:first-child a {
-      background-size: 30px;
-      background-position: 127px 27px;
-      border-bottom-color: transparent;
-      border-left-color: #4a4647;
-      float: none;
-      height: 113px;
-      text-decoration: none;
-      width: 289px; }
-    footer nav > ul li:first-child + li a {
-      border-left-color: #4a4647; }
-footer nav > ul .icon {
-  background-position: 16px 16px;
-  background-size: 23px;
-  border: 1px solid #4a4647;
-  border-left-color: transparent;
-  color: #ecf0f1;
-  display: block;
-  float: left;
-  font-size: 12px;
-  height: 0;
-  overflow: hidden;
-  padding-top: 58px;
-  text-transform: uppercase;
-  width: 58px; }
-  footer nav > ul .icon:hover {
-    background-color: #e44345;
-    color: #fff; }
-footer nav > ul .icon-icons_yt {
-  background-position: 15px 20px; }
-footer nav > ul .icon-icons_fbook {
-  background-position: 22px 17px;
-  background-size: 11px; }
-footer nav > ul .icon-icons_twitter {
-  background-position: 17px 19px;
-  background-size: 22px; }
-footer nav > ul .icon-icons_insta {
-  background-size: 20px; }
+    list-style: none;
+    text-align: center; }
+    footer nav > ul li:first-child {
+      float: none; }
+      footer nav > ul li:first-child a {
+        background-size: 30px;
+        background-position: 127px 27px;
+        border-bottom-color: transparent;
+        border-left-color: #4a4647;
+        float: none;
+        height: 113px;
+        text-decoration: none;
+        width: 289px; }
+      footer nav > ul li:first-child + li a {
+        border-left-color: #4a4647; }
+  footer nav > ul .icon {
+    background-position: 16px 16px;
+    background-size: 23px;
+    border: 1px solid #4a4647;
+    border-left-color: transparent;
+    color: #ecf0f1;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 0;
+    overflow: hidden;
+    padding-top: 58px;
+    text-transform: uppercase;
+    width: 58px; }
+    footer nav > ul .icon:hover {
+      background-color: #e44345;
+      color: #fff; }
+  footer nav > ul .icon-icons_yt {
+    background-position: 15px 20px; }
+  footer nav > ul .icon-icons_fbook {
+    background-position: 22px 17px;
+    background-size: 11px; }
+  footer nav > ul .icon-icons_twitter {
+    background-position: 17px 19px;
+    background-size: 22px; }
+  footer nav > ul .icon-icons_insta {
+    background-size: 20px; }
 
 .footer-btm {
   clear: both;
@@ -764,12 +854,20 @@ footer nav > ul .icon-icons_insta {
   font-size: 12px;
   padding-top: 80px; }
   .footer-btm span {
-    float: left; }
-    .footer-btm span + span {
-      float: right; }
+    display: block; }
+    @media screen and (min-width: 768px) {
+      .footer-btm span {
+        float: left; } }
+    @media screen and (min-width: 768px) {
+      .footer-btm span + span {
+        float: right; } }
   .footer-btm a {
     color: #7c7a7a;
-    margin-left: 20px; }
+    margin-right: 20px; }
+    @media screen and (min-width: 768px) {
+      .footer-btm a {
+        margin-left: 20px;
+        margin-right: 0; } }
     .footer-btm a:hover {
       color: #fff; }
 
@@ -792,6 +890,7 @@ footer nav > ul .icon-icons_insta {
   .front .hero h2 {
     color: #e44345;
     font-size: 42px;
+    line-height: 1em;
     margin-bottom: 0;
     text-transform: uppercase; }
   .front .hero h4 {
@@ -800,19 +899,27 @@ footer nav > ul .icon-icons_insta {
     font-style: italic;
     margin: 0 0 30px; }
 .front .feature {
-  float: left;
-  position: relative;
-  width: 50%; }
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    .front .feature {
+      float: left;
+      width: 50%; } }
+  .front .feature .content {
+    background-repeat: no-repeat;
+    background-size: cover; }
 .front .file-image {
   left: 0;
   position: absolute;
   top: 0;
   z-index: 0; }
 .front .group-info {
-  padding: 59% 11% 9%;
+  padding: 59% 6% 17%;
   position: relative;
   text-align: left;
   z-index: 1; }
+  @media screen and (min-width: 768px) {
+    .front .group-info {
+      padding: 59% 11% 9%; } }
 
 .front #views-exposed-form-songs-page {
   height: 94px;
@@ -882,13 +989,14 @@ footer nav > ul .icon-icons_insta {
   border-radius: 20px;
   content: " ";
   display: block;
-  height: 7px;
+  height: 11px;
   float: left;
   margin: 8px 7px 0 0;
-  width: 7px; }
+  width: 11px; }
 
 #block-views-banners-banner-sidebar-top {
-  margin-right: 0; }
+  margin-right: 0;
+  float: left; }
   #block-views-banners-banner-sidebar-top .views-field-field-banner-image a {
     background-color: #ecf0f1;
     display: block; }
@@ -949,18 +1057,35 @@ footer nav > ul .icon-icons_insta {
   .news-listing > ul a {
     color: #1a1717;
     text-decoration: none; }
+    .news-listing > ul a:before {
+      content: " ";
+      display: block;
+      left: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      visibility: hidden;
+      width: 100%;
+      z-index: -1;
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+      -webkit-transition: -webkit-transform 0.9s;
+      -moz-transition: -moz-transform 0.9s;
+      transition: transform 0.9s; }
     .news-listing > ul a:hover {
       color: #fff; }
+      .news-listing > ul a:hover:before {
+        visibility: visible;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1); }
       .news-listing > ul a:hover h2 {
         color: #fff; }
-      .news-listing > ul a:hover + .field-type-image {
-        opacity: 1; }
-        .news-listing > ul a:hover + .field-type-image img {
-          -webkit-transform: scale(1);
-          -moz-transform: scale(1);
-          -ms-transform: scale(1);
-          -o-transform: scale(1);
-          transform: scale(1); }
     .news-listing > ul a .field-type-taxonomy-term-reference {
       border-left: 1px solid #3b3738;
       display: inline-block;
@@ -1308,8 +1433,14 @@ footer nav > ul .icon-icons_insta {
   position: relative;
   width: 100%; }
   #views-exposed-form-songs-page #edit-title-wrapper input {
-    padding: 2% 3% 2% 5%;
+    padding: 7% 3% 7% 20%;
     width: 100%; }
+    @media screen and (min-width: 768px) {
+      #views-exposed-form-songs-page #edit-title-wrapper input {
+        padding: 3% 3% 3% 9%; } }
+    @media screen and (min-width: 1024px) {
+      #views-exposed-form-songs-page #edit-title-wrapper input {
+        padding: 2% 3% 2% 5%; } }
   #views-exposed-form-songs-page #edit-title-wrapper .icon {
     left: 20px;
     position: absolute;
@@ -1329,20 +1460,21 @@ footer nav > ul .icon-icons_insta {
       display: inline-block;
       margin-right: 15px;
       padding-right: 13px; }
-  #views-exposed-form-songs-page #edit-title-wrapper.active p {
-    display: block; }
-    #views-exposed-form-songs-page #edit-title-wrapper.active p small {
-      color: #cfd2d3;
-      content: "X";
-      cursor: pointer;
-      display: inline-block;
-      font-size: 26px;
-      font-style: normal;
-      line-height: 1.8em;
-      position: relative;
-      top: 3px; }
-      #views-exposed-form-songs-page #edit-title-wrapper.active p small:hover {
-        color: #1a1717; }
+  @media screen and (min-width: 768px) {
+    #views-exposed-form-songs-page #edit-title-wrapper.active p {
+      display: block; } }
+  #views-exposed-form-songs-page #edit-title-wrapper.active p small {
+    color: #cfd2d3;
+    content: "X";
+    cursor: pointer;
+    display: inline-block;
+    font-size: 26px;
+    font-style: normal;
+    line-height: 1.8em;
+    position: relative;
+    top: 3px; }
+    #views-exposed-form-songs-page #edit-title-wrapper.active p small:hover {
+      color: #1a1717; }
 #views-exposed-form-songs-page #edit-field-tempo-tid-wrapper {
   border-right: 2px solid #ecf0f1;
   padding: 0 25px 0 0;

@@ -142,8 +142,16 @@
 		width:100%;
 
 		input {
-			padding:2% 3% 2% 5%;
+			padding: 7% 3% 7% 20%;
 			width: 100%;
+
+			@include tablet {
+				padding:3% 3% 3% 9%;
+			}
+
+			@include desk {
+				padding:2% 3% 2% 5%;
+			}
 		}
 
 		.icon {
@@ -172,7 +180,10 @@
 		}
 
 		&.active p {
-			display: block;
+
+			@include tablet {
+				display: block;
+			}
 
 			small {
 				color: #cfd2d3;
