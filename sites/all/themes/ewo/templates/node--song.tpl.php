@@ -21,6 +21,7 @@ hide($content['field_mp3']);
 
 <!-- node.tpl.php -->
 <article <?php print $id_node . $classes .  $attributes; ?> role="article">
+<span class="icons icon-icons_arrow"></span>
   <?php print $mothership_poorthemers_helper; ?>
 
   <?php if ($display_submitted): ?>

@@ -227,11 +227,6 @@ input[type="submit"] {
 input[type="checkbox"] + label {
   margin: 0 1%; }
 
-#edit-field-tempo-tid-wrapper {
-  border-right: 2px solid #ecf0f1;
-  padding-right: 20px;
-  margin-right: 20px; }
-
 .chosen-container .chosen-single, .chosen-container.chosen-with-drop .chosen-single {
   background: #ecf0f1;
   border: none;
@@ -1334,7 +1329,7 @@ footer nav {
     width: 100%; }
 
 .page-songs .hero {
-  background: url(../img/songs.jpg) no-repeat scroll 0 0;
+  background: url(../img/songs.jpg) no-repeat scroll center center;
   background-size: cover;
   color: #fff;
   max-width: none;
@@ -1386,7 +1381,7 @@ footer nav {
 .song-listing .result-summary {
   background-color: #322e2f;
   margin: 2% 0;
-  padding: 1.5%; }
+  padding: 17px; }
   .song-listing .result-summary:after {
     content: "";
     display: table;
@@ -1415,7 +1410,10 @@ footer nav {
       content: ""; }
 
 #views-exposed-form-songs-page .views-exposed-widget {
-  padding: 0 15px 0 0; }
+  padding: 0; }
+  @media screen and (min-width: 768px) {
+    #views-exposed-form-songs-page .views-exposed-widget {
+      padding: 0 15px 0 0; } }
   #views-exposed-form-songs-page .views-exposed-widget small {
     display: none; }
 #views-exposed-form-songs-page #edit-field-church-tid-wrapper {
@@ -1475,19 +1473,35 @@ footer nav {
     top: 3px; }
     #views-exposed-form-songs-page #edit-title-wrapper.active p small:hover {
       color: #1a1717; }
-#views-exposed-form-songs-page #edit-field-tempo-tid-wrapper {
-  border-right: 2px solid #ecf0f1;
-  padding: 0 25px 0 0;
-  margin-right: 20px; }
+@media screen and (min-width: 768px) {
+  #views-exposed-form-songs-page #edit-field-tempo-tid-wrapper {
+    border-right: 2px solid #ecf0f1;
+    padding: 0 25px 0 0;
+    margin-right: 20px; } }
 
 #edit-field-key-tid,
 #edit-field-tempo-tid {
   width: 100px; }
 
+#edit-field-theme-tid-wrapper,
+#edit-field-services-tid-wrapper,
+#edit-field-church-tid-wrapper {
+  margin-top: 10px; }
+  @media screen and (min-width: 768px) {
+    #edit-field-theme-tid-wrapper,
+    #edit-field-services-tid-wrapper,
+    #edit-field-church-tid-wrapper {
+      margin-top: 0; } }
+
 #edit-field-theme-tid,
 #edit-field-services-tid,
 #edit-field-church-tid {
-  width: 240px; }
+  width: 290px; }
+  @media screen and (min-width: 768px) {
+    #edit-field-theme-tid,
+    #edit-field-services-tid,
+    #edit-field-church-tid {
+      width: 240px; } }
 
 #edit-field-key-tid-wrapper {
   width: 190px; }
@@ -1506,17 +1520,31 @@ footer nav {
   visibility: hidden;
   z-index: -10; }
 
-.song-listing > ul, .song-listing > ul li {
+.song-listing .view-content ul, .song-listing .view-content li {
   margin: 0;
   padding: 0; }
-.song-listing > ul li {
+.song-listing .view-content li {
   border-bottom: 1px dashed #ecf0f1;
   list-style: none;
+  overflow: auto;
   padding: 3% 0 1%; }
-  .song-listing > ul li:first-child {
+  .song-listing .view-content li:first-child {
     padding-top: 0; }
-  .song-listing > ul li:last-child {
+  .song-listing .view-content li:last-child {
     border-bottom: 1px solid #1a1717; }
+.song-listing .node-song {
+  overflow: auto;
+  min-width: 68em;
+  position: relative; }
+  .song-listing .node-song .icons {
+    background-color: #2f2f2f;
+    display: block;
+    height: 44px;
+    left: 50%;
+    opacity: .4;
+    position: absolute;
+    top: 35px;
+    width: 43px; }
 .song-listing .audio-btn,
 .song-listing .field-group-div {
   float: left;

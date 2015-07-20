@@ -8,7 +8,7 @@
 
 .page-songs {
 	.hero {
-		background:url(../img/songs.jpg) no-repeat scroll 0 0;
+		background:url(../img/songs.jpg) no-repeat scroll center center;
 		background-size:cover;
 		color:#fff;
 		max-width: none;
@@ -72,7 +72,7 @@
 		@include clearfix;
 		background-color: $gray;
 		margin: 2% 0;
-		padding:1.5%;
+		padding:17px;
 
 		p {
 			color: #ecf0f1;
@@ -112,7 +112,11 @@
 
 #views-exposed-form-songs-page {
 	.views-exposed-widget {
-		padding:0 15px 0 0;
+		padding:0;
+
+		@include tablet {
+			padding:0 15px 0 0;
+		}
 
 		small {
 			display: none;
@@ -204,9 +208,12 @@
 	}
 
 	#edit-field-tempo-tid-wrapper {
-	  border-right: 2px solid #ecf0f1;
-	  padding: 0 25px 0 0;
-	  margin-right: 20px;
+
+		@include tablet {
+		  border-right: 2px solid #ecf0f1;
+		  padding: 0 25px 0 0;
+		  margin-right: 20px;
+		}
 	}
 }
 
@@ -217,10 +224,24 @@
 }
 
 // Theme, Services, Church
+#edit-field-theme-tid-wrapper,
+#edit-field-services-tid-wrapper,
+#edit-field-church-tid-wrapper {
+	margin-top:10px;
+
+	@include tablet {
+		margin-top: 0;
+	}
+}
+
 #edit-field-theme-tid,
 #edit-field-services-tid,
 #edit-field-church-tid {
-	width:240px;
+	width:290px;
+
+	@include tablet {
+		width:240px;
+	}
 }
 
 // Key (First)
@@ -252,14 +273,17 @@
 
 // General
 .song-listing {
-	> ul, > ul li {
-		margin:0;
-		padding:0;
+	.view-content {
+		ul, li {
+			margin:0;
+			padding:0;
+		}
 	}
 
-	> ul li {
+	.view-content li {
 		border-bottom:1px dashed $light;
 		list-style:none;
+		overflow: auto;
 		padding:3% 0 1%;
 
 		&:first-child {
@@ -270,6 +294,24 @@
 			border-bottom:1px solid $base;
 		}
 	}
+
+	.node-song {
+		overflow: auto;
+		min-width: 68em;
+		position: relative;
+
+		.icons {
+			background-color: #2f2f2f;
+			display: block;
+		  height: 44px;
+		  left: 50%;
+		  opacity: .4;
+		  position: absolute;
+		  top: 35px;
+		  width: 43px;
+		}
+	}
+
 	.audio-btn,
 	.field-group-div {
 		float: left;
