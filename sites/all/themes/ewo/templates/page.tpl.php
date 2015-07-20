@@ -131,3 +131,18 @@ if (!empty($bgImg)) {
       </div>
   <?php endif; ?>
 <?php endif; ?>
+
+<?php if($page['modal']): ?>
+  <div id="myModal" class="non-video modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <?php print render($page['modal']); ?>
+              </div>
+          </div>
+      </div>
+  </div>
+<?php endif; ?>

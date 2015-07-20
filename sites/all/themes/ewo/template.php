@@ -14,6 +14,9 @@ function ewo_preprocess_page(&$vars,$hook) {
   //googlefont
   drupal_add_css('http://fonts.googleapis.com/css?family=Ropa+Sans','external');
   drupal_add_css('http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic','external');
+  drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap-theme.min.css', array('group' => CSS_DEFAULT));
+  drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap.min.css', array('group' => CSS_DEFAULT));
+  drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));
 
   // Variables set for fallback
   $vars['bgImg'] = '';
@@ -33,9 +36,6 @@ function ewo_preprocess_page(&$vars,$hook) {
     // If Song
     if ($node->type == 'song') {
       drupal_add_css('http://fonts.googleapis.com/css?family=Roboto+Mono','external');
-      drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap-theme.min.css', array('group' => CSS_DEFAULT));
-      drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap.min.css', array('group' => CSS_DEFAULT));
-      drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));
       drupal_add_js($path .'/assets/js/song.js', array('group' => JS_THEME));
       if (!empty($node->field_song_resources)) {
         $vars['resources'] = file_create_url($node->field_song_resources[LANGUAGE_NONE][0]['uri']);
@@ -86,6 +86,19 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
       $form['field_services_tid']['#options']['All'] = '';
       $form['field_church_tid']['#options']['All'] = '';
     }
+  }
+
+  // Login
+  if ($form_id == 'user_login_block') {
+    $form['name']['#attributes']['placeholder'] = 'Email Address';
+    $form['actions']['submit']['#value'] = 'Sign In';
+  }
+
+  // Register
+  if ($form_id == 'user_register_form') {
+    $form['account']['mail']['#attributes']['placeholder'] = 'Email Address';
+    $form['actions']['submit']['#value'] = 'Sign Up';
+    $form['field_i_would_like_to_receive_th'][LANGUAGE_NONE][0]['subscribe']['#title'] = $form['field_i_would_like_to_receive_th'][LANGUAGE_NONE][0]['#title'];
   }
 }
 

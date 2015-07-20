@@ -107,6 +107,18 @@ function ew_base_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-9',
         ),
+        'user-login' => array(
+          'module' => 'user',
+          'delta' => 'login',
+          'region' => 'modal',
+          'weight' => '-10',
+        ),
+        'formblock-user_register' => array(
+          'module' => 'formblock',
+          'delta' => 'user_register',
+          'region' => 'modal',
+          'weight' => '-9',
+        ),
       ),
     ),
   );

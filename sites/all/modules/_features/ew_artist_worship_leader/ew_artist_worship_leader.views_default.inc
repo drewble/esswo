@@ -64,8 +64,10 @@ function ew_artist_worship_leader_views_default_views() {
   /* Display: Worship Leaders Page */
   $handler = $view->new_display('block', 'Worship Leaders Page', 'block_1');
 
-  /* Display: Albums */
-  $handler = $view->new_display('block', 'Albums', 'block_2');
+  /* Display: Artist Albums */
+  $handler = $view->new_display('block', 'Artist Albums', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Available Albums';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;

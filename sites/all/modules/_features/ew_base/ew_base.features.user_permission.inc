@@ -10,6 +10,15 @@
 function ew_base_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access mailchimp signup pages'.
+  $permissions['access mailchimp signup pages'] = array(
+    'name' => 'access mailchimp signup pages',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'mailchimp_signup',
+  );
+
   // Exported permission: 'access own authorizations'.
   $permissions['access own authorizations'] = array(
     'name' => 'access own authorizations',
@@ -71,6 +80,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'mailchimp',
+  );
+
+  // Exported permission: 'administer mailchimp signup entities'.
+  $permissions['administer mailchimp signup entities'] = array(
+    'name' => 'administer mailchimp signup entities',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'mailchimp_signup',
   );
 
   // Exported permission: 'administer menu attributes'.

@@ -1,11 +1,9 @@
 (function() {
   (function($) {
     return $(function() {
-      return $("#block-views-news-news-front > ul li").click(function(event) {
-        return $(this).find('.news-copy h2 a').click(function(event) {
-          event.stopPropagation();
-          return true;
-        });
+      return $('header nav .login a').click(function(e) {
+        $('#myModal').modal('show');
+        return e.preventDefault();
       });
     });
   })(jQuery);

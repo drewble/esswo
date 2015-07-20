@@ -224,6 +224,9 @@ input[type="submit"] {
     color: #fff;
     text-decoration: none; }
 
+input[type="checkbox"] + label {
+  margin: 0 1%; }
+
 #edit-field-tempo-tid-wrapper {
   border-right: 2px solid #ecf0f1;
   padding-right: 20px;
@@ -251,6 +254,36 @@ input[type="submit"] {
 
 .chosen-search input {
   text-transform: none; }
+
+.placeholder #views-exposed-form-songs-page label,
+.placeholder #block-user-login label,
+.placeholder #block-formblock-user-register label {
+  display: none; }
+.placeholder #views-exposed-form-songs-page input[type="checkbox"] + label,
+.placeholder #block-user-login input[type="checkbox"] + label,
+.placeholder #block-formblock-user-register input[type="checkbox"] + label {
+  display: inline; }
+
+#block-user-login ul, #block-user-login li {
+  float: right;
+  margin: 10px 17px;
+  padding: 0; }
+#block-user-login li {
+  list-style: none; }
+  #block-user-login li:first-child {
+    display: none; }
+#block-user-login a:hover {
+  color: #fff; }
+#block-user-login .form-actions {
+  margin: 0; }
+
+.field-type-mailchimp-lists-subscription fieldset {
+  border: none;
+  color: #fff;
+  margin: 30px 5px;
+  padding: 0; }
+.field-type-mailchimp-lists-subscription legend {
+  display: none; }
 
 /* Tables */
 table {
@@ -330,9 +363,17 @@ ul.primary {
   -ms-transform: translate(0, 23%);
   -o-transform: translate(0, 23%);
   transform: translate(0, 23%); }
+.modal.in.non-video .modal-dialog {
+  -webkit-transform: translate(0, 12%);
+  -moz-transform: translate(0, 12%);
+  -ms-transform: translate(0, 12%);
+  -o-transform: translate(0, 12%);
+  transform: translate(0, 12%); }
 
 .modal-backdrop {
-  background-color: rgba(255, 255, 255, 0.9); }
+  background-color: #000; }
+  .modal-backdrop.in {
+    opacity: .9; }
 
 .modal-content {
   background: none;
@@ -348,7 +389,6 @@ ul.primary {
   top: -15px;
   z-index: 10; }
   .modal-header button {
-    background-color: #e44345;
     border: none;
     border-radius: 50px;
     color: #fff;
@@ -362,8 +402,53 @@ ul.primary {
     .modal-header button:before {
       display: none; }
 
+.modal-dialog {
+  width: 72%; }
+
 .modal-body {
+  overflow: hidden;
   padding: 0; }
+  @media screen and (min-width: 1024px) {
+    .modal-body > div {
+      float: left;
+      width: 48%; } }
+  @media screen and (min-width: 1024px) {
+    .modal-body > div:first-child {
+      border-right: 1px solid #444243;
+      margin-right: 3%; } }
+  .modal-body h2 {
+    color: #e44345;
+    font-size: 48px; }
+  .modal-body input[type="text"], .modal-body input[type="password"], .modal-body input[type="email"] {
+    background-color: rgba(45, 45, 45, 0.4);
+    color: #ecf0f1;
+    padding: 4% 5%;
+    width: 93%; }
+    .modal-body input[type="text"]:focus, .modal-body input[type="password"]:focus, .modal-body input[type="email"]:focus {
+      background-color: #ecf0f1;
+      color: #4a4647; }
+      .modal-body input[type="text"]:focus::-webkit-input-placeholder, .modal-body input[type="password"]:focus::-webkit-input-placeholder, .modal-body input[type="email"]:focus::-webkit-input-placeholder {
+        color: #575454; }
+      .modal-body input[type="text"]:focus::-moz-placeholder, .modal-body input[type="password"]:focus::-moz-placeholder, .modal-body input[type="email"]:focus::-moz-placeholder {
+        color: #575454; }
+      .modal-body input[type="text"]:focus:-moz-placeholder, .modal-body input[type="password"]:focus:-moz-placeholder, .modal-body input[type="email"]:focus:-moz-placeholder {
+        color: #575454; }
+      .modal-body input[type="text"]:focus:-ms-input-placeholder, .modal-body input[type="password"]:focus:-ms-input-placeholder, .modal-body input[type="email"]:focus:-ms-input-placeholder {
+        color: #575454; }
+    .modal-body input[type="text"]::-webkit-input-placeholder, .modal-body input[type="password"]::-webkit-input-placeholder, .modal-body input[type="email"]::-webkit-input-placeholder {
+      color: #575454; }
+    .modal-body input[type="text"]::-moz-placeholder, .modal-body input[type="password"]::-moz-placeholder, .modal-body input[type="email"]::-moz-placeholder {
+      color: #575454; }
+    .modal-body input[type="text"]:-moz-placeholder, .modal-body input[type="password"]:-moz-placeholder, .modal-body input[type="email"]:-moz-placeholder {
+      color: #575454; }
+    .modal-body input[type="text"]:-ms-input-placeholder, .modal-body input[type="password"]:-ms-input-placeholder, .modal-body input[type="email"]:-ms-input-placeholder {
+      color: #575454; }
+  .modal-body input[type="submit"] {
+    color: #ecf0f1; }
+    .modal-body input[type="submit"]:hover {
+      border-color: #e44345; }
+  .modal-body small {
+    display: none; }
 
 /* Application Template
  * -----------------------------------------------------------------------------
@@ -1122,9 +1207,6 @@ footer nav > ul .icon-icons_insta {
   width: 46%; }
   .node-song .field-type-link-field a {
     width: 100%; }
-
-.placeholder #views-exposed-form-songs-page label {
-  display: none; }
 
 .page-songs .hero {
   background: url(../img/songs.jpg) no-repeat scroll 0 0;

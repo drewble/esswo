@@ -67,3 +67,45 @@ function ew_base_flag_default_flags() {
   return $flags;
 
 }
+
+/**
+ * Implements hook_default_mailchimp_signup().
+ */
+function ew_base_default_mailchimp_signup() {
+  $items = array();
+  $items['registration'] = entity_import('mailchimp_signup', '{
+    "name" : "registration",
+    "mc_lists" : { "d1abab443f" : "d1abab443f" },
+    "mode" : "1",
+    "title" : "Registration",
+    "settings" : {
+      "path" : "",
+      "submit_button" : "Submit",
+      "confirmation_message" : "You have been successfully subscribed.",
+      "destination" : "",
+      "mergefields" : {
+        "EMAIL" : {
+          "name" : "Email Address",
+          "req" : true,
+          "field_type" : "email",
+          "public" : true,
+          "show" : true,
+          "order" : "1",
+          "default" : null,
+          "helptext" : null,
+          "size" : "25",
+          "tag" : "EMAIL",
+          "id" : 0
+        },
+        "FNAME" : 0,
+        "LNAME" : 0
+      },
+      "description" : "",
+      "doublein" : 0,
+      "send_welcome" : 0,
+      "include_interest_groups" : 0
+    },
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
