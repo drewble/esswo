@@ -123,6 +123,7 @@ header {
         color: #fff;
 
         @include desk {
+          background-color:transparent;
           @include border-btm;
         }
       }

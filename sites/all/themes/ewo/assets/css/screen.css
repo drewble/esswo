@@ -605,6 +605,7 @@ header nav {
       color: #fff; }
       @media screen and (min-width: 1024px) {
         header nav a.active, header nav a:hover {
+          background-color: transparent;
           position: relative; }
           header nav a.active:after, header nav a:hover:after {
             background-color: #e44345;
