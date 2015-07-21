@@ -285,6 +285,7 @@
 		list-style:none;
 		overflow: auto;
 		padding:3% 0 1%;
+		position: relative;
 
 		&:first-child {
 			padding-top:0;
@@ -293,23 +294,22 @@
 		&:last-child {
 			border-bottom:1px solid $base;
 		}
-	}
-
-	.node-song {
-		overflow: auto;
-		min-width: 68em;
-		position: relative;
 
 		.icons {
 			background-color: #2f2f2f;
 			display: block;
 		  height: 44px;
-		  left: 50%;
 		  opacity: .4;
 		  position: absolute;
+		  right: 0;
 		  top: 35px;
 		  width: 43px;
 		}
+	}
+
+	.node-song {
+		overflow: auto;
+		min-width: 68em;
 	}
 
 	.audio-btn,

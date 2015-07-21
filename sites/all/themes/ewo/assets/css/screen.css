@@ -1527,24 +1527,24 @@ footer nav {
   border-bottom: 1px dashed #ecf0f1;
   list-style: none;
   overflow: auto;
-  padding: 3% 0 1%; }
+  padding: 3% 0 1%;
+  position: relative; }
   .song-listing .view-content li:first-child {
     padding-top: 0; }
   .song-listing .view-content li:last-child {
     border-bottom: 1px solid #1a1717; }
-.song-listing .node-song {
-  overflow: auto;
-  min-width: 68em;
-  position: relative; }
-  .song-listing .node-song .icons {
+  .song-listing .view-content li .icons {
     background-color: #2f2f2f;
     display: block;
     height: 44px;
-    left: 50%;
     opacity: .4;
     position: absolute;
+    right: 0;
     top: 35px;
     width: 43px; }
+.song-listing .node-song {
+  overflow: auto;
+  min-width: 68em; }
 .song-listing .audio-btn,
 .song-listing .field-group-div {
   float: left;
