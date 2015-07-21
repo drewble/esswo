@@ -80,11 +80,11 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
       $form['title']['#prefix'] = '<span class="icon icon-icons_add"></span><p><span>press [enter] to submit</span><small>X</small></p>';
       $form['field_key_tid']['#prefix'] = '<span>Filter by</span>';
       $form['title']['#attributes']['placeholder'] = 'Find a Song...';
-      $form['field_key_tid']['#options']['All'] = '';
-      $form['field_tempo_tid']['#options']['All'] = '';
-      $form['field_theme_tid']['#options']['All'] = '';
-      $form['field_services_tid']['#options']['All'] = '';
-      $form['field_church_tid']['#options']['All'] = '';
+      $form['field_key_tid']['#options']['All'] = 'Key';
+      $form['field_tempo_tid']['#options']['All'] = 'Tempo';
+      $form['field_theme_tid']['#options']['All'] = 'Theme';
+      $form['field_services_tid']['#options']['All'] = 'Services';
+      $form['field_church_tid']['#options']['All'] = 'Ministry';
     }
   }
 

@@ -24,6 +24,9 @@
 			$(this).not('#edit-flagged').attr('data-placeholder',label).chosen().on 'change', (evt, params) ->
 	  		$('#edit-submit-songs').click()
 
+	  $('.views-exposed-form select').on 'chosen:showing_dropdown', (evt, params) ->
+  		$('.chosen-results li:first-child').text 'All'
+
 	  # Title Active State
 	  $('#edit-title').on 'focus', ->
 	  	$('#edit-title-wrapper').addClass 'active'

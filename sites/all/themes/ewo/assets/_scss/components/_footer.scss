@@ -5,7 +5,11 @@
 footer {
   background-color: $gray;
   color: $light;
-  padding: 5% 4% 3%;
+  padding: 11% 4% 3%;
+
+  @include tablet {
+    padding: 5% 4% 3%;
+  }
 
   @include desk {
     padding:5% 0 3%;

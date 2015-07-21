@@ -485,6 +485,9 @@ ul.primary {
   margin-bottom: 70px;
   margin-top: 30px;
   padding: 0 4%; }
+  @media screen and (min-width: 1024px) {
+    .page {
+      padding: 0; } }
 
 .bread {
   float: left;
@@ -755,7 +758,10 @@ header nav {
 footer {
   background-color: #322e2f;
   color: #ecf0f1;
-  padding: 5% 4% 3%; }
+  padding: 11% 4% 3%; }
+  @media screen and (min-width: 768px) {
+    footer {
+      padding: 5% 4% 3%; } }
   @media screen and (min-width: 1024px) {
     footer {
       padding: 5% 0 3%; } }
@@ -1527,36 +1533,33 @@ footer nav {
 .song-listing .view-content li {
   border-bottom: 1px dashed #ecf0f1;
   list-style: none;
-  overflow: auto;
+  overflow: hidden;
   padding: 3% 0 1%;
   position: relative; }
   .song-listing .view-content li:first-child {
     padding-top: 0; }
   .song-listing .view-content li:last-child {
     border-bottom: 1px solid #1a1717; }
-  .song-listing .view-content li .icons {
-    background-color: #2f2f2f;
-    display: block;
-    height: 44px;
-    opacity: .4;
-    position: absolute;
-    right: 0;
-    top: 35px;
-    width: 43px; }
-.song-listing .node-song {
-  overflow: scroll;
-  min-width: 68em;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap; }
 .song-listing .audio-btn,
 .song-listing .field-group-div {
   float: left;
   padding: 3% 4%; }
+.song-listing .field-group-div {
+  width: 80%; }
+  @media screen and (min-width: 768px) {
+    .song-listing .field-group-div {
+      width: auto; } }
+  .song-listing .field-group-div + div {
+    display: none; }
+    @media screen and (min-width: 768px) {
+      .song-listing .field-group-div + div {
+        display: block; } }
 
 .song-listing .audio-btn {
   margin: 4% 2%;
   padding: 0;
-  position: relative; }
+  position: relative;
+  width: 35px; }
   .song-listing .audio-btn a:first-child {
     border: 2px solid #1a1717;
     border-radius: 30px;

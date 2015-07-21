@@ -19,6 +19,9 @@
           $(this).not('#edit-flagged').attr('data-placeholder', label).chosen().on('change', function(evt, params) {
             return $('#edit-submit-songs').click();
           });
+          $('.views-exposed-form select').on('chosen:showing_dropdown', function(evt, params) {
+            return $('.chosen-results li:first-child').text('All');
+          });
           $('#edit-title').on('focus', function() {
             return $('#edit-title-wrapper').addClass('active');
           });
