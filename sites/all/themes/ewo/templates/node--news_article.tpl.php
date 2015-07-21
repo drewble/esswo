@@ -16,18 +16,18 @@ if ($id_node) {
 hide($content['comments']);
 hide($content['links']);
 if (!$page) {
-  hide($content['field_news_main_image']);
+  hide($content['field_header_image']);
   hide($content['field_tags']);
   hide($content['field_news_body']);
 }
-if ($content['field_news_main_image']) {
-  $newsImgUrl = file_create_url($content['field_news_main_image'][0]['file']['#item']['uri']);
+if ($content['field_header_image']) {
+  $newsImgUrl = file_create_url($content['field_header_image'][0]['file']['#item']['uri']);
 }
 ?>
 
 <!-- node.tpl.php -->
 <article <?php print $id_node . $classes .  $attributes; ?> role="article">
-  <?php if ($content['field_news_main_image']): ?>
+  <?php if ($content['field_header_image']): ?>
   <style type="text/css">
     .news-copy:before {
       background: url(<?php print $newsImgUrl; ?>) no-repeat scroll center center;

@@ -4,12 +4,19 @@
 
 .hero {
   @include outer-container;
-  padding: 12% 0 4%;
+  padding: 111px 6% 50px;
   text-align: center;
+
+  @include tablet {
+    padding: 12% 0 4%;
+  }
 
   h1 {
     margin: 0 auto;
-    width: 74%;
+
+    @include tablet {
+      width: 74%;
+    }
   }
 
   h2 {
@@ -46,7 +53,10 @@
     h2 {
       text-transform: none;
       margin: 0 auto;
-      width: 50%;
+
+      @include tablet {
+        width: 50%;
+      }
     }
   }
 }

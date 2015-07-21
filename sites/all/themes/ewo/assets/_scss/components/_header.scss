@@ -41,6 +41,10 @@ header {
     min-width: 0;
     padding: 0;
 
+    @include tablet {
+      margin: 30px;
+    }
+
     @include desk {
       display: none;
     }

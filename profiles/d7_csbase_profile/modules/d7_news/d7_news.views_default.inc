@@ -111,7 +111,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Main Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_news_main_image']['id'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['table'] = 'field_data_field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['field'] = 'field_news_main_image';
@@ -122,11 +122,6 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_main_image']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_news_main_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_news_main_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_news_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_main_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -227,17 +222,12 @@ function d7_news_views_default_views() {
   $handler->display->display_options['title'] = 'Insights';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Main Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_news_main_image']['id'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['table'] = 'field_data_field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['field'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['label'] = '';
   $handler->display->display_options['fields']['field_news_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_main_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -360,17 +350,12 @@ function d7_news_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Main Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_news_main_image']['id'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['table'] = 'field_data_field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['field'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['label'] = '';
   $handler->display->display_options['fields']['field_news_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_main_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -456,7 +441,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="back-link button" href="/news">Back to News</a>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="back-link icon-btn icon-icons_arrow" href="/news">Back to News</a>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -538,7 +523,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Main Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_news_main_image']['id'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['table'] = 'field_data_field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['field'] = 'field_news_main_image';
@@ -546,11 +531,6 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_main_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_main_image']['alter']['text'] = '[field_news_main_image-fid]';
   $handler->display->display_options['fields']['field_news_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_main_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -629,7 +609,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Main Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_news_main_image']['id'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['table'] = 'field_data_field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['field'] = 'field_news_main_image';
@@ -637,11 +617,6 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_main_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_main_image']['alter']['text'] = '[field_news_main_image-fid]';
   $handler->display->display_options['fields']['field_news_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_main_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -720,7 +695,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Field: Content: Main Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_news_main_image']['id'] = 'field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['table'] = 'field_data_field_news_main_image';
   $handler->display->display_options['fields']['field_news_main_image']['field'] = 'field_news_main_image';
@@ -728,11 +703,6 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_main_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_news_main_image']['alter']['text'] = '[field_news_main_image-fid]';
   $handler->display->display_options['fields']['field_news_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_main_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_news_main_image']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';

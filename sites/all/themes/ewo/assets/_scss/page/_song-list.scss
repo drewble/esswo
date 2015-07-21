@@ -12,7 +12,11 @@
 		background-size:cover;
 		color:#fff;
 		max-width: none;
-		padding:14% 0 6%;
+		padding: 111px 6% 50px;
+
+		@include tablet {
+			padding:14% 0 6%;
+		}
 
 		h1 {
 			@include border-btm;
@@ -28,7 +32,10 @@
 		h2 {
 			margin: 0 auto;
 		  text-transform: none;
-		  width: 38%;
+
+		  @include tablet {
+			  width: 38%;
+			}
 		}
 	}
 }
@@ -49,7 +56,7 @@
 			right: 0;
 			text-decoration: none;
 			text-transform: uppercase;
-			top:-20px;
+			top:-25px;
 
 			span {
 				color: #cfd2d3;
@@ -211,6 +218,11 @@
 
 		@include tablet {
 		  border-right: 2px solid #ecf0f1;
+		  padding: 0 15px 0 0;
+		  margin-right: 15px;
+		}
+
+		@include desk {
 		  padding: 0 25px 0 0;
 		  margin-right: 20px;
 		}
@@ -221,6 +233,14 @@
 #edit-field-key-tid,
 #edit-field-tempo-tid {
 	width:100px;
+
+	@include tablet {
+		width: 90px;
+	}
+
+	@include desk {
+		width: 100px;
+	}
 }
 
 // Theme, Services, Church
@@ -240,13 +260,25 @@
 	width:290px;
 
 	@include tablet {
+		width:120px;
+	}
+
+	@include desk {
 		width:240px;
 	}
 }
 
 // Key (First)
 #edit-field-key-tid-wrapper {
-	width: 190px;
+	width:190px;
+
+	@include tablet {
+		width:177px;
+	}
+
+	@include tablet {
+		width: 190px;
+	}
 
 	.views-widget > span {
 		float: left;
@@ -303,12 +335,6 @@
 	}
 
 	.field-group-div {
-		width: 80%;
-
-		@include tablet {
-			width: auto;
-		}
-
 		& + div {
 			display: none;
 
@@ -383,6 +409,15 @@
 .song-listing {
 	.group-song-info {
 		padding-left:0;
+		width: 80%;
+
+		@include tablet {
+			width: 35%;
+		}
+
+		@include desk {
+			width: auto;
+		}
 
 		h2 {
 			border:none;
@@ -426,6 +461,14 @@
 	.group-song-categories {
 		font-size: 14px;
 
+		@include tablet {
+			width:31%;
+		}
+
+		@include desk {
+			width: auto;
+		}
+
 		.field-label {
 			clear: left;
 			font-size: 12px;
@@ -435,12 +478,20 @@
 		}
 
 		.field {
+			clear: left;
 			float: left;
+
+			@include desk {
+				clear: none;
+			}
 		}
 
 		.field-type-taxonomy-term-reference + .field-type-taxonomy-term-reference {
 			&:before {
-				content: ", ";
+
+				@include desk {
+					content: ", ";
+				}
 			}
 		}
 	}

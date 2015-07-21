@@ -157,6 +157,9 @@ h3 {
   height: 24px;
   width: 24px; }
 
+.back-link {
+  margin: 40px 0; }
+
 /* Tables */
 table {
   width: 100%; }

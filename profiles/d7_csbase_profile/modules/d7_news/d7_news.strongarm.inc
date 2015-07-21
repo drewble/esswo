@@ -90,13 +90,13 @@ function d7_news_strongarm() {
           'weight' => '5',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '6',
         ),
       ),
       'display' => array(
         'news_entity_view_1' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '2',
             'visible' => TRUE,
           ),
           'teaser' => array(
