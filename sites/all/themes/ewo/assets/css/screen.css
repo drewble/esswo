@@ -1544,8 +1544,10 @@ footer nav {
     top: 35px;
     width: 43px; }
 .song-listing .node-song {
-  overflow: auto;
-  min-width: 68em; }
+  overflow: scroll;
+  min-width: 68em;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap; }
 .song-listing .audio-btn,
 .song-listing .field-group-div {
   float: left;
