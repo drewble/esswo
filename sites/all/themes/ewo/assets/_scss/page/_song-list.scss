@@ -153,16 +153,8 @@
 		width:100%;
 
 		input {
-			padding: 7% 3% 7% 20%;
+			padding: 23px 61px;
 			width: 100%;
-
-			@include tablet {
-				padding:3% 3% 3% 9%;
-			}
-
-			@include desk {
-				padding:2% 3% 2% 5%;
-			}
 		}
 
 		.icon {

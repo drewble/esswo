@@ -14,7 +14,7 @@
 		margin-bottom: 3%;
 		position: relative;
 
-		@include tablet {
+		@media screen and (min-width: 620px) {
 			@include span-columns(4);
 		}
 
@@ -39,10 +39,14 @@
 			color: #fff;
 			display: block;
 			font-size: 34px;
-			padding: 17.5% 0 10.2%;
+			padding:14.5% 0 10.2%;
 			text-align: center;
 			text-decoration: none;
 			@include border-btm;
+
+			@include desk {
+				padding: 17.5% 0 10.2%;
+			}
 
 			&:after {
 				margin: 17px auto;
@@ -78,7 +82,10 @@
 				}
 
 				.white-btn {
-					display: block;
+
+					@include desk {
+						display: block;
+					}
 				}
 			}
 		}

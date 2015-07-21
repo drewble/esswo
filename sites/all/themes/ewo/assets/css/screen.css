@@ -356,11 +356,11 @@ ul.primary {
       color: #1a1717; }
 
 .modal.in .modal-dialog {
-  -webkit-transform: translate(0, 23%);
-  -moz-transform: translate(0, 23%);
-  -ms-transform: translate(0, 23%);
-  -o-transform: translate(0, 23%);
-  transform: translate(0, 23%); }
+  -webkit-transform: translate(0, 7%);
+  -moz-transform: translate(0, 7%);
+  -ms-transform: translate(0, 7%);
+  -o-transform: translate(0, 7%);
+  transform: translate(0, 7%); }
 .modal.in.non-video .modal-dialog {
   -webkit-transform: translate(0, 12%);
   -moz-transform: translate(0, 12%);
@@ -419,55 +419,59 @@ ul.primary {
     .modal-header button:before {
       display: none; }
 
+#songModal .modal-header {
+  right: -10%;
+  top: -7%; }
+
 .modal-dialog {
   width: 72%; }
 
-.modal-body {
+#myModal .modal-body {
   overflow: hidden;
   padding: 0; }
   @media screen and (min-width: 1024px) {
-    .modal-body > div {
+    #myModal .modal-body > div {
       float: left;
       width: 48%; } }
-  .modal-body > div:first-child {
+  #myModal .modal-body > div:first-child {
     margin-bottom: 40px; }
     @media screen and (min-width: 1024px) {
-      .modal-body > div:first-child {
+      #myModal .modal-body > div:first-child {
         border-right: 1px solid #444243;
         margin-bottom: 0;
         margin-right: 3%; } }
-  .modal-body h2 {
+  #myModal .modal-body h2 {
     color: #e44345;
     font-size: 48px; }
-  .modal-body input[type="text"], .modal-body input[type="password"], .modal-body input[type="email"] {
+  #myModal .modal-body input[type="text"], #myModal .modal-body input[type="password"], #myModal .modal-body input[type="email"] {
     background-color: rgba(45, 45, 45, 0.4);
     color: #ecf0f1;
     padding: 4% 5%;
     width: 93%; }
-    .modal-body input[type="text"]:focus, .modal-body input[type="password"]:focus, .modal-body input[type="email"]:focus {
+    #myModal .modal-body input[type="text"]:focus, #myModal .modal-body input[type="password"]:focus, #myModal .modal-body input[type="email"]:focus {
       background-color: #ecf0f1;
       color: #4a4647; }
-      .modal-body input[type="text"]:focus::-webkit-input-placeholder, .modal-body input[type="password"]:focus::-webkit-input-placeholder, .modal-body input[type="email"]:focus::-webkit-input-placeholder {
+      #myModal .modal-body input[type="text"]:focus::-webkit-input-placeholder, #myModal .modal-body input[type="password"]:focus::-webkit-input-placeholder, #myModal .modal-body input[type="email"]:focus::-webkit-input-placeholder {
         color: #575454; }
-      .modal-body input[type="text"]:focus::-moz-placeholder, .modal-body input[type="password"]:focus::-moz-placeholder, .modal-body input[type="email"]:focus::-moz-placeholder {
+      #myModal .modal-body input[type="text"]:focus::-moz-placeholder, #myModal .modal-body input[type="password"]:focus::-moz-placeholder, #myModal .modal-body input[type="email"]:focus::-moz-placeholder {
         color: #575454; }
-      .modal-body input[type="text"]:focus:-moz-placeholder, .modal-body input[type="password"]:focus:-moz-placeholder, .modal-body input[type="email"]:focus:-moz-placeholder {
+      #myModal .modal-body input[type="text"]:focus:-moz-placeholder, #myModal .modal-body input[type="password"]:focus:-moz-placeholder, #myModal .modal-body input[type="email"]:focus:-moz-placeholder {
         color: #575454; }
-      .modal-body input[type="text"]:focus:-ms-input-placeholder, .modal-body input[type="password"]:focus:-ms-input-placeholder, .modal-body input[type="email"]:focus:-ms-input-placeholder {
+      #myModal .modal-body input[type="text"]:focus:-ms-input-placeholder, #myModal .modal-body input[type="password"]:focus:-ms-input-placeholder, #myModal .modal-body input[type="email"]:focus:-ms-input-placeholder {
         color: #575454; }
-    .modal-body input[type="text"]::-webkit-input-placeholder, .modal-body input[type="password"]::-webkit-input-placeholder, .modal-body input[type="email"]::-webkit-input-placeholder {
+    #myModal .modal-body input[type="text"]::-webkit-input-placeholder, #myModal .modal-body input[type="password"]::-webkit-input-placeholder, #myModal .modal-body input[type="email"]::-webkit-input-placeholder {
       color: #575454; }
-    .modal-body input[type="text"]::-moz-placeholder, .modal-body input[type="password"]::-moz-placeholder, .modal-body input[type="email"]::-moz-placeholder {
+    #myModal .modal-body input[type="text"]::-moz-placeholder, #myModal .modal-body input[type="password"]::-moz-placeholder, #myModal .modal-body input[type="email"]::-moz-placeholder {
       color: #575454; }
-    .modal-body input[type="text"]:-moz-placeholder, .modal-body input[type="password"]:-moz-placeholder, .modal-body input[type="email"]:-moz-placeholder {
+    #myModal .modal-body input[type="text"]:-moz-placeholder, #myModal .modal-body input[type="password"]:-moz-placeholder, #myModal .modal-body input[type="email"]:-moz-placeholder {
       color: #575454; }
-    .modal-body input[type="text"]:-ms-input-placeholder, .modal-body input[type="password"]:-ms-input-placeholder, .modal-body input[type="email"]:-ms-input-placeholder {
+    #myModal .modal-body input[type="text"]:-ms-input-placeholder, #myModal .modal-body input[type="password"]:-ms-input-placeholder, #myModal .modal-body input[type="email"]:-ms-input-placeholder {
       color: #575454; }
-  .modal-body input[type="submit"] {
+  #myModal .modal-body input[type="submit"] {
     color: #ecf0f1; }
-    .modal-body input[type="submit"]:hover {
+    #myModal .modal-body input[type="submit"]:hover {
       border-color: #e44345; }
-  .modal-body small {
+  #myModal .modal-body small {
     display: none; }
 
 /* Application Template
@@ -684,6 +688,9 @@ header nav {
     clear: both; }
   @media screen and (min-width: 768px) {
     .hero {
+      padding: 20% 0 9%; } }
+  @media screen and (min-width: 1024px) {
+    .hero {
       padding: 12% 0 4%; } }
   .hero h1 {
     margin: 0 auto; }
@@ -707,10 +714,19 @@ header nav {
       top: 0;
       width: 180px; }
     .hero .btns a {
-      margin: 0 15px; }
+      margin: 5px 0; }
+      @media screen and (min-width: 768px) {
+        .hero .btns a {
+          margin: 0 15px; } }
   .hero.with-img {
     max-width: none;
-    padding: 14% 0 6%; }
+    padding: 111px 6% 50px; }
+    @media screen and (min-width: 768px) {
+      .hero.with-img {
+        padding: 20% 0 9%; } }
+    @media screen and (min-width: 1024px) {
+      .hero.with-img {
+        padding: 12% 0 4%; } }
     .hero.with-img h1, .hero.with-img h2 {
       color: #fff; }
     .hero.with-img h1 {
@@ -1087,8 +1103,11 @@ footer nav {
     .news-listing > ul li:first-child:last-child {
       border-bottom: none; }
   .news-listing > ul a {
-    color: #1a1717;
+    color: #fff;
     text-decoration: none; }
+    @media screen and (min-width: 1024px) {
+      .news-listing > ul a {
+        color: #1a1717; } }
     .news-listing > ul a:before {
       content: " ";
       display: block;
@@ -1096,7 +1115,6 @@ footer nav {
       height: 100%;
       position: absolute;
       top: 0;
-      visibility: hidden;
       width: 100%;
       z-index: -1;
       -webkit-transform: scale(1.1);
@@ -1107,6 +1125,9 @@ footer nav {
       -webkit-transition: -webkit-transform 0.9s;
       -moz-transition: -moz-transform 0.9s;
       transition: transform 0.9s; }
+      @media screen and (min-width: 1024px) {
+        .news-listing > ul a:before {
+          visibility: hidden; } }
     .news-listing > ul a:hover {
       color: #fff; }
       .news-listing > ul a:hover:before {
@@ -1125,10 +1146,13 @@ footer nav {
       padding-left: 7px;
       margin-left: 7px; }
   .news-listing > ul h2 {
-    color: #e44345;
+    color: #fff;
     font-size: 36px;
     margin: 7px 0 2px;
     text-transform: uppercase; }
+    @media screen and (min-width: 1024px) {
+      .news-listing > ul h2 {
+        color: #e44345; } }
   .news-listing > ul .author {
     color: #7c7a7a;
     font-size: 14px;
@@ -1163,11 +1187,15 @@ footer nav {
   position: relative; }
 .node-type-song .bread {
   color: #1a1717;
+  display: none;
   height: 13px;
   left: 0;
   position: absolute;
   top: 164px;
   width: 146px; }
+  @media screen and (min-width: 1024px) {
+    .node-type-song .bread {
+      display: block; } }
   .node-type-song .bread:hover {
     color: #e44345; }
 .node-type-song .page {
@@ -1269,6 +1297,11 @@ footer nav {
 .node-song .group-left .field-type-text-long {
   font: 0.58333 "Roboto Mono", monospace;
   white-space: pre; }
+.node-song .group-right {
+  margin-top: 50px; }
+  @media screen and (min-width: 768px) {
+    .node-song .group-right {
+      margin-top: 0; } }
 
 .node-song .group-song {
   background-color: #ecf0f1;
@@ -1282,7 +1315,13 @@ footer nav {
     float: left;
     margin-right: 2%;
     position: relative;
-    width: 87%; }
+    width: 77%; }
+    @media screen and (min-width: 768px) {
+      .node-song .group-song iframe, .node-song .group-song .field-type-file {
+        width: 83%; } }
+    @media screen and (min-width: 1024px) {
+      .node-song .group-song iframe, .node-song .group-song .field-type-file {
+        width: 87%; } }
 
 .audiojs-default .audiojs {
   height: 75px;
@@ -1310,7 +1349,13 @@ footer nav {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: 11%; }
+  width: 20%; }
+  @media screen and (min-width: 768px) {
+    #spotify-add {
+      width: 15%; } }
+  @media screen and (min-width: 1024px) {
+    #spotify-add {
+      width: 11%; } }
   #spotify-add span {
     border: 1px solid #1a1717;
     display: block;
@@ -1333,15 +1378,30 @@ footer nav {
     padding: 2% 0 5%;
     text-align: center;
     text-transform: uppercase;
-    width: 32%; }
+    width: 43%; }
+    @media screen and (min-width: 768px) {
+      .node-song .view-display-id-entity_view_3 .key-tempo span {
+        width: 39%; } }
+    @media screen and (min-width: 1024px) {
+      .node-song .view-display-id-entity_view_3 .key-tempo span {
+        width: 32%; } }
     .node-song .view-display-id-entity_view_3 .key-tempo span + span {
       border-right: none;
-      width: 68%; }
+      width: 57%; }
+      @media screen and (min-width: 768px) {
+        .node-song .view-display-id-entity_view_3 .key-tempo span + span {
+          width: 61%; } }
+      @media screen and (min-width: 1024px) {
+        .node-song .view-display-id-entity_view_3 .key-tempo span + span {
+          width: 68%; } }
     .node-song .view-display-id-entity_view_3 .key-tempo span h4 {
       font-size: 13px; }
   .node-song .view-display-id-entity_view_3 .theme, .node-song .view-display-id-entity_view_3 .song-info {
     clear: both;
-    padding: 5% 9%; }
+    padding: 5%; }
+    @media screen and (min-width: 768px) {
+      .node-song .view-display-id-entity_view_3 .theme, .node-song .view-display-id-entity_view_3 .song-info {
+        padding: 5% 9%; } }
     .node-song .view-display-id-entity_view_3 .theme div, .node-song .view-display-id-entity_view_3 .song-info div {
       margin: 10px 0; }
       .node-song .view-display-id-entity_view_3 .theme div span, .node-song .view-display-id-entity_view_3 .song-info div span {
@@ -1359,9 +1419,11 @@ footer nav {
       margin: 2px 0; }
 
 .node-song .field-type-link-field {
-  float: left;
-  margin: 4% 4% 0 0;
-  width: 46%; }
+  margin: 4% 4% 0 0; }
+  @media screen and (min-width: 1024px) {
+    .node-song .field-type-link-field {
+      float: left;
+      width: 46%; } }
   .node-song .field-type-link-field a {
     width: 100%; }
 
@@ -1473,14 +1535,8 @@ footer nav {
   position: relative;
   width: 100%; }
   #views-exposed-form-songs-page #edit-title-wrapper input {
-    padding: 7% 3% 7% 20%;
+    padding: 23px 61px;
     width: 100%; }
-    @media screen and (min-width: 768px) {
-      #views-exposed-form-songs-page #edit-title-wrapper input {
-        padding: 3% 3% 3% 9%; } }
-    @media screen and (min-width: 1024px) {
-      #views-exposed-form-songs-page #edit-title-wrapper input {
-        padding: 2% 3% 2% 5%; } }
   #views-exposed-form-songs-page #edit-title-wrapper .icon {
     left: 20px;
     position: absolute;
@@ -1734,7 +1790,7 @@ footer nav {
   list-style: none;
   margin-bottom: 3%;
   position: relative; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 620px) {
     #block-views-worship-leaders-block-1 li {
       display: block;
       float: left;
@@ -1756,7 +1812,7 @@ footer nav {
     color: #fff;
     display: block;
     font-size: 34px;
-    padding: 17.5% 0 10.2%;
+    padding: 14.5% 0 10.2%;
     text-align: center;
     text-decoration: none;
     position: relative; }
@@ -1770,6 +1826,9 @@ footer nav {
       margin-left: -17px;
       position: absolute;
       width: 34px; }
+    @media screen and (min-width: 1024px) {
+      .path-worship-leaders .node-artist-worship-leader h2 a {
+        padding: 17.5% 0 10.2%; } }
     .path-worship-leaders .node-artist-worship-leader h2 a:after {
       margin: 17px auto;
       position: static;
@@ -1793,8 +1852,9 @@ footer nav {
       position: absolute;
       top: 0;
       width: 100%; }
-    .path-worship-leaders .node-artist-worship-leader h2 a:hover .white-btn {
-      display: block; }
+    @media screen and (min-width: 1024px) {
+      .path-worship-leaders .node-artist-worship-leader h2 a:hover .white-btn {
+        display: block; } }
 
 @media screen and (min-width: 1024px) {
   .node-artist-worship-leader .field-type-text-with-summary {

@@ -10,11 +10,16 @@
 
   .bread {
     color: $base;
+    display: none;
     height: 13px;
     left: 0;
     position: absolute;
     top: 164px;
     width: 146px;
+
+    @include desk {
+      display: block;
+    }
 
     &:hover {
       color: $red;
@@ -133,13 +138,19 @@
     }
   }
   .group-left {
-
     @include tablet {
       margin-left: 2%;
     }
     .field-type-text-long {
       font: em(14)/1.5em 'Roboto Mono', monospace;
       white-space: pre;
+    }
+  }
+  .group-right {
+    margin-top: 50px;
+
+    @include tablet {
+      margin-top: 0;
     }
   }
 }
@@ -156,7 +167,15 @@
       float: left;
       margin-right: 2%;
       position: relative;
-      width: 87%;
+      width: 77%;
+
+      @include tablet {
+        width: 83%;
+      }
+
+      @include desk {
+        width: 87%;
+      }
     }
   }
 }
@@ -198,7 +217,15 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: 11%;
+  width: 20%;
+
+  @include tablet {
+    width: 15%;
+  }
+
+  @include desk {
+    width: 11%;
+  }
 
   span {
     border: 1px solid $base;
@@ -232,11 +259,27 @@
         padding:2% 0 5%;
         text-align: center;
         text-transform: uppercase;
-        width: 32%;
+        width: 43%;
+
+        @include tablet {
+          width: 39%;
+        }
+
+        @include desk {
+          width: 32%;
+        }
 
         & + span {
           border-right:none;
-          width: 68%;
+          width: 57%;
+
+          @include tablet {
+            width: 61%;
+          }
+
+          @include desk {
+            width: 68%;
+          }
         }
 
         h4 {
@@ -247,7 +290,11 @@
 
     .theme, .song-info {
       clear: both;
-      padding: 5% 9%;
+      padding: 5%;
+
+      @include tablet {
+        padding: 5% 9%;
+      }
 
       div {
         margin: 10px 0;
@@ -279,9 +326,12 @@
 // Purchase Links
 .node-song {
   .field-type-link-field {
-    float: left;
     margin: 4% 4% 0 0;
-    width: 46%;
+
+    @include desk {
+      float: left;
+      width: 46%;
+    }
 
     a {
       width: 100%;

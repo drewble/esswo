@@ -7,18 +7,20 @@
     $('<a id="spotify-add" href=""><span>+</span>Add to Spotify</a>').appendTo('.group-song');
 
     # Video Modal
-    $('.video > a').click ->
-      window.location.hash = $(this).next().text().replace(/\s/g, '+');
-      src = $(this).attr('href')
-      src_vid = src.substring src.indexOf('=') + 1
-      vid = 'https://www.youtube.com/embed/' + src_vid + '?autoplay=1'
-      $('#myModal').modal 'show'
-      $('#myModal iframe').attr 'src', vid
-      return false
+    if $('.hero .btns a').css('margin-top') == '0px'
+      $('.video > a').click ->
+        window.location.hash = $(this).next().text().replace(/\s/g, '+');
+        src = $(this).attr('href')
+        src_vid = src.substring src.indexOf('=') + 1
+        vid = 'https://www.youtube.com/embed/' + src_vid + '?autoplay=1'
+        $('#songModal').modal 'show'
+        $('#songModal iframe').attr('src', vid)
+        $('.modal-body').fitVids()
+        return false
 
-    $('#myModal button').on 'click', ->
+    $('#songModal button').on 'click', ->
       window.location.hash = ''
-      $('#myModal iframe').removeAttr 'src'
+      $('#songModal iframe').removeAttr 'src'
 
     if window.location.hash
       hash = window.location.hash.substr(1).replace('+', ' ');

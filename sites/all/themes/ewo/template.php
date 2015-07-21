@@ -36,6 +36,7 @@ function ewo_preprocess_page(&$vars,$hook) {
     // If Song
     if ($node->type == 'song') {
       drupal_add_css('http://fonts.googleapis.com/css?family=Roboto+Mono','external');
+      drupal_add_js($path .'/assets/js/vendor/jquery.fitvids.js', array('group' => JS_LIBRARY));
       drupal_add_js($path .'/assets/js/song.js', array('group' => JS_THEME));
       if (!empty($node->field_song_resources)) {
         $vars['resources'] = file_create_url($node->field_song_resources[LANGUAGE_NONE][0]['uri']);
@@ -47,6 +48,8 @@ function ewo_preprocess_page(&$vars,$hook) {
 
     // Worship Leader
     if ($node->type == 'artist_worship_leader') {
+      drupal_add_css($path .'/assets/js/vendor/chosen/chosen.min.css', array('group' => CSS_DEFAULT));
+      drupal_add_js($path .'/assets/js/vendor/chosen/chosen.jquery.min.js', array('group' => JS_LIBRARY));
       drupal_add_js($path .'/assets/js/song-list.js', array('group' => JS_THEME));
     }
   }

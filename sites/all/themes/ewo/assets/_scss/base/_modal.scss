@@ -4,7 +4,7 @@
 
 .modal.in {
   .modal-dialog {
-    @include transform(translate(0, 23%));
+    @include transform(translate(0, 7%));
   }
 
   &.non-video {
@@ -50,11 +50,18 @@
   }
 }
 
+#songModal {
+  .modal-header {
+    right: -10%;
+    top: -7%;
+  }
+}
+
 .modal-dialog {
   width: 72%;
 }
 
-.modal-body {
+#myModal .modal-body {
   overflow: hidden;
   padding:0;
 
