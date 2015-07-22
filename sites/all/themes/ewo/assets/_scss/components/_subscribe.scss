@@ -83,7 +83,7 @@
 	}
 
 	// Submit
-	#edit-submit {
+	input[type="submit"] {
 		border:2px solid $base;
 		color: $base;
 	  float: right;

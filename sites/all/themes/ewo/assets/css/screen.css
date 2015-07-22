@@ -1019,7 +1019,7 @@ footer nav {
       font: 13px/1em "Titillium Web", sans-serif;
       font-style: italic;
       text-transform: lowercase; }
-  #mailchimp-signup-subscribe-block-registration-form #edit-submit {
+  #mailchimp-signup-subscribe-block-registration-form input[type="submit"] {
     border: 2px solid #1a1717;
     color: #1a1717;
     float: right;
@@ -1028,7 +1028,7 @@ footer nav {
     padding: 10px;
     width: 30%;
     min-width: 0; }
-    #mailchimp-signup-subscribe-block-registration-form #edit-submit:hover {
+    #mailchimp-signup-subscribe-block-registration-form input[type="submit"]:hover {
       background-color: #1a1717;
       color: #fff; }
 
