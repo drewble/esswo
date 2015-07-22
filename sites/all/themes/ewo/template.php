@@ -80,7 +80,7 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
       drupal_add_js($path .'/assets/js/song-list.js', array('group' => JS_THEME));
 
       // Set Default Values
-      $form['title']['#prefix'] = '<span class="icon icon-icons_add"></span><p><span>press [enter] to submit</span><small>X</small></p>';
+      $form['title']['#prefix'] = '<span class="icon icon-icons_search"></span><p><span>press [enter] to submit</span><small>X</small></p>';
       $form['field_key_tid']['#prefix'] = '<span>Filter by</span>';
       $form['title']['#attributes']['placeholder'] = 'Find a Song...';
       $form['field_key_tid']['#options']['All'] = 'Key';
@@ -133,10 +133,10 @@ function ewo_preprocess_field(&$vars,$hook) {
     $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_web';
   }
   if ($vars['element']['#field_name'] == 'field_facebook') {
-    $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_fbook';
+    $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_fbook_dk';
   }
   if ($vars['element']['#field_name'] == 'field_twitter') {
-    $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_twitter';
+    $vars['items'][0]['#element']['attributes']['class'] = 'icon-btn icon-icons_twitter_dark';
   }
 }
 

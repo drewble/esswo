@@ -116,7 +116,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2 class="title"><span class="icon icon-icons_login"></span>Most Popular</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2 class="title"><span class="icon icon-icons_popular"></span>Most Popular</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';

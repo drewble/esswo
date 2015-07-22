@@ -257,7 +257,7 @@ function ew_artist_worship_leader_field_default_field_instances() {
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
-        'class' => 'icon-btn icon-icons_fbook',
+        'class' => 'icon-btn icon-icons_fbook_dk',
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
@@ -564,7 +564,7 @@ function ew_artist_worship_leader_field_default_field_instances() {
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
-        'class' => 'icon-btn icon-icons_twitter',
+        'class' => 'icon-btn icon-icons_twitter_dark',
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',

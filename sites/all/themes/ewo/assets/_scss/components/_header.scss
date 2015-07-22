@@ -16,18 +16,17 @@ header {
     float: left;
     line-height: 1em;
     margin: 29px 25px;
+    width: 60%;
 
-    a {
-      @include sprite(0 0);
-      background-size: cover;
-      padding-top: 13px;
-      width: 191px;
+    @include desk {
+      width: 33%;
+    }
 
-      @include tablet {
-        background-size: initial;
-        padding-top: 27px;
-        width: 369px;
-      }
+    .icon {
+      height: 0;
+      overflow: hidden;
+      padding-top: 28px;
+      width: 100%;
     }
   }
 

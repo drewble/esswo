@@ -2,11 +2,23 @@
 
 .icon-icons_arrow { background-image: url('png/icons_arrow.png'); background-repeat: no-repeat; }
 
+.icon-icons_check { background-image: url('png/icons_check.png'); background-repeat: no-repeat; }
+
+.icon-icons_close { background-image: url('png/icons_close.png'); background-repeat: no-repeat; }
+
 .icon-icons_download { background-image: url('png/icons_download.png'); background-repeat: no-repeat; }
 
 .icon-icons_email { background-image: url('png/icons_email.png'); background-repeat: no-repeat; }
 
+.icon-icons_fbook dark { background-image: url('png/icons_fbook dark.png'); background-repeat: no-repeat; }
+
 .icon-icons_fbook { background-image: url('png/icons_fbook.png'); background-repeat: no-repeat; }
+
+.icon-icons_fbook_dk { background-image: url('png/icons_fbook_dk.png'); background-repeat: no-repeat; }
+
+.icon-icons_find song { background-image: url('png/icons_find song.png'); background-repeat: no-repeat; }
+
+.icon-icons_find_song { background-image: url('png/icons_find_song.png'); background-repeat: no-repeat; }
 
 .icon-icons_insights { background-image: url('png/icons_insights.png'); background-repeat: no-repeat; }
 
@@ -18,13 +30,33 @@
 
 .icon-icons_login { background-image: url('png/icons_login.png'); background-repeat: no-repeat; }
 
+.icon-icons_logo { background-image: url('png/icons_logo.png'); background-repeat: no-repeat; }
+
+.icon-icons_menu { background-image: url('png/icons_menu.png'); background-repeat: no-repeat; }
+
 .icon-icons_more { background-image: url('png/icons_more.png'); background-repeat: no-repeat; }
+
+.icon-icons_new { background-image: url('png/icons_new.png'); background-repeat: no-repeat; }
+
+.icon-icons_play dark { background-image: url('png/icons_play dark.png'); background-repeat: no-repeat; }
+
+.icon-icons_play { background-image: url('png/icons_play.png'); background-repeat: no-repeat; }
+
+.icon-icons_play_dark { background-image: url('png/icons_play_dark.png'); background-repeat: no-repeat; }
+
+.icon-icons_popular { background-image: url('png/icons_popular.png'); background-repeat: no-repeat; }
+
+.icon-icons_search { background-image: url('png/icons_search.png'); background-repeat: no-repeat; }
 
 .icon-icons_share { background-image: url('png/icons_share.png'); background-repeat: no-repeat; }
 
 .icon-icons_spotify { background-image: url('png/icons_spotify.png'); background-repeat: no-repeat; }
 
+.icon-icons_twitter dark { background-image: url('png/icons_twitter dark.png'); background-repeat: no-repeat; }
+
 .icon-icons_twitter { background-image: url('png/icons_twitter.png'); background-repeat: no-repeat; }
+
+.icon-icons_twitter_dark { background-image: url('png/icons_twitter_dark.png'); background-repeat: no-repeat; }
 
 .icon-icons_watch { background-image: url('png/icons_watch.png'); background-repeat: no-repeat; }
 

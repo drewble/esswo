@@ -150,6 +150,18 @@ h3 {
   background-position: 13px 12px;
   background-size: 17px; }
 
+.icon-icons_fbook_dk {
+  background-position: 17px 12px;
+  background-size: 11px; }
+
+.icon-icons_add {
+  background-position: 14px 12px;
+  background-size: 20px; }
+
+.icon-icons_popular {
+  background-position: 8px 6px;
+  background-size: 13px; }
+
 .white-btn {
   border: 1px solid #fff;
   color: #fff; }
@@ -532,21 +544,16 @@ header {
   header h1 {
     float: left;
     line-height: 1em;
-    margin: 29px 25px; }
-    header h1 a {
-      background: url(../img/sprite.png) no-repeat scroll 0 0;
-      background-position: 0 0;
-      display: block;
+    margin: 29px 25px;
+    width: 60%; }
+    @media screen and (min-width: 1024px) {
+      header h1 {
+        width: 33%; } }
+    header h1 .icon {
       height: 0;
       overflow: hidden;
-      background-size: cover;
-      padding-top: 13px;
-      width: 191px; }
-      @media screen and (min-width: 768px) {
-        header h1 a {
-          background-size: initial;
-          padding-top: 27px;
-          width: 369px; } }
+      padding-top: 28px;
+      width: 100%; }
   header button {
     border: none;
     color: #fff;
@@ -1190,6 +1197,7 @@ footer nav {
   display: none;
   height: 13px;
   left: 0;
+  padding-left: 27px;
   position: absolute;
   top: 164px;
   width: 146px; }
@@ -1538,9 +1546,9 @@ footer nav {
     padding: 23px 61px;
     width: 100%; }
   #views-exposed-form-songs-page #edit-title-wrapper .icon {
-    left: 20px;
+    left: 23px;
     position: absolute;
-    top: 34px; }
+    top: 35px; }
   #views-exposed-form-songs-page #edit-title-wrapper p {
     color: #9d9c9c;
     display: none;
@@ -1860,7 +1868,7 @@ footer nav {
   .node-artist-worship-leader .field-type-text-with-summary {
     float: left;
     margin-right: 6%;
-    width: 67%; } }
+    width: 65%; } }
 .node-artist-worship-leader .group-links {
   border-left: 2px solid #bababb;
   float: left;

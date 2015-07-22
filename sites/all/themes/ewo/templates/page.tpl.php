@@ -25,7 +25,7 @@ if (!empty($bgImg)) {
 <?php print $mothership_poorthemers_helper; ?>
 
 <header role="banner">
-  <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">Essential Worship</a></h1>
+  <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="icon icon-icons_logo">Essential Worship</a></h1>
 
   <button>Menu</button>
   <?php if($page['header']): ?>
@@ -37,7 +37,7 @@ if (!empty($bgImg)) {
 <div class="hero<?php if(!empty($bgImg)): ?> with-img<?php endif; ?>">
   <?php if(isset($node)): ?>
     <?php if($node->type == 'song'): ?>
-    <a class="bread icon icon-icons_arrow" href="/songs">Find Another Song</a>
+    <a class="bread icon icon-icons_find_song" href="/songs">Find Another Song</a>
     <?php endif; ?>
   <?php endif; ?>
   <?php print render($page['hero']); ?>
@@ -52,8 +52,8 @@ if (!empty($bgImg)) {
   <?php endif; ?>
   <?php if(!empty($resources)): ?>
     <div class="btns">
-      <a class="btn" id="planning">Add to Planning Center</a>
-      <a class="btn" href="<?php print $resources; ?>">Download Song Resources</a>
+      <a class="icon-btn icon-icons_add" id="planning">Add to Planning Center</a>
+      <a class="icon-btn icon-icons_download" href="<?php print $resources; ?>">Download Song Resources</a>
     </div>
   <?php endif; ?>
 </div>
@@ -95,16 +95,16 @@ if (!empty($bgImg)) {
 </div><!-- /page-->
 
 <?php if ($page['pre_footer'] || isset($links) || $is_front): ?>
-    <div class="pre-footer">
-      <?php print render($page['pre_footer']); ?>
-      <?php if (isset($links)): ?>
-        <?php print $links['addtoany']['title']; ?>
-      <?php endif; ?>
-      <?php if ($is_front): ?>
-        <a href="/insights" class="icon-btn icon-icons_insights">View All Insights</a>
-      <?php endif; ?>
-    </div>
-  <?php endif; ?>
+  <div class="pre-footer">
+    <?php print render($page['pre_footer']); ?>
+    <?php if (isset($links)): ?>
+      <?php print $links['addtoany']['title']; ?>
+    <?php endif; ?>
+    <?php if ($is_front): ?>
+      <a href="/insights" class="icon-btn icon-icons_insights">View All Insights</a>
+    <?php endif; ?>
+  </div>
+<?php endif; ?>
 
 <footer role="contentinfo">
   <div class="outer-container">
