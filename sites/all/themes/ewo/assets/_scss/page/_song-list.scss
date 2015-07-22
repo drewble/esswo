@@ -172,7 +172,7 @@
 			margin:0;
 			position: absolute;
 			right: 20px;
-			top:20px;
+			top:26px;
 
 			span {
 				border-right:1px solid;
@@ -189,15 +189,11 @@
 			}
 
 			small {
-				color: #cfd2d3;
-				content: "X";
 				cursor: pointer;
 				display: inline-block;
-				font-size: 26px;
-				font-style: normal;
-				line-height:1.8em;
+				left: 0;
 				position:relative;
-				top:3px;
+				top:8px;
 
 				&:hover {
 					color: $base;

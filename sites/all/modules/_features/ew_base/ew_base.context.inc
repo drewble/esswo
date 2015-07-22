@@ -119,6 +119,12 @@ function ew_base_context_default_contexts() {
           'region' => 'modal',
           'weight' => '-9',
         ),
+        'mailchimp_signup-registration' => array(
+          'module' => 'mailchimp_signup',
+          'delta' => 'registration',
+          'region' => 'outside_content',
+          'weight' => '-10',
+        ),
       ),
     ),
   );

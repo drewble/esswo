@@ -132,6 +132,17 @@ h3 {
       background-color: #e44345;
       text-decoration: none; }
 
+.icon-embed {
+  position: relative; }
+  .icon-embed span {
+    height: 20px;
+    left: 13px;
+    position: absolute;
+    top: 6px;
+    width: 20px; }
+  .icon-embed path {
+    fill: #1a1717; }
+
 .icon-icons_listen,
 .icon-icons_download,
 .icon-icons_arrow,
@@ -177,6 +188,8 @@ h3 {
 
 .back-link {
   margin: 40px 0; }
+  .back-link span {
+    top: 0; }
 
 form small, form .description {
   color: #5f5f5f; }
@@ -267,11 +280,13 @@ input[type="checkbox"] + label {
 
 .placeholder #views-exposed-form-songs-page label,
 .placeholder #block-user-login label,
-.placeholder #block-formblock-user-register label {
+.placeholder #block-formblock-user-register label,
+.placeholder #block-mailchimp-signup-registration label {
   display: none; }
 .placeholder #views-exposed-form-songs-page input[type="checkbox"] + label,
 .placeholder #block-user-login input[type="checkbox"] + label,
-.placeholder #block-formblock-user-register input[type="checkbox"] + label {
+.placeholder #block-formblock-user-register input[type="checkbox"] + label,
+.placeholder #block-mailchimp-signup-registration input[type="checkbox"] + label {
   display: inline; }
 
 #block-user-login ul, #block-user-login li {
@@ -926,6 +941,112 @@ footer nav {
     .footer-btm a:hover {
       color: #fff; }
 
+#block-mailchimp-signup-registration {
+  bottom: 8%;
+  position: fixed;
+  right: 4%;
+  z-index: 11; }
+  #block-mailchimp-signup-registration.show #mailchimp-signup-subscribe-block-registration-form {
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+    padding: 22px 21px;
+    top: -53px; }
+  #block-mailchimp-signup-registration.show #subscribe {
+    opacity: 1; }
+
+#subscribe {
+  background-color: #288899;
+  border: none;
+  border-radius: 23px;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: .7;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+  min-width: 0; }
+  #subscribe:hover {
+    opacity: 1; }
+
+#mailchimp-signup-subscribe-block-registration-form {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #ccc;
+  font: 18px "Ropa Sans", sans-serif;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  top: -51px;
+  visibility: hidden;
+  width: 283px;
+  -webkit-transition: 0.3s top;
+  -moz-transition: 0.3s top;
+  transition: 0.3s top; }
+  #mailchimp-signup-subscribe-block-registration-form:after {
+    content: "";
+    display: table;
+    clear: both; }
+  #mailchimp-signup-subscribe-block-registration-form:before {
+    border: 10px solid #fff;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    bottom: -20px;
+    content: " ";
+    position: absolute;
+    right: 40px;
+    z-index: 1; }
+  #mailchimp-signup-subscribe-block-registration-form input[type="text"] {
+    font-size: 13px;
+    padding: 13px;
+    width: 100%; }
+    #mailchimp-signup-subscribe-block-registration-form input[type="text"]::-webkit-input-placeholder {
+      font: 13px/1em "Titillium Web", sans-serif;
+      font-style: italic;
+      text-transform: lowercase; }
+    #mailchimp-signup-subscribe-block-registration-form input[type="text"]::-moz-placeholder {
+      font: 13px/1em "Titillium Web", sans-serif;
+      font-style: italic;
+      text-transform: lowercase; }
+    #mailchimp-signup-subscribe-block-registration-form input[type="text"]:-moz-placeholder {
+      font: 13px/1em "Titillium Web", sans-serif;
+      font-style: italic;
+      text-transform: lowercase; }
+    #mailchimp-signup-subscribe-block-registration-form input[type="text"]:-ms-input-placeholder {
+      font: 13px/1em "Titillium Web", sans-serif;
+      font-style: italic;
+      text-transform: lowercase; }
+  #mailchimp-signup-subscribe-block-registration-form #edit-submit {
+    border: 2px solid #1a1717;
+    color: #1a1717;
+    float: right;
+    font-size: 13px;
+    line-height: 1.2em;
+    padding: 10px;
+    width: 30%;
+    min-width: 0; }
+    #mailchimp-signup-subscribe-block-registration-form #edit-submit:hover {
+      background-color: #1a1717;
+      color: #fff; }
+
+#mailchimp-newsletter-62125-mergefields {
+  float: left;
+  width: 66%; }
+  #mailchimp-newsletter-62125-mergefields:before {
+    border: 10px solid #aaa;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    bottom: -22px;
+    content: " ";
+    opacity: .1;
+    position: absolute;
+    right: 40px;
+    z-index: 0; }
+
 /* Pages
  * -----------------------------------------------------------------------------*/
 .front .hero {
@@ -1558,7 +1679,7 @@ footer nav {
     margin: 0;
     position: absolute;
     right: 20px;
-    top: 20px; }
+    top: 26px; }
     #views-exposed-form-songs-page #edit-title-wrapper p span {
       border-right: 1px solid;
       display: inline-block;
@@ -1568,15 +1689,11 @@ footer nav {
     #views-exposed-form-songs-page #edit-title-wrapper.active p {
       display: block; } }
   #views-exposed-form-songs-page #edit-title-wrapper.active p small {
-    color: #cfd2d3;
-    content: "X";
     cursor: pointer;
     display: inline-block;
-    font-size: 26px;
-    font-style: normal;
-    line-height: 1.8em;
+    left: 0;
     position: relative;
-    top: 3px; }
+    top: 8px; }
     #views-exposed-form-songs-page #edit-title-wrapper.active p small:hover {
       color: #1a1717; }
 @media screen and (min-width: 768px) {

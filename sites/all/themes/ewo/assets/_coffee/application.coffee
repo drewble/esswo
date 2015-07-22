@@ -3,6 +3,10 @@
   # Document.ready
   $ ->
 
+    # Subscribe
+    $('<button id="subscribe">Subscribe</button>').prependTo('#block-mailchimp-signup-registration').click ->
+      $(this).parent().toggleClass 'show'
+
   	# Mobile Menu
   	$('header button').click (e) ->
   		$(this).next().addClass 'show'

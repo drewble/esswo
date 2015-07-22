@@ -1,0 +1,121 @@
+//
+//  Subscribe
+//
+
+#block-mailchimp-signup-registration {
+	bottom:8%;
+	position: fixed;
+	right:4%;
+	z-index: 11;
+
+	&.show {
+  	#mailchimp-signup-subscribe-block-registration-form {
+			height: auto;
+			overflow: visible;
+			visibility: visible;
+			padding:22px 21px;
+			top:-53px;
+		}
+
+		#subscribe {
+			opacity: 1;
+		}
+	}
+}
+
+// Button
+#subscribe {
+  background-color: #288899;
+  border: none;
+  border-radius: 23px;
+  bottom:0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: .7;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+  min-width: 0;
+
+  &:hover {
+  	opacity: 1;
+  }
+}
+
+#mailchimp-signup-subscribe-block-registration-form {
+	background-color:#fff;
+	border-radius:6px;
+	box-shadow: 0 0 8px #ccc;
+	font:18px $header;
+	height:0;
+	overflow:hidden;
+	position: relative;
+  top: -51px;
+	visibility:hidden;
+	width:283px;
+	@include clearfix;
+	@include transition(.3s top);
+
+	&:before {
+		border:10px solid #fff;
+		border-bottom-color:transparent;
+		border-left-color:transparent;
+		border-right-color:transparent;
+		bottom: -20px;
+		content: " ";
+		position: absolute;
+		right: 40px;
+		z-index: 1;
+	}
+
+	// Enter Email Address
+	input[type="text"] {
+		font-size: 13px;
+		padding:13px;
+		width: 100%;
+
+		@include placeholder {
+			font: 13px/1em $font;
+			font-style: italic;
+			text-transform: lowercase;
+		}
+	}
+
+	// Submit
+	#edit-submit {
+		border:2px solid $base;
+		color: $base;
+	  float: right;
+	  font-size: 13px;
+	  line-height: 1.2em;
+	  padding:10px;
+	  width: 30%;
+	  min-width: 0;
+
+	  &:hover {
+	  	background-color:$base;
+	  	color: #fff;
+	  } 
+	}
+}
+
+// Input wrapper
+#mailchimp-newsletter-62125-mergefields {
+  float: left;
+  width: 66%;
+
+  &:before {
+  	border:10px solid #aaa;
+		border-bottom-color:transparent;
+		border-left-color:transparent;
+		border-right-color:transparent;
+		bottom: -22px;
+		content: " ";
+		opacity: .1;
+		position: absolute;
+		right: 40px;
+		z-index: 0;
+  }
+}
+

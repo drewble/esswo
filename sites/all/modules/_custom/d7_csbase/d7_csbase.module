@@ -34,3 +34,20 @@ function d7_csbase_form_song_node_form_alter(&$form, &$form_state, $form_id) {
   $form['field_praisecharts_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.praisecharts.com/detail/arrangement/';
   $form['field_loopcommunity_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://loopcommunity.com/';
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function d7_csbase_form_alter(&$form, &$form_state, $form_id) {
+  // Mailchimp forms
+  if (!empty($form_state['build_info']['base_form_id'])) {
+    if ($form_state['build_info']['base_form_id'] == 'mailchimp_signup_subscribe_form') {
+      $form['mergevars']['EMAIL']['#attributes']['placeholder'] = t('enter email address');
+      //     if (isset($form['mailchimp_lists'][$field_id]['subscribe'])) {
+      //       $form['mailchimp_lists'][$field_id]['subscribe']['#default_value'] = TRUE;
+      //     }
+      //   }
+      // }
+    }
+  }
+}

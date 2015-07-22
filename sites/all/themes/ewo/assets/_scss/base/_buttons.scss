@@ -93,6 +93,23 @@
   @include icon-btn;
 }
 
+// Embedded icons
+.icon-embed {
+  position: relative;
+
+  span {
+    height: 20px;
+    left: 13px;
+    position: absolute;
+    top: 6px;
+    width: 20px;
+  }
+
+  path {
+    fill: $base;
+  }
+}
+
 .icon-icons_listen,
 .icon-icons_download,
 .icon-icons_arrow,
@@ -142,5 +159,9 @@
 
 .back-link {
   margin: 40px 0;
+
+  span {
+    top: 0;
+  }
 }
 

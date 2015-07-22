@@ -53,7 +53,7 @@ if (!empty($bgImg)) {
   <?php if(!empty($resources)): ?>
     <div class="btns">
       <a class="icon-btn icon-icons_add" id="planning">Add to Planning Center</a>
-      <a class="icon-btn icon-icons_download" href="<?php print $resources; ?>">Download Song Resources</a>
+      <a class="icon-btn icon-embed" href="<?php print $resources; ?>"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
     </div>
   <?php endif; ?>
 </div>
@@ -147,3 +147,8 @@ if (!empty($bgImg)) {
       </div>
   </div>
 <?php endif; ?>
+
+<?php if($page['outside_content']): ?>
+  <?php print render($page['outside_content']); ?>
+<?php endif; ?>
+

@@ -111,17 +111,6 @@ function d7_news_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_news_main_image']['id'] = 'field_news_main_image';
-  $handler->display->display_options['fields']['field_news_main_image']['table'] = 'field_data_field_news_main_image';
-  $handler->display->display_options['fields']['field_news_main_image']['field'] = 'field_news_main_image';
-  $handler->display->display_options['fields']['field_news_main_image']['label'] = '';
-  $handler->display->display_options['fields']['field_news_main_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_news_main_image']['element_class'] = 'news-image';
-  $handler->display->display_options['fields']['field_news_main_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_news_main_image']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_news_main_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_news_main_image']['hide_empty'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -441,7 +430,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="back-link icon-btn icon-icons_arrow" href="/news">Back to News</a>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="back-link icon-btn icon-embed" href="/news"><span class="icon-icons_find_song_opt" data-grunticon-embed></span>Back to News</a>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;

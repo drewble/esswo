@@ -100,7 +100,7 @@ function ew_base_default_mailchimp_signup() {
         "FNAME" : 0,
         "LNAME" : 0
       },
-      "description" : "",
+      "description" : "SUBSCRIBE TO OUR NEWSLETTER",
       "doublein" : 0,
       "send_welcome" : 0,
       "include_interest_groups" : 0

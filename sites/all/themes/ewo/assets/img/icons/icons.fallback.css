@@ -1,5 +1,7 @@
 .icon-icons_add { background-image: url('png/icons_add.png'); background-repeat: no-repeat; }
 
+.icon-icons_add_opt { background-image: url('png/icons_add_opt.png'); background-repeat: no-repeat; }
+
 .icon-icons_arrow { background-image: url('png/icons_arrow.png'); background-repeat: no-repeat; }
 
 .icon-icons_check { background-image: url('png/icons_check.png'); background-repeat: no-repeat; }
@@ -7,6 +9,8 @@
 .icon-icons_close { background-image: url('png/icons_close.png'); background-repeat: no-repeat; }
 
 .icon-icons_download { background-image: url('png/icons_download.png'); background-repeat: no-repeat; }
+
+.icon-icons_download_opt { background-image: url('png/icons_download_opt.png'); background-repeat: no-repeat; }
 
 .icon-icons_email { background-image: url('png/icons_email.png'); background-repeat: no-repeat; }
 
@@ -19,6 +23,8 @@
 .icon-icons_find song { background-image: url('png/icons_find song.png'); background-repeat: no-repeat; }
 
 .icon-icons_find_song { background-image: url('png/icons_find_song.png'); background-repeat: no-repeat; }
+
+.icon-icons_find_song_opt { background-image: url('png/icons_find_song_opt.png'); background-repeat: no-repeat; }
 
 .icon-icons_insights { background-image: url('png/icons_insights.png'); background-repeat: no-repeat; }
 

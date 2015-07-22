@@ -32,6 +32,7 @@ regions[sidebar] = Sidebar
 regions[pre_footer] = Pre Footer
 regions[footer] = Footer
 regions[modal] = Modal
+regions[outside_content] = Outside Content
 regions[help] = Help
 regions[highlighted] = Highlighted
 
