@@ -2,6 +2,11 @@
   (function($) {
     return Drupal.behaviors.songList = {
       attach: function(context, settings) {
+        if ($('#edit-flagged').val() === 'All') {
+          $('#view-all').addClass('active');
+        } else {
+          $('#view-new').addClass('active');
+        }
         $('#view-all', context).on('click', function() {
           $('#edit-flagged').val('All');
           $('#edit-submit-songs').click();

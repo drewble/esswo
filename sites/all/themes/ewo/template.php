@@ -13,7 +13,7 @@ function ewo_preprocess_page(&$vars,$hook) {
   $path = drupal_get_path('theme', 'ewo');
   //googlefont
   drupal_add_css('http://fonts.googleapis.com/css?family=Ropa+Sans','external');
-  drupal_add_css('http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic','external');
+  drupal_add_css('http://fonts.googleapis.com/css?family=Titillium+Web:300,400,400italic','external');
   drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap-theme.min.css', array('group' => CSS_DEFAULT));
   drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap.min.css', array('group' => CSS_DEFAULT));
   drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));

@@ -102,8 +102,16 @@
 				padding:0 3px;
 			}
 
-			&:hover {
+			&.active {
 				color: $red;
+
+				&:before {
+					color: #ecf0f1;
+				}
+			}
+
+			&:hover {
+				color: #ccc;
 
 				&:before {
 					color: #ecf0f1;
@@ -380,14 +388,18 @@
 			color: $base;
 			display: none;
 			font-size: 28px;
+			height: 30px;
 			left: 0;
-			padding: 4px 8px;
+			padding: 3px 4px;
 			position: absolute;
 			text-decoration:none;
 			top:0;
+			width: 30px;
 
 			&:hover {
-				color: $red;
+				polygon {
+					fill: $red;
+				}
 			}
 		}
 	}
@@ -401,10 +413,6 @@
 
 		@include tablet {
 			width: 35%;
-		}
-
-		@include desk {
-			width: auto;
 		}
 
 		h2 {
@@ -448,12 +456,14 @@
 .song-listing {
 	.group-song-categories {
 		font-size: 14px;
+		padding: 2% 4%;
 
 		@include tablet {
 			width:31%;
 		}
 
 		@include desk {
+			padding:3% 4%;
 			width: auto;
 		}
 

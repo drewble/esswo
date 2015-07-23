@@ -14,7 +14,7 @@ function d7_advertisement_banners_field_default_field_instances() {
   $field_instances['node-banner-field_banner_image'] = array(
     'bundle' => 'banner',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<em>At least 920x920 recommended, as this is shown larger on mobile/tablet sizes.</em>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -34,6 +34,7 @@ function d7_advertisement_banners_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_banner_image',
     'label' => 'Banner Image',
     'required' => 1,
@@ -53,24 +54,21 @@ function d7_advertisement_banners_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
           'public' => 'public',
-          'vimeo' => 0,
           'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
-          'default' => 0,
+          'document' => 0,
           'image' => 'image',
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'library' => 0,
           'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
           'upload' => 'upload',
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 1,
@@ -214,6 +212,7 @@ function d7_advertisement_banners_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<em>At least 920x920 recommended, as this is shown larger on mobile/tablet sizes.</em>');
   t('Banner Image');
   t('Banner Link');
   t('Banner Space');

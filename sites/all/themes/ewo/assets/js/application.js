@@ -1,7 +1,7 @@
 (function() {
   (function($) {
     $(function() {
-      return $('<button id="subscribe">Subscribe</button>').prependTo('#block-mailchimp-signup-registration').click(function() {
+      return $('<button id="subscribe"><span>Subscribe</span><span class="icon icon-icons_close"></span></button>').prependTo('#block-mailchimp-signup-registration').click(function() {
         return $(this).parent().toggleClass('show');
       });
     });

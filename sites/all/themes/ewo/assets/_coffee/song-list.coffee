@@ -2,6 +2,12 @@
 (($) ->
 
 	Drupal.behaviors.songList = attach: (context, settings) ->
+
+		if $('#edit-flagged').val() == 'All'
+			$('#view-all').addClass 'active'
+		else
+			$('#view-new').addClass 'active'
+
 		# Sort Flagged/Un-flagged
 		$('#view-all', context).on 'click', ->
 			$('#edit-flagged').val('All')

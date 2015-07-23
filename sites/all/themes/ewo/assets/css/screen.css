@@ -27,6 +27,7 @@ html, body {
 body {
   color: #1a1717;
   font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
   line-height: 1.5em; }
 
 a {
@@ -224,7 +225,8 @@ input[type="text"], input[type="password"], input[type="email"] {
     text-transform: uppercase; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
     background-color: #fff;
-    box-shadow: 0 0 5px #aaa; }
+    box-shadow: 0 0 5px #aaa;
+    outline-width: 0; }
 
 textarea {
   border: none;
@@ -382,6 +384,12 @@ ul.primary {
     .pager a:hover {
       color: #1a1717; }
 
+.modal.non-video .modal-dialog {
+  -webkit-transform: translate(24%, 12%);
+  -moz-transform: translate(24%, 12%);
+  -ms-transform: translate(24%, 12%);
+  -o-transform: translate(24%, 12%);
+  transform: translate(24%, 12%); }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 7%);
   -moz-transform: translate(0, 7%);
@@ -445,6 +453,12 @@ ul.primary {
       color: #e44345; }
     .modal-header button:before {
       display: none; }
+  .modal-header .close {
+    position: relative;
+    top: -40px; }
+    @media screen and (min-width: 768px) {
+      .modal-header .close {
+        position: static; } }
 
 #songModal .modal-header {
   right: -10%;
@@ -453,6 +467,15 @@ ul.primary {
 .modal-dialog {
   width: 72%; }
 
+#myModal .modal-dialog {
+  margin: 0 auto;
+  text-align: center;
+  width: 78%; }
+  @media screen and (min-width: 768px) {
+    #myModal .modal-dialog {
+      margin: 10px;
+      text-align: left;
+      width: 72%; } }
 #myModal .modal-body {
   overflow: hidden;
   padding: 0; }
@@ -549,7 +572,7 @@ ul.primary {
 /* Components
  * -----------------------------------------------------------------------------*/
 header {
-  background-color: rgba(48, 46, 46, 0.9);
+  background-color: rgba(0, 0, 0, 0.78);
   height: auto;
   left: 0;
   position: fixed;
@@ -559,29 +582,34 @@ header {
   header h1 {
     float: left;
     line-height: 1em;
-    margin: 29px 25px;
+    margin: 29px 25px 16px;
     width: 60%; }
     @media screen and (min-width: 1024px) {
       header h1 {
-        width: 33%; } }
+        margin: 29px 25px;
+        width: 28%; } }
     header h1 .icon {
       height: 0;
       overflow: hidden;
       padding-top: 28px;
       width: 100%; }
-  header button {
+  header button.icon {
     border: none;
     color: #fff;
     display: inline-block;
     float: right;
-    margin: 24px 20px;
+    margin: 26px 25px 22px;
     min-width: 0;
     padding: 0; }
+    header button.icon:hover {
+      background-color: transparent; }
+      header button.icon:hover path {
+        fill: #fff; }
     @media screen and (min-width: 768px) {
-      header button {
+      header button.icon {
         margin: 30px; } }
     @media screen and (min-width: 1024px) {
-      header button {
+      header button.icon {
         display: none; } }
 
 body.admin-menu header {
@@ -609,6 +637,7 @@ header nav {
   header nav.show {
     height: 100%;
     opacity: 1;
+    position: fixed;
     visibility: visible;
     z-index: 10; }
   header nav .close-menu {
@@ -624,8 +653,10 @@ header nav {
     text-align: center;
     text-transform: uppercase;
     transition: all 0.3s;
-    float: right;
-    margin: 18px 20px; }
+    margin: 18px 20px;
+    position: absolute;
+    right: 0;
+    top: 0; }
     header nav .close-menu:hover {
       background-color: #fff;
       color: #e44345; }
@@ -647,11 +678,13 @@ header nav {
     color: #b5b5b6;
     display: block;
     padding: 28px 14px;
+    text-align: center;
     text-decoration: none; }
     @media screen and (min-width: 1024px) {
       header nav a {
         display: inline-block;
-        padding: 31px 14px; } }
+        padding: 31px 14px;
+        text-align: none; } }
     header nav a.active, header nav a:hover {
       background-color: #e44345;
       color: #fff; }
@@ -675,14 +708,16 @@ header nav {
     color: #288899;
     font-size: 12px;
     height: 30px;
+    left: 13px;
     line-height: 1.4em;
-    margin: 0 14px;
+    margin: 0 auto;
     padding: 9px 29px;
     position: relative;
-    top: 9px;
-    width: auto; }
+    top: 7px;
+    width: 150px; }
     @media screen and (min-width: 1024px) {
       header nav .login a {
+        left: auto;
         margin: 0;
         padding: 0 29px;
         width: 102px; } }
@@ -777,8 +812,11 @@ header nav {
 
 .pre-footer {
   background-color: #ecf0f1;
-  padding: 4% 0;
+  padding: 30px 0;
   text-align: center; }
+  @media screen and (min-width: 1024px) {
+    .pre-footer {
+      padding: 4% 0; } }
   .pre-footer .icon-btn {
     background-color: transparent;
     border: 2px solid #d7d5d5;
@@ -858,6 +896,11 @@ footer h2 {
     margin: 1.5% 0 4%;
     position: static;
     width: 200px; }
+footer p {
+  color: #7c7a7a;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5em; }
 
 footer nav {
   margin-top: 50px; }
@@ -876,22 +919,24 @@ footer nav {
     display: block;
     float: left;
     list-style: none;
-    text-align: center; }
+    text-align: center;
+    width: 20%; }
     footer nav > ul li:first-child {
-      float: none; }
+      float: none;
+      width: 100%; }
       footer nav > ul li:first-child a {
         background-size: 30px;
-        background-position: 127px 27px;
+        background-position: center 27px;
         border-bottom-color: transparent;
         border-left-color: #4a4647;
         float: none;
         height: 113px;
         text-decoration: none;
-        width: 289px; }
+        width: 100%; }
       footer nav > ul li:first-child + li a {
         border-left-color: #4a4647; }
   footer nav > ul .icon {
-    background-position: 16px 16px;
+    background-position: center center;
     background-size: 23px;
     border: 1px solid #4a4647;
     border-left-color: transparent;
@@ -903,17 +948,13 @@ footer nav {
     overflow: hidden;
     padding-top: 58px;
     text-transform: uppercase;
-    width: 58px; }
+    width: 100%; }
     footer nav > ul .icon:hover {
       background-color: #e44345;
       color: #fff; }
-  footer nav > ul .icon-icons_yt {
-    background-position: 15px 20px; }
   footer nav > ul .icon-icons_fbook {
-    background-position: 22px 17px;
     background-size: 11px; }
   footer nav > ul .icon-icons_twitter {
-    background-position: 17px 19px;
     background-size: 22px; }
   footer nav > ul .icon-icons_insta {
     background-size: 20px; }
@@ -924,16 +965,18 @@ footer nav {
   font-size: 12px;
   padding-top: 80px; }
   .footer-btm span {
-    display: block; }
+    display: block;
+    text-align: center; }
     @media screen and (min-width: 768px) {
       .footer-btm span {
-        float: left; } }
+        float: left;
+        text-align: left; } }
     @media screen and (min-width: 768px) {
       .footer-btm span + span {
         float: right; } }
   .footer-btm a {
     color: #7c7a7a;
-    margin-right: 20px; }
+    margin: 0 6px; }
     @media screen and (min-width: 768px) {
       .footer-btm a {
         margin-left: 20px;
@@ -945,7 +988,7 @@ footer nav {
   bottom: 8%;
   position: fixed;
   right: 4%;
-  z-index: 11; }
+  z-index: 9; }
   #block-mailchimp-signup-registration.show #mailchimp-signup-subscribe-block-registration-form {
     height: auto;
     overflow: visible;
@@ -953,7 +996,13 @@ footer nav {
     padding: 22px 21px;
     top: -53px; }
   #block-mailchimp-signup-registration.show #subscribe {
-    opacity: 1; }
+    margin: 0 31px;
+    opacity: 1;
+    padding: 10px; }
+    #block-mailchimp-signup-registration.show #subscribe span {
+      display: block; }
+      #block-mailchimp-signup-registration.show #subscribe span:first-child {
+        display: none; }
 
 #subscribe {
   background-color: #288899;
@@ -967,9 +1016,16 @@ footer nav {
   padding: 10px 20px;
   position: absolute;
   right: 0;
-  min-width: 0; }
+  min-width: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none; }
   #subscribe:hover {
     opacity: 1; }
+  #subscribe span + span {
+    display: none;
+    height: 18px;
+    width: 18px; }
 
 #mailchimp-signup-subscribe-block-registration-form {
   background-color: #fff;
@@ -1061,14 +1117,17 @@ footer nav {
   .front .hero h3 {
     color: #fff;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     text-transform: uppercase; }
   .front .hero h2 {
     color: #e44345;
-    font-size: 42px;
+    font-size: 35px;
     line-height: 1em;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     text-transform: uppercase; }
+    @media screen and (min-width: 1024px) {
+      .front .hero h2 {
+        font-size: 38px; } }
   .front .hero h4 {
     color: #ecf0f1;
     font: 13px "Titillium Web", sans-serif;
@@ -1089,18 +1148,28 @@ footer nav {
   top: 0;
   z-index: 0; }
 .front .group-info {
-  padding: 59% 6% 17%;
+  padding: 59% 5% 14%;
   position: relative;
   text-align: left;
   z-index: 1; }
   @media screen and (min-width: 768px) {
     .front .group-info {
+      padding: 59% 5% 8%; } }
+  @media screen and (min-width: 1024px) {
+    .front .group-info {
       padding: 59% 11% 9%; } }
 
 .front #views-exposed-form-songs-page {
   height: 94px;
-  margin: 60px 0 50px;
-  overflow: hidden; }
+  left: -2.5%;
+  margin: 20px 0 20px;
+  overflow: hidden;
+  padding: 0 2%;
+  position: relative;
+  width: 101%; }
+  @media screen and (min-width: 768px) {
+    .front #views-exposed-form-songs-page {
+      margin: 60px 0 50px; } }
 
 @media screen and (min-width: 1024px) {
   #block-views-popular-content-block,
@@ -1160,40 +1229,49 @@ footer nav {
     color: #3d3738;
     font-size: 14px; }
 
-#block-views-new-content-block .title:before {
-  border: 2px solid #288899;
-  border-radius: 20px;
-  content: " ";
-  display: block;
-  height: 11px;
-  float: left;
-  margin: 8px 7px 0 0;
-  width: 11px; }
-
-#block-views-banners-banner-sidebar-top {
-  margin-right: 0;
-  float: left; }
-  #block-views-banners-banner-sidebar-top .views-field-field-banner-image a {
-    background-color: #ecf0f1;
-    display: block; }
-  #block-views-banners-banner-sidebar-top .views-field-field-banner-image img {
+#block-views-new-content-block {
+  margin: 40px 0; }
+  @media screen and (min-width: 1024px) {
+    #block-views-new-content-block {
+      margin: 0; } }
+  #block-views-new-content-block .title:before {
+    border: 2px solid #288899;
+    border-radius: 20px;
+    content: " ";
     display: block;
-    -webkit-transform: scale(0.92);
-    -moz-transform: scale(0.92);
-    -ms-transform: scale(0.92);
-    -o-transform: scale(0.92);
-    transform: scale(0.92);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s; }
-    #block-views-banners-banner-sidebar-top .views-field-field-banner-image img:hover {
-      left: 0;
-      -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-      -ms-transform: scale(1);
-      -o-transform: scale(1);
-      transform: scale(1);
-      top: 0; }
+    height: 11px;
+    float: left;
+    margin: 8px 7px 0 0;
+    width: 11px; }
+
+@media screen and (min-width: 1024px) {
+  #block-views-banners-banner-sidebar-top {
+    margin-right: 0;
+    float: left; } }
+#block-views-banners-banner-sidebar-top .views-field-field-banner-image a {
+  background-color: #ecf0f1;
+  display: block; }
+#block-views-banners-banner-sidebar-top .views-field-field-banner-image img {
+  display: block;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+  @media screen and (min-width: 1024px) {
+    #block-views-banners-banner-sidebar-top .views-field-field-banner-image img {
+      -webkit-transform: scale(0.92);
+      -moz-transform: scale(0.92);
+      -ms-transform: scale(0.92);
+      -o-transform: scale(0.92);
+      transform: scale(0.92); } }
+  #block-views-banners-banner-sidebar-top .views-field-field-banner-image img:hover {
+    left: 0;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    top: 0; }
 
 #block-views-news-news-front {
   clear: both;
@@ -1201,7 +1279,7 @@ footer nav {
   #block-views-news-news-front > .title {
     position: relative;
     font-size: 14px;
-    margin: 0 auto 50px;
+    margin: 0 auto;
     width: 100px; }
     #block-views-news-news-front > .title:after {
       background-color: #e44345;
@@ -1213,6 +1291,9 @@ footer nav {
       margin-left: -17px;
       position: absolute;
       width: 34px; }
+    @media screen and (min-width: 1024px) {
+      #block-views-news-news-front > .title {
+        margin: 0 auto 50px; } }
     #block-views-news-news-front > .title:after {
       background-color: #1a1717;
       bottom: -10px;
@@ -1635,8 +1716,12 @@ footer nav {
       display: inline-block;
       margin: 0 3px;
       padding: 0 3px; }
-    .song-listing .result-summary a:hover {
+    .song-listing .result-summary a.active {
       color: #e44345; }
+      .song-listing .result-summary a.active:before {
+        color: #ecf0f1; }
+    .song-listing .result-summary a:hover {
+      color: #ccc; }
       .song-listing .result-summary a:hover:before {
         color: #ecf0f1; }
     .song-listing .result-summary a + a:before {
@@ -1823,13 +1908,15 @@ footer nav {
     color: #1a1717;
     display: none;
     font-size: 28px;
+    height: 30px;
     left: 0;
-    padding: 4px 8px;
+    padding: 3px 4px;
     position: absolute;
     text-decoration: none;
-    top: 0; }
-    .song-listing .audio-btn #remove:hover {
-      color: #e44345; }
+    top: 0;
+    width: 30px; }
+    .song-listing .audio-btn #remove:hover polygon {
+      fill: #e44345; }
 
 .song-listing .group-song-info {
   padding-left: 0;
@@ -1837,9 +1924,6 @@ footer nav {
   @media screen and (min-width: 768px) {
     .song-listing .group-song-info {
       width: 35%; } }
-  @media screen and (min-width: 1024px) {
-    .song-listing .group-song-info {
-      width: auto; } }
   .song-listing .group-song-info h2 {
     border: none;
     color: #e44345;
@@ -1866,12 +1950,14 @@ footer nav {
     text-transform: uppercase; }
 
 .song-listing .group-song-categories {
-  font-size: 14px; }
+  font-size: 14px;
+  padding: 2% 4%; }
   @media screen and (min-width: 768px) {
     .song-listing .group-song-categories {
       width: 31%; } }
   @media screen and (min-width: 1024px) {
     .song-listing .group-song-categories {
+      padding: 3% 4%;
       width: auto; } }
   .song-listing .group-song-categories .field-label {
     clear: left;
@@ -1981,15 +2067,31 @@ footer nav {
       .path-worship-leaders .node-artist-worship-leader h2 a:hover .white-btn {
         display: block; } }
 
+.node-type-artist-worship-leader .bread {
+  background-size: 25px;
+  color: #1a1717;
+  float: none;
+  margin: 20px 0;
+  padding-left: 31px;
+  width: auto; }
+  .node-type-artist-worship-leader .bread:hover {
+    color: #e44345; }
+
 @media screen and (min-width: 1024px) {
   .node-artist-worship-leader .field-type-text-with-summary {
     float: left;
     margin-right: 6%;
     width: 65%; } }
-.node-artist-worship-leader .group-links {
-  border-left: 2px solid #bababb;
-  float: left;
-  padding-left: 3%; }
+@media screen and (min-width: 1024px) {
+  .node-artist-worship-leader .group-links {
+    border-left: 2px solid #bababb;
+    float: left;
+    padding-left: 3%; } }
+.node-artist-worship-leader .group-links .icon-btn {
+  width: 100%; }
+  @media screen and (min-width: 1024px) {
+    .node-artist-worship-leader .group-links .icon-btn {
+      width: auto; } }
 .node-artist-worship-leader .field-type-link-field {
   margin-bottom: 13px; }
   .node-artist-worship-leader .field-type-link-field:last-child {

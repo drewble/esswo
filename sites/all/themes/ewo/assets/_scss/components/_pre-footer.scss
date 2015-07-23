@@ -4,8 +4,12 @@
 
 .pre-footer {
   background-color: $light;
-  padding: 4% 0;
+  padding: 30px 0;
   text-align: center;
+
+  @include desk {
+    padding:4% 0;
+  }
 
   .icon-btn {
     @include icon-btn;

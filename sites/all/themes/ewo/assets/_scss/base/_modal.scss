@@ -2,21 +2,31 @@
 //  Modal Styling (Bootstrap Overrides)
 //
 
-.modal.in {
-  .modal-dialog {
-    @include transform(translate(0, 7%));
-  }
+.modal {
 
   &.non-video {
     .modal-dialog {
-      @include transform(translate(0, 12%));
+      @include transform(translate(24%, 12%));
+    }
+  }
 
-      @include tablet {
-        @include transform(translate(0, 6%));
-      }
+  // After transition
+  &.in {
+    .modal-dialog {
+      @include transform(translate(0, 7%));
+    }
 
-      @include desk {
+    &.non-video {
+      .modal-dialog {
         @include transform(translate(0, 12%));
+
+        @include tablet {
+          @include transform(translate(0, 6%));
+        }
+
+        @include desk {
+          @include transform(translate(0, 12%));
+        }
       }
     }
   }
@@ -48,6 +58,15 @@
   button {
     @include close-btn;
   }
+
+  .close {
+    position: relative;
+    top: -40px;
+
+    @include tablet {
+      position: static;
+    }
+  }
 }
 
 #songModal {
@@ -61,63 +80,75 @@
   width: 72%;
 }
 
-#myModal .modal-body {
-  overflow: hidden;
-  padding:0;
+#myModal {
+  .modal-dialog {
+    margin: 0 auto;
+    text-align: center;
+    width: 78%;
 
-  > div {
-    @include desk {
-      float: left;
-      width: 48%;
+    @include tablet {
+      margin: 10px;
+      text-align: left;
+      width: 72%;
     }
+  }
+  .modal-body {
+    overflow: hidden;
+    padding:0;
 
-    &:first-child {
-      margin-bottom: 40px;
-      
+    > div {
       @include desk {
-        border-right:1px solid #444243;
-        margin-bottom: 0;
-        margin-right: 3%;
+        float: left;
+        width: 48%;
+      }
+
+      &:first-child {
+        margin-bottom: 40px;
+        
+        @include desk {
+          border-right:1px solid #444243;
+          margin-bottom: 0;
+          margin-right: 3%;
+        }
       }
     }
-  }
 
-  h2 {
-    color: $red;
-    font-size: 48px;
-  }
+    h2 {
+      color: $red;
+      font-size: 48px;
+    }
 
-  input[type="text"], input[type="password"], input[type="email"] {
-    background-color: rgba(45,45,45,.4);
-    color: $light;
-    padding: 4% 5%;
-    width: 93%;
+    input[type="text"], input[type="password"], input[type="email"] {
+      background-color: rgba(45,45,45,.4);
+      color: $light;
+      padding: 4% 5%;
+      width: 93%;
 
-    &:focus {
-      background-color:$light;
-      color: #4a4647;
+      &:focus {
+        background-color:$light;
+        color: #4a4647;
+
+        @include placeholder {
+          color: #575454;
+        }
+      }
 
       @include placeholder {
         color: #575454;
       }
     }
 
-    @include placeholder {
-      color: #575454;
+    input[type="submit"] {
+      color: $light;
+
+      &:hover {
+        border-color:$red;
+      }
+    }
+
+    small {
+      display: none;
     }
   }
-
-  input[type="submit"] {
-    color: $light;
-
-    &:hover {
-      border-color:$red;
-    }
-  }
-
-  small {
-    display: none;
-  }
-
 }
 

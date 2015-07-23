@@ -4,7 +4,7 @@
   $ ->
 
     # Subscribe
-    $('<button id="subscribe">Subscribe</button>').prependTo('#block-mailchimp-signup-registration').click ->
+    $('<button id="subscribe"><span>Subscribe</span><span class="icon icon-icons_close"></span></button>').prependTo('#block-mailchimp-signup-registration').click ->
       $(this).parent().toggleClass 'show'
 
   	# Mobile Menu

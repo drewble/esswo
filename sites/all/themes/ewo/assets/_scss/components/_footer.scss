@@ -41,6 +41,13 @@ footer {
       width: 200px;
     }
   }
+
+  p {
+    color: $lt-gray;
+    font-size:15px;
+    font-style: italic;
+    line-height: 1.5em;
+  }
 }
 
 footer {
@@ -68,19 +75,21 @@ footer {
         float: left;
         list-style: none;
         text-align: center;
+        width: 20%;
 
         &:first-child {
           float: none;
+          width: 100%;
 
           a {
             background-size: 30px;
-            background-position: 127px 27px;
+            background-position: center 27px;
             border-bottom-color:transparent;
             border-left-color:#4a4647;
             float: none;
             height: 113px;
             text-decoration: none;
-            width: 289px;
+            width: 100%;
           }
 
           & + li a {
@@ -90,7 +99,7 @@ footer {
       }
 
       .icon {
-        background-position: 16px 16px;
+        background-position: center center;
         background-size: 23px;
         border:1px solid #4a4647;
         border-left-color:transparent;
@@ -102,7 +111,7 @@ footer {
         overflow: hidden;
         padding-top:58px;
         text-transform: uppercase;
-        width: 58px;
+        width: 100%;
 
         &:hover {
           background-color:$red;
@@ -110,17 +119,11 @@ footer {
         }
       }
 
-      .icon-icons_yt {
-        background-position: 15px 20px;
-      }
-
       .icon-icons_fbook {
-        background-position:22px 17px;
         background-size: 11px;
       }
 
       .icon-icons_twitter {
-        background-position:17px 19px;
         background-size: 22px;
       }
 
@@ -139,9 +142,11 @@ footer {
 
   span {
     display: block;
+    text-align: center;
 
     @include tablet {
       float: left;
+      text-align: left;
     }
 
     & + span {
@@ -153,7 +158,7 @@ footer {
 
   a {
     color: #7c7a7a;
-    margin-right: 20px;
+    margin: 0 6px;
 
     @include tablet {
       margin-left: 20px;

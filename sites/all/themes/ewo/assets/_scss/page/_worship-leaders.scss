@@ -93,6 +93,21 @@
 }
 
 // Node Listing
+.node-type-artist-worship-leader {
+	.bread {
+	  background-size: 25px;
+	  color: $base;
+	  float: none;
+	  margin: 20px 0;
+	  padding-left: 31px;
+	  width: auto;
+
+	  &:hover {
+	  	color: $red;
+	  }
+	}
+}
+
 .node-artist-worship-leader {
 	.field-type-text-with-summary {
 		@include desk {
@@ -103,9 +118,19 @@
 	}
 
 	.group-links {
-		border-left: 2px solid #bababb;
-		float: left;
-		padding-left:3%;
+		@include desk {
+			border-left: 2px solid #bababb;
+			float: left;
+			padding-left:3%;
+		}
+
+		.icon-btn {
+			width: 100%;
+
+			@include desk {
+				width: auto;
+			}
+		}
 	}
 
 	.field-type-link-field {

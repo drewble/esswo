@@ -39,7 +39,7 @@ hide($content['field_mp3']);
     <?php if (!$page): ?>
       <div class="audio-btn">
         <a href="#">X</a>
-        <a href="#" id="remove">X</a>
+        <a class="icon icon-icons_close" href="#" id="remove" data-grunticon-embed></a>
       </div>
     <?php endif; ?>
     <?php print render($content);?>

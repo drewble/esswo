@@ -27,7 +27,7 @@ if (!empty($bgImg)) {
 <header role="banner">
   <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="icon icon-icons_logo">Essential Worship</a></h1>
 
-  <button>Menu</button>
+  <button class="icon icon-icons_menu" data-grunticon-embed></button>
   <?php if($page['header']): ?>
     <?php print render($page['header']); ?>
   <?php endif; ?>
@@ -61,6 +61,12 @@ if (!empty($bgImg)) {
 <div class="page outer-container">
 
   <div role="main" id="main-content<?php if ($page['sidebar']): ?> with-side<?php endif; ?>">
+
+    <?php if(isset($node)): ?>
+      <?php if($node->type == 'artist_worship_leader'): ?>
+      <a class="bread icon icon-icons_find_song" href="/worship-leaders">All Worship Leaders</a>
+      <?php endif; ?>
+    <?php endif; ?>
 
     <?php if ($action_links): ?>
       <ul class="action-links"><?php print render($action_links); ?></ul>

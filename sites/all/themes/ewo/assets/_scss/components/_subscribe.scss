@@ -6,7 +6,7 @@
 	bottom:8%;
 	position: fixed;
 	right:4%;
-	z-index: 11;
+	z-index: 9;
 
 	&.show {
   	#mailchimp-signup-subscribe-block-registration-form {
@@ -18,7 +18,17 @@
 		}
 
 		#subscribe {
+			margin: 0 31px;
 			opacity: 1;
+			padding: 10px;
+
+			span {
+				display: block;
+
+				&:first-child {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -37,9 +47,16 @@
   position: absolute;
   right: 0;
   min-width: 0;
+  @include transition(none);
 
   &:hover {
   	opacity: 1;
+  }
+
+  span + span {
+  	display: none;
+  	height: 18px;
+  	width: 18px;
   }
 }
 

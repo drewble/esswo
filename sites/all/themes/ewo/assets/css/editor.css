@@ -21,6 +21,7 @@ html, body {
 body {
   color: #1a1717;
   font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
   line-height: 1.5em; }
 
 a {

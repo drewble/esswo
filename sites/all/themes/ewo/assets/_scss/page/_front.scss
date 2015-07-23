@@ -17,17 +17,21 @@
 		h3 {
 			color: #fff;
 			font-size: 18px;
-			margin-bottom: 10px;
+			margin-bottom: 14px;
 			text-transform: uppercase;
 		}
 
 		// Headline 2
 		h2 {
 			color: $red;
-			font-size: 42px;
+			font-size: 35px;
 			line-height: 1em;
-			margin-bottom: 0;
+			margin-bottom: 5px;
 			text-transform: uppercase;
+
+			@include desk {
+				font-size: 38px;
+			}
 		}
 
 		// Headline 3
@@ -61,12 +65,16 @@
 	}
 
 	.group-info {
-	  padding: 59% 6% 17%;
+		padding:59% 5% 14%;
 	  position: relative;
 	  text-align: left;
 	  z-index: 1;
 
 	  @include tablet {
+	  	padding:59% 5% 8%;
+	  }
+
+	  @include desk {
 	  	padding: 59% 11% 9%;
 	  }
 	}
@@ -78,8 +86,16 @@
 .front {
 	#views-exposed-form-songs-page {
 		height: 94px;
-		margin: 60px 0 50px;
+		left: -2.5%;
+		margin: 20px 0 20px;
 	  overflow: hidden;
+	  padding: 0 2%;
+  	position: relative;
+	  width: 101%;
+
+	  @include tablet {
+	  	margin: 60px 0 50px;
+	  }
 	}
 }
 
@@ -139,14 +155,23 @@
 }
 
 #block-views-new-content-block {
+	margin: 40px 0;
+
+	@include desk {
+		margin: 0;
+	}
+
 	.title {
 		@include new;
 	}
 }
 
 #block-views-banners-banner-sidebar-top {
-	@include omega;
-	float: left;
+	
+	@include desk {
+		@include omega;
+		float: left;
+	}
 
 	.views-field-field-banner-image {
 		a {
@@ -156,7 +181,11 @@
 
 		img {
 			display: block;
-			@include transform(scale(.92));
+			width: 100%;
+
+			@include desk {
+				@include transform(scale(.92));
+			}
 			@include transition(all .3s);
 
 			&:hover {
@@ -175,8 +204,12 @@
 	> .title {
 		@include border-btm;
 		font-size: 14px;
-		margin:0 auto 50px;
+		margin:0 auto;
 		width: 100px;
+
+		@include desk {
+			margin:0 auto 50px;
+		}
 
 		&:after {
 			background-color:$base;
