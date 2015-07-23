@@ -390,6 +390,20 @@ ul.primary {
   -ms-transform: translate(24%, 12%);
   -o-transform: translate(24%, 12%);
   transform: translate(24%, 12%); }
+  @media screen and (min-width: 768px) {
+    .modal.non-video .modal-dialog {
+      -webkit-transform: translate(12%, 12%);
+      -moz-transform: translate(12%, 12%);
+      -ms-transform: translate(12%, 12%);
+      -o-transform: translate(12%, 12%);
+      transform: translate(12%, 12%); } }
+  @media screen and (min-width: 1024px) {
+    .modal.non-video .modal-dialog {
+      -webkit-transform: translate(0, 0);
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -o-transform: translate(0, 0);
+      transform: translate(0, 0); } }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 7%);
   -moz-transform: translate(0, 7%);
@@ -473,7 +487,7 @@ ul.primary {
   width: 78%; }
   @media screen and (min-width: 768px) {
     #myModal .modal-dialog {
-      margin: 10px;
+      margin: 10px auto;
       text-align: left;
       width: 72%; } }
 #myModal .modal-body {

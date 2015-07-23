@@ -7,6 +7,14 @@
   &.non-video {
     .modal-dialog {
       @include transform(translate(24%, 12%));
+
+      @include tablet {
+        @include transform(translate(12%, 12%));
+      }
+
+      @include desk {
+        @include transform(translate(0, 0));
+      }
     }
   }
 
@@ -87,7 +95,7 @@
     width: 78%;
 
     @include tablet {
-      margin: 10px;
+      margin: 10px auto;
       text-align: left;
       width: 72%;
     }
