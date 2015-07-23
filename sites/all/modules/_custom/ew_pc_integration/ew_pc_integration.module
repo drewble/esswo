@@ -1,0 +1,104 @@
+<?php
+/**
+ * @file
+ * Module for integrating with Planning Center Online
+ *
+ * API credentials are set in pc-php-library/oauth_config.php
+ *
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ew_pc_integration_menu() {
+  // Callback url for planning center OAuth authorization
+  $items['pc-api-connect'] = array(
+    'title' => 'Planning Center Online',
+    'page callback' => 'ew_pc_integration_api_connect',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  // Callback url for planning center api callback
+  $items['pc-api-callback'] = array(
+    'title' => 'Planning Center Online',
+    'page callback' => 'ew_pc_integration_api_callback',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  // Callback url for syncing a song with a users planning center account
+  $items['pc-api-sync-song'] = array(
+    'title' => 'Planning Center Online',
+    'page callback' => 'ew_pc_integration_api_sync_song',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Callback to be used for connecting to planning center online via OAuth
+ */
+function ew_pc_integration_api_connect() {
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth.php');
+
+  $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
+
+  $params = array("oauth_callback" => CALLBACK_URL);
+  $request_token_request = OAuthRequest::from_consumer_and_token($consumer, NULL, "GET", "https://services.planningcenteronline.com/oauth/request_token", $params);
+  $request_token_request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, NULL);
+  $request_token_response = run_curl($request_token_request->to_url(), "GET");
+
+  parse_str($request_token_response, $request_token);
+  setcookie("oauth_token", $request_token["oauth_token"]);
+  setcookie("oauth_token_secret", $request_token["oauth_token_secret"]);
+
+  $authorization_url = "https://services.planningcenteronline.com/oauth/authorize?oauth_token=" . $request_token["oauth_token"];
+
+  drupal_goto($authorization_url);
+
+}
+
+/**
+ * Callback for planning center online api integration
+ */
+function ew_pc_integration_api_callback() {
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth.php');
+
+  $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
+  $request_token = new OAuthConsumer($_COOKIE["oauth_token"], $_COOKIE["oauth_token_secret"], NULL);
+
+  $params = array("oauth_verifier" => $_GET['oauth_verifier']);
+  $access_token_request = OAuthRequest::from_consumer_and_token($consumer, $request_token, "GET", "https://services.planningcenteronline.com/oauth/access_token", $params);
+
+  $access_token_request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $request_token);
+  $access_token_response = run_curl($access_token_request->to_url(), "GET");
+
+  parse_str($access_token_response, $access_token_request);
+  setcookie("oauth_token", $access_token_request['oauth_token']);
+  setcookie("oauth_token_secret", $access_token_request['oauth_token_secret']);
+
+  drupal_goto($intended_url);
+
+}
+
+/**
+ * Callback for syncing a song with a user's planning center account
+ * @param $nid - Song node id
+ */
+function ew_pc_integration_api_sync_song($nid) {
+
+  setcookie("pc_intended_path", 'pc-api-sync-song/'.$nid);
+
+
+}
+
+
+
