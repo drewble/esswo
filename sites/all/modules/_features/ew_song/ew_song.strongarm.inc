@@ -88,7 +88,7 @@ function ew_song_strongarm() {
         ),
         'songs_entity_view_2' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'teaser' => array(
