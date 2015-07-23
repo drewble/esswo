@@ -8,6 +8,7 @@
 if (!empty($bgImg)) {
   $bgImgUrl = file_create_url($bgImg['uri']);
 }
+$links = '';
 ?>
 <?php if( theme_get_setting('mothership_poorthemers_helper') ){ ?>
 <!-- page.tpl.php-->
@@ -100,10 +101,10 @@ if (!empty($bgImg)) {
 
 </div><!-- /page-->
 
-<?php if ($page['pre_footer'] || isset($links) || $is_front): ?>
+<?php if ($page['pre_footer'] || !empty($links) || $is_front): ?>
   <div class="pre-footer">
     <?php print render($page['pre_footer']); ?>
-    <?php if (isset($links)): ?>
+    <?php if (!empty($links)): ?>
       <div class="share-link">
       <span class="icon icon-icons_share"></span>
       <?php print $links['addtoany']['title']; ?>
