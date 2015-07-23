@@ -16,7 +16,8 @@
   }
 
   h1 {
-    margin: 0 auto;
+    color: $red;
+    margin: 0 auto 13px;
 
     @include tablet {
       width: 74%;
@@ -24,11 +25,16 @@
   }
 
   h2 {
-    font:1em $font;
+    font:15px $font;
+    font-style: italic;
   }
 
   .btns {
     @include border-top;
+
+    &:before {
+      background-color: $base;
+    }
 
     a {
       margin: 5px 0;
