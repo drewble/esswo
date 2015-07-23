@@ -70,6 +70,18 @@ input[type="checkbox"] + label {
     }
   }
 
+  a.chosen-single {
+    background-color:$gray;
+    color: #fff;
+    font-weight: 700;
+
+    &.chosen-default {
+      background-color:$light;
+      color: #999;
+      font-weight: 400;
+    }
+  }
+
   &.chosen-with-drop .chosen-single {
     font-weight: bold;
   }

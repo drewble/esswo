@@ -127,6 +127,8 @@
 }
 
 #views-exposed-form-songs-page {
+	position:relative;
+
 	.views-exposed-widget {
 		padding:0;
 
@@ -145,11 +147,34 @@
 
 	// Submit
 	.views-submit-button {
-		height:0;
-		overflow:hidden;
-		position: absolute;
-		visibility:hidden;
-		z-index: -10;
+
+		input[type="submit"] {
+			height:0;
+			overflow:hidden;
+			position: absolute;
+			visibility:hidden;
+			z-index: -10;
+		}
+	}
+
+	// Ajax Throbber
+	.ajax-progress {
+		display: inline-block;
+	  height: 100%;
+	  left: 0;
+	  position: absolute;
+	  top: 0;
+	  width: 100%;
+	  z-index: 9;
+
+		.throbber {
+			background:url(../img/ajax.gif) no-repeat scroll center center rgba(255,255,255,.8);
+	    height: 100%;
+	    padding:8%;
+	    position: relative;
+	    left: -2px;
+	    width: 100%;
+		}
 	}
 }
 

@@ -26,6 +26,7 @@
 		$('.views-exposed-form select').each ->
 			# Get Label Text
 			label = $(this).parents('.views-widget').prev().text().trim()
+			console.log(label)
 			# Set Default Placeholder Text to Label, Activate Chosen and force click on change
 			$(this).not('#edit-flagged').attr('data-placeholder',label).chosen().on 'change', (evt, params) ->
 	  		$('#edit-submit-songs').click()

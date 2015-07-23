@@ -270,6 +270,14 @@ input[type="checkbox"] + label {
     right: 3px;
     top: 13px;
     width: 16px; }
+.chosen-container a.chosen-single {
+  background-color: #322e2f;
+  color: #fff;
+  font-weight: 700; }
+  .chosen-container a.chosen-single.chosen-default {
+    background-color: #ecf0f1;
+    color: #999;
+    font-weight: 400; }
 .chosen-container.chosen-with-drop .chosen-single {
   font-weight: bold; }
 .chosen-container .chosen-drop {
@@ -1757,21 +1765,38 @@ footer nav {
     .song-listing .result-summary a + a:before {
       content: ""; }
 
-#views-exposed-form-songs-page .views-exposed-widget {
-  padding: 0; }
-  @media screen and (min-width: 768px) {
-    #views-exposed-form-songs-page .views-exposed-widget {
-      padding: 0 15px 0 0; } }
-  #views-exposed-form-songs-page .views-exposed-widget small {
-    display: none; }
-#views-exposed-form-songs-page #edit-field-church-tid-wrapper {
-  padding-right: 0; }
-#views-exposed-form-songs-page .views-submit-button {
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  visibility: hidden;
-  z-index: -10; }
+#views-exposed-form-songs-page {
+  position: relative; }
+  #views-exposed-form-songs-page .views-exposed-widget {
+    padding: 0; }
+    @media screen and (min-width: 768px) {
+      #views-exposed-form-songs-page .views-exposed-widget {
+        padding: 0 15px 0 0; } }
+    #views-exposed-form-songs-page .views-exposed-widget small {
+      display: none; }
+  #views-exposed-form-songs-page #edit-field-church-tid-wrapper {
+    padding-right: 0; }
+  #views-exposed-form-songs-page .views-submit-button input[type="submit"] {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    visibility: hidden;
+    z-index: -10; }
+  #views-exposed-form-songs-page .ajax-progress {
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9; }
+    #views-exposed-form-songs-page .ajax-progress .throbber {
+      background: url(../img/ajax.gif) no-repeat scroll center center rgba(255, 255, 255, 0.8);
+      height: 100%;
+      padding: 8%;
+      position: relative;
+      left: -2px;
+      width: 100%; }
 
 #views-exposed-form-songs-page #edit-title-wrapper {
   margin-bottom: 15px;
