@@ -821,7 +821,7 @@ header nav {
   @media screen and (min-width: 1024px) {
     .pre-footer {
       padding: 4% 0; } }
-  .pre-footer .icon-btn {
+  .pre-footer .icon-btn, .pre-footer .addtoany_share_save {
     background-color: transparent;
     border: 2px solid #d7d5d5;
     color: #524b4c;
@@ -841,11 +841,11 @@ header nav {
     line-height: 3.2em;
     min-width: 277px;
     padding: 0 19px 0 0; }
-    .pre-footer .icon-btn:hover {
+    .pre-footer .icon-btn:hover, .pre-footer .addtoany_share_save:hover {
       background-color: #e44345;
       color: #fff;
       text-decoration: none; }
-    .pre-footer .icon-btn:before {
+    .pre-footer .icon-btn:before, .pre-footer .addtoany_share_save:before {
       background: inherit;
       border-right: 2px solid #524b4c;
       content: " ";
@@ -853,17 +853,28 @@ header nav {
       float: left;
       margin-right: 15px;
       padding: 22px 23px; }
-    .pre-footer .icon-btn:hover {
+    .pre-footer .icon-btn:hover, .pre-footer .addtoany_share_save:hover {
       background-color: transparent;
       color: #524b4c; }
-      .pre-footer .icon-btn:hover:before {
+      .pre-footer .icon-btn:hover:before, .pre-footer .addtoany_share_save:hover:before {
         background-color: #e44345;
         text-decoration: none; }
-    .pre-footer .icon-btn.icon-icons_insights {
+    .pre-footer .icon-btn.icon-icons_insights, .pre-footer .addtoany_share_save.icon-icons_insights {
       background-position: 13px 12px;
       background-size: 17px; }
-    .pre-footer .icon-btn span.a2a_img {
+    .pre-footer .icon-btn span.a2a_img, .pre-footer .addtoany_share_save span.a2a_img {
       display: none; }
+
+.share-link {
+  position: relative;
+  margin: 0 auto;
+  width: 308px; }
+  .share-link .icon {
+    position: absolute;
+    top: 11px;
+    left: 14px; }
+  .share-link .addtoany_share_save {
+    min-width: 306px; }
 
 footer {
   background-color: #322e2f;
@@ -1652,6 +1663,7 @@ footer nav {
       padding: 14% 0 6%; } }
   .page-songs .hero h1 {
     position: relative;
+    color: #fff;
     padding-bottom: 40px; }
     .page-songs .hero h1:after {
       background-color: #e44345;

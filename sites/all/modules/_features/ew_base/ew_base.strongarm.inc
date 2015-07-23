@@ -91,7 +91,7 @@ function ew_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'addtoany_image_attributes';
-  $strongarm->value = 'alt="Share"';
+  $strongarm->value = 'alt="Share" class="icon-icons_share"';
   $export['addtoany_image_attributes'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -107,8 +107,10 @@ function ew_base_strongarm() {
   $strongarm->name = 'addtoany_nodetypes';
   $strongarm->value = array(
     'song' => 'song',
+    'banner' => 0,
     'artist_worship_leader' => 0,
     'page' => 0,
+    'homepage_feature' => 0,
     'news_article' => 0,
   );
   $export['addtoany_nodetypes'] = $strongarm;

@@ -11,7 +11,7 @@
     padding:4% 0;
   }
 
-  .icon-btn {
+  .icon-btn, .addtoany_share_save {
     @include icon-btn;
 
     &.icon-icons_insights {
@@ -22,5 +22,21 @@
     span.a2a_img {
       display: none;
     }
+  }
+}
+
+.share-link {
+  position: relative;
+  margin: 0 auto;
+  width: 308px;
+
+  .icon {
+    position: absolute;
+    top: 11px;
+    left: 14px;
+  }
+
+  .addtoany_share_save {
+    min-width: 306px;
   }
 }

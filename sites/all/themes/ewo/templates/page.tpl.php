@@ -104,7 +104,10 @@ if (!empty($bgImg)) {
   <div class="pre-footer">
     <?php print render($page['pre_footer']); ?>
     <?php if (isset($links)): ?>
+      <div class="share-link">
+      <span class="icon icon-icons_share"></span>
       <?php print $links['addtoany']['title']; ?>
+      </div>
     <?php endif; ?>
     <?php if ($is_front): ?>
       <a href="/insights" class="icon-btn icon-icons_insights">View All Insights</a>

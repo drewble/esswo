@@ -22,6 +22,7 @@ function ewo_preprocess_page(&$vars,$hook) {
   $vars['bgImg'] = '';
   $vars['subtitle'] = '';
   $vars['resources'] = '';
+  $vars['links'] = '';
   // if a node
   if (isset($vars['node'])) {
     $node = $vars['node'];
@@ -43,7 +44,11 @@ function ewo_preprocess_page(&$vars,$hook) {
       }
       
       // Link Changes
-      $vars['links'] = $vars['page']['content']['system_main']['nodes'][1]['links']['#links'];
+      foreach ($vars['page']['content']['system_main']['nodes'] as $key => &$value) {
+        if (is_array($value)) {
+          $vars['links'] = $value['links']['#links'];
+        }
+      }
     }
 
     // Worship Leader
