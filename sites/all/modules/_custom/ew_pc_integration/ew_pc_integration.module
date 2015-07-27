@@ -55,8 +55,8 @@ function ew_pc_integration_api_connect() {
   $request_token_response = run_curl($request_token_request->to_url(), "GET");
 
   parse_str($request_token_response, $request_token);
-  setcookie("oauth_token", $request_token["oauth_token"]);
-  setcookie("oauth_token_secret", $request_token["oauth_token_secret"]);
+  $cookies = array('oauth_token' => $request_token["oauth_token"], 'oauth_token_secret' => $request_token["oauth_token_secret"]);
+  user_cookie_save($cookies);
 
   $authorization_url = "https://services.planningcenteronline.com/oauth/authorize?oauth_token=" . $request_token["oauth_token"];
 
@@ -73,7 +73,7 @@ function ew_pc_integration_api_callback() {
   require_once(dirname(__FILE__) . '/pc-php-library/oauth.php');
 
   $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
-  $request_token = new OAuthConsumer($_COOKIE["oauth_token"], $_COOKIE["oauth_token_secret"], NULL);
+  $request_token = new OAuthConsumer($_COOKIE["Drupal_visitor_oauth_token"], $_COOKIE["Drupal_visitor_oauth_token_secret"], NULL);
 
   $params = array("oauth_verifier" => $_GET['oauth_verifier']);
   $access_token_request = OAuthRequest::from_consumer_and_token($consumer, $request_token, "GET", "https://services.planningcenteronline.com/oauth/access_token", $params);
@@ -82,10 +82,16 @@ function ew_pc_integration_api_callback() {
   $access_token_response = run_curl($access_token_request->to_url(), "GET");
 
   parse_str($access_token_response, $access_token_request);
-  setcookie("oauth_token", $access_token_request['oauth_token']);
-  setcookie("oauth_token_secret", $access_token_request['oauth_token_secret']);
+  $cookies = array('oauth_token' => $access_token_request["oauth_token"], 'oauth_token_secret' => $access_token_request["oauth_token_secret"]);
+  user_cookie_save($cookies);
+
+  $intended_url = '';
+  if (!empty($_COOKIE['Drupal_visitor_pc_intended_path'])) {
+    $intended_url = $_COOKIE['Drupal_visitor_pc_intended_path'];
+  }
 
   drupal_goto($intended_url);
+
 
 }
 
@@ -94,10 +100,34 @@ function ew_pc_integration_api_callback() {
  * @param $nid - Song node id
  */
 function ew_pc_integration_api_sync_song($nid) {
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth.php');
 
-  setcookie("pc_intended_path", 'pc-api-sync-song/'.$nid);
+  $cookies = array('pc_intended_path' => 'pc-api-sync-song/'.$nid);
+  user_cookie_save($cookies);
+
+  $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
+  $access_token = new OAuthConsumer($_COOKIE['Drupal_visitor_oauth_token'], $_COOKIE['Drupal_visitor_oauth_token_secret'], NULL);
+
+  $url = "https://services.planningcenteronline.com/me.json";
+  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url, NULL);
+
+  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+
+  $response = run_curl($request, "GET");
+
+  if (empty($response)) {
+    ew_pc_integration_api_connect();
+  }
+
+  $me = json_decode($response);
+
+  // TODO - start porting stuff into pc
 
 
+
+  return '';
 }
 
 
