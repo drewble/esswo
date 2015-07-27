@@ -51,7 +51,7 @@ function ew_song_strongarm() {
         'custom_settings' => FALSE,
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -82,7 +82,11 @@ function ew_song_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '9',
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),
@@ -92,7 +96,11 @@ function ew_song_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '10',
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '24',
             'visible' => FALSE,
           ),
         ),
@@ -102,7 +110,25 @@ function ew_song_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '8',
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+        ),
+        'songs_entity_view_5' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '11',
+            'visible' => TRUE,
+          ),
+          'rss' => array(
+            'weight' => '14',
             'visible' => FALSE,
           ),
         ),

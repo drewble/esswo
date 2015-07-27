@@ -204,7 +204,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = 'group_right';
   $field_group->data = array(
     'label' => 'Purchase Options',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_itunes_link',
       1 => 'field_multitracks_link',
@@ -242,8 +242,9 @@ function ew_song_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'songs_entity_view_3',
-      1 => 'group_purchase_options',
-      2 => 'group_song',
+      1 => 'songs_entity_view_5',
+      2 => 'group_purchase_options',
+      3 => 'group_song',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -273,10 +274,10 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Song Categories',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_theme',
-      1 => 'field_church',
+      0 => 'field_church',
+      1 => 'field_theme',
       2 => 'field_services',
     ),
     'format_type' => 'div',

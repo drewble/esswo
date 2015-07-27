@@ -91,6 +91,7 @@ h3 {
   transition: all 0.3s; }
   .btn:hover, button:hover {
     background-color: #e44345;
+    border-color: #e44345;
     color: #fff;
     text-decoration: none; }
 
@@ -116,6 +117,7 @@ h3 {
   padding: 0 19px 0 0; }
   .icon-btn:hover {
     background-color: #e44345;
+    border-color: #e44345;
     color: #fff;
     text-decoration: none; }
   .icon-btn:before {
@@ -128,6 +130,7 @@ h3 {
     padding: 22px 23px; }
   .icon-btn:hover {
     background-color: transparent;
+    border-color: #524b4c;
     color: #524b4c; }
     .icon-btn:hover:before {
       background-color: #e44345;
@@ -180,6 +183,7 @@ h3 {
   .white-btn:before {
     border-color: #fff; }
   .white-btn:hover {
+    border-color: #fff;
     color: #fff; }
 
 .icon {
@@ -251,6 +255,7 @@ input[type="submit"] {
   margin-top: 10px; }
   input[type="submit"]:hover {
     background-color: #e44345;
+    border-color: #e44345;
     color: #fff;
     text-decoration: none; }
 
@@ -865,6 +870,7 @@ header nav {
     padding: 0 19px 0 0; }
     .pre-footer .icon-btn:hover, .pre-footer .addtoany_share_save:hover {
       background-color: #e44345;
+      border-color: #e44345;
       color: #fff;
       text-decoration: none; }
     .pre-footer .icon-btn:before, .pre-footer .addtoany_share_save:before {
@@ -877,6 +883,7 @@ header nav {
       padding: 22px 23px; }
     .pre-footer .icon-btn:hover, .pre-footer .addtoany_share_save:hover {
       background-color: transparent;
+      border-color: #524b4c;
       color: #524b4c; }
       .pre-footer .icon-btn:hover:before, .pre-footer .addtoany_share_save:hover:before {
         background-color: #e44345;
@@ -1674,6 +1681,25 @@ footer nav {
   .node-song .field-type-link-field a {
     width: 100%; }
 
+.smart-filter {
+  margin-bottom: 20px; }
+  .smart-filter ul, .smart-filter li {
+    margin: 0;
+    padding: 0; }
+  .smart-filter li {
+    list-style: none;
+    margin: 20px 0; }
+  .smart-filter h3 {
+    margin-bottom: 5px; }
+  .smart-filter .field-type-text + .field-type-text {
+    font-size: 14px;
+    font-style: italic; }
+  .smart-filter span, .smart-filter .field-type-taxonomy-term-reference {
+    display: inline;
+    font-size: 12px;
+    line-height: 1em;
+    text-transform: uppercase; }
+
 .page-songs .hero {
   background: url(../img/songs.jpg) no-repeat scroll center center;
   background-size: cover;
@@ -2208,6 +2234,7 @@ footer nav {
     #block-views-worship-leaders-block-2 > ul a:hover:after:before {
       border-color: #fff; }
     #block-views-worship-leaders-block-2 > ul a:hover:after:hover {
+      border-color: #fff;
       color: #fff; }
 #block-views-worship-leaders-block-2 img {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);

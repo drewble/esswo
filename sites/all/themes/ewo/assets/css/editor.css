@@ -85,6 +85,7 @@ h3 {
   transition: all 0.3s; }
   .btn:hover, button:hover {
     background-color: #e44345;
+    border-color: #e44345;
     color: #fff;
     text-decoration: none; }
 
@@ -110,6 +111,7 @@ h3 {
   padding: 0 19px 0 0; }
   .icon-btn:hover {
     background-color: #e44345;
+    border-color: #e44345;
     color: #fff;
     text-decoration: none; }
   .icon-btn:before {
@@ -122,6 +124,7 @@ h3 {
     padding: 22px 23px; }
   .icon-btn:hover {
     background-color: transparent;
+    border-color: #524b4c;
     color: #524b4c; }
     .icon-btn:hover:before {
       background-color: #e44345;
@@ -174,6 +177,7 @@ h3 {
   .white-btn:before {
     border-color: #fff; }
   .white-btn:hover {
+    border-color: #fff;
     color: #fff; }
 
 .icon {
