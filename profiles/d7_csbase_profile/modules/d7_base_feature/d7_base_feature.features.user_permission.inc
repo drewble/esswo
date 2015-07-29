@@ -113,6 +113,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'block',
@@ -628,6 +629,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'admin_menu',
@@ -787,6 +789,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'node',
