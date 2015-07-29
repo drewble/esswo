@@ -1549,7 +1549,8 @@ footer nav {
   .node-song .group-left {
     margin-left: 2%; } }
 .node-song .group-left .field-type-text-long {
-  font: 0.58333 "Roboto Mono", monospace;
+  font: 0.875em "Roboto Mono", monospace;
+  line-height: 1.5em;
   white-space: pre; }
 .node-song .group-right {
   margin-top: 50px; }

@@ -143,7 +143,8 @@
       margin-left: 2%;
     }
     .field-type-text-long {
-      font: em(14)/1.5em 'Roboto Mono', monospace;
+      font: em(14) 'Roboto Mono', monospace;
+      line-height: 1.5em;
       white-space: pre;
     }
   }
