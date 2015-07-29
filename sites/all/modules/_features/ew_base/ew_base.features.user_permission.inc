@@ -10,6 +10,33 @@
 function ew_base_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access artist_worship_leader node view'.
+  $permissions['access artist_worship_leader node view'] = array(
+    'name' => 'access artist_worship_leader node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'access banner node view'.
+  $permissions['access banner node view'] = array(
+    'name' => 'access banner node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'access homepage_feature node view'.
+  $permissions['access homepage_feature node view'] = array(
+    'name' => 'access homepage_feature node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
   // Exported permission: 'access mailchimp signup pages'.
   $permissions['access mailchimp signup pages'] = array(
     'name' => 'access mailchimp signup pages',
@@ -18,6 +45,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'mailchimp_signup',
+  );
+
+  // Exported permission: 'access news_article node view'.
+  $permissions['access news_article node view'] = array(
+    'name' => 'access news_article node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
   );
 
   // Exported permission: 'access own authorizations'.
@@ -36,6 +72,24 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'access page node view'.
+  $permissions['access page node view'] = array(
+    'name' => 'access page node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'access song node view'.
+  $permissions['access song node view'] = array(
+    'name' => 'access song node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
   );
 
   // Exported permission: 'access the block administration page'.
@@ -99,6 +153,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'google_analytics_counter',
+  );
+
+  // Exported permission: 'administer internal nodes'.
+  $permissions['administer internal nodes'] = array(
+    'name' => 'administer internal nodes',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
   );
 
   // Exported permission: 'administer mailchimp'.
@@ -185,6 +248,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'menu_admin_per_menu',
+  );
+
+  // Exported permission: 'blocked node status'.
+  $permissions['blocked node status'] = array(
+    'name' => 'blocked node status',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
   );
 
   // Exported permission: 'configure all block body fields'.
