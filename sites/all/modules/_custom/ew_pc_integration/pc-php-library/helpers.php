@@ -7,7 +7,7 @@ function run_curl($url, $method = 'GET', $headers = null, $postvals = null){
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   } else {
     $options = array(
-      CURLOPT_HEADER => true,
+      CURLOPT_HEADER => false,
       CURLINFO_HEADER_OUT => true,
       CURLOPT_VERBOSE => true,
       CURLOPT_HTTPHEADER => $headers,
