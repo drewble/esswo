@@ -206,7 +206,6 @@ function d7_base_feature_user_default_permissions() {
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
     'roles' => array(
-      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'menu',
