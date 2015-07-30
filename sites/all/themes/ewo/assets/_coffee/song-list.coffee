@@ -22,6 +22,16 @@
   # Document.ready
   $ ->
 
+  	$('.audio-btn a:first-child').click (e) ->
+  		$(this).addClass 'open'
+  		$(this).parent().siblings('.play-audio').addClass('show')
+  		e.preventDefault()
+		
+		$('.remove').click (e) ->
+  		$(this).prev().removeClass 'open'
+  		$(this).parent().siblings('.play-audio').removeClass('show')
+  		e.preventDefault()
+
   	# Song Exposed Filters Actions
 		$('.views-exposed-form select').each ->
 			# Get Label Text
@@ -42,15 +52,6 @@
 
   	$('#views-exposed-form-songs-page #edit-title-wrapper small').click ->
   		$('#edit-title').blur()
-
-  	$('.audio-btn a:first-child').click ->
-  		$(this).addClass 'open'
-  		$(this).parent().siblings('.play-audio').addClass('show')
-  		$('#remove').click ->
-	  		$(this).prev().removeClass 'open'
-	  		$(this).parent().siblings('.play-audio').removeClass('show')
-	  		return false
-	  	return false
 
 
 ) jQuery

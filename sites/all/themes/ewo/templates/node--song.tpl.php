@@ -38,9 +38,11 @@ hide($content['field_mp3']);
   <div class="content">
     <?php if ($teaser): ?>
       <div class="audio-btn">
-        <a href="#">X</a>
-        <a class="icon icon-icons_close" href="#" id="remove" data-grunticon-embed></a>
-      </div>
+        <?php if (isset($content['field_spotify'][0]) || isset($content['field_mp3'][0])): ?>
+          <a href="#">X</a>
+        <?php endif; ?>
+        <a class="icon icon-icons_close remove" href="#" data-grunticon-embed></a>
+      </div> 
     <?php endif; ?>
     <?php print render($content);?>
     <?php if ($teaser): ?>

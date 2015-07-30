@@ -17,7 +17,18 @@
           $('#edit-submit-songs').click();
           return false;
         });
-        $(function() {});
+        $(function() {
+          return $('.audio-btn a:first-child').click(function(e) {
+            $(this).addClass('open');
+            $(this).parent().siblings('.play-audio').addClass('show');
+            return e.preventDefault();
+          });
+        });
+        $('.remove').click(function(e) {
+          $(this).prev().removeClass('open');
+          $(this).parent().siblings('.play-audio').removeClass('show');
+          return e.preventDefault();
+        });
         return $('.views-exposed-form select').each(function() {
           var label;
           label = $(this).parents('.views-widget').prev().text().trim();
@@ -33,18 +44,8 @@
           $('#edit-title').on('blur', function() {
             return $('#edit-title-wrapper').removeClass('active');
           });
-          $('#views-exposed-form-songs-page #edit-title-wrapper small').click(function() {
+          return $('#views-exposed-form-songs-page #edit-title-wrapper small').click(function() {
             return $('#edit-title').blur();
-          });
-          return $('.audio-btn a:first-child').click(function() {
-            $(this).addClass('open');
-            $(this).parent().siblings('.play-audio').addClass('show');
-            $('#remove').click(function() {
-              $(this).prev().removeClass('open');
-              $(this).parent().siblings('.play-audio').removeClass('show');
-              return false;
-            });
-            return false;
           });
         });
       }

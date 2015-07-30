@@ -3,53 +3,71 @@
 //kpr($theme_hook_suggestions);
 //template naming
 //page--[CONTENT TYPE].tpl.php
+
+// GNAR Background Image for Nodes
+if (!empty($bgImg)) {
+  $bgImgUrl = file_create_url($bgImg['uri']);
+}
+$links = '';
 ?>
 <?php if( theme_get_setting('mothership_poorthemers_helper') ){ ?>
 <!-- page.tpl.php-->
 <?php } ?>
 
+<?php if(!empty($bgImg)): ?>
+<style type="text/css">
+  .hero {
+    background: url(<?php print $bgImgUrl; ?>) no-repeat scroll center center;
+    background-size: cover;
+  }
+</style>
+<?php endif; ?>
+
 <?php print $mothership_poorthemers_helper; ?>
 
 <header role="banner">
-  <div class="siteinfo">
-    <?php if ($logo): ?>
-      <figure>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-      </figure>
-    <?php endif; ?>
+  <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="icon icon-icons_logo">Essential Worship</a></h1>
 
-    <?php if($site_name OR $site_slogan ): ?>
-    <hgroup>
-      <?php if($site_name): ?>
-        <h1><?php print $site_name; ?></h1>
-      <?php endif; ?>
-      <?php if ($site_slogan): ?>
-        <h2><?php print $site_slogan; ?></h2>
-      <?php endif; ?>
-    </hgroup>
-    <?php endif; ?>
-  </div>
-
+  <button class="icon icon-icons_menu" data-grunticon-embed></button>
   <?php if($page['header']): ?>
-    <div class="header-region">
-      <?php print render($page['header']); ?>
-    </div>
+    <?php print render($page['header']); ?>
   <?php endif; ?>
 
 </header>
 
-<div class="page">
-
-  <div role="main" id="main-content">
-    <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-      <h1><?php print $title; ?></h1>
+<div class="hero<?php if(!empty($bgImg)): ?> with-img<?php endif; ?>">
+  <?php if(isset($node)): ?>
+    <?php if($node->type == 'song'): ?>
+    <a class="bread icon icon-icons_find_song" href="/songs">Find Another Song</a>
     <?php endif; ?>
-    <?php print render($title_suffix); ?>
+  <?php endif; ?>
+  <?php print render($page['hero']); ?>
+  <?php print render($title_prefix); ?>
+  <?php if ($title): ?>
+    <h1><?php print $title; ?></h1>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
 
-    <?php print $breadcrumb; ?>
+  <?php if(!empty($subtitle)): ?>
+    <h2><?php print $subtitle; ?></h2>
+  <?php endif; ?>
+  <?php if(!empty($resources)): ?>
+    <div class="btns">
+      <a class="icon-btn icon-icons_add" id="planning">Add to Planning Center</a>
+      <a class="icon-btn icon-embed" href="<?php print $resources; ?>"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
+    </div>
+  <?php endif; ?>
+</div>
+
+<div class="page outer-container">
+
+  <div role="main" id="main-content<?php if ($page['sidebar']): ?> with-side<?php endif; ?>">
+
+    <?php if(isset($node)): ?>
+      <?php if($node->type == 'artist_worship_leader'): ?>
+      <a class="bread icon icon-icons_find_song" href="/worship-leaders">All Worship Leaders</a>
+      <?php endif; ?>
+    <?php endif; ?>
 
     <?php if ($action_links): ?>
       <ul class="action-links"><?php print render($action_links); ?></ul>
@@ -75,20 +93,72 @@
 
   </div><!-- /main-->
 
-  <?php if ($page['sidebar_first']): ?>
-    <div class="sidebar-first">
-    <?php print render($page['sidebar_first']); ?>
+  <?php if ($page['sidebar']): ?>
+    <div class="sidebar">
+      <?php print render($page['sidebar']); ?>
     </div>
   <?php endif; ?>
 
-  <?php if ($page['sidebar_second']): ?>
-    <div class="sidebar-second">
-      <?php print render($page['sidebar_second']); ?>
-    </div>
-  <?php endif; ?>
 </div><!-- /page-->
 
+<?php if ($page['pre_footer'] || !empty($links) || $is_front): ?>
+  <div class="pre-footer">
+    <?php print render($page['pre_footer']); ?>
+    <?php if (!empty($links)): ?>
+      <div class="share-link">
+      <span class="icon icon-icons_share"></span>
+      <?php print $links['addtoany']['title']; ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($is_front): ?>
+      <a href="/insights" class="icon-btn icon-icons_insights">View All Insights</a>
+    <?php endif; ?>
+  </div>
+<?php endif; ?>
+
 <footer role="contentinfo">
-  <?php print render($page['footer']); ?>
+  <div class="outer-container">
+    <?php print render($page['footer']); ?>
+    <div class="footer-btm">
+      <span>&copy; <?php print date('Y'); ?> ESSENTIAL WORSHIP</span>
+      <span><a href="/">Terms of Use</a><a href="/">Privacy Policy</a></span>
+    </div>
+  </div>
 </footer>
+
+<?php if(isset($node)): ?>
+    <?php if($node->type == 'song'): ?>
+      <div id="songModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  </div>
+                  <div class="modal-body">
+                      <iframe width="600" height="395" frameborder="0" allowfullscreen=""></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <?php endif; ?>
+<?php endif; ?>
+
+<?php if($page['modal']): ?>
+  <div id="myModal" class="non-video modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <?php print render($page['modal']); ?>
+              </div>
+          </div>
+      </div>
+  </div>
+<?php endif; ?>
+
+<?php if($page['outside_content']): ?>
+  <?php print render($page['outside_content']); ?>
+<?php endif; ?>
 

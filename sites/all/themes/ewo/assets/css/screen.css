@@ -2000,21 +2000,25 @@ footer nav {
       border-color: #e44345; }
       .song-listing .audio-btn a:first-child:hover:after {
         border-left-color: #e44345; }
-    .song-listing .audio-btn a:first-child.open + #remove {
-      display: block; }
-  .song-listing .audio-btn #remove {
+    .song-listing .audio-btn a:first-child.open + .remove {
+      height: 30px;
+      overflow: visible;
+      width: 30px;
+      visibility: visible; }
+  .song-listing .audio-btn .remove {
     background-color: #ecf0f1;
     color: #1a1717;
-    display: none;
     font-size: 28px;
-    height: 30px;
+    height: 0;
     left: 0;
+    overflow: hidden;
     padding: 3px 4px;
     position: absolute;
     text-decoration: none;
     top: 0;
+    visibility: hidden;
     width: 30px; }
-    .song-listing .audio-btn #remove:hover polygon {
+    .song-listing .audio-btn .remove:hover polygon {
       fill: #e44345; }
 
 .song-listing .group-song-info {
