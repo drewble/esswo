@@ -1441,6 +1441,9 @@ footer nav {
 
 .node-type-song .hero {
   position: relative; }
+  .node-type-song .hero h2 span {
+    font-size: 13px;
+    text-transform: lowercase; }
 .node-type-song .bread {
   color: #1a1717;
   display: none;
@@ -1701,6 +1704,9 @@ footer nav {
   .smart-filter .field-type-text + .field-type-text {
     font-size: 14px;
     font-style: italic; }
+    .smart-filter .field-type-text + .field-type-text span {
+      font-size: 12px;
+      text-transform: lowercase; }
   .smart-filter span, .smart-filter .field-type-taxonomy-term-reference {
     display: inline;
     font-size: 12px;
@@ -2025,6 +2031,12 @@ footer nav {
     width: 30px; }
     .song-listing .audio-btn .remove:hover polygon {
       fill: #e44345; }
+
+.node-song.node-teaser .field-type-text span {
+  float: left;
+  font-size: 12px;
+  line-height: 1.8em;
+  margin-right: 2px; }
 
 .song-listing .group-song-info {
   padding-left: 0;

@@ -6,6 +6,13 @@
 .node-type-song {
   .hero {
     position: relative;
+
+    h2 {
+      span {
+        font-size: 13px;
+        text-transform: lowercase;
+      }
+    }
   }
 
   .bread {
@@ -366,6 +373,11 @@
   .field-type-text + .field-type-text {
     font-size: 14px;
     font-style: italic;
+
+    span {
+      font-size: 12px;
+      text-transform: lowercase;
+    }
   }
 
   span, .field-type-taxonomy-term-reference {

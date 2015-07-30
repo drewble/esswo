@@ -438,6 +438,13 @@
 }
 
 // Title, Artist
+.node-song.node-teaser .field-type-text span {
+	float: left;
+	font-size: 12px;
+	line-height: 1.8em;
+	margin-right: 2px;
+}
+
 .song-listing {
 	.group-song-info {
 		padding-left:0;

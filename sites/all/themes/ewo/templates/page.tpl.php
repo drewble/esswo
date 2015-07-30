@@ -49,7 +49,7 @@ $links = '';
   <?php print render($title_suffix); ?>
 
   <?php if(!empty($subtitle)): ?>
-    <h2><?php print $subtitle; ?></h2>
+    <h2><?php if(isset($node)): ?><?php if($node->type == 'song'): ?><span>Recorded by: </span><br /><?php endif; ?><?php endif; ?><?php print $subtitle; ?></h2>
   <?php endif; ?>
   <?php if(!empty($resources)): ?>
     <div class="btns">
