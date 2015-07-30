@@ -121,7 +121,7 @@ $links = '';
     <?php print render($page['footer']); ?>
     <div class="footer-btm">
       <span>&copy; <?php print date('Y'); ?> ESSENTIAL WORSHIP</span>
-      <span><a href="/">Terms of Use</a><a href="/">Privacy Policy</a></span>
+      <span><a href="http://providentcentral.com/Terms/" target="_blank">Terms of Use</a><a href="http://providentcentral.com/Privacy/" target="_blank">Privacy Policy</a></span>
     </div>
   </div>
 </footer>
