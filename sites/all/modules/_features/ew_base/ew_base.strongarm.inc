@@ -281,5 +281,15 @@ function ew_base_strongarm() {
   $strongarm->value = 0;
   $export['menu_attributes_title_enable'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'roleassign_roles';
+  $strongarm->value = array(
+    3 => '3',
+    4 => 0,
+  );
+  $export['roleassign_roles'] = $strongarm;
+
   return $export;
 }

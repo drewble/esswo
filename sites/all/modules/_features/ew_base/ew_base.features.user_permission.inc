@@ -250,6 +250,16 @@ function ew_base_user_default_permissions() {
     'module' => 'menu_admin_per_menu',
   );
 
+  // Exported permission: 'assign roles'.
+  $permissions['assign roles'] = array(
+    'name' => 'assign roles',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'roleassign',
+  );
+
   // Exported permission: 'blocked node status'.
   $permissions['blocked node status'] = array(
     'name' => 'blocked node status',
