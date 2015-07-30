@@ -24,6 +24,7 @@
 
   	$('.audio-btn a:first-child').click (e) ->
   		$('.play-audio.show').removeClass 'show'
+  		$('.audio-btn .open').removeClass 'open'
   		$(this).addClass 'open'
   		$(this).parent().siblings('.play-audio').addClass('show')
   		e.preventDefault()
