@@ -1668,10 +1668,12 @@ footer nav {
             width: 133px; } }
   .node-song .view-display-id-entity_view_3 .song-info {
     background-color: #3d3738;
-    color: #fff; }
+    color: #ecf0f1; }
     .node-song .view-display-id-entity_view_3 .song-info div {
-      font-size: 14px;
+      font-size: 13px;
       margin: 2px 0; }
+      .node-song .view-display-id-entity_view_3 .song-info div span {
+        font-size: 12px; }
 
 .node-song .field-type-link-field {
   margin: 4% 4% 0 0; }

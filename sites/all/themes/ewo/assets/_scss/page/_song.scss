@@ -315,11 +315,15 @@
 
     .song-info {
       background-color: #3d3738;
-      color: #fff;
+      color: $light;
 
       div {
-        font-size: 14px;
+        font-size: 13px;
         margin: 2px 0;
+
+        span {
+          font-size:12px;
+        }
       }
     }
   }
