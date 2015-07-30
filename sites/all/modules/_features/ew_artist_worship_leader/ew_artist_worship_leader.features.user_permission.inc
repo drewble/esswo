@@ -10,6 +10,16 @@
 function ew_artist_worship_leader_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access draggableviews'.
+  $permissions['access draggableviews'] = array(
+    'name' => 'access draggableviews',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'draggableviews',
+  );
+
   // Exported permission: 'create artist_worship_leader content'.
   $permissions['create artist_worship_leader content'] = array(
     'name' => 'create artist_worship_leader content',
