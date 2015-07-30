@@ -11,13 +11,13 @@
     g_tracks = []
 
     getUsername = (callback) ->
-      console.log 'getUsername'
+      # console.log 'getUsername'
       url = 'https://api.spotify.com/v1/me'
       $.ajax url,
         dataType: 'json'
         headers: 'Authorization': 'Bearer ' + g_access_token
         success: (r) ->
-          console.log 'got username response', r
+          # console.log 'got username response', r
           callback r.id
           return
         error: (r) ->
@@ -26,9 +26,8 @@
       return
 
     createPlaylist = (username, name, callback) ->
-      console.log 'createPlaylist', username, name
+      # console.log 'createPlaylist', username, name
       url = 'https://api.spotify.com/v1/users/' + username + '/playlists'
-      # console.log($.get(url)) 
       $.ajax url,
         type: 'GET'
         dataType: 'json'
@@ -37,13 +36,19 @@
           'Authorization': 'Bearer ' + g_access_token
           'Content-Type': 'application/json'
         success: (r) ->
+          # loop to see existence of 'Essential Worship' playlist
           i = 0
           spotify_id = ''
           while i < r.items.length
-            if r.items[i].name == 'essential-worship'
+            # If 'Essential Worship' playlist exists
+            if r.items[i].name == 'Essential Worship'
+              # set spotify_id to be the id of the existing playlist
               spotify_id = r.items[i].id
             i++
+          # if spotify_id is empty ('Essential Worship' playlist doesn't exist)
           if spotify_id.length == 0
+            $('#creating h1').text('Creating Playlist')
+            # create the 'Essential Worship' playlist
             $.ajax url,
               method: 'POST'
               data: JSON.stringify(
@@ -54,20 +59,22 @@
                 'Authorization': 'Bearer ' + g_access_token
                 'Content-Type': 'application/json'
               success: (r) ->
-                console.log 'create playlist response', r
+                # console.log 'create playlist response', r
                 callback r.id
                 return
               error: (r) ->
                 callback null
                 return
             return
+          # 'Essential Worship' playlist exists, so set playlist ID to that one
           else
+            $('#creating h1').text('Found Playlist')
             callback spotify_id
 
 
 
     addTracksToPlaylist = (username, playlist, tracks, callback) ->
-      console.log 'addTracksToPlaylist', username, playlist, tracks
+      # console.log 'addTracksToPlaylist', username, playlist, tracks
       url = 'https://api.spotify.com/v1/users/' + username + '/playlists/' + playlist + '/tracks'
       # ?uris='+encodeURIComponent(tracks.join(','));
       $.ajax url,
@@ -78,7 +85,7 @@
           'Authorization': 'Bearer ' + g_access_token
           'Content-Type': 'application/json'
         success: (r) ->
-          console.log 'add track response', r
+          # console.log 'add track response', r
           callback r.id
           return
         error: (r) ->
@@ -91,26 +98,26 @@
       hash = location.hash.replace(/#/g, '')
       all = hash.split('&')
       args = {}
-      console.log 'all', all
+      # console.log 'all', all
       all.forEach (keyvalue) ->
         idx = keyvalue.indexOf('=')
         key = keyvalue.substring(0, idx)
         val = keyvalue.substring(idx + 1)
         args[key] = val
         return
-      g_name = localStorage.getItem('createplaylist-name')
-      g_tracks = JSON.parse(localStorage.getItem('createplaylist-tracks'))
-      console.log 'got args', args
+      g_name = localStorage.getItem('spotifyplaylist-name')
+      g_tracks = JSON.parse(localStorage.getItem('spotifyplaylist-tracks'))
+      # console.log 'got args', args
       if typeof args['access_token'] != 'undefined'
         # got access token
-        console.log 'got access token', args['access_token']
+        # console.log 'got access token', args['access_token']
         g_access_token = args['access_token']
       getUsername (username) ->
-        console.log 'got username', username
+        # console.log 'got username', username
         createPlaylist username, g_name, (playlist) ->
-          console.log 'created playlist', playlist
+          # console.log 'created playlist', playlist
           addTracksToPlaylist username, playlist, g_tracks, ->
-            console.log 'tracks added.'
+            # console.log 'tracks added.'
             $('#playlistlink').attr 'href', 'spotify:user:' + username + ':playlist:' + playlist
             $('#creating').hide()
             $('#done').show()

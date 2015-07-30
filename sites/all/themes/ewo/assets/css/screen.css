@@ -1712,18 +1712,8 @@ footer nav {
     border-color: #e44345; }
 
 .site-wrapper {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 50%;
-  height: 50%; }
-
-.site-wrapper-inner {
-  position: absolute;
-  right: -250px;
-  bottom: -30px;
-  width: 500px;
-  height: 100px; }
+  margin: 0 auto;
+  padding: 150px 0; }
 
 .page-songs .hero {
   background: url(../img/songs.jpg) no-repeat scroll center center;

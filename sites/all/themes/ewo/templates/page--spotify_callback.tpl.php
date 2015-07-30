@@ -13,7 +13,7 @@
 <div class="site-wrapper">
   <div class="site-wrapper-inner">
     <div id="creating" style="text-align: center;">
-      <h1>Creating playlist...</h1>
+      <h1>Checking for playlist...</h1>
     </div>
     <div id="done" style="display: none; text-align: center;">
       <h1>Done!</h1>
