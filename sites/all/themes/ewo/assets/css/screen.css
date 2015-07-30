@@ -1167,6 +1167,7 @@ footer nav {
     text-transform: uppercase; }
   .front .hero h2 {
     color: #e44345;
+    font-style: normal;
     font-size: 35px;
     line-height: 1em;
     margin-bottom: 5px;
