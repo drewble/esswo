@@ -835,6 +835,8 @@ header nav {
         margin-left: -75px;
         width: 150px; }
     .hero.with-img h2 {
+      color: #ecf0f1;
+      font-style: normal;
       text-transform: none;
       margin: 0 auto; }
       @media screen and (min-width: 768px) {
@@ -1746,6 +1748,8 @@ footer nav {
       bottom: 20px;
       width: 134px; }
   .page-songs .hero h2 {
+    color: #ecf0f1;
+    font-style: normal;
     margin: 0 auto;
     text-transform: none; }
     @media screen and (min-width: 768px) {
