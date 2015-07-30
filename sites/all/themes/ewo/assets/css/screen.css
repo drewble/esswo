@@ -1453,6 +1453,7 @@ footer nav {
   .node-type-song .bread:hover {
     color: #e44345; }
 .node-type-song .page {
+  margin-top: 0;
   max-width: none; }
 .node-type-song .tabs, .node-type-song .drupal-messages {
   max-width: 68em;
