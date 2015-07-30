@@ -2140,6 +2140,7 @@ footer nav {
   margin-bottom: 0;
   position: relative; }
   .path-worship-leaders .node-artist-worship-leader h2 a {
+    background-color: #ccc;
     color: #fff;
     display: block;
     font-size: 34px;
