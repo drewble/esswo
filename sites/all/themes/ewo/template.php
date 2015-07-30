@@ -3,11 +3,11 @@
   Preprocess
 */
 
-/*
-function ewo_preprocess_html(&$vars) {
-  //  kpr($vars['content']);
-}
-*/
+
+// function ewo_preprocess_html(&$vars) {
+//   sdpm($vars);
+// }
+
 
 function ewo_preprocess_page(&$vars,$hook) {
   $path = drupal_get_path('theme', 'ewo');
@@ -63,6 +63,11 @@ function ewo_preprocess_page(&$vars,$hook) {
   if ($vars['theme_hook_suggestions'][0] == 'page__songs') {
     $vars['subtitle'] = 'Browse our collection of worship songs for any key, tempo, theme,
 ministry or service to find the perfect song.';
+  }
+
+  // Spotify Callback Page
+  if ($vars['theme_hook_suggestions'][0] == 'page__spotify_callback') {
+    drupal_add_js($path .'/assets/js/spotify_add_to_playlist.js', array('group' => JS_THEME));
   }
 }
 

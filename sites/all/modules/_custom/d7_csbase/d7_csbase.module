@@ -15,6 +15,13 @@ function d7_csbase_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_SUGGESTED_ITEM,
   );
+  // Adds Spotify Callback page - see sites/all/themes/ewo/assets/coffee/spotify_add_to_playlist
+  $items['spotify-callback'] = array(
+    'title' => 'Spotify Callback',
+    'page callback' => 'get_homepage',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
 
   return $items;
 }
