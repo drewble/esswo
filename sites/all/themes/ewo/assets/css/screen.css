@@ -109,7 +109,7 @@ h3 {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-  background-position: 12px 15px;
+  background-position: 12px 16px;
   background-size: 22px;
   border-color: #524b4c;
   line-height: 3.2em;
@@ -127,7 +127,7 @@ h3 {
     display: block;
     float: left;
     margin-right: 15px;
-    padding: 22px 23px; }
+    padding: 23px; }
   .icon-btn:hover {
     background-color: transparent;
     border-color: #524b4c;
@@ -162,7 +162,7 @@ h3 {
   background-size: 27px; }
 
 .icon-icons_insights {
-  background-position: 13px 12px;
+  background-position: 14px 12px;
   background-size: 17px; }
 
 .icon-icons_fbook_dk {
@@ -864,7 +864,7 @@ header nav {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-    background-position: 12px 15px;
+    background-position: 12px 16px;
     background-size: 22px;
     border-color: #524b4c;
     line-height: 3.2em;
@@ -882,7 +882,7 @@ header nav {
       display: block;
       float: left;
       margin-right: 15px;
-      padding: 22px 23px; }
+      padding: 23px; }
     .pre-footer .icon-btn:hover, .pre-footer .addtoany_share_save:hover {
       background-color: transparent;
       border-color: #524b4c;
@@ -891,7 +891,7 @@ header nav {
         background-color: #e44345;
         text-decoration: none; }
     .pre-footer .icon-btn.icon-icons_insights, .pre-footer .addtoany_share_save.icon-icons_insights {
-      background-position: 13px 12px;
+      background-position: 14px 12px;
       background-size: 17px; }
     .pre-footer .icon-btn span.a2a_img, .pre-footer .addtoany_share_save span.a2a_img {
       display: none; }
