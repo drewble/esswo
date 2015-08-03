@@ -25,7 +25,7 @@ html, body {
   font-size: 100%; }
 
 body {
-  color: #1a1717;
+  color: #3d3738;
   font-family: "Titillium Web", sans-serif;
   font-weight: 300;
   line-height: 1.5em; }
@@ -145,7 +145,7 @@ h3 {
     top: 6px;
     width: 20px; }
   .icon-embed path {
-    fill: #1a1717; }
+    fill: #3d3738; }
 
 .icon-icons_listen,
 .icon-icons_download,
@@ -212,7 +212,7 @@ label.required:after {
 input[type="text"], input[type="password"], input[type="email"] {
   background-color: #ecf0f1;
   border: none;
-  color: #1a1717;
+  color: #3d3738;
   font: 1.75em "Ropa Sans", sans-serif;
   margin: 10px 0;
   padding: 2% 3%; }
@@ -360,7 +360,7 @@ ul.primary {
       background-color: #ecf0f1;
       border-bottom: 1px solid #ecf0f1;
       border-radius: 3px 3px 0 0;
-      color: #1a1717;
+      color: #3d3738;
       display: inline-block;
       font-size: .8em;
       padding: 5px 10px; }
@@ -378,7 +378,7 @@ ul.primary {
     position: relative; }
     .pager li.current {
       background-color: #ecf0f1;
-      color: #1a1717; }
+      color: #3d3738; }
     .pager li:first-child.current:before {
       color: #ecf0f1;
       content: "<";
@@ -391,12 +391,12 @@ ul.primary {
       .pager li.next a {
         color: #b5b5b6; }
         .pager li.next a:hover {
-          color: #1a1717; }
+          color: #3d3738; }
   .pager a {
     color: #b5b5b6;
     text-decoration: none; }
     .pager a:hover {
-      color: #1a1717; }
+      color: #3d3738; }
 
 .modal.non-video .modal-dialog {
   -webkit-transform: translate(24%, 12%);
@@ -801,7 +801,7 @@ header nav {
       top: 0;
       width: 180px; }
     .hero .btns:before {
-      background-color: #1a1717; }
+      background-color: #3d3738; }
     .hero .btns a {
       margin: 5px 0; }
       @media screen and (min-width: 768px) {
@@ -1123,8 +1123,8 @@ footer nav {
       font-style: italic;
       text-transform: lowercase; }
   #mailchimp-signup-subscribe-block-registration-form input[type="submit"] {
-    border: 2px solid #1a1717;
-    color: #1a1717;
+    border: 2px solid #3d3738;
+    color: #3d3738;
     float: right;
     font-size: 13px;
     line-height: 1.2em;
@@ -1132,7 +1132,7 @@ footer nav {
     width: 30%;
     min-width: 0; }
     #mailchimp-signup-subscribe-block-registration-form input[type="submit"]:hover {
-      background-color: #1a1717;
+      background-color: #3d3738;
       color: #fff; }
 
 #mailchimp-newsletter-62125-mergefields {
@@ -1251,7 +1251,7 @@ footer nav {
   #block-views-popular-content-block .title:after,
   #block-views-new-content-block .title:after,
   #block-views-banners-banner-sidebar-top .title:after {
-    background-color: #1a1717;
+    background-color: #3d3738;
     left: 0;
     margin-left: 0;
     width: 80%; }
@@ -1288,10 +1288,10 @@ footer nav {
     border-radius: 20px;
     content: " ";
     display: block;
-    height: 11px;
+    height: 9px;
     float: left;
-    margin: 8px 7px 0 0;
-    width: 11px; }
+    margin: 9px 7px 0 0;
+    width: 9px; }
 
 @media screen and (min-width: 1024px) {
   #block-views-banners-banner-sidebar-top {
@@ -1344,7 +1344,7 @@ footer nav {
       #block-views-news-news-front > .title {
         margin: 0 auto 50px; } }
     #block-views-news-news-front > .title:after {
-      background-color: #1a1717;
+      background-color: #3d3738;
       bottom: -10px;
       margin-left: -42px;
       width: 84px; }
@@ -1365,7 +1365,7 @@ footer nav {
     text-decoration: none; }
     @media screen and (min-width: 1024px) {
       .news-listing > ul a {
-        color: #1a1717; } }
+        color: #3d3738; } }
     .news-listing > ul a:before {
       content: " ";
       display: block;
@@ -1446,7 +1446,7 @@ footer nav {
       font-size: 13px;
       text-transform: lowercase; }
 .node-type-song .bread {
-  color: #1a1717;
+  color: #3d3738;
   display: none;
   height: 13px;
   left: 0;
@@ -1605,7 +1605,7 @@ footer nav {
   right: 10px; }
 
 #spotify-add {
-  color: #1a1717;
+  color: #3d3738;
   float: right;
   font-size: 0.75em;
   line-height: 1.4em;
@@ -1620,7 +1620,7 @@ footer nav {
     #spotify-add {
       width: 9%; } }
   #spotify-add span {
-    border: 1px solid #1a1717;
+    border: 1px solid #3d3738;
     display: block;
     font-size: 30px;
     line-height: 1em;
@@ -1635,8 +1635,8 @@ footer nav {
   margin-bottom: 70px; }
   .node-song .view-display-id-entity_view_3 .key-tempo span {
     background-color: #ecf0f1;
-    border-bottom: 2px solid #1a1717;
-    border-right: 2px solid #1a1717;
+    border-bottom: 2px solid #3d3738;
+    border-right: 2px solid #3d3738;
     display: block;
     float: left;
     font-size: 2em;
@@ -1825,7 +1825,7 @@ footer nav {
       color: #cfd2d3;
       font: 13px "Titillium Web", sans-serif; }
     #views-exposed-form-songs-page .clear-filters:hover {
-      color: #1a1717; }
+      color: #3d3738; }
   #views-exposed-form-songs-page .views-exposed-widget {
     padding: 0; }
     @media screen and (min-width: 768px) {
@@ -1894,7 +1894,7 @@ footer nav {
     position: relative;
     top: 8px; }
     #views-exposed-form-songs-page #edit-title-wrapper.active p small:hover {
-      color: #1a1717; }
+      color: #3d3738; }
 @media screen and (min-width: 768px) {
   #views-exposed-form-songs-page #edit-field-tempo-tid-wrapper {
     border-right: 2px solid #ecf0f1;
@@ -1977,7 +1977,7 @@ footer nav {
   .song-listing .view-content li:first-child {
     padding-top: 0; }
   .song-listing .view-content li:last-child {
-    border-bottom: 1px solid #1a1717; }
+    border-bottom: 1px solid #3d3738; }
 .song-listing .audio-btn,
 .song-listing .field-group-div {
   float: left;
@@ -1994,7 +1994,7 @@ footer nav {
   position: relative;
   width: 35px; }
   .song-listing .audio-btn a:first-child {
-    border: 2px solid #1a1717;
+    border: 2px solid #3d3738;
     border-radius: 30px;
     display: inline-block;
     height: 30px;
@@ -2002,7 +2002,7 @@ footer nav {
     text-indent: -9999px;
     width: 30px; }
     .song-listing .audio-btn a:first-child:after {
-      border: 10px solid #1a1717;
+      border: 10px solid #3d3738;
       border-bottom: 6px solid transparent;
       border-right: 7px solid transparent;
       border-top: 6px solid transparent;
@@ -2022,7 +2022,7 @@ footer nav {
       visibility: visible; }
   .song-listing .audio-btn .remove {
     background-color: #ecf0f1;
-    color: #1a1717;
+    color: #3d3738;
     font-size: 28px;
     height: 0;
     left: 0;
@@ -2196,7 +2196,7 @@ footer nav {
   padding: 13% 0 6%; }
 .node-type-artist-worship-leader .bread {
   background-size: 25px;
-  color: #1a1717;
+  color: #3d3738;
   float: none;
   margin: 20px 0;
   padding-left: 31px;
@@ -2247,7 +2247,7 @@ footer nav {
     position: absolute;
     width: 34px; }
   #block-views-worship-leaders-block-2 h2:after {
-    background-color: #1a1717;
+    background-color: #3d3738;
     margin-left: -50px;
     width: 100px; }
 #block-views-worship-leaders-block-2 > ul, #block-views-worship-leaders-block-2 > ul li {

@@ -19,7 +19,7 @@ html, body {
   font-size: 100%; }
 
 body {
-  color: #1a1717;
+  color: #3d3738;
   font-family: "Titillium Web", sans-serif;
   font-weight: 300;
   line-height: 1.5em; }
@@ -139,7 +139,7 @@ h3 {
     top: 6px;
     width: 20px; }
   .icon-embed path {
-    fill: #1a1717; }
+    fill: #3d3738; }
 
 .icon-icons_listen,
 .icon-icons_download,
@@ -225,7 +225,7 @@ ul.primary {
       background-color: #ecf0f1;
       border-bottom: 1px solid #ecf0f1;
       border-radius: 3px 3px 0 0;
-      color: #1a1717;
+      color: #3d3738;
       display: inline-block;
       font-size: .8em;
       padding: 5px 10px; }
@@ -243,7 +243,7 @@ ul.primary {
     position: relative; }
     .pager li.current {
       background-color: #ecf0f1;
-      color: #1a1717; }
+      color: #3d3738; }
     .pager li:first-child.current:before {
       color: #ecf0f1;
       content: "<";
@@ -256,12 +256,12 @@ ul.primary {
       .pager li.next a {
         color: #b5b5b6; }
         .pager li.next a:hover {
-          color: #1a1717; }
+          color: #3d3738; }
   .pager a {
     color: #b5b5b6;
     text-decoration: none; }
     .pager a:hover {
-      color: #1a1717; }
+      color: #3d3738; }
 
 /* Fonts (pulled in separately for wysiwyg)
  * -----------------------------------------------------------------------------*/
