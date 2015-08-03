@@ -2266,10 +2266,11 @@ footer nav {
   #block-views-worship-leaders-block-2 > ul a:hover:after {
     border: 1px solid #fff;
     color: #fff;
-    content: "Purchase Album";
+    content: "PURCHASE ALBUM";
     left: 26%;
     padding: 2%;
     position: absolute;
+    text-transform: uppercase;
     top: 42%; }
     #block-views-worship-leaders-block-2 > ul a:hover:after:before {
       border-color: #fff; }
