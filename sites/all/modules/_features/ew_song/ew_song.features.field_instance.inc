@@ -230,7 +230,11 @@ function ew_song_field_default_field_instances() {
   // Exported field_instance: 'node-song-field_church'
   $field_instances['node-song-field_church'] = array(
     'bundle' => 'song',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 201,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -263,7 +267,7 @@ function ew_song_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'multiselect',
       'settings' => array(),
       'type' => 'multiselect',
@@ -914,7 +918,11 @@ function ew_song_field_default_field_instances() {
   // Exported field_instance: 'node-song-field_services'
   $field_instances['node-song-field_services'] = array(
     'bundle' => 'song',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 200,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -947,7 +955,7 @@ function ew_song_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'multiselect',
       'settings' => array(),
       'type' => 'multiselect',
@@ -1258,7 +1266,11 @@ function ew_song_field_default_field_instances() {
   // Exported field_instance: 'node-song-field_theme'
   $field_instances['node-song-field_theme'] = array(
     'bundle' => 'song',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 199,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
