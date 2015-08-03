@@ -1608,10 +1608,10 @@ footer nav {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: 20%; }
+  width: 17%; }
   @media screen and (min-width: 768px) {
     #spotify-add {
-      width: 15%; } }
+      width: 13%; } }
   @media screen and (min-width: 1024px) {
     #spotify-add {
       width: 9%; } }
