@@ -1602,7 +1602,7 @@ footer nav {
 
 #spotify-add {
   color: #1a1717;
-  float: left;
+  float: right;
   font-size: 0.75em;
   line-height: 1.4em;
   text-align: center;
@@ -1614,15 +1614,17 @@ footer nav {
       width: 15%; } }
   @media screen and (min-width: 1024px) {
     #spotify-add {
-      width: 11%; } }
+      width: 9%; } }
   #spotify-add span {
     border: 1px solid #1a1717;
     display: block;
     font-size: 30px;
-    margin-bottom: 5%;
-    padding: 19% 0 28%; }
+    line-height: 1em;
+    margin-bottom: 5px;
+    padding: 3px 0 8px; }
   #spotify-add:hover span {
-    background-color: #1a1717;
+    background-color: #e44345;
+    border-color: #e44345;
     color: #fff; }
 
 .node-song .view-display-id-entity_view_3 {

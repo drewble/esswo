@@ -221,7 +221,7 @@
 
 #spotify-add {
   color: $base;
-  float: left;
+  float: right;
   font-size: em(12);
   line-height: 1.4em;
   text-align: center;
@@ -234,20 +234,22 @@
   }
 
   @include desk {
-    width: 11%;
+    width: 9%;
   }
 
   span {
     border: 1px solid $base;
     display: block;
     font-size: 30px;
-    margin-bottom: 5%;
-    padding: 19% 0 28%;
+    line-height: 1em;
+    margin-bottom: 5px;
+    padding: 3px 0 8px;
   }
 
   &:hover {
     span {
-      background-color: $base;
+      background-color: $red;
+      border-color:$red;
       color: #fff;
     }
   }
