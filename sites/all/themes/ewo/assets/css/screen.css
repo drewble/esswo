@@ -306,9 +306,11 @@ input[type="checkbox"] + label {
   display: inline; }
 
 #block-user-login ul, #block-user-login li {
-  float: right;
   margin: 10px 17px;
   padding: 0; }
+  @media screen and (min-width: 768px) {
+    #block-user-login ul, #block-user-login li {
+      float: right; } }
 #block-user-login li {
   list-style: none; }
   #block-user-login li:first-child {
@@ -317,6 +319,9 @@ input[type="checkbox"] + label {
   color: #fff; }
 #block-user-login .form-actions {
   margin: 0; }
+
+#block-formblock-user-register {
+  margin-bottom: 70px; }
 
 .field-type-mailchimp-lists-subscription fieldset {
   border: none;
@@ -708,6 +713,9 @@ header nav {
     padding: 28px 14px;
     text-align: center;
     text-decoration: none; }
+    @media screen and (min-width: 375px) {
+      header nav a {
+        padding: 36px 14px; } }
     @media screen and (min-width: 1024px) {
       header nav a {
         display: inline-block;
@@ -743,11 +751,15 @@ header nav {
     position: relative;
     top: 7px;
     width: 150px; }
+    @media screen and (min-width: 375px) {
+      header nav .login a {
+        top: 22px; } }
     @media screen and (min-width: 1024px) {
       header nav .login a {
         left: auto;
         margin: 0;
         padding: 0 29px;
+        top: 7px;
         width: 102px; } }
     header nav .login a:hover {
       background-color: transparent;
@@ -1218,6 +1230,8 @@ footer nav {
   @media screen and (min-width: 768px) {
     .front #views-exposed-form-songs-page {
       margin: 60px 0 50px; } }
+  .front #views-exposed-form-songs-page .clear-filters {
+    display: none; }
 
 @media screen and (min-width: 1024px) {
   #block-views-popular-content-block,
@@ -1355,9 +1369,14 @@ footer nav {
   width: 100%; }
   .news-listing > ul li {
     border-bottom: 1px solid #c4c3c3;
-    margin: 0;
+    margin: 0 0 20px;
     overflow: hidden;
+    padding-bottom: 20px;
     position: relative; }
+    @media screen and (min-width: 1024px) {
+      .news-listing > ul li {
+        margin-bottom: 0;
+        padding-bottom: 0; } }
     .news-listing > ul li:first-child:last-child, .news-listing > ul li:last-child {
       border-bottom: none; }
   .news-listing > ul a {
@@ -1366,22 +1385,8 @@ footer nav {
     @media screen and (min-width: 1024px) {
       .news-listing > ul a {
         color: #3d3738; } }
-    .news-listing > ul a:before {
-      content: " ";
-      display: block;
-      left: 0;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: -1; }
-      @media screen and (min-width: 1024px) {
-        .news-listing > ul a:before {
-          visibility: hidden; } }
     .news-listing > ul a:hover {
       color: #fff; }
-      .news-listing > ul a:hover:before {
-        visibility: visible; }
       .news-listing > ul a:hover h2 {
         color: #fff; }
     .news-listing > ul a .field-type-taxonomy-term-reference {
@@ -1423,17 +1428,19 @@ footer nav {
       left: 0;
       position: absolute;
       top: 0;
-      visibility: hidden;
       width: 100%;
-      z-index: 0;
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      transform: scale(1.1);
-      -webkit-transition: -webkit-transform 0.9s;
-      -moz-transition: -moz-transform 0.9s;
-      transition: transform 0.9s; }
+      z-index: 0; }
+      @media screen and (min-width: 1024px) {
+        .news-listing .news-copy .cover {
+          visibility: hidden;
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+          transform: scale(1.1);
+          -webkit-transition: -webkit-transform 0.9s;
+          -moz-transition: -moz-transform 0.9s;
+          transition: transform 0.9s; } }
     .news-listing .news-copy .info {
       position: relative;
       z-index: 1; }
@@ -1698,7 +1705,7 @@ footer nav {
     width: 100%; }
 
 .smart-filter {
-  margin-bottom: 20px; }
+  margin-bottom: 70px; }
   .smart-filter ul, .smart-filter li {
     margin: 0;
     padding: 0; }
@@ -2192,8 +2199,9 @@ footer nav {
       .path-worship-leaders .node-artist-worship-leader h2 a:hover .white-btn {
         display: block; } }
 
-.node-type-artist-worship-leader .hero.with-img {
-  padding: 13% 0 6%; }
+@media screen and (min-width: 1024px) {
+  .node-type-artist-worship-leader .hero.with-img {
+    padding: 13% 0 6%; } }
 .node-type-artist-worship-leader .bread {
   background-size: 25px;
   color: #3d3738;
@@ -2256,7 +2264,7 @@ footer nav {
 #block-views-worship-leaders-block-2 > ul li {
   display: inline-block;
   list-style: none;
-  margin: 0 1%;
+  margin: 0 1% 1%;
   position: relative; }
 #block-views-worship-leaders-block-2 > ul a {
   display: block; }

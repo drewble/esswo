@@ -97,6 +97,10 @@
 	  @include tablet {
 	  	margin: 60px 0 50px;
 	  }
+
+	  .clear-filters {
+	  	display: none;
+	  }
 	}
 }
 
@@ -230,9 +234,15 @@
 	> ul {
 		li {
 			border-bottom:1px solid #c4c3c3;
-			margin: 0;
+			margin: 0 0 20px;
 			overflow: hidden;
+			padding-bottom:20px;
 			position: relative;
+
+			@include desk {
+				margin-bottom: 0;
+				padding-bottom:0;
+			}
 
 			&:first-child:last-child, &:last-child {
 				border-bottom:none;
@@ -247,29 +257,8 @@
 				color: $base;
 			}
 
-			&:before {
-				content:" ";
-	      display: block;
-	      left: 0;
-	      height: 100%;
-	      position: absolute;
-	      top: 0;
-	      width: 100%;
-	      z-index: -1;
-				
-
-				@include desk {
-					visibility: hidden;
-				}
-			}
-
 			&:hover {
 				color: #fff;
-
-				&:before {
-					visibility: visible;
-		      
-		    }
 
 				h2 {
 					color: #fff;
@@ -324,11 +313,14 @@
 			left: 0;
 			position: absolute;
 			top:0;
-			visibility: hidden;
 			width: 100%;
 			z-index: 0;
-			@include transform(scale(1.1));
-			@include transition(transform .9s);
+
+			@include desk {
+				visibility: hidden;
+				@include transform(scale(1.1));
+				@include transition(transform .9s);
+			}
 		}
 
 		.info {

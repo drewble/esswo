@@ -129,6 +129,10 @@ header {
       text-align: center;
       text-decoration: none;
 
+      @include lgMobile {
+        padding:36px 14px;
+      }
+
       @include desk {
         display: inline-block;
         padding: 31px 14px;
@@ -161,10 +165,15 @@ header {
         top: 7px;
         width: 150px;
 
+        @include lgMobile {
+          top:22px;
+        }
+
         @include desk {
           left: auto;
           margin: 0;
           padding: 0 29px;
+          top: 7px;
           width: 102px;
         }
 
