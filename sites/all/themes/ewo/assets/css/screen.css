@@ -1438,9 +1438,11 @@ footer nav {
 
 .node-type-song .hero {
   position: relative; }
-  .node-type-song .hero h2 span {
-    font-size: 13px;
-    text-transform: lowercase; }
+  .node-type-song .hero h2 {
+    text-transform: none; }
+    .node-type-song .hero h2 span {
+      font-size: 13px;
+      text-transform: lowercase; }
 .node-type-song .bread {
   color: #1a1717;
   display: none;
