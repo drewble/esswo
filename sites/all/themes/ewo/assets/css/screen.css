@@ -1274,7 +1274,8 @@ footer nav {
       text-decoration: none; }
   .popular-content li h3, .new-content li h3, .news-listing li h3 {
     color: #3d3738;
-    font-size: 14px; }
+    font-size: 14px;
+    font-style: italic; }
 
 #block-views-new-content-block {
   margin: 40px 0; }
