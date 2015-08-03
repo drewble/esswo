@@ -43,8 +43,10 @@ if ($content['field_header_image']) {
 
   <div class="content">
     <?php if (!$page) { ?>
-      <a class="news-copy" href="<?php print $node_url; ?>" rel="bookmark" <?php if ($content['field_header_image']): ?> style="background: url(<?php print $newsImgUrl; ?>) no-repeat scroll center center; background-size: cover;"<?php endif; ?>>
-        <div class="cover"></div>
+      <a class="news-copy" href="<?php print $node_url; ?>" rel="bookmark">
+        <?php if ($content['field_header_image']): ?>
+          <div class="cover" style="background: url(<?php print $newsImgUrl; ?>) no-repeat scroll center center; background-size: cover;"></div>
+        <?php endif; ?>
         <div class="info">
           <span><?php echo trim(format_date($node->created, "custom", "F j, Y")); ?></span><?php print render($content['field_tags']);?>
           <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
