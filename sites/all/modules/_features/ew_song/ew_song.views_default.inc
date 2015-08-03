@@ -1124,6 +1124,21 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          'song::field_church' => 'song::field_church',
+          'song::field_theme' => 'song::field_theme',
+          'song::field_services' => 'song::field_services',
+        ),
+      ),
+    ),
     'action::node_save_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
