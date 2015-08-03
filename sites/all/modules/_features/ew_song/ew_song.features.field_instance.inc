@@ -258,7 +258,7 @@ function ew_song_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_church',
     'label' => 'Ministry',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -942,12 +942,12 @@ function ew_song_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_services',
     'label' => 'Service',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'multiselect',
       'settings' => array(),
       'type' => 'multiselect',
@@ -1286,7 +1286,7 @@ function ew_song_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_theme',
     'label' => 'Theme',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
