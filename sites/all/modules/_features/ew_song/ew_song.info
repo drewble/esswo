@@ -27,7 +27,6 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = title
 dependencies[] = views
-dependencies[] = views_bulk_operations
 features[context][] = songs_page
 features[ctools][] = context:context:3
 features[ctools][] = field_group:field_group:1
