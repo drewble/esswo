@@ -210,11 +210,6 @@ function ew_song_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'AND',
-    3 => 'AND',
-  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -247,30 +242,11 @@ function ew_song_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Tempo (field_tempo) */
-  $handler->display->display_options['filters']['field_tempo_tid']['id'] = 'field_tempo_tid';
-  $handler->display->display_options['filters']['field_tempo_tid']['table'] = 'field_data_field_tempo';
-  $handler->display->display_options['filters']['field_tempo_tid']['field'] = 'field_tempo_tid';
-  $handler->display->display_options['filters']['field_tempo_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_tempo_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_tempo_tid']['expose']['operator_id'] = 'field_tempo_tid_op';
-  $handler->display->display_options['filters']['field_tempo_tid']['expose']['label'] = 'Tempo';
-  $handler->display->display_options['filters']['field_tempo_tid']['expose']['operator'] = 'field_tempo_tid_op';
-  $handler->display->display_options['filters']['field_tempo_tid']['expose']['identifier'] = 'field_tempo_tid';
-  $handler->display->display_options['filters']['field_tempo_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-  );
-  $handler->display->display_options['filters']['field_tempo_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_tempo_tid']['vocabulary'] = 'tempo';
-  $handler->display->display_options['filters']['field_tempo_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Key (field_key) */
   $handler->display->display_options['filters']['field_key_tid']['id'] = 'field_key_tid';
   $handler->display->display_options['filters']['field_key_tid']['table'] = 'field_data_field_key';
   $handler->display->display_options['filters']['field_key_tid']['field'] = 'field_key_tid';
-  $handler->display->display_options['filters']['field_key_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_key_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_key_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_key_tid']['expose']['operator_id'] = 'field_key_tid_op';
   $handler->display->display_options['filters']['field_key_tid']['expose']['label'] = 'Key';
@@ -285,11 +261,30 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_key_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_key_tid']['vocabulary'] = 'key';
   $handler->display->display_options['filters']['field_key_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Tempo (field_tempo) */
+  $handler->display->display_options['filters']['field_tempo_tid']['id'] = 'field_tempo_tid';
+  $handler->display->display_options['filters']['field_tempo_tid']['table'] = 'field_data_field_tempo';
+  $handler->display->display_options['filters']['field_tempo_tid']['field'] = 'field_tempo_tid';
+  $handler->display->display_options['filters']['field_tempo_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_tempo_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_tempo_tid']['expose']['operator_id'] = 'field_tempo_tid_op';
+  $handler->display->display_options['filters']['field_tempo_tid']['expose']['label'] = 'Tempo';
+  $handler->display->display_options['filters']['field_tempo_tid']['expose']['operator'] = 'field_tempo_tid_op';
+  $handler->display->display_options['filters']['field_tempo_tid']['expose']['identifier'] = 'field_tempo_tid';
+  $handler->display->display_options['filters']['field_tempo_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_tempo_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_tempo_tid']['vocabulary'] = 'tempo';
+  $handler->display->display_options['filters']['field_tempo_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Theme (field_theme) */
   $handler->display->display_options['filters']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['filters']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['filters']['field_theme_tid']['field'] = 'field_theme_tid';
-  $handler->display->display_options['filters']['field_theme_tid']['group'] = 3;
+  $handler->display->display_options['filters']['field_theme_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_theme_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_theme_tid']['expose']['operator_id'] = 'field_theme_tid_op';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['label'] = 'Theme';
@@ -308,7 +303,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_services_tid']['id'] = 'field_services_tid';
   $handler->display->display_options['filters']['field_services_tid']['table'] = 'field_data_field_services';
   $handler->display->display_options['filters']['field_services_tid']['field'] = 'field_services_tid';
-  $handler->display->display_options['filters']['field_services_tid']['group'] = 3;
+  $handler->display->display_options['filters']['field_services_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_services_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_services_tid']['expose']['operator_id'] = 'field_services_tid_op';
   $handler->display->display_options['filters']['field_services_tid']['expose']['label'] = 'Services';
@@ -327,7 +322,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_church_tid']['id'] = 'field_church_tid';
   $handler->display->display_options['filters']['field_church_tid']['table'] = 'field_data_field_church';
   $handler->display->display_options['filters']['field_church_tid']['field'] = 'field_church_tid';
-  $handler->display->display_options['filters']['field_church_tid']['group'] = 3;
+  $handler->display->display_options['filters']['field_church_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_church_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_church_tid']['expose']['operator_id'] = 'field_church_tid_op';
   $handler->display->display_options['filters']['field_church_tid']['expose']['label'] = 'Ministry';
