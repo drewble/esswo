@@ -176,7 +176,7 @@ function ew_artist_worship_leader_views_default_views() {
   $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
   $handler->display->display_options['path'] = 'admin/content/worship-leaders';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Worship Leaders';
+  $handler->display->display_options['menu']['title'] = 'Worship Leader Sort';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
