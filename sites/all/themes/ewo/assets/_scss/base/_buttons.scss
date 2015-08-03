@@ -145,11 +145,6 @@
   background-size: 20px;
 }
 
-.icon-icons_popular {
-  background-position: 8px 6px;
-  background-size: 13px;
-}
-
 .white-btn {
   @include white-btn;
 }
@@ -158,6 +153,12 @@
   display: block;
   height: 24px;
   width: 24px;
+}
+
+.icon-icons_popular {
+  background-position: 0 6px;
+  background-size: 13px;
+  width: 18px;
 }
 
 .back-link {
