@@ -307,12 +307,15 @@
       }
 
       div {
+        display: table;
         margin: 10px 0;
+        width: 100%;
 
         span {
-          display: inline-block;
+          display: table-cell;
           font-size: 12px;
           text-transform: uppercase;
+          width: 37%;
 
           @include tablet {
               width: 133px;

@@ -1680,11 +1680,14 @@ footer nav {
       .node-song .view-display-id-entity_view_3 .theme, .node-song .view-display-id-entity_view_3 .song-info {
         padding: 5% 9%; } }
     .node-song .view-display-id-entity_view_3 .theme div, .node-song .view-display-id-entity_view_3 .song-info div {
-      margin: 10px 0; }
+      display: table;
+      margin: 10px 0;
+      width: 100%; }
       .node-song .view-display-id-entity_view_3 .theme div span, .node-song .view-display-id-entity_view_3 .song-info div span {
-        display: inline-block;
+        display: table-cell;
         font-size: 12px;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        width: 37%; }
         @media screen and (min-width: 768px) {
           .node-song .view-display-id-entity_view_3 .theme div span, .node-song .view-display-id-entity_view_3 .song-info div span {
             width: 133px; } }
