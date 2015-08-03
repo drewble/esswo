@@ -155,6 +155,16 @@ function ew_base_user_default_permissions() {
     'module' => 'google_analytics_counter',
   );
 
+  // Exported permission: 'administer google tag manager'.
+  $permissions['administer google tag manager'] = array(
+    'name' => 'administer google tag manager',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'google_tag',
+  );
+
   // Exported permission: 'administer internal nodes'.
   $permissions['administer internal nodes'] = array(
     'name' => 'administer internal nodes',
