@@ -51,25 +51,6 @@
 		p {
 			margin:0;
 		}
-
-		.clear-filters {
-			color: #9d9c9c;
-			font: em(12) $header;
-			position:absolute;
-			right: 0;
-			text-decoration: none;
-			text-transform: uppercase;
-			top:-25px;
-
-			span {
-				color: #cfd2d3;
-				font: 13px $font;
-			}
-
-			&:hover {
-				color: $base;
-			}
-		}
 	}
 	.view-empty {
 	  text-align: center;
@@ -130,6 +111,23 @@
 
 #views-exposed-form-songs-page {
 	position:relative;
+
+	.clear-filters {
+		color: #9d9c9c;
+		float:right;
+		font: em(12) $header;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		span {
+			color: #cfd2d3;
+			font: 13px $font;
+		}
+
+		&:hover {
+			color: $base;
+		}
+	}
 
 	.views-exposed-widget {
 		padding:0;

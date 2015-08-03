@@ -1772,19 +1772,6 @@ footer nav {
   position: relative; }
   .song-listing .view-header p {
     margin: 0; }
-  .song-listing .view-header .clear-filters {
-    color: #9d9c9c;
-    font: 0.75em "Ropa Sans", sans-serif;
-    position: absolute;
-    right: 0;
-    text-decoration: none;
-    text-transform: uppercase;
-    top: -25px; }
-    .song-listing .view-header .clear-filters span {
-      color: #cfd2d3;
-      font: 13px "Titillium Web", sans-serif; }
-    .song-listing .view-header .clear-filters:hover {
-      color: #1a1717; }
   .song-listing .view-empty {
     text-align: center;
     padding: 4%; }
@@ -1826,6 +1813,17 @@ footer nav {
 
 #views-exposed-form-songs-page {
   position: relative; }
+  #views-exposed-form-songs-page .clear-filters {
+    color: #9d9c9c;
+    float: right;
+    font: 0.75em "Ropa Sans", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase; }
+    #views-exposed-form-songs-page .clear-filters span {
+      color: #cfd2d3;
+      font: 13px "Titillium Web", sans-serif; }
+    #views-exposed-form-songs-page .clear-filters:hover {
+      color: #1a1717; }
   #views-exposed-form-songs-page .views-exposed-widget {
     padding: 0; }
     @media screen and (min-width: 768px) {
