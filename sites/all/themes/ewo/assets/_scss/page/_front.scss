@@ -233,7 +233,7 @@
 			overflow: hidden;
 			position: relative;
 
-			&:first-child:last-child {
+			&:first-child:last-child, &:last-child {
 				border-bottom:none;
 			}
 		}
@@ -326,6 +326,27 @@
 		position:relative;
 		text-align: center;
 		z-index: 1;
+
+		&:hover .cover {
+			display: none;
+		}
+
+		.cover {
+			background-color: #fff;
+			content: " ";
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top:0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.info {
+			position: relative;
+			z-index: 2;
+		}
 	}
 }
 

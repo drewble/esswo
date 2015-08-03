@@ -1356,7 +1356,7 @@ footer nav {
     margin: 0;
     overflow: hidden;
     position: relative; }
-    .news-listing > ul li:first-child:last-child {
+    .news-listing > ul li:first-child:last-child, .news-listing > ul li:last-child {
       border-bottom: none; }
   .news-listing > ul a {
     color: #fff;
@@ -1438,6 +1438,21 @@ footer nav {
     position: relative;
     text-align: center;
     z-index: 1; }
+    .news-listing .news-copy:hover .cover {
+      display: none; }
+    .news-listing .news-copy .cover {
+      background-color: #fff;
+      content: " ";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1; }
+    .news-listing .news-copy .info {
+      position: relative;
+      z-index: 2; }
 
 .node-type-song .hero {
   position: relative; }
