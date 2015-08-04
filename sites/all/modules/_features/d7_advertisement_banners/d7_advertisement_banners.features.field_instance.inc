@@ -130,44 +130,6 @@ function d7_advertisement_banners_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_banner_space'
-  $field_instances['node-banner-field_banner_space'] = array(
-    'bundle' => 'banner',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div',
-    'field_name' => 'field_banner_space',
-    'label' => 'Banner Space',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-banner-field_target'
   $field_instances['node-banner-field_target'] = array(
     'bundle' => 'banner',
@@ -216,7 +178,6 @@ function d7_advertisement_banners_field_default_field_instances() {
   t('<em>At least 920x920 recommended, as this is shown larger on mobile/tablet sizes.</em>');
   t('Banner Image');
   t('Banner Link');
-  t('Banner Space');
   t('Open URL in New Window');
   t('Use the full url for offsite links (e.g., http://google.com) or for local links, you can also just use the local path (e.g., \'news\' for http://[yoursite]/news)');
 
