@@ -133,12 +133,12 @@
 }
 
 .popular-content, .new-content, .news-listing {
-	ul, li {
+	> ul, > ul > li {
 		margin:0;
 		padding:0;
 	}
 
-	li {
+	> ul > li {
 		list-style:none;
 		margin: 20px 0;
 
@@ -232,7 +232,7 @@
 	width:100%;
 
 	> ul {
-		li {
+		> li {
 			border-bottom:1px solid #c4c3c3;
 			margin: 0 0 20px;
 			overflow: hidden;
@@ -247,41 +247,41 @@
 			&:first-child:last-child, &:last-child {
 				border-bottom:none;
 			}
-		}
 
-		a {
-			color: #fff;
-			text-decoration: none;
-
-			@include desk {
-				color: $base;
-			}
-
-			&:hover {
+			a {
 				color: #fff;
+				text-decoration: none;
 
-				h2 {
+				@include desk {
+					color: $base;
+				}
+
+				&:hover {
 					color: #fff;
+
+					h2 {
+						color: #fff;
+					}
+				}
+
+				.field-type-taxonomy-term-reference {
+					border-left:1px solid #3b3738;
+					display: inline-block;
+					line-height: .9em;
+					padding-left: 7px;
+					margin-left: 7px;
 				}
 			}
 
-			.field-type-taxonomy-term-reference {
-				border-left:1px solid #3b3738;
-				display: inline-block;
-				line-height: .9em;
-				padding-left: 7px;
-				margin-left: 7px;
-			}
-		}
+			h2 {
+				color: #fff;
+				font-size: 36px;
+				margin: 7px 0 2px;
+				text-transform: uppercase;
 
-		h2 {
-			color: #fff;
-			font-size: 36px;
-			margin: 7px 0 2px;
-			text-transform: uppercase;
-
-			@include desk {
-				color: $red;
+				@include desk {
+					color: $red;
+				}
 			}
 		}
 
