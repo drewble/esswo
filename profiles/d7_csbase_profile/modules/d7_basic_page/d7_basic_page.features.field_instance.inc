@@ -138,7 +138,7 @@ function d7_basic_page_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div',
     'field_name' => 'field_subtitle',
-    'label' => 'Subtitle (Artist/Worship Leaders)',
+    'label' => 'Subtitle',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -181,7 +181,7 @@ function d7_basic_page_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Header Image');
-  t('Subtitle (Artist/Worship Leaders)');
+  t('Subtitle');
 
   return $field_instances;
 }
