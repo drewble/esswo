@@ -82,7 +82,7 @@ footer {
           width: 100%;
 
           a {
-            background-size: 30px;
+            background-size: 30px 30px;
             background-position: center 27px;
             border-bottom-color:transparent;
             border-left-color:#4a4647;
@@ -100,7 +100,7 @@ footer {
 
       .icon {
         background-position: center center;
-        background-size: 23px;
+        background-size: 23px 23px;
         border:1px solid #4a4647;
         border-left-color:transparent;
         color: $light;
@@ -120,15 +120,15 @@ footer {
       }
 
       .icon-icons_fbook {
-        background-size: 11px;
+        background-size: 20px 20px;
       }
 
       .icon-icons_twitter {
-        background-size: 22px;
+        background-size: 22px 22px;
       }
 
       .icon-icons_insta {
-        background-size: 20px;
+        background-size: 20px 20px;
       }
     }
   }

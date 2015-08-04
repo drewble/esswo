@@ -14,11 +14,6 @@
   .icon-btn, .addtoany_share_save {
     @include icon-btn;
 
-    &.icon-icons_insights {
-      background-position: 14px 12px;
-      background-size: 17px;
-    }
-
     span.a2a_img {
       display: none;
     }
