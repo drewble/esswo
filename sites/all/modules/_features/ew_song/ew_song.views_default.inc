@@ -671,6 +671,8 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_services']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_services']['empty'] = 'N/A';
   $handler->display->display_options['fields']['field_services']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_services']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_services']['separator'] = ' / ';
   /* Field: Content: Scripture */
   $handler->display->display_options['fields']['field_scripture']['id'] = 'field_scripture';
   $handler->display->display_options['fields']['field_scripture']['table'] = 'field_data_field_scripture';
@@ -705,6 +707,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_church']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_church']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_church']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_church']['separator'] = ' / ';
   /* Field: Content: CCLI License */
   $handler->display->display_options['fields']['field_ccli_license']['id'] = 'field_ccli_license';
   $handler->display->display_options['fields']['field_ccli_license']['table'] = 'field_data_field_ccli_license';
