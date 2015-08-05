@@ -14,7 +14,7 @@ function d7_news_field_default_field_instances() {
   $field_instances['node-news_article-field_header_image'] = array(
     'bundle' => 'news_article',
     'deleted' => 0,
-    'description' => '<em>Ideal dimensions are 1400w x407h</em>',
+    'description' => '<em>Ideal dimensions are 1400w x 407h.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -188,7 +188,7 @@ function d7_news_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<em>Ideal dimensions are 1400w x407h</em>');
+  t('<em>Ideal dimensions are 1400w x 407h.</em>');
   t('Enter a comma-separated list of words to describe your content.');
   t('Header Image');
   t('News Body');

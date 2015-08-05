@@ -14,7 +14,7 @@ function ew_homepage_feature_field_default_field_instances() {
   $field_instances['node-homepage_feature-field_background_image'] = array(
     'bundle' => 'homepage_feature',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<em>Ideal dimensions are 700w x 700h.</em>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -368,6 +368,7 @@ function ew_homepage_feature_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<em>Ideal dimensions are 700w x 700h.</em>');
   t('Background Image');
   t('Headline 2');
   t('Headline 3');
