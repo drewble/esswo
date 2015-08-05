@@ -622,7 +622,7 @@ function d7_news_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="back-link icon-btn icon-embed" href="/news"><span class="icon-icons_find_song_opt" data-grunticon-embed></span>Back to News</a>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a class="back-link icon-btn icon-embed" href="/insights"><span class="icon-icons_find_song_opt" data-grunticon-embed></span>Back to Insights</a>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
