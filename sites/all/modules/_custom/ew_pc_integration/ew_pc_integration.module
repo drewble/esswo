@@ -45,7 +45,7 @@ function ew_pc_integration_menu() {
 function ew_pc_integration_api_connect() {
   require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
   require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
-  require_once(dirname(__FILE__) . '/pc-php-library/oauth.php');
+  module_load_include('php', 'oauth', 'lib/OAuth');
 
   $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
 
@@ -68,7 +68,7 @@ function ew_pc_integration_api_connect() {
 function ew_pc_integration_api_callback() {
   require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
   require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
-  require_once(dirname(__FILE__) . '/pc-php-library/oauth.php');
+  module_load_include('php', 'oauth', 'lib/OAuth');
 
   $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
   $request_token = new OAuthConsumer($_COOKIE["Drupal_visitor_oauth_token"], $_COOKIE["Drupal_visitor_oauth_token_secret"], NULL);
@@ -98,7 +98,7 @@ function ew_pc_integration_api_callback() {
 function ew_pc_integration_api_sync_song($nid) {
   require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
   require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
-  require_once(dirname(__FILE__) . '/pc-php-library/oauth.php');
+  module_load_include('php', 'oauth', 'lib/OAuth');
 
   $cookies = array('pc_intended_path' => 'pc-api-sync-song/'.$nid);
   user_cookie_save($cookies);
