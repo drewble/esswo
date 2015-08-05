@@ -300,7 +300,6 @@
 		text-align: center;
 		z-index: 1;
 		
-
 		&:hover .cover {
 			visibility: visible;
 			@include transform(scale(1));
@@ -318,6 +317,7 @@
 
 			@include desk {
 				visibility: hidden;
+				-webkit-backface-visibility: hidden;
 				@include transform(scale(1.1));
 				@include transition(transform .9s);
 			}
@@ -326,6 +326,7 @@
 		.info {
 			position: relative;
 			z-index: 1;
+			-webkit-font-smoothing: antialiased
 		}
 	}
 }
