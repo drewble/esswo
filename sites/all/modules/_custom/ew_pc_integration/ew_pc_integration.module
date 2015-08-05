@@ -166,7 +166,7 @@ function ew_pc_integration_api_sync_song($nid) {
   if (!empty($bpm)) {
     $pc_arrangement['bpm'] = $bpm;
   }
-  if ($key) {
+  if (!empty($key)) {
     $pc_arrangement['chord_chart_key'] = $key;
   }
   // Grab chord chart
@@ -174,8 +174,15 @@ function ew_pc_integration_api_sync_song($nid) {
     $pc_arrangement['chord_chart'] = $song->field_lyrics_chords[LANGUAGE_NONE][0]['value'];
   }
 
+  // Build key
+  $key_arrangement = array();
+  if (!empty($key)) {
+    $key_arrangement['starting'] = $key;
+    $key_arrangement['name'] = "Default Key";
+  }
+
   // Sync up this song with PC
-  if (ew_pc_integration_sync_song($pc_song, $pc_arrangement, $consumer, $access_token)) {
+  if (ew_pc_integration_sync_song($pc_song, $pc_arrangement, $key_arrangement, $consumer, $access_token)) {
     drupal_set_message('"'.$song->title.'" has been added to your Planning Center Online account.');
   }
   else {
@@ -195,9 +202,9 @@ function ew_pc_integration_api_sync_song($nid) {
 
 
   // Take us back to song page
-  //drupal_goto('node/'.$song->nid);
+  drupal_goto('node/'.$song->nid);
 
-  return '';
+  //return '';
 }
 
 /**
@@ -208,7 +215,7 @@ function ew_pc_integration_api_sync_song($nid) {
  * @param $access_token - OAuth access token
  * @return boolean
  */
-function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $consumer, $access_token) {
+function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $key = array(), $consumer, $access_token) {
   if (empty($song)) {
     return FALSE;
   }
@@ -252,6 +259,20 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $c
       $headers[] = "Content-type: application/json";
       $response = run_curl($request, "POST", $headers, $arrangement_json);
       $new_arrangement = json_decode($response);
+
+      // Sync key
+      if (!empty($new_arrangement->id)) {
+        $key['arrangement_id'] = $new_arrangement->id;
+        $key_json = json_encode($key);
+        $url = "https://services.planningcenteronline.com/keys.json";
+        $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
+        $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+        $headers = array();
+        $headers[] = "Content-type: application/json";
+        $response = run_curl($request, "POST", $headers, $key_json);
+        $new_key = json_decode($response);
+      }
+
     }
     return TRUE;
   }

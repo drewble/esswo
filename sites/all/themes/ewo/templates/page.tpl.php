@@ -52,7 +52,7 @@ if (!empty($bgImg)) {
   <?php endif; ?>
   <?php if(!empty($resources)): ?>
     <div class="btns">
-      <a class="icon-btn icon-icons_add" id="planning">Add to Planning Center</a>
+      <a class="icon-btn icon-icons_add" id="planning" href="/pc-api-sync-song/<?php print $node->nid; ?>">Add to Planning Center</a>
       <a class="icon-btn icon-icons_download" href="<?php print $resources; ?>">Download Song Resources</a>
     </div>
   <?php endif; ?>
