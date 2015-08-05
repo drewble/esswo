@@ -850,10 +850,10 @@ function ew_song_views_default_views() {
     0 => 'artist_worship_leader',
   );
 
-  /* Display: Smart Filter EVA */
-  $handler = $view->new_display('entity_view', 'Smart Filter EVA', 'entity_view_5');
+  /* Display: Related Songs EVA */
+  $handler = $view->new_display('entity_view', 'Related Songs EVA', 'entity_view_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Smart Filter';
+  $handler->display->display_options['title'] = '(none) - see header';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'smart-filter';
   $handler->display->display_options['defaults']['query'] = FALSE;
@@ -879,7 +879,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Smart Filter</h2>';
+  $handler->display->display_options['header']['area']['content'] = '<h2>Related Songs</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Tempo Terms on Node */
