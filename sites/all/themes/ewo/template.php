@@ -75,7 +75,6 @@ ministry or service to find the perfect song.';
 // function ewo_preprocess_node(&$vars,$hook) {
 //   if ($vars['type'] == 'song') {
 //     if ($vars['teaser'] == TRUE) {
-//       sdpm($vars);
 //       if (empty($vars['field_theme'])) {
         
 //       }

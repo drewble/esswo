@@ -24,6 +24,7 @@ dependencies[] = spotify
 dependencies[] = spotifyfield
 dependencies[] = strongarm
 dependencies[] = taxonomy
+dependencies[] = taxonomy_formatter
 dependencies[] = text
 dependencies[] = title
 dependencies[] = views
