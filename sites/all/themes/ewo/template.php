@@ -61,7 +61,7 @@ function ewo_preprocess_page(&$vars,$hook) {
 
   // Song page
   if ($vars['theme_hook_suggestions'][0] == 'page__songs') {
-    $vars['subtitle'] = 'Browse our collection of worship songs for any key, tempo, theme,
+    $vars['subtitle'] = 'browse our collection of worship songs for any key, tempo, theme,
 ministry or service to find the perfect song.';
   }
 
