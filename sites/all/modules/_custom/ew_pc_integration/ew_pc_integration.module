@@ -154,6 +154,11 @@ function ew_pc_integration_api_sync_song($nid) {
   if (!empty($song->field_songwriters[LANGUAGE_NONE][0]['value'])) {
     $pc_song['author'] = $song->field_songwriters[LANGUAGE_NONE][0]['value'];
   }
+  // Add song file
+  if (!empty($song->field_mp3[LANGUAGE_NONE][0]['uri'])) {
+    $pc_song['mp3_url'] = file_create_url($song->field_mp3[LANGUAGE_NONE][0]['uri']);
+  }
+
 
   // Build our arrangement object to sync with PC
   $pc_arrangement = array();
@@ -179,14 +184,14 @@ function ew_pc_integration_api_sync_song($nid) {
 
 
   //Testing - remove
-  $url = "https://services.planningcenteronline.com/songs.json?include_arrangements=true";
+  /*$url = "https://services.planningcenteronline.com/songs.json?include_arrangements=true";
   $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
   $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
   $headers = array();
   $headers[] = "Content-type: application/json";
   $response = run_curl($request, "GET", $headers);
   $test_song = json_decode($response);
-  dpm($test_song);
+  dpm($test_song);*/
 
 
   // Take us back to song page
@@ -208,11 +213,23 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $c
     return FALSE;
   }
 
+  // Try to upload song first
+  if (!empty($song['mp3_url'])) {
+
+    $url = "http://services.planningcenteronline.com/songs/import?ccli_number=".$song['ccli_id']."&files%5B%5D%5Burl%5D=".urlencode($song['mp3_url']);
+    $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
+    $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+    $headers = array();
+    $headers[] = "Content-type: application/json";
+    $response = run_curl($request, "GET", $headers);
+    $mp3_results = json_decode($response);
+  }
+
   // Turn into json
   $song_json = json_encode($song);
   $arrangement_json = json_encode($arrangement);
 
-  // Add song to pc first
+  // Add song to pc
   $url = "https://services.planningcenteronline.com/songs.json";
   $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
   $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
