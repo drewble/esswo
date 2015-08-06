@@ -138,6 +138,11 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_subtitle']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subtitle']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_subtitle']['element_default_classes'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Google Analytics Counter: Pageview Total */
   $handler->display->display_options['sorts']['pageview_total']['id'] = 'pageview_total';
   $handler->display->display_options['sorts']['pageview_total']['table'] = 'google_analytics_counter_storage';

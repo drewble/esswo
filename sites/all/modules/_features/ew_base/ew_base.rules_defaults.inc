@@ -56,7 +56,7 @@ function ew_base_default_rules_configuration() {
         },
         { "schedule" : {
             "component" : "rules_unflag_song_leader",
-            "date" : "+30 days",
+            "date" : "+60 days",
             "identifier" : "node-[node:nid]-unflag-as-new",
             "param_node" : [ "node" ]
           }
