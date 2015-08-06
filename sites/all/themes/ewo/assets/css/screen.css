@@ -1967,6 +1967,8 @@ footer nav {
     position: relative;
     top: 12px;
     text-transform: uppercase; }
+  #edit-field-key-tid-wrapper .chosen-container a.chosen-single {
+    text-transform: none; }
 
 #edit-flagged-wrapper {
   position: absolute;

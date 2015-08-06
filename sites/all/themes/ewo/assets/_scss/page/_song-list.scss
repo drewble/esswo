@@ -310,6 +310,10 @@
 		top:12px;
 	  text-transform: uppercase;
 	}
+
+	.chosen-container a.chosen-single {
+		text-transform: none;
+	}
 }
 
 // Flag sort (hidden and checked in js)
