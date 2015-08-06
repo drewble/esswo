@@ -481,10 +481,20 @@
 		font-size: 18px;
 		text-align: center;
 
+		@include desk {
+			width: 12%;
+		}
+
 		.field-label {
 			color: #3d3738;
 			font-size: 12px;
 			text-transform: uppercase;
+		}
+	}
+
+	.group-tempo {
+		@include desk {
+			width: 14%;
 		}
 	}
 }
@@ -501,7 +511,7 @@
 
 		@include desk {
 			padding:3% 4%;
-			width: auto;
+			width: 31%;
 		}
 
 		.field-label {
@@ -518,6 +528,7 @@
 
 			@include desk {
 				clear: none;
+				width: 68%;
 			}
 		}
 

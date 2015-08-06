@@ -2077,11 +2077,18 @@ footer nav {
   border-right: 1px solid #ecf0f1;
   font-size: 18px;
   text-align: center; }
+  @media screen and (min-width: 1024px) {
+    .song-listing .group-key,
+    .song-listing .group-tempo {
+      width: 12%; } }
   .song-listing .group-key .field-label,
   .song-listing .group-tempo .field-label {
     color: #3d3738;
     font-size: 12px;
     text-transform: uppercase; }
+@media screen and (min-width: 1024px) {
+  .song-listing .group-tempo {
+    width: 14%; } }
 
 .song-listing .group-song-categories {
   font-size: 14px;
@@ -2092,7 +2099,7 @@ footer nav {
   @media screen and (min-width: 1024px) {
     .song-listing .group-song-categories {
       padding: 3% 4%;
-      width: auto; } }
+      width: 31%; } }
   .song-listing .group-song-categories .field-label {
     clear: left;
     font-size: 12px;
@@ -2104,7 +2111,8 @@ footer nav {
     float: left; }
     @media screen and (min-width: 1024px) {
       .song-listing .group-song-categories .field {
-        clear: none; } }
+        clear: none;
+        width: 68%; } }
   @media screen and (min-width: 1024px) {
     .song-listing .group-song-categories .field-type-taxonomy-term-reference + .field-type-taxonomy-term-reference:before {
       content: ", "; } }
