@@ -119,6 +119,26 @@ function ew_base_user_default_permissions() {
     'module' => 'block_access',
   );
 
+  // Exported permission: 'administer bpm vocabulary terms'.
+  $permissions['administer bpm vocabulary terms'] = array(
+    'name' => 'administer bpm vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
+  // Exported permission: 'administer church vocabulary terms'.
+  $permissions['administer church vocabulary terms'] = array(
+    'name' => 'administer church vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
   // Exported permission: 'administer consumers'.
   $permissions['administer consumers'] = array(
     'name' => 'administer consumers',
@@ -172,6 +192,16 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'administer key vocabulary terms'.
+  $permissions['administer key vocabulary terms'] = array(
+    'name' => 'administer key vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
   );
 
   // Exported permission: 'administer mailchimp'.
@@ -242,6 +272,16 @@ function ew_base_user_default_permissions() {
     'module' => 'menu_admin_per_menu',
   );
 
+  // Exported permission: 'administer news_tags vocabulary terms'.
+  $permissions['administer news_tags vocabulary terms'] = array(
+    'name' => 'administer news_tags vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
   // Exported permission: 'administer oauth'.
   $permissions['administer oauth'] = array(
     'name' => 'administer oauth',
@@ -249,6 +289,36 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'administer services vocabulary terms'.
+  $permissions['administer services vocabulary terms'] = array(
+    'name' => 'administer services vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
+  // Exported permission: 'administer tempo vocabulary terms'.
+  $permissions['administer tempo vocabulary terms'] = array(
+    'name' => 'administer tempo vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
+  // Exported permission: 'administer theme vocabulary terms'.
+  $permissions['administer theme vocabulary terms'] = array(
+    'name' => 'administer theme vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
   );
 
   // Exported permission: 'administer user-menu menu items'.
