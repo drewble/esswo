@@ -1650,6 +1650,10 @@ footer nav {
     text-align: center;
     text-transform: uppercase;
     width: 43%; }
+    .node-song .view-display-id-entity_view_3 .key-tempo span:first-child {
+      text-transform: none; }
+      .node-song .view-display-id-entity_view_3 .key-tempo span:first-child h4 {
+        text-transform: uppercase; }
     @media screen and (min-width: 768px) {
       .node-song .view-display-id-entity_view_3 .key-tempo span {
         width: 39%; } }

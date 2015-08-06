@@ -274,6 +274,14 @@
         text-transform: uppercase;
         width: 43%;
 
+        &:first-child {
+          text-transform: none;
+
+          h4 {
+            text-transform: uppercase;
+          }
+        }
+
         @include tablet {
           width: 39%;
         }
