@@ -313,6 +313,10 @@
 
 	.chosen-container a.chosen-single {
 		text-transform: none;
+
+		&.chosen-default {
+      text-transform: uppercase;
+    }
 	}
 }
 

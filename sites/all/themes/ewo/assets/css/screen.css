@@ -1969,6 +1969,8 @@ footer nav {
     text-transform: uppercase; }
   #edit-field-key-tid-wrapper .chosen-container a.chosen-single {
     text-transform: none; }
+    #edit-field-key-tid-wrapper .chosen-container a.chosen-single.chosen-default {
+      text-transform: uppercase; }
 
 #edit-flagged-wrapper {
   position: absolute;
