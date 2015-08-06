@@ -288,7 +288,6 @@ function d7_base_feature_user_default_permissions() {
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
     'roles' => array(
-      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'taxonomy',
