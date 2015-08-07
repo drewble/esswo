@@ -20,7 +20,7 @@
         spotifyLogin(function() {});
         return e.preventDefault();
       });
-      if ($('.hero .btns a').css('margin-top') === '0px') {
+      if ($('header button.icon').css('margin-top') === '30px') {
         $('.video > a').click(function() {
           var src, src_vid, vid;
           window.location.hash = $(this).next().text().replace(/\s/g, '+');
@@ -34,7 +34,7 @@
         });
       }
       $('#songModal button').on('click', function() {
-        window.location.hash = '';
+        window.location.hash = 'main-content';
         return $('#songModal iframe').removeAttr('src');
       });
       if (window.location.hash) {

@@ -70,7 +70,7 @@
       float: left;
       margin-bottom: 0;
       margin-right: 2%;
-      width: 49%;
+      width: 50%;
     }
 
      & + div {
@@ -78,19 +78,43 @@
 
       @include tablet {
         float: left;
-        width: 49%;
+        width: 48%;
       }
 
       .vid-description {
         top:39%;
       }
+    }
+  }
 
-      & + div {
+  .view-content {
+    > div {
+      margin-bottom: 20px;
 
-        @include tablet {
-          float: left;
-          width: 49%;
+      &.row-2:first-child, &.row-2 + .row-1 {
+        height: 182px;
+        
+        .video > a {
+          height: 182px;
         }
+      }
+    }
+  }
+}
+
+// Only 1 Video
+.node-song .view-empty {
+  .view-display-id-entity_view_2 {
+    .field-type-file {
+      overflow: hidden;
+      position: relative;
+
+      @include tablet {
+        height: 300px;
+      }
+
+      img {
+        margin-top: -22%;
       }
     }
   }

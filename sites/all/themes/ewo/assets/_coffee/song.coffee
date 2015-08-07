@@ -28,7 +28,7 @@
       e.preventDefault()
 
     # Video Modal
-    if $('.hero .btns a').css('margin-top') == '0px'
+    if $('header button.icon').css('margin-top') == '30px'
       $('.video > a').click ->
         window.location.hash = $(this).next().text().replace(/\s/g, '+');
         src = $(this).attr('href')
@@ -40,7 +40,7 @@
         return false
 
     $('#songModal button').on 'click', ->
-      window.location.hash = ''
+      window.location.hash = 'main-content'
       $('#songModal iframe').removeAttr 'src'
 
     if window.location.hash
