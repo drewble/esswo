@@ -85,6 +85,19 @@
         top:39%;
       }
     }
+
+    &.total-3 {
+
+      @include tablet {
+        width: 50%;
+      }
+
+      & + div {
+        @include tablet {
+          width: 48%;
+        }
+      }
+    }
   }
 
   .view-content {

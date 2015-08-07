@@ -34,7 +34,7 @@
   <?php print render($title_suffix); ?>
 
   <?php if (!empty($rows)): ?>
-    <div class="view-header">
+    <div class="view-header<?php if (count($view->result) == '2'): ?> total-3<?php endif; ?>">
       <?php print $header; ?>
     </div>
   <?php endif; ?>
