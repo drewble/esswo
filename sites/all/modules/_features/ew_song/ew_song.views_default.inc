@@ -873,10 +873,6 @@ function ew_song_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'smart-filter';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -901,30 +897,6 @@ function ew_song_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<h2>Related Songs</h2>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Tempo Terms on Node */
-  $handler->display->display_options['relationships']['term_node_tid_1']['id'] = 'term_node_tid_1';
-  $handler->display->display_options['relationships']['term_node_tid_1']['table'] = 'node';
-  $handler->display->display_options['relationships']['term_node_tid_1']['field'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['term_node_tid_1']['ui_name'] = 'Tempo Terms on Node';
-  $handler->display->display_options['relationships']['term_node_tid_1']['label'] = 'tempo terms on node';
-  $handler->display->display_options['relationships']['term_node_tid_1']['required'] = TRUE;
-  $handler->display->display_options['relationships']['term_node_tid_1']['vocabularies'] = array(
-    'tempo' => 'tempo',
-    'bpm' => 0,
-    'church' => 0,
-    'key' => 0,
-    'news_tags' => 0,
-    'services' => 0,
-    'theme' => 0,
-  );
-  /* Relationship: Content with Tempo */
-  $handler->display->display_options['relationships']['nid_1']['id'] = 'nid_1';
-  $handler->display->display_options['relationships']['nid_1']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid_1']['relationship'] = 'term_node_tid_1';
-  $handler->display->display_options['relationships']['nid_1']['ui_name'] = 'Content with Tempo';
-  $handler->display->display_options['relationships']['nid_1']['label'] = 'content with tempo';
-  $handler->display->display_options['relationships']['nid_1']['required'] = TRUE;
   /* Relationship: Key Terms on Node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
@@ -941,12 +913,22 @@ function ew_song_views_default_views() {
     'tempo' => 0,
     'theme' => 0,
   );
-  /* Relationship: Taxonomy term: Content with term */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['nid']['label'] = 'content with key';
+  /* Relationship: Tempo Terms on Node */
+  $handler->display->display_options['relationships']['term_node_tid_1']['id'] = 'term_node_tid_1';
+  $handler->display->display_options['relationships']['term_node_tid_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid_1']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid_1']['ui_name'] = 'Tempo Terms on Node';
+  $handler->display->display_options['relationships']['term_node_tid_1']['label'] = 'tempo terms on node';
+  $handler->display->display_options['relationships']['term_node_tid_1']['required'] = TRUE;
+  $handler->display->display_options['relationships']['term_node_tid_1']['vocabularies'] = array(
+    'tempo' => 'tempo',
+    'bpm' => 0,
+    'church' => 0,
+    'key' => 0,
+    'news_tags' => 0,
+    'services' => 0,
+    'theme' => 0,
+  );
   /* Relationship: Theme Terms on Node */
   $handler->display->display_options['relationships']['term_node_tid_2']['id'] = 'term_node_tid_2';
   $handler->display->display_options['relationships']['term_node_tid_2']['table'] = 'node';
@@ -963,12 +945,6 @@ function ew_song_views_default_views() {
     'services' => 0,
     'tempo' => 0,
   );
-  /* Relationship: Taxonomy term: Content with term */
-  $handler->display->display_options['relationships']['nid_2']['id'] = 'nid_2';
-  $handler->display->display_options['relationships']['nid_2']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid_2']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid_2']['relationship'] = 'term_node_tid_2';
-  $handler->display->display_options['relationships']['nid_2']['label'] = 'content with tempo';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -997,43 +973,6 @@ function ew_song_views_default_views() {
   $handler->display->display_options['sorts']['pageview_total']['field'] = 'pageview_total';
   $handler->display->display_options['sorts']['pageview_total']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: NID */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['ui_name'] = 'NID';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['nid']['validate_options']['vocabularies'] = array(
-    'key' => 'key',
-    'theme' => 'theme',
-  );
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid_2']['id'] = 'nid_2';
-  $handler->display->display_options['arguments']['nid_2']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid_2']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid_2']['relationship'] = 'nid_2';
-  $handler->display->display_options['arguments']['nid_2']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid_2']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid_2']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid_2']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid_2']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: NID - exclude current */
-  $handler->display->display_options['arguments']['nid_1']['id'] = 'nid_1';
-  $handler->display->display_options['arguments']['nid_1']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid_1']['ui_name'] = 'NID - exclude current';
-  $handler->display->display_options['arguments']['nid_1']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid_1']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid_1']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid_1']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid_1']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid_1']['not'] = TRUE;
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
@@ -1052,6 +991,50 @@ function ew_song_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['not'] = TRUE;
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid_1']['id'] = 'tid_1';
+  $handler->display->display_options['arguments']['tid_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid_1']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid_1']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['arguments']['tid_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid_1']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid_1']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['tid_1']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['tid_1']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['tid_1']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['tid_1']['default_argument_options']['vocabularies'] = array(
+    'key' => 'key',
+  );
+  $handler->display->display_options['arguments']['tid_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid_1']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid_2']['id'] = 'tid_2';
+  $handler->display->display_options['arguments']['tid_2']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid_2']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid_2']['relationship'] = 'term_node_tid_2';
+  $handler->display->display_options['arguments']['tid_2']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid_2']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid_2']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['tid_2']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['tid_2']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['tid_2']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['tid_2']['default_argument_options']['vocabularies'] = array(
+    'theme' => 'theme',
+  );
+  $handler->display->display_options['arguments']['tid_2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid_2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid_2']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1073,6 +1056,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'song',
   );
+  $handler->display->display_options['argument_mode'] = 'none';
   $handler->display->display_options['show_title'] = 0;
 
   /* Display: Songs Admin */
