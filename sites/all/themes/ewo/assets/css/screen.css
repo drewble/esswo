@@ -1307,7 +1307,8 @@ footer nav {
 @media screen and (min-width: 1024px) {
   #block-views-banners-banner-sidebar-top {
     margin-right: 0;
-    float: left; } }
+    float: left;
+    margin-top: 30px; } }
 #block-views-banners-banner-sidebar-top .views-field-field-banner-image a {
   background-color: #ecf0f1;
   display: block; }
