@@ -54,7 +54,7 @@ function ew_song_image_default_styles() {
       1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 1024,
+          'width' => 1088,
           'height' => 768,
         ),
         'weight' => 1,
