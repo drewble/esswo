@@ -1516,10 +1516,6 @@ footer nav {
         top: 39%; }
   .node-song .view-display-id-entity_view_1 .view-content > div {
     margin-bottom: 20px; }
-    .node-song .view-display-id-entity_view_1 .view-content > div.row-2:first-child, .node-song .view-display-id-entity_view_1 .view-content > div.row-2 + .row-1 {
-      height: 182px; }
-      .node-song .view-display-id-entity_view_1 .view-content > div.row-2:first-child .video > a, .node-song .view-display-id-entity_view_1 .view-content > div.row-2 + .row-1 .video > a {
-        height: 182px; }
 
 .node-song .view-empty .view-display-id-entity_view_2 .field-type-file {
   overflow: hidden;

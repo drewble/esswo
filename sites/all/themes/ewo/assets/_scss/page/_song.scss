@@ -91,13 +91,13 @@
     > div {
       margin-bottom: 20px;
 
-      &.row-2:first-child, &.row-2 + .row-1 {
-        height: 182px;
+      // &.row-2:first-child, &.row-2 + .row-1 {
+      //   height: 182px;
         
-        .video > a {
-          height: 182px;
-        }
-      }
+      //   .video > a {
+      //     height: 182px;
+      //   }
+      // }
     }
   }
 }
