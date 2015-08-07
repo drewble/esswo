@@ -115,7 +115,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Header',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(),
     'format_type' => 'html5',
     'format_settings' => array(
@@ -172,7 +172,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Left',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_lyrics_chords',
     ),
@@ -239,7 +239,7 @@ function ew_song_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Right',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'songs_entity_view_3',
       1 => 'songs_entity_view_5',

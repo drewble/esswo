@@ -78,29 +78,29 @@ function ew_song_strongarm() {
       'display' => array(
         'songs_entity_view_1' => array(
           'default' => array(
-            'weight' => '1',
-            'visible' => TRUE,
-          ),
-          'teaser' => array(
-            'weight' => '10',
-            'visible' => FALSE,
-          ),
-          'rss' => array(
-            'weight' => '10',
-            'visible' => FALSE,
-          ),
-        ),
-        'songs_entity_view_2' => array(
-          'default' => array(
             'weight' => '0',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
           'teaser' => array(
             'weight' => '11',
             'visible' => FALSE,
           ),
           'rss' => array(
-            'weight' => '24',
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+        ),
+        'songs_entity_view_2' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '25',
             'visible' => FALSE,
           ),
         ),
@@ -110,17 +110,17 @@ function ew_song_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '9',
+            'weight' => '10',
             'visible' => FALSE,
           ),
           'rss' => array(
-            'weight' => '13',
+            'weight' => '14',
             'visible' => FALSE,
           ),
         ),
         'songs_entity_view_5' => array(
           'teaser' => array(
-            'weight' => '6',
+            'weight' => '7',
             'visible' => FALSE,
           ),
           'default' => array(
@@ -128,7 +128,21 @@ function ew_song_strongarm() {
             'visible' => TRUE,
           ),
           'rss' => array(
-            'weight' => '14',
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+        ),
+        'songs_entity_view_6' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '4',
             'visible' => FALSE,
           ),
         ),
