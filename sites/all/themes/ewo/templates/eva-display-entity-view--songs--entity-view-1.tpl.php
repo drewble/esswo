@@ -52,9 +52,13 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content">
-      <?php print $rows; ?>
-    </div>
+    <?php if (count($view->result) == '2'): ?>
+      <div class="view-content">
+        <?php print $rows; ?>
+      </div>
+    <?php elseif (count($view->result) == '1'): ?>
+      <?php print views_embed_view('songs','entity_view_6', $view->args[0]); ?>
+    <?php endif; ?>
   <?php elseif ($empty): ?>
     <div class="view-empty">
       <?php print $empty; ?>
@@ -76,9 +80,7 @@
   <?php endif; ?>
 
   <?php if ($footer): ?>
-    <div class="view-footer">
-      <?php print $footer; ?>
-    </div>
+    
   <?php endif; ?>
 
   <?php if ($feed_icon): ?>

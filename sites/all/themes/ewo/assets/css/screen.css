@@ -1505,13 +1505,13 @@ footer nav {
         float: left;
         margin-bottom: 0;
         margin-right: 2%;
-        width: 50%; } }
+        width: 49%; } }
     .node-song .view-display-id-entity_view_1 .view-header + div {
       margin-bottom: 25px; }
       @media screen and (min-width: 768px) {
         .node-song .view-display-id-entity_view_1 .view-header + div {
           float: left;
-          width: 48%; } }
+          width: 49%; } }
       .node-song .view-display-id-entity_view_1 .view-header + div .vid-description {
         top: 39%; }
   .node-song .view-display-id-entity_view_1 .view-content > div {

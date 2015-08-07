@@ -70,7 +70,7 @@
       float: left;
       margin-bottom: 0;
       margin-right: 2%;
-      width: 50%;
+      width: 49%;
     }
 
      & + div {
@@ -78,7 +78,7 @@
 
       @include tablet {
         float: left;
-        width: 48%;
+        width: 49%;
       }
 
       .vid-description {
@@ -90,14 +90,6 @@
   .view-content {
     > div {
       margin-bottom: 20px;
-
-      // &.row-2:first-child, &.row-2 + .row-1 {
-      //   height: 182px;
-        
-      //   .video > a {
-      //     height: 182px;
-      //   }
-      // }
     }
   }
 }
