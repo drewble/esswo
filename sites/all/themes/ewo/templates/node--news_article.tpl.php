@@ -20,7 +20,7 @@ if (!$page) {
   hide($content['field_tags']);
   hide($content['field_news_body']);
 }
-if ($content['field_header_image']) {
+if (isset($content['field_header_image'])) {
   $newsImgUrl = file_create_url($content['field_header_image'][0]['file']['#item']['uri']);
 }
 ?>
