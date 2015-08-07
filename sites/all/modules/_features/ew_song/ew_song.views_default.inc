@@ -499,7 +499,6 @@ function ew_song_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '1';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'row-[counter]';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -572,22 +571,13 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_videos']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_videos']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_videos']['settings'] = array(
-    'file_view_mode' => 'teaser',
+    'file_view_mode' => 'rss',
   );
   $handler->display->display_options['fields']['field_videos']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_videos']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_videos']['delta_limit'] = '2';
   $handler->display->display_options['fields']['field_videos']['delta_offset'] = '1';
   $handler->display->display_options['fields']['field_videos']['field_api_classes'] = TRUE;
-  /* Field: Global: View result counter */
-  $handler->display->display_options['fields']['counter']['id'] = 'counter';
-  $handler->display->display_options['fields']['counter']['table'] = 'views';
-  $handler->display->display_options['fields']['counter']['field'] = 'counter';
-  $handler->display->display_options['fields']['counter']['label'] = '';
-  $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  $handler->display->display_options['fields']['counter']['reverse'] = 1;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
