@@ -21,7 +21,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -107,7 +107,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'rss' => array(
         'label' => 'above',
@@ -174,7 +174,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'rss' => array(
         'label' => 'above',
@@ -400,7 +400,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'rss' => array(
         'label' => 'above',
@@ -527,7 +527,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'rss' => array(
         'label' => 'above',
@@ -865,7 +865,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'rss' => array(
         'label' => 'above',
@@ -937,7 +937,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'rss' => array(
         'label' => 'above',
@@ -987,7 +987,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -1051,7 +1051,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1169,7 +1169,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'rss' => array(
         'label' => 'hidden',
@@ -1399,7 +1399,7 @@ function ew_song_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'rss' => array(
         'label' => 'hidden',

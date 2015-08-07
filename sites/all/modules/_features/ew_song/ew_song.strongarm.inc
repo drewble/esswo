@@ -78,7 +78,7 @@ function ew_song_strongarm() {
       'display' => array(
         'songs_entity_view_1' => array(
           'default' => array(
-            'weight' => '0',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'teaser' => array(
@@ -92,7 +92,7 @@ function ew_song_strongarm() {
         ),
         'songs_entity_view_2' => array(
           'default' => array(
-            'weight' => '15',
+            'weight' => '0',
             'visible' => FALSE,
           ),
           'teaser' => array(
