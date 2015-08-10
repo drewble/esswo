@@ -31,6 +31,11 @@
 
   .btns {
     @include border-top;
+    padding: 39px 0;
+
+    @include tablet {
+      padding:39px;
+    }
 
     &:before {
       background-color: $base;
