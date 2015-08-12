@@ -31,6 +31,10 @@
           $(this).parent().siblings('.play-audio').removeClass('show');
           return e.preventDefault();
         });
+        $('.clear-filters').click(function(e) {
+          $('#edit-reset').click();
+          return e.preventDefault();
+        });
         return $('.views-exposed-form select').each(function() {
           var label;
           label = $(this).parents('.views-widget').prev().text().trim();

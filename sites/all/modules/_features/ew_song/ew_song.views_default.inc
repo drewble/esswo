@@ -53,7 +53,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Subtitle */
+  /* Field: Content: Subtitle (Artist/Worship Leaders) */
   $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
@@ -129,7 +129,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Subtitle */
+  /* Field: Content: Subtitle (Artist/Worship Leaders) */
   $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';
@@ -186,6 +186,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Clear all';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
@@ -240,9 +241,10 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Find a Song...';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
     3 => 0,
     4 => 0,
   );
@@ -256,9 +258,10 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_key_tid']['expose']['label'] = 'Key';
   $handler->display->display_options['filters']['field_key_tid']['expose']['operator'] = 'field_key_tid_op';
   $handler->display->display_options['filters']['field_key_tid']['expose']['identifier'] = 'field_key_tid';
+  $handler->display->display_options['filters']['field_key_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_key_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
     3 => 0,
     4 => 0,
   );
@@ -275,9 +278,10 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_tempo_tid']['expose']['label'] = 'Tempo';
   $handler->display->display_options['filters']['field_tempo_tid']['expose']['operator'] = 'field_tempo_tid_op';
   $handler->display->display_options['filters']['field_tempo_tid']['expose']['identifier'] = 'field_tempo_tid';
+  $handler->display->display_options['filters']['field_tempo_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_tempo_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
     3 => 0,
     4 => 0,
   );
@@ -294,9 +298,10 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_theme_tid']['expose']['label'] = 'Theme';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['operator'] = 'field_theme_tid_op';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['identifier'] = 'field_theme_tid';
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_theme_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
     3 => 0,
     4 => 0,
   );
@@ -313,9 +318,10 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_services_tid']['expose']['label'] = 'Services';
   $handler->display->display_options['filters']['field_services_tid']['expose']['operator'] = 'field_services_tid_op';
   $handler->display->display_options['filters']['field_services_tid']['expose']['identifier'] = 'field_services_tid';
+  $handler->display->display_options['filters']['field_services_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_services_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
     3 => 0,
     4 => 0,
   );
@@ -332,9 +338,10 @@ function ew_song_views_default_views() {
   $handler->display->display_options['filters']['field_church_tid']['expose']['label'] = 'Ministry';
   $handler->display->display_options['filters']['field_church_tid']['expose']['operator'] = 'field_church_tid_op';
   $handler->display->display_options['filters']['field_church_tid']['expose']['identifier'] = 'field_church_tid';
+  $handler->display->display_options['filters']['field_church_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_church_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
     3 => 0,
     4 => 0,
   );
@@ -1057,7 +1064,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
+  /* Field: Content: Song Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -1315,7 +1322,7 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  /* Field: Content: Subtitle */
+  /* Field: Content: Subtitle (Artist/Worship Leaders) */
   $handler->display->display_options['fields']['field_subtitle']['id'] = 'field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['table'] = 'field_data_field_subtitle';
   $handler->display->display_options['fields']['field_subtitle']['field'] = 'field_subtitle';

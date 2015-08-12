@@ -145,16 +145,12 @@
 		padding-right:0;
 	}
 
-	// Submit
-	.views-submit-button {
-
-		input[type="submit"] {
-			height:0;
-			overflow:hidden;
-			position: absolute;
-			visibility:hidden;
-			z-index: -10;
-		}
+	input[type="submit"] {
+		height:0;
+		overflow:hidden;
+		position: absolute;
+		visibility:hidden;
+		z-index: -10;
 	}
 
 	// Ajax Throbber

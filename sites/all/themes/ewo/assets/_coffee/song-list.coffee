@@ -34,6 +34,11 @@
   		$(this).parent().siblings('.play-audio').removeClass('show')
   		e.preventDefault()
 
+  	# Clear filters
+  	$('.clear-filters').click (e) ->
+  		$('#edit-reset').click()
+  		e.preventDefault()
+
   	# Song Exposed Filters Actions
 		$('.views-exposed-form select').each ->
 			# Get Label Text

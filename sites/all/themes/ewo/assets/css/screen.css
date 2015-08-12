@@ -1863,7 +1863,7 @@ footer nav {
       display: none; }
   #views-exposed-form-songs-page #edit-field-church-tid-wrapper {
     padding-right: 0; }
-  #views-exposed-form-songs-page .views-submit-button input[type="submit"] {
+  #views-exposed-form-songs-page input[type="submit"] {
     height: 0;
     overflow: hidden;
     position: absolute;

@@ -26,7 +26,7 @@
     print $q;
   ?>
 <?php endif; ?>
-<a href="/songs" class="clear-filters"><span>X</span> Clear All Filters</a>
+<a href="#" class="clear-filters"><span>X</span> Clear All Filters</a>
 <div class="views-exposed-form">
   <div class="views-exposed-widgets clearfix">
     <?php foreach ($widgets as $id => $widget): ?>
