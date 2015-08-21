@@ -125,6 +125,45 @@ function ew_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'better_messages';
+  $strongarm->value = array(
+    'position' => 'center',
+    'vertical' => '0',
+    'horizontal' => '10',
+    'fixed' => 1,
+    'width' => '400px',
+    'autoclose' => '0',
+    'opendelay' => '0.3',
+    'disable_autoclose' => 0,
+    'show_countdown' => 1,
+    'hover_autoclose' => 1,
+    'popin' => array(
+      'effect' => 'fadeIn',
+      'duration' => 'normal',
+    ),
+    'popout' => array(
+      'effect' => 'fadeIn',
+      'duration' => 'fast',
+    ),
+    'jquery_ui' => array(
+      'draggable' => 0,
+      'resizable' => 0,
+    ),
+    'extra' => array(
+      'pages' => 'admin
+admin/*
+node/add/*
+node/edit/*
+user/edit',
+      'visibility' => '0',
+      'admin' => 1,
+    ),
+  );
+  $export['better_messages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'google_tag_compact_tag';
   $strongarm->value = 1;
   $export['google_tag_compact_tag'] = $strongarm;

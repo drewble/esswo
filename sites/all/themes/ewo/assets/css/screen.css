@@ -566,6 +566,52 @@ ul.primary {
     .modal-message {
       margin: 0 0 20px; } }
 
+#better-messages-wrapper {
+  max-width: 270px; }
+  @media screen and (min-width: 768px) {
+    #better-messages-wrapper {
+      max-width: none; } }
+
+#better-messages-default {
+  background-color: #fff; }
+  #better-messages-default .close {
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 33px;
+    line-height: 1em;
+    min-width: 0;
+    padding: 0 9px 4px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    background-color: #e44345;
+    color: #fff;
+    position: absolute;
+    right: -18px;
+    top: -17px; }
+    #better-messages-default .close:hover {
+      background-color: #fff;
+      color: #e44345; }
+    #better-messages-default .close:before {
+      display: none; }
+    #better-messages-default .close:hover {
+      background-color: #e9696a;
+      color: #fff; }
+  #better-messages-default .messages-label {
+    font-size: 14px;
+    padding: 10px; }
+  #better-messages-default div.messages {
+    background: none;
+    border: none;
+    padding: 13px; }
+  #better-messages-default .footer {
+    border: none; }
+  #better-messages-default a.message-close {
+    height: 0; }
+
 /* Application Template
  * -----------------------------------------------------------------------------
  * Styling for the structure of the site. If your element doesn't show up on

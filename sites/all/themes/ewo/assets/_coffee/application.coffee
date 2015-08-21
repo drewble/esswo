@@ -22,5 +22,9 @@
   		$('#myModal').modal 'show'
   		e.preventDefault()
 
+  	# Close button
+  	$('#better-messages-default .close').click ->
+  		$('#better-messages-default a.message-close').click()
+
 
 ) jQuery

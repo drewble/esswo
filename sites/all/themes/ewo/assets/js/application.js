@@ -13,9 +13,12 @@
       $('header nav').removeClass('show');
       return e.preventDefault();
     });
-    return $('.not-logged-in header nav .login a').click(function(e) {
+    $('.not-logged-in header nav .login a').click(function(e) {
       $('#myModal').modal('show');
       return e.preventDefault();
+    });
+    return $('#better-messages-default .close').click(function() {
+      return $('#better-messages-default a.message-close').click();
     });
   })(jQuery);
 

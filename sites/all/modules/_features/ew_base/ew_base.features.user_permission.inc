@@ -28,6 +28,17 @@ function ew_base_user_default_permissions() {
     'module' => 'internal_nodes',
   );
 
+  // Exported permission: 'access better messages'.
+  $permissions['access better messages'] = array(
+    'name' => 'access better messages',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'developer' => 'developer',
+    ),
+    'module' => 'better_messages',
+  );
+
   // Exported permission: 'access homepage_feature node view'.
   $permissions['access homepage_feature node view'] = array(
     'name' => 'access homepage_feature node view',
@@ -108,6 +119,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'addtoany',
+  );
+
+  // Exported permission: 'administer better messages'.
+  $permissions['administer better messages'] = array(
+    'name' => 'administer better messages',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'better_messages',
   );
 
   // Exported permission: 'administer block access settings'.
