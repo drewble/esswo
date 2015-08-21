@@ -75,7 +75,7 @@ function ew_base_default_mailchimp_signup() {
   $items = array();
   $items['registration'] = entity_import('mailchimp_signup', '{
     "name" : "registration",
-    "mc_lists" : { "d1abab443f" : "d1abab443f" },
+    "mc_lists" : { "9860993967" : "9860993967" },
     "mode" : "1",
     "title" : "Registration",
     "settings" : {
@@ -91,14 +91,17 @@ function ew_base_default_mailchimp_signup() {
           "public" : true,
           "show" : true,
           "order" : "1",
-          "default" : null,
-          "helptext" : null,
+          "default" : "",
+          "helptext" : "",
           "size" : "25",
           "tag" : "EMAIL",
           "id" : 0
         },
         "FNAME" : 0,
-        "LNAME" : 0
+        "LNAME" : 0,
+        "POSTAL" : 0,
+        "BIRTHDAY" : 0,
+        "MOBILE" : 0
       },
       "description" : "SUBSCRIBE TO OUR NEWSLETTER",
       "doublein" : 0,
