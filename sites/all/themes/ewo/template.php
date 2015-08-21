@@ -18,6 +18,10 @@ function ewo_preprocess_page(&$vars,$hook) {
   drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap.min.css', array('group' => CSS_DEFAULT));
   drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));
 
+  if ($vars['is_front'] == TRUE) {
+  	drupal_add_js($path .'/assets/js/front.js', array('group' => JS_THEME));
+  }
+
   // Variables set for fallback
   $vars['bgImg'] = '';
   $vars['subtitle'] = '';
