@@ -365,7 +365,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'user',
@@ -810,6 +810,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'client' => 'client',
       'developer' => 'developer',
     ),
