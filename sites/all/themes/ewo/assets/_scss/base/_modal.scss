@@ -181,7 +181,6 @@
 }
 
 #better-messages-default {
-  background-color: #fff;
 
   .close {
   	@include close-btn;
@@ -198,14 +197,21 @@
   }
 
   .messages-label {
+  	background-color: rgba(0, 0, 0, 0.78);
   	font-size: 14px;
+  	margin: 0;
   	padding:10px;
+
+  	&.error {
+  		background-color:tint($red, 30%);
+  	}
   }
 
   div.messages {
-  	background:none;
+  	background: $light;
   	border:none;
-  	padding: 13px;
+  	margin: 0;
+  	padding: 19px 13px 30px;
   }
 
   .footer {
