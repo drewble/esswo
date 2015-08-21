@@ -1239,10 +1239,10 @@ footer nav {
       background-color: #3d3738;
       color: #fff; }
 
-#mailchimp-newsletter-62125-mergefields {
+#mailchimp-signup-subscribe-block-registration-form > div {
   float: left;
   width: 66%; }
-  #mailchimp-newsletter-62125-mergefields:before {
+  #mailchimp-signup-subscribe-block-registration-form > div:before {
     border: 10px solid #aaa;
     border-bottom-color: transparent;
     border-left-color: transparent;
