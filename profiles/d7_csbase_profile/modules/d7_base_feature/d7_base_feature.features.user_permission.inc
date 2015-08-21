@@ -345,6 +345,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'node',
