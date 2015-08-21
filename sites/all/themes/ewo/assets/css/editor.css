@@ -26,7 +26,7 @@ body {
 
 a {
   color: #e44345; }
-  a:hover {
+  a:hover, a:focus {
     color: #322e2f;
     text-decoration: none; }
 

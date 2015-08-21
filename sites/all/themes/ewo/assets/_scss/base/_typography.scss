@@ -12,7 +12,7 @@ body {
 a {
   color: $red;
 
-  &:hover {
+  &:hover, &:focus {
     color: $gray;
     text-decoration: none;
   }
