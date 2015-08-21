@@ -15,7 +15,7 @@ function ew_base_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => array(
       0 => array(
-        'subscribe' => 0,
+        'subscribe' => 1,
         'interest_groups' => array(
           15245 => '',
         ),
@@ -38,7 +38,7 @@ function ew_base_field_default_field_instances() {
     'entity_type' => 'user',
     'fences_wrapper' => 'div',
     'field_name' => 'field_i_would_like_to_receive_th',
-    'label' => 'I would like to receive the monthly newsletter',
+    'label' => 'I would like to receive the newsletter',
     'required' => 0,
     'settings' => array(
       'interest_groups_title' => 'Interest Groups',
@@ -67,7 +67,7 @@ function ew_base_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('I would like to receive the monthly newsletter');
+  t('I would like to receive the newsletter');
 
   return $field_instances;
 }
