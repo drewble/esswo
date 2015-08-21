@@ -1,6 +1,6 @@
 (function() {
   (function($) {
-    return $(function() {
+    $(function() {
       var client_id, g_access_token, g_name, g_tracks, g_username, hash, redirect_uri, spotifyLogin;
       g_access_token = '';
       g_name = 'Essential Worship';
@@ -44,6 +44,13 @@
       if ($('.field-type-spotifyfield').length) {
         return $('.field-type-spotifyfield + div').remove();
       }
+    });
+    return $('.not-logged-in .hero .btns a').click(function(e) {
+      if (!$('.modal-message').length) {
+        $('<p class="modal-message">You must be logged in to access this page.</p>').prependTo('#myModal .modal-body');
+      }
+      $('#myModal').modal('show');
+      return e.preventDefault();
     });
   })(jQuery);
 

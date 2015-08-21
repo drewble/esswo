@@ -51,4 +51,11 @@
     if $('.field-type-spotifyfield').length
       $('.field-type-spotifyfield + div').remove()
 
+    # anonymous header link clicks
+  	$('.not-logged-in .hero .btns a').click (e) ->
+  		if !$('.modal-message').length
+  			$('<p class="modal-message">You must be logged in to access this page.</p>').prependTo('#myModal .modal-body')
+  		$('#myModal').modal 'show'
+  		e.preventDefault()
+
 ) jQuery

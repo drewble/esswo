@@ -557,6 +557,15 @@ ul.primary {
   #myModal .modal-body small {
     display: none; }
 
+.modal-message {
+  background-color: #fff;
+  margin: 0 auto 20px;
+  padding: 20px;
+  width: 92%; }
+  @media screen and (min-width: 768px) {
+    .modal-message {
+      margin: 0 0 20px; } }
+
 /* Application Template
  * -----------------------------------------------------------------------------
  * Styling for the structure of the site. If your element doesn't show up on

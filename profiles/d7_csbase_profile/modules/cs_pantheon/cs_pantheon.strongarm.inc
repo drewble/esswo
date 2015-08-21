@@ -76,7 +76,7 @@ function cs_pantheon_strongarm() {
     'mothership_css_nuke_system_theme' => 0,
     'mothership_css_freeform' => '',
     'mothership_classes_body_html' => 1,
-    'mothership_classes_body_loggedin' => 1,
+    'mothership_classes_body_loggedin' => 0,
     'mothership_classes_body_front' => 0,
     'mothership_classes_body_layout' => 0,
     'mothership_classes_body_toolbar' => 0,
