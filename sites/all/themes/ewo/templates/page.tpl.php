@@ -51,20 +51,22 @@ $links = '';
   <?php if(!empty($subtitle)): ?>
     <h2><?php if(isset($node)): ?><?php if($node->type == 'song'): ?><span>Recorded by: </span><br /><?php endif; ?><?php endif; ?><?php print $subtitle; ?></h2>
   <?php endif; ?>
-  <?php if($node->type == 'song'): ?>
-    <div class="btns">
-	    <?php if ($logged_in == TRUE) { ?>
-	      <a class="icon-btn icon-icons_add" id="planning">Add to Planning Center</a>
-	      <?php if(!empty($resources)): ?>
-	      	<a class="icon-btn icon-embed" href="<?php print $resources; ?>"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
-	      <?php endif; ?>
-      <?php } else { ?>
-      	<a class="icon-btn icon-icons_add" href="/user/login">Add to Planning Center</a>
-      	<?php if(!empty($resources)): ?>
-	      	<a class="icon-btn icon-embed" href="/user/login"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
-	      <?php endif; ?>
-      <?php } ?>
-    </div>
+  <?php if(isset($node)): ?>
+	  <?php if($node->type == 'song'): ?>
+	    <div class="btns">
+		    <?php if ($logged_in == TRUE) { ?>
+		      <a class="icon-btn icon-icons_add" id="planning">Add to Planning Center</a>
+		      <?php if(!empty($resources)): ?>
+		      	<a class="icon-btn icon-embed" href="<?php print $resources; ?>"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
+		      <?php endif; ?>
+	      <?php } else { ?>
+	      	<a class="icon-btn icon-icons_add" href="/user/login">Add to Planning Center</a>
+	      	<?php if(!empty($resources)): ?>
+		      	<a class="icon-btn icon-embed" href="/user/login"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
+		      <?php endif; ?>
+	      <?php } ?>
+	    </div>
+	   <?php endif; ?>
    <?php endif; ?>
 </div>
 

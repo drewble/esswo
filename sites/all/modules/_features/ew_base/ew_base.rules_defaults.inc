@@ -64,6 +64,15 @@ function ew_base_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_redirect_to_user_page_on_user_save'] = entity_import('rules_config', '{ "rules_redirect_to_user_page_on_user_save" : {
+      "LABEL" : "Redirect to User Page on User Save",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_update" : [] },
+      "DO" : [ { "redirect" : { "url" : "user" } } ]
+    }
+  }');
   $items['rules_unflag_song_leader'] = entity_import('rules_config', '{ "rules_unflag_song_leader" : {
       "LABEL" : "Unflag Song\\/Leader",
       "PLUGIN" : "action set",
