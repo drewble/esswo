@@ -200,3 +200,18 @@ header {
     }
   }
 }
+
+// Anonymous
+.not-logged-in {
+	header nav .logged-in {
+		display: none;
+	}
+}
+
+// Logged-in
+.logged-in {
+	header nav .logged-in a {
+		text-align: left;
+	}
+}
+

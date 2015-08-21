@@ -70,7 +70,7 @@ $links = '';
 
 <div class="page outer-container">
 
-  <div role="main" id="main-content<?php if ($page['sidebar']): ?> with-side<?php endif; ?>">
+  <div role="main" id="main-content" <?php if ($page['sidebar']): ?>class="with-side"<?php endif; ?>>
 
     <?php if(isset($node)): ?>
       <?php if($node->type == 'artist_worship_leader'): ?>

@@ -109,7 +109,7 @@
 #block-views-new-content-block,
 #block-views-banners-banner-sidebar-top {
 	@include desk {
-		@include span-columns(2.666666666);
+		@include span-columns(3.95);
 	}
 
 	.title {

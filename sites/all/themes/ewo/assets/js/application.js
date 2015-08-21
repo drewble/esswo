@@ -13,7 +13,7 @@
       $('header nav').removeClass('show');
       return e.preventDefault();
     });
-    return $('header nav .login a').click(function(e) {
+    return $('.not-logged-in header nav .login a').click(function(e) {
       $('#myModal').modal('show');
       return e.preventDefault();
     });

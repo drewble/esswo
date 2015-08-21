@@ -605,6 +605,36 @@ ul.primary {
     .page {
       padding: 0; } }
 
+.with-side {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 61.61588%; }
+  .with-side:last-child {
+    margin-right: 0; }
+
+.sidebar {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  margin-left: 4.2649%; }
+  .sidebar:last-child {
+    margin-right: 0; }
+  .sidebar nav {
+    background-color: #ecf0f1; }
+    .sidebar nav > ul, .sidebar nav > ul li {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+    .sidebar nav > ul a {
+      background-color: #ecf0f1;
+      display: block;
+      padding: 20px; }
+      .sidebar nav > ul a:hover {
+        background-color: #e44345;
+        color: #fff; }
+
 .bread {
   float: left;
   font: 0.75em "Ropa Sans", sans-serif;
@@ -781,6 +811,12 @@ header nav {
       color: #fff; }
     header nav .login.active-trail a:after {
       display: none; }
+
+.not-logged-in header nav .logged-in {
+  display: none; }
+
+.logged-in header nav .logged-in a {
+  text-align: left; }
 
 .hero {
   max-width: 68em;
@@ -1249,8 +1285,8 @@ footer nav {
   #block-views-banners-banner-sidebar-top {
     display: block;
     float: left;
-    margin-right: 3.57866%;
-    width: 30.94756%; }
+    margin-right: 2.35765%;
+    width: 31.33508%; }
     #block-views-popular-content-block:last-child,
     #block-views-new-content-block:last-child,
     #block-views-banners-banner-sidebar-top:last-child {
@@ -2178,8 +2214,8 @@ footer nav {
     #block-views-worship-leaders-block-1 li {
       display: block;
       float: left;
-      margin-right: 3.57866%;
-      width: 48.21067%; }
+      margin-right: 2.35765%;
+      width: 48.82117%; }
       #block-views-worship-leaders-block-1 li:last-child {
         margin-right: 0; } }
   #block-views-worship-leaders-block-1 li:nth-child(2n) {

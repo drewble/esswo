@@ -18,7 +18,7 @@
 
 
   	# Modal - login/register
-  	$('header nav .login a').click (e) ->
+  	$('.not-logged-in header nav .login a').click (e) ->
   		$('#myModal').modal 'show'
   		e.preventDefault()
 

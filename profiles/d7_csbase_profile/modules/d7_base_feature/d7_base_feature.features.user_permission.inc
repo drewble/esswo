@@ -65,6 +65,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'client' => 'client',
       'developer' => 'developer',
     ),
