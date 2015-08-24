@@ -22,7 +22,7 @@ function ew_base_field_default_field_bases() {
     'module' => 'mailchimp_lists',
     'settings' => array(
       'double_opt_in' => 0,
-      'mc_list_id' => 'd1abab443f',
+      'mc_list_id' => 9860993967,
       'send_welcome' => 0,
     ),
     'translatable' => 0,
