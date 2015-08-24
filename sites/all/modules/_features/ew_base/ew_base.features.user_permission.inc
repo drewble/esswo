@@ -48,16 +48,6 @@ function ew_base_user_default_permissions() {
     'module' => 'internal_nodes',
   );
 
-  // Exported permission: 'access mailchimp signup pages'.
-  $permissions['access mailchimp signup pages'] = array(
-    'name' => 'access mailchimp signup pages',
-    'roles' => array(
-      'client' => 'client',
-      'developer' => 'developer',
-    ),
-    'module' => 'mailchimp_signup',
-  );
-
   // Exported permission: 'access news_article node view'.
   $permissions['access news_article node view'] = array(
     'name' => 'access news_article node view',
@@ -222,26 +212,6 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'vppr',
-  );
-
-  // Exported permission: 'administer mailchimp'.
-  $permissions['administer mailchimp'] = array(
-    'name' => 'administer mailchimp',
-    'roles' => array(
-      'client' => 'client',
-      'developer' => 'developer',
-    ),
-    'module' => 'mailchimp',
-  );
-
-  // Exported permission: 'administer mailchimp signup entities'.
-  $permissions['administer mailchimp signup entities'] = array(
-    'name' => 'administer mailchimp signup entities',
-    'roles' => array(
-      'client' => 'client',
-      'developer' => 'developer',
-    ),
-    'module' => 'mailchimp_signup',
   );
 
   // Exported permission: 'administer main-menu menu items'.
