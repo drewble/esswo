@@ -149,6 +149,11 @@ input[type="checkbox"] + label {
 }
 
 // Mailchimp
+.logged-in {
+	#block-mailchimp-signup-registration {
+		display: none;
+	}
+}
 .field-type-mailchimp-lists-subscription {
   fieldset {
     border: none;

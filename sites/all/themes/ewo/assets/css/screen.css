@@ -323,6 +323,9 @@ input[type="checkbox"] + label {
 #block-formblock-user-register {
   margin-bottom: 70px; }
 
+.logged-in #block-mailchimp-signup-registration {
+  display: none; }
+
 .field-type-mailchimp-lists-subscription fieldset {
   border: none;
   color: #fff;
