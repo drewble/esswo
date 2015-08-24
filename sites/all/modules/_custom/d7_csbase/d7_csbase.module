@@ -58,11 +58,3 @@ function d7_csbase_form_song_node_form_alter(&$form, &$form_state, $form_id) {
   $form['field_praisecharts_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.praisecharts.com/detail/arrangement/';
   $form['field_loopcommunity_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://loopcommunity.com/';
 }
-
-/**
- * Implements hook_form_FORMID_alter().
- */
-function d7_csbase_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
-  // Remove mailchimp from profile editing screen
-  unset($form['field_i_would_like_to_receive_th']);
-}
