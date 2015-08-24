@@ -256,27 +256,6 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'mailchimp_api_key';
-  $strongarm->value = '12b310e749e515fd885ff1809eb6dabf-us10';
-  $export['mailchimp_api_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'mailchimp_batch_limit';
-  $strongarm->value = '100';
-  $export['mailchimp_batch_limit'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'mailchimp_cron';
-  $strongarm->value = 0;
-  $export['mailchimp_cron'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'menu_attributes_accesskey_default';
   $strongarm->value = '';
   $export['menu_attributes_accesskey_default'] = $strongarm;
