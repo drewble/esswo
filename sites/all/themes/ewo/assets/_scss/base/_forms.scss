@@ -46,8 +46,14 @@ input[type="submit"] {
   margin-top: 10px;
 }
 
-input[type="checkbox"] + label {
-  margin: 0 1%;
+input[type="checkbox"] {
+	float: left;
+  margin: 7px;
+
+	& + label {
+		color: $base;
+	  margin: 0 1%;
+	}
 }
 
 // Chosen Overrides

@@ -27,18 +27,17 @@
   		$('#better-messages-default a.message-close').click()
 
   	$(window).load ->
-  		$('.password-strength, .password-confirm').hide();
+  		$('#myModal .password-strength, #myModal .password-confirm').hide();
 
-  	$('.password-field').keyup ->
+  	$('#myModal .password-field').keyup ->
   		if $(this).val() isnt ''
   			$('.password-strength, .password-confirm').show();
   		else
   			$('.password-strength, .password-confirm').hide();
 
-  	$('.password-field').focus ->
+  	$('#myModal .password-field').focus ->
   		if $(this).val() isnt ''
   			$('.password-strength, .password-confirm').show();
-  			console.log('yes')
   		else
   			$('.password-strength, .password-confirm').hide();
 

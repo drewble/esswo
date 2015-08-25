@@ -146,6 +146,10 @@
       }
     }
 
+    input[type="checkbox"] + label {
+    	color: #fff;
+    }
+
     input[type="submit"] {
       color: $light;
 

@@ -21,19 +21,18 @@
       return $('#better-messages-default a.message-close').click();
     });
     $(window).load(function() {
-      return $('.password-strength, .password-confirm').hide();
+      return $('#myModal .password-strength, #myModal .password-confirm').hide();
     });
-    $('.password-field').keyup(function() {
+    $('#myModal .password-field').keyup(function() {
       if ($(this).val() !== '') {
         return $('.password-strength, .password-confirm').show();
       } else {
         return $('.password-strength, .password-confirm').hide();
       }
     });
-    $('.password-field').focus(function() {
+    $('#myModal .password-field').focus(function() {
       if ($(this).val() !== '') {
-        $('.password-strength, .password-confirm').show();
-        return console.log('yes');
+        return $('.password-strength, .password-confirm').show();
       } else {
         return $('.password-strength, .password-confirm').hide();
       }

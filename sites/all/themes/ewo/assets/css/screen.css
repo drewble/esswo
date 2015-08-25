@@ -260,8 +260,12 @@ input[type="submit"] {
     color: #fff;
     text-decoration: none; }
 
-input[type="checkbox"] + label {
-  margin: 0 1%; }
+input[type="checkbox"] {
+  float: left;
+  margin: 7px; }
+  input[type="checkbox"] + label {
+    color: #3d3738;
+    margin: 0 1%; }
 
 .chosen-container .chosen-single, .chosen-container.chosen-with-drop .chosen-single {
   background: #ecf0f1;
@@ -568,6 +572,8 @@ ul.primary {
       color: #575454; }
     #myModal .modal-body input[type="text"]:-ms-input-placeholder, #myModal .modal-body input[type="password"]:-ms-input-placeholder, #myModal .modal-body input[type="email"]:-ms-input-placeholder, #myModal .modal-body input[type="password"]:-ms-input-placeholder {
       color: #575454; }
+  #myModal .modal-body input[type="checkbox"] + label {
+    color: #fff; }
   #myModal .modal-body input[type="submit"] {
     color: #ecf0f1; }
     #myModal .modal-body input[type="submit"]:hover {
