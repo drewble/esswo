@@ -792,9 +792,8 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_services']['label'] = '';
   $handler->display->display_options['fields']['field_services']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_services']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_services']['alter']['text'] = '<div><span>Service:</span>[field_services]<br></div>';
+  $handler->display->display_options['fields']['field_services']['alter']['text'] = '[field_services]<br>';
   $handler->display->display_options['fields']['field_services']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_services']['element_label_type'] = '0';
   $handler->display->display_options['fields']['field_services']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_services']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_services']['element_default_classes'] = FALSE;

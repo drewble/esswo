@@ -20,12 +20,14 @@ hide($content['field_mp3']);
 
 // Hide fields (labels and all) if empty
 // Service
-if ($content['group_song_categories']['field_services'][0]['#markup'] == '') {
-	hide($content['group_song_categories']['field_services']);
-}
-// Ministry
-if ($content['group_song_categories']['field_church'][0]['#markup'] == '') {
-	hide($content['group_song_categories']['field_church']);
+if ($teaser) {
+	if ($content['group_song_categories']['field_services'][0]['#markup'] == '') {
+		hide($content['group_song_categories']['field_services']);
+	}
+	// Ministry
+	if ($content['group_song_categories']['field_church'][0]['#markup'] == '') {
+		hide($content['group_song_categories']['field_church']);
+	}
 }
 
 ?>
