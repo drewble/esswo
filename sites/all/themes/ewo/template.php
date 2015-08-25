@@ -81,17 +81,6 @@ ministry or service to find the perfect song.';
 }
 
 
-// function ewo_preprocess_node(&$vars,$hook) {
-//   if ($vars['type'] == 'song') {
-//     if ($vars['teaser'] == TRUE) {
-//       if (empty($vars['field_theme'])) {
-        
-//       }
-//     }
-//   }
-// }
-
-
 function ewo_form_alter(&$form, &$form_state, $form_id) {
   $path = drupal_get_path('theme', 'ewo');
   if ($form_id == 'views_exposed_form') {

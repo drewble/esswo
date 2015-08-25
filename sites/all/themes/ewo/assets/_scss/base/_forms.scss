@@ -167,5 +167,26 @@ input[type="checkbox"] + label {
   }
 }
 
+.password-parent, .confirm-parent {
+	color:$red;
+	width:auto;
+
+	> div {
+		margin-right: 2em;
+		margin-top: 0;
+	}
+}
+
+.confirm-parent {
+	margin-bottom:0;
+}
+
+div.password-confirm {
+	text-align: right;
+
+	.ok {
+		color: #47C965;
+	}
+}
 
 

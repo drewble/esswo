@@ -26,5 +26,17 @@
   	$('#better-messages-default .close').click ->
   		$('#better-messages-default a.message-close').click()
 
+  	$(window).load ->
+  		$('.password-strength, .password-confirm').hide();
+
+  	$('.password-field').keyup ->
+  		if $(this).val() isnt ''
+  			$('.password-strength, .password-confirm').show();
+  		else
+  			$('.password-strength, .password-confirm').hide();
+
+  	# Password placeholder value (couldn't get it to work with a form alter and only need it in js modal)
+  	$('input.password-field, input.password-confirm').attr('placeholder','Password');
+
 
 ) jQuery

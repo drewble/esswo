@@ -334,6 +334,21 @@ input[type="checkbox"] + label {
 .field-type-mailchimp-lists-subscription legend {
   display: none; }
 
+.password-parent, .confirm-parent {
+  color: #e44345;
+  width: auto; }
+  .password-parent > div, .confirm-parent > div {
+    margin-right: 2em;
+    margin-top: 0; }
+
+.confirm-parent {
+  margin-bottom: 0; }
+
+div.password-confirm {
+  text-align: right; }
+  div.password-confirm .ok {
+    color: #47C965; }
+
 /* Tables */
 table {
   width: 100%; }
@@ -529,29 +544,29 @@ ul.primary {
   #myModal .modal-body h2 {
     color: #e44345;
     font-size: 48px; }
-  #myModal .modal-body input[type="text"], #myModal .modal-body input[type="password"], #myModal .modal-body input[type="email"] {
+  #myModal .modal-body input[type="text"], #myModal .modal-body input[type="password"], #myModal .modal-body input[type="email"], #myModal .modal-body input[type="password"] {
     background-color: rgba(45, 45, 45, 0.4);
     color: #ecf0f1;
     padding: 4% 5%;
     width: 93%; }
-    #myModal .modal-body input[type="text"]:focus, #myModal .modal-body input[type="password"]:focus, #myModal .modal-body input[type="email"]:focus {
+    #myModal .modal-body input[type="text"]:focus, #myModal .modal-body input[type="password"]:focus, #myModal .modal-body input[type="email"]:focus, #myModal .modal-body input[type="password"]:focus {
       background-color: #ecf0f1;
       color: #4a4647; }
-      #myModal .modal-body input[type="text"]:focus::-webkit-input-placeholder, #myModal .modal-body input[type="password"]:focus::-webkit-input-placeholder, #myModal .modal-body input[type="email"]:focus::-webkit-input-placeholder {
+      #myModal .modal-body input[type="text"]:focus::-webkit-input-placeholder, #myModal .modal-body input[type="password"]:focus::-webkit-input-placeholder, #myModal .modal-body input[type="email"]:focus::-webkit-input-placeholder, #myModal .modal-body input[type="password"]:focus::-webkit-input-placeholder {
         color: #575454; }
-      #myModal .modal-body input[type="text"]:focus::-moz-placeholder, #myModal .modal-body input[type="password"]:focus::-moz-placeholder, #myModal .modal-body input[type="email"]:focus::-moz-placeholder {
+      #myModal .modal-body input[type="text"]:focus::-moz-placeholder, #myModal .modal-body input[type="password"]:focus::-moz-placeholder, #myModal .modal-body input[type="email"]:focus::-moz-placeholder, #myModal .modal-body input[type="password"]:focus::-moz-placeholder {
         color: #575454; }
-      #myModal .modal-body input[type="text"]:focus:-moz-placeholder, #myModal .modal-body input[type="password"]:focus:-moz-placeholder, #myModal .modal-body input[type="email"]:focus:-moz-placeholder {
+      #myModal .modal-body input[type="text"]:focus:-moz-placeholder, #myModal .modal-body input[type="password"]:focus:-moz-placeholder, #myModal .modal-body input[type="email"]:focus:-moz-placeholder, #myModal .modal-body input[type="password"]:focus:-moz-placeholder {
         color: #575454; }
-      #myModal .modal-body input[type="text"]:focus:-ms-input-placeholder, #myModal .modal-body input[type="password"]:focus:-ms-input-placeholder, #myModal .modal-body input[type="email"]:focus:-ms-input-placeholder {
+      #myModal .modal-body input[type="text"]:focus:-ms-input-placeholder, #myModal .modal-body input[type="password"]:focus:-ms-input-placeholder, #myModal .modal-body input[type="email"]:focus:-ms-input-placeholder, #myModal .modal-body input[type="password"]:focus:-ms-input-placeholder {
         color: #575454; }
-    #myModal .modal-body input[type="text"]::-webkit-input-placeholder, #myModal .modal-body input[type="password"]::-webkit-input-placeholder, #myModal .modal-body input[type="email"]::-webkit-input-placeholder {
+    #myModal .modal-body input[type="text"]::-webkit-input-placeholder, #myModal .modal-body input[type="password"]::-webkit-input-placeholder, #myModal .modal-body input[type="email"]::-webkit-input-placeholder, #myModal .modal-body input[type="password"]::-webkit-input-placeholder {
       color: #575454; }
-    #myModal .modal-body input[type="text"]::-moz-placeholder, #myModal .modal-body input[type="password"]::-moz-placeholder, #myModal .modal-body input[type="email"]::-moz-placeholder {
+    #myModal .modal-body input[type="text"]::-moz-placeholder, #myModal .modal-body input[type="password"]::-moz-placeholder, #myModal .modal-body input[type="email"]::-moz-placeholder, #myModal .modal-body input[type="password"]::-moz-placeholder {
       color: #575454; }
-    #myModal .modal-body input[type="text"]:-moz-placeholder, #myModal .modal-body input[type="password"]:-moz-placeholder, #myModal .modal-body input[type="email"]:-moz-placeholder {
+    #myModal .modal-body input[type="text"]:-moz-placeholder, #myModal .modal-body input[type="password"]:-moz-placeholder, #myModal .modal-body input[type="email"]:-moz-placeholder, #myModal .modal-body input[type="password"]:-moz-placeholder {
       color: #575454; }
-    #myModal .modal-body input[type="text"]:-ms-input-placeholder, #myModal .modal-body input[type="password"]:-ms-input-placeholder, #myModal .modal-body input[type="email"]:-ms-input-placeholder {
+    #myModal .modal-body input[type="text"]:-ms-input-placeholder, #myModal .modal-body input[type="password"]:-ms-input-placeholder, #myModal .modal-body input[type="email"]:-ms-input-placeholder, #myModal .modal-body input[type="password"]:-ms-input-placeholder {
       color: #575454; }
   #myModal .modal-body input[type="submit"] {
     color: #ecf0f1; }
@@ -559,6 +574,8 @@ ul.primary {
       border-color: #e44345; }
   #myModal .modal-body small {
     display: none; }
+  #myModal .modal-body .password-suggestions {
+    display: none !important; }
 
 .modal-message {
   background-color: #fff;

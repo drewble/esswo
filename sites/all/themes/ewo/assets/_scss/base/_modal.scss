@@ -126,7 +126,7 @@
       font-size: 48px;
     }
 
-    input[type="text"], input[type="password"], input[type="email"] {
+    input[type="text"], input[type="password"], input[type="email"], input[type="password"] {
       background-color: rgba(45,45,45,.4);
       color: $light;
       padding: 4% 5%;
@@ -156,6 +156,10 @@
 
     small {
       display: none;
+    }
+
+    .password-suggestions {
+    	display: none !important;
     }
   }
 }

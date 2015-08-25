@@ -17,9 +17,20 @@
       $('#myModal').modal('show');
       return e.preventDefault();
     });
-    return $('#better-messages-default .close').click(function() {
+    $('#better-messages-default .close').click(function() {
       return $('#better-messages-default a.message-close').click();
     });
+    $(window).load(function() {
+      return $('.password-strength, .password-confirm').hide();
+    });
+    $('.password-field').keyup(function() {
+      if ($(this).val() !== '') {
+        return $('.password-strength, .password-confirm').show();
+      } else {
+        return $('.password-strength, .password-confirm').hide();
+      }
+    });
+    return $('input.password-field, input.password-confirm').attr('placeholder', 'Password');
   })(jQuery);
 
 }).call(this);
