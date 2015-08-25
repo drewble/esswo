@@ -52,6 +52,7 @@ function ew_base_user_default_permissions() {
   $permissions['access mailchimp signup pages'] = array(
     'name' => 'access mailchimp signup pages',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'mailchimp_signup',
@@ -227,6 +228,7 @@ function ew_base_user_default_permissions() {
   $permissions['administer mailchimp'] = array(
     'name' => 'administer mailchimp',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'mailchimp',
@@ -236,6 +238,7 @@ function ew_base_user_default_permissions() {
   $permissions['administer mailchimp signup entities'] = array(
     'name' => 'administer mailchimp signup entities',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'mailchimp_signup',
