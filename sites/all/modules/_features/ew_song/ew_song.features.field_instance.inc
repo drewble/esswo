@@ -964,12 +964,12 @@ function ew_song_field_default_field_instances() {
     'fences_wrapper' => 'div',
     'field_name' => 'field_services',
     'label' => 'Service',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
+      'active' => 0,
       'module' => 'multiselect',
       'settings' => array(),
       'type' => 'multiselect',

@@ -777,10 +777,13 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['label'] = '';
   $handler->display->display_options['fields']['field_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['text'] = '<div><span>Theme:</span>[field_theme]<br></div>';
   $handler->display->display_options['fields']['field_theme']['element_type'] = '0';
   $handler->display->display_options['fields']['field_theme']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_theme']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_theme']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_theme']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_theme']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Service */
   $handler->display->display_options['fields']['field_services']['id'] = 'field_services';
@@ -788,11 +791,14 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_services']['field'] = 'field_services';
   $handler->display->display_options['fields']['field_services']['label'] = '';
   $handler->display->display_options['fields']['field_services']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_services']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_services']['alter']['text'] = '<div><span>Service:</span>[field_services]<br></div>';
   $handler->display->display_options['fields']['field_services']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_services']['element_label_type'] = '0';
   $handler->display->display_options['fields']['field_services']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_services']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_services']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_services']['empty'] = 'N/A';
+  $handler->display->display_options['fields']['field_services']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_services']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_services']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_services']['separator'] = ' / ';
@@ -802,10 +808,13 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_scripture']['field'] = 'field_scripture';
   $handler->display->display_options['fields']['field_scripture']['label'] = '';
   $handler->display->display_options['fields']['field_scripture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_scripture']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_scripture']['alter']['text'] = '<div><span>Scripture:</span>[field_scripture]<br></div>';
   $handler->display->display_options['fields']['field_scripture']['element_type'] = '0';
   $handler->display->display_options['fields']['field_scripture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_scripture']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_scripture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_scripture']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_scripture']['type'] = 'text_plain';
   /* Field: Content: Songwriters */
   $handler->display->display_options['fields']['field_songwriters']['id'] = 'field_songwriters';
@@ -813,10 +822,13 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_songwriters']['field'] = 'field_songwriters';
   $handler->display->display_options['fields']['field_songwriters']['label'] = '';
   $handler->display->display_options['fields']['field_songwriters']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_songwriters']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_songwriters']['alter']['text'] = '<div><span>Songwriters:</span>[field_songwriters]<br></div>';
   $handler->display->display_options['fields']['field_songwriters']['element_type'] = '0';
   $handler->display->display_options['fields']['field_songwriters']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_songwriters']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_songwriters']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_songwriters']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_songwriters']['type'] = 'text_plain';
   /* Field: Content: Ministry */
   $handler->display->display_options['fields']['field_church']['id'] = 'field_church';
@@ -824,10 +836,13 @@ function ew_song_views_default_views() {
   $handler->display->display_options['fields']['field_church']['field'] = 'field_church';
   $handler->display->display_options['fields']['field_church']['label'] = '';
   $handler->display->display_options['fields']['field_church']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_church']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_church']['alter']['text'] = '<div><span>Ministry:</span>[field_church]<br></div>';
   $handler->display->display_options['fields']['field_church']['element_type'] = '0';
   $handler->display->display_options['fields']['field_church']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_church']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_church']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_church']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_church']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_church']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_church']['separator'] = ' / ';
@@ -851,13 +866,13 @@ function ew_song_views_default_views() {
 <span><h4>Tempo/BPM</h4>[field_tempo]/[field_bpm]</span>
 </div>
 <div class="theme">
-<div><span>Theme:</span>[field_theme]<br></div>
-<div><span>Service:</span>[field_services]<br></div>
-<div><span>Scripture:</span>[field_scripture]<br></div>
+[field_theme]
+[field_services]
+[field_scripture]
 </div>
 <div class="song-info">
-<div><span>Songwriters:</span>[field_songwriters]<br></div>
-<div><span>Ministry:</span>[field_church]<br></div>
+[field_songwriters]
+[field_church]
 <div><span>CCLI#:</span>[field_ccli_license]<br></div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
