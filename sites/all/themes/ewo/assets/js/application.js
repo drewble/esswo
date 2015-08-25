@@ -30,7 +30,16 @@
         return $('.password-strength, .password-confirm').hide();
       }
     });
-    return $('input.password-field, input.password-confirm').attr('placeholder', 'Password');
+    $('.password-field').focus(function() {
+      if ($(this).val() !== '') {
+        $('.password-strength, .password-confirm').show();
+        return console.log('yes');
+      } else {
+        return $('.password-strength, .password-confirm').hide();
+      }
+    });
+    $('input.password-field').attr('placeholder', 'Password');
+    return $('input.password-confirm').attr('placeholder', 'Confirm Password');
   })(jQuery);
 
 }).call(this);
