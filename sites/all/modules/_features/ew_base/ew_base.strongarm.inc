@@ -150,11 +150,7 @@ function ew_base_strongarm() {
       'resizable' => 0,
     ),
     'extra' => array(
-      'pages' => 'admin
-admin/*
-node/add/*
-node/edit/*
-user/edit',
+      'pages' => '',
       'visibility' => '0',
       'admin' => 1,
     ),
