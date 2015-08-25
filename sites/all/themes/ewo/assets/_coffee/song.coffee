@@ -58,4 +58,7 @@
   		$('#myModal').modal 'show'
   		e.preventDefault()
 
+  	$('#myModal button').on 'click', ->
+      $('.modal-message').remove()
+
 ) jQuery
