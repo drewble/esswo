@@ -16,7 +16,7 @@ if ($id_node) {
 hide($content['comments']);
 hide($content['links']);
 
-if ($content['field_listing_image']) {
+if (isset($content['field_listing_image'])) {
   hide($content['field_listing_image']);
   $artistImg = file_create_url($content['field_listing_image'][0]['file']['#item']['uri']);
 }

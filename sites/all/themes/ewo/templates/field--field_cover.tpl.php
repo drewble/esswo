@@ -42,7 +42,8 @@
  * @see template_preprocess_field()
  * @see theme_field()
  */
-if (!empty($element['#object']->field_itunes_album_link)) {
+$link = '';
+if (!empty($element['#object']->field_itunes_album_link[LANGUAGE_NONE])) {
   $link = $element['#object']->field_itunes_album_link[LANGUAGE_NONE][0]['url'];
 }
 ?>
