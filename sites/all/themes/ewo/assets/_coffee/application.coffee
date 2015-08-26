@@ -41,7 +41,7 @@
   		else
   			$('.password-strength, .password-confirm').hide();
 
-  	# Password placeholder value (couldn't get it to work with a form alter and only need it in js modal)
+  	# Password placeholder value (couldn't get it to work with a form alter and only needed in js modal)
   	$('input.password-field').attr('placeholder','Password');
   	$('input.password-confirm').attr('placeholder','Confirm Password');
 

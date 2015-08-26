@@ -39,11 +39,6 @@ function d7_csbase_form_alter(&$form, &$form_state, $form_id) {
   if (!empty($form_state['build_info']['base_form_id'])) {
     if ($form_state['build_info']['base_form_id'] == 'mailchimp_signup_subscribe_form') {
       $form['mergevars']['EMAIL']['#attributes']['placeholder'] = t('enter email address');
-      //     if (isset($form['mailchimp_lists'][$field_id]['subscribe'])) {
-      //       $form['mailchimp_lists'][$field_id]['subscribe']['#default_value'] = TRUE;
-      //     }
-      //   }
-      // }
     }
   }
 }
