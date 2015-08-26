@@ -61,8 +61,17 @@ header {
 
 body.admin-menu {
   header {
-    top:29px;
+  	top:46px;
+
+  	@include desk {
+	    top:29px;
+	  }
   }
+}
+
+.slicknav_menu {
+  position: relative;
+  z-index: 11;
 }
 
 // Nav

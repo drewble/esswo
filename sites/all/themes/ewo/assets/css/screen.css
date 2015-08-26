@@ -760,7 +760,14 @@ header {
         display: none; } }
 
 body.admin-menu header {
-  top: 29px; }
+  top: 46px; }
+  @media screen and (min-width: 1024px) {
+    body.admin-menu header {
+      top: 29px; } }
+
+.slicknav_menu {
+  position: relative;
+  z-index: 11; }
 
 header nav {
   background-color: rgba(0, 0, 0, 0.9);
