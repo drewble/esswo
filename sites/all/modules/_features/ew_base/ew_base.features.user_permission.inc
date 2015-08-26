@@ -190,6 +190,7 @@ function ew_base_user_default_permissions() {
   $permissions['administer google analytics counter'] = array(
     'name' => 'administer google analytics counter',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'google_analytics_counter',
