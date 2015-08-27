@@ -1300,7 +1300,7 @@ function ew_song_views_default_views() {
       'postpone_processing' => 0,
       'skip_confirmation' => 1,
       'override_label' => 1,
-      'label' => 'Make New',
+      'label' => 'Toggle New',
     ),
     'action::views_bulk_operations_modify_action' => array(
       'selected' => 1,
