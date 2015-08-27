@@ -5,7 +5,6 @@
 
     # Clear search box
     $('#edit-title').val('');
-    
 
 
 ) jQuery

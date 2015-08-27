@@ -1309,10 +1309,13 @@ footer nav {
   .front .hero h2 {
     color: #e44345;
     font-style: normal;
-    font-size: 35px;
+    font-size: 26px;
     line-height: 1em;
     margin-bottom: 5px;
     text-transform: uppercase; }
+    @media screen and (min-width: 375px) {
+      .front .hero h2 {
+        font-size: 30px; } }
     @media screen and (min-width: 1024px) {
       .front .hero h2 {
         font-size: 38px; } }
@@ -1329,23 +1332,34 @@ footer nav {
       width: 50%; } }
   .front .feature .content {
     background-repeat: no-repeat;
-    background-size: cover; }
+    background-size: cover;
+    display: table;
+    height: 404px;
+    width: 101%; }
+    @media screen and (min-width: 768px) {
+      .front .feature .content {
+        height: 507px; } }
+    @media screen and (min-width: 1024px) {
+      .front .feature .content {
+        height: 609px; } }
 .front .file-image {
   left: 0;
   position: absolute;
   top: 0;
   z-index: 0; }
 .front .group-info {
-  padding: 59% 5% 14%;
+  display: table-cell;
+  padding: 43% 5% 9%;
   position: relative;
   text-align: left;
+  vertical-align: bottom;
   z-index: 1; }
   @media screen and (min-width: 768px) {
     .front .group-info {
-      padding: 59% 5% 8%; } }
+      padding: 43% 5% 8%; } }
   @media screen and (min-width: 1024px) {
     .front .group-info {
-      padding: 59% 11% 9%; } }
+      padding: 43% 11% 9%; } }
 
 .front #views-exposed-form-songs-page {
   height: 94px;
