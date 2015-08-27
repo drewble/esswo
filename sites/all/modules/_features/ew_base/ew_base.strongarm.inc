@@ -273,6 +273,17 @@ user/*/*';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_strings_en';
+  $strongarm->value = array(
+    '' => array(
+      'A welcome message with further instructions has been sent to your e-mail address.' => 'A confirmation email has been sent to your e-mail address. Once you click the validation link you can login!',
+    ),
+  );
+  $export['locale_custom_strings_en'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'mailchimp_api_key';
   $strongarm->value = '12b310e749e515fd885ff1809eb6dabf-us10';
   $export['mailchimp_api_key'] = $strongarm;

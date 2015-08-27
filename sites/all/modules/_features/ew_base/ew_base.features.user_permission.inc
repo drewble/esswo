@@ -322,6 +322,15 @@ function ew_base_user_default_permissions() {
     'module' => 'vppr',
   );
 
+  // Exported permission: 'administer string overrides'.
+  $permissions['administer string overrides'] = array(
+    'name' => 'administer string overrides',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'stringoverrides',
+  );
+
   // Exported permission: 'administer tempo vocabulary terms'.
   $permissions['administer tempo vocabulary terms'] = array(
     'name' => 'administer tempo vocabulary terms',
