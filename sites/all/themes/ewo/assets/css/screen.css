@@ -1532,6 +1532,8 @@ footer nav {
         color: #fff; }
         .news-listing > ul > li a:hover h2 {
           color: #fff; }
+        .news-listing > ul > li a:hover .author {
+          color: #fff; }
       .news-listing > ul > li a .field-type-taxonomy-term-reference {
         border-left: 1px solid #3b3738;
         display: inline-block;
