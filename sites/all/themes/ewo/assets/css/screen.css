@@ -1349,17 +1349,17 @@ footer nav {
   z-index: 0; }
 .front .group-info {
   display: table-cell;
-  padding: 43% 5% 9%;
+  padding: 0 5% 9%;
   position: relative;
   text-align: left;
   vertical-align: bottom;
   z-index: 1; }
   @media screen and (min-width: 768px) {
     .front .group-info {
-      padding: 43% 5% 8%; } }
+      padding: 0 5% 8%; } }
   @media screen and (min-width: 1024px) {
     .front .group-info {
-      padding: 43% 11% 9%; } }
+      padding: 0 11% 9%; } }
 
 .front #views-exposed-form-songs-page {
   height: 94px;
