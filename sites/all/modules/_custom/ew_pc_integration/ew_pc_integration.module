@@ -155,7 +155,12 @@ function ew_pc_integration_api_sync_song($nid) {
     $pc_song['author'] = $song->field_songwriters[LANGUAGE_NONE][0]['value'];
   }
   // Add notes
-  $pc_song['notes'] = $song->field_scripture[LANGUAGE_NONE][0]['value'].' - All song resources provided courtesy of Essential Worship – for more worship resources visit EssentialWorship.com';
+  if (!empty($song->field_scripture[LANGUAGE_NONE][0]['value'])) {
+    $pc_song['notes'] = $song->field_scripture[LANGUAGE_NONE][0]['value'].' - All song resources provided courtesy of Essential Worship – for more worship resources visit EssentialWorship.com';
+  }
+  else {
+    $pc_song['notes'] = 'All song resources provided courtesy of Essential Worship – for more worship resources visit EssentialWorship.com';
+  }
   // Add song file
   /*if (!empty($song->field_mp3[LANGUAGE_NONE][0]['uri'])) {
     $pc_song['mp3_url'] = file_create_url($song->field_mp3[LANGUAGE_NONE][0]['uri']);
