@@ -154,6 +154,8 @@ function ew_pc_integration_api_sync_song($nid) {
   if (!empty($song->field_songwriters[LANGUAGE_NONE][0]['value'])) {
     $pc_song['author'] = $song->field_songwriters[LANGUAGE_NONE][0]['value'];
   }
+  // Add notes
+  $pc_song['notes'] = $song->field_scripture[LANGUAGE_NONE][0]['value'].' - All song resources provided courtesy of Essential Worship – for more worship resources visit EssentialWorship.com';
   // Add song file
   /*if (!empty($song->field_mp3[LANGUAGE_NONE][0]['uri'])) {
     $pc_song['mp3_url'] = file_create_url($song->field_mp3[LANGUAGE_NONE][0]['uri']);
@@ -236,6 +238,11 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $k
   $song_json = json_encode($song);
   $arrangement_json = json_encode($arrangement);
 
+  // PC suggested trying to update theme with an update API call after create
+  $song_update = array();
+  $song_update['themes'] = $song['themes'];
+  $song_update_json = json_encode($song_update);
+
   // Add song to pc
   $url = "https://services.planningcenteronline.com/songs.json";
   $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
@@ -244,6 +251,13 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $k
   $headers[] = "Content-type: application/json";
   $response = run_curl($request, "POST", $headers, $song_json);
   $new_song = json_decode($response);
+
+  // Update the song real quick to see if we can override themes
+  $update_song_url = "https://services.planningcenteronline.com/songs/".$new_song->id.".json";
+  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "PUT", $update_song_url);
+  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+  $response = run_curl($request, "PUT", $headers, $song_update_json);
+  $updated_song = json_decode($response);
 
   if (empty($new_song)) {
     // Looks like user can't add songs
