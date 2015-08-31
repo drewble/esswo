@@ -13,6 +13,7 @@
 
   &:hover {
     background-color: $red;
+    border-color:$red;
     color: #fff;
     text-decoration: none;
   }
@@ -20,8 +21,8 @@
 
 @mixin icon-btn {
   @include btn;
-  background-position: 12px 15px;
-  background-size: 22px;
+  background-position: 12px 11px;
+  background-size: 22px 22px;
   border-color:$btn;
   line-height: 3.2em;
   min-width: 277px;
@@ -34,11 +35,12 @@
     display: block;
     float: left;
     margin-right: 15px;
-    padding: 22px 23px;
+    padding: 23px;
   }
 
   &:hover {
     background-color: transparent;
+    border-color:$btn;
     color: $btn;
 
     &:before {
@@ -57,6 +59,7 @@
   }
 
   &:hover {
+    border-color:#fff;
     color: #fff;
   }
 }
@@ -93,12 +96,29 @@
   @include icon-btn;
 }
 
+// Embedded icons
+.icon-embed {
+  position: relative;
+
+  span {
+    height: 20px;
+    left: 13px;
+    position: absolute;
+    top: 6px;
+    width: 20px;
+  }
+
+  path {
+    fill: $base;
+  }
+}
+
 .icon-icons_listen,
 .icon-icons_download,
 .icon-icons_arrow,
 .icon-icons_more {
   background-position: 13px 13px;
-  background-size: 19px;
+  background-size: 19px 19px;
 }
 
 .icon-icons_arrow {
@@ -107,27 +127,22 @@
 
 .icon-icons_join {
   background-position: 10px 13px;
-  background-size: 27px;
+  background-size: 27px 27px;
 }
 
 .icon-icons_insights {
-  background-position: 13px 12px;
-  background-size: 17px;
+  background-position: 14px 14px;
+  background-size: 17px 17px;
 }
 
 .icon-icons_fbook_dk {
-  background-position: 17px 12px;
-  background-size: 11px;
+  background-position: 14px 12px;
+  background-size: 19px 19px;
 }
 
 .icon-icons_add {
-  background-position: 14px 12px;
-  background-size: 20px;
-}
-
-.icon-icons_popular {
-  background-position: 8px 6px;
-  background-size: 13px;
+  background-position: 14px 13px;
+  background-size: 20px 20px;
 }
 
 .white-btn {
@@ -140,7 +155,17 @@
   width: 24px;
 }
 
+.icon-icons_popular {
+  background-position: 0 6px;
+  background-size: 13px 13px;
+  width: 18px;
+}
+
 .back-link {
   margin: 40px 0;
+
+  span {
+    top: 0;
+  }
 }
 

@@ -3,7 +3,7 @@
 //
 
 header {
-  background-color: rgba(48, 46, 46, .9);
+  background-color: rgba(0, 0, 0, .78);
   height: auto;
   left: 0;
   position: fixed;
@@ -15,11 +15,12 @@ header {
   h1 {
     float: left;
     line-height: 1em;
-    margin: 29px 25px;
+    margin: 29px 25px 16px;
     width: 60%;
 
     @include desk {
-      width: 33%;
+      margin: 29px 25px;
+      width: 28%;
     }
 
     .icon {
@@ -31,14 +32,22 @@ header {
   }
 
   // Mobile Menu Button
-  button {
+  button.icon {
     border: none;
     color: #fff;
     display: inline-block;
     float: right;
-    margin: 24px 20px;
+    margin: 26px 25px 22px;
     min-width: 0;
     padding: 0;
+
+    &:hover {
+      background-color:transparent;
+
+      path {
+        fill:#fff;
+      }
+    }
 
     @include tablet {
       margin: 30px;
@@ -52,8 +61,17 @@ header {
 
 body.admin-menu {
   header {
-    top:29px;
+  	top:46px;
+
+  	@include desk {
+	    top:29px;
+	  }
   }
+}
+
+.slicknav_menu {
+  position: relative;
+  z-index: 11;
 }
 
 // Nav
@@ -82,14 +100,17 @@ header {
     &.show {
       height: 100%;
       opacity: 1;
+      position: fixed;
       visibility: visible;
       z-index: 10;
     }
 
     .close-menu {
       @include close-btn;
-      float: right;
       margin: 18px 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
 
       @include desk {
         display: none;
@@ -114,11 +135,17 @@ header {
       color: #b5b5b6;
       display: block;
       padding: 28px 14px;
+      text-align: center;
       text-decoration: none;
+
+      @include lgMobile {
+        padding:36px 14px;
+      }
 
       @include desk {
         display: inline-block;
         padding: 31px 14px;
+        text-align: none;
       }
 
       &.active, &:hover {
@@ -135,20 +162,27 @@ header {
     .login {
       a {
         background-position: 0 5px;
-        background-size: 23px;
+        background-size: 23px 23px;
         color: #288899;
         font-size: 12px;
         height: 30px;
+        left: 13px;
         line-height: 1.4em;
-        margin: 0 14px;
+        margin: 0 auto;
         padding: 9px 29px;
         position: relative;
-        top: 9px;
-        width: auto;
+        top: 7px;
+        width: 150px;
+
+        @include lgMobile {
+          top:22px;
+        }
 
         @include desk {
+          left: auto;
           margin: 0;
           padding: 0 29px;
+          top: 7px;
           width: 102px;
         }
 
@@ -175,3 +209,18 @@ header {
     }
   }
 }
+
+// Anonymous
+.not-logged-in {
+	header nav .logged-in {
+		display: none;
+	}
+}
+
+// Logged-in
+.logged-in {
+	header nav .logged-in a {
+		text-align: left;
+	}
+}
+

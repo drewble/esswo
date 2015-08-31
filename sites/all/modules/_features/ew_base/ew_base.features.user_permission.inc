@@ -10,13 +10,61 @@
 function ew_base_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access artist_worship_leader node view'.
+  $permissions['access artist_worship_leader node view'] = array(
+    'name' => 'access artist_worship_leader node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'access banner node view'.
+  $permissions['access banner node view'] = array(
+    'name' => 'access banner node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'access better messages'.
+  $permissions['access better messages'] = array(
+    'name' => 'access better messages',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'developer' => 'developer',
+    ),
+    'module' => 'better_messages',
+  );
+
+  // Exported permission: 'access homepage_feature node view'.
+  $permissions['access homepage_feature node view'] = array(
+    'name' => 'access homepage_feature node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
   // Exported permission: 'access mailchimp signup pages'.
   $permissions['access mailchimp signup pages'] = array(
     'name' => 'access mailchimp signup pages',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'mailchimp_signup',
+  );
+
+  // Exported permission: 'access news_article node view'.
+  $permissions['access news_article node view'] = array(
+    'name' => 'access news_article node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
   );
 
   // Exported permission: 'access own authorizations'.
@@ -37,6 +85,33 @@ function ew_base_user_default_permissions() {
     'module' => 'oauth_common',
   );
 
+  // Exported permission: 'access page node view'.
+  $permissions['access page node view'] = array(
+    'name' => 'access page node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'access song node view'.
+  $permissions['access song node view'] = array(
+    'name' => 'access song node view',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'access the block administration page'.
+  $permissions['access the block administration page'] = array(
+    'name' => 'access the block administration page',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
   // Exported permission: 'administer addtoany'.
   $permissions['administer addtoany'] = array(
     'name' => 'administer addtoany',
@@ -46,6 +121,44 @@ function ew_base_user_default_permissions() {
     'module' => 'addtoany',
   );
 
+  // Exported permission: 'administer better messages'.
+  $permissions['administer better messages'] = array(
+    'name' => 'administer better messages',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'better_messages',
+  );
+
+  // Exported permission: 'administer block access settings'.
+  $permissions['administer block access settings'] = array(
+    'name' => 'administer block access settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'administer bpm vocabulary terms'.
+  $permissions['administer bpm vocabulary terms'] = array(
+    'name' => 'administer bpm vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
+  // Exported permission: 'administer church vocabulary terms'.
+  $permissions['administer church vocabulary terms'] = array(
+    'name' => 'administer church vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
   // Exported permission: 'administer consumers'.
   $permissions['administer consumers'] = array(
     'name' => 'administer consumers',
@@ -53,6 +166,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'administer devel menu items'.
+  $permissions['administer devel menu items'] = array(
+    'name' => 'administer devel menu items',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'menu_admin_per_menu',
   );
 
   // Exported permission: 'administer flags'.
@@ -68,15 +190,46 @@ function ew_base_user_default_permissions() {
   $permissions['administer google analytics counter'] = array(
     'name' => 'administer google analytics counter',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'google_analytics_counter',
+  );
+
+  // Exported permission: 'administer google tag manager'.
+  $permissions['administer google tag manager'] = array(
+    'name' => 'administer google tag manager',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'google_tag',
+  );
+
+  // Exported permission: 'administer internal nodes'.
+  $permissions['administer internal nodes'] = array(
+    'name' => 'administer internal nodes',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'administer key vocabulary terms'.
+  $permissions['administer key vocabulary terms'] = array(
+    'name' => 'administer key vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
   );
 
   // Exported permission: 'administer mailchimp'.
   $permissions['administer mailchimp'] = array(
     'name' => 'administer mailchimp',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'mailchimp',
@@ -86,18 +239,68 @@ function ew_base_user_default_permissions() {
   $permissions['administer mailchimp signup entities'] = array(
     'name' => 'administer mailchimp signup entities',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'mailchimp_signup',
+  );
+
+  // Exported permission: 'administer main-menu menu items'.
+  $permissions['administer main-menu menu items'] = array(
+    'name' => 'administer main-menu menu items',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
+  // Exported permission: 'administer management menu items'.
+  $permissions['administer management menu items'] = array(
+    'name' => 'administer management menu items',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'menu_admin_per_menu',
   );
 
   // Exported permission: 'administer menu attributes'.
   $permissions['administer menu attributes'] = array(
     'name' => 'administer menu attributes',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'menu_attributes',
+  );
+
+  // Exported permission: 'administer menu-get-in-touch menu items'.
+  $permissions['administer menu-get-in-touch menu items'] = array(
+    'name' => 'administer menu-get-in-touch menu items',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
+  // Exported permission: 'administer navigation menu items'.
+  $permissions['administer navigation menu items'] = array(
+    'name' => 'administer navigation menu items',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
+  // Exported permission: 'administer news_tags vocabulary terms'.
+  $permissions['administer news_tags vocabulary terms'] = array(
+    'name' => 'administer news_tags vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
   );
 
   // Exported permission: 'administer oauth'.
@@ -109,6 +312,210 @@ function ew_base_user_default_permissions() {
     'module' => 'oauth_common',
   );
 
+  // Exported permission: 'administer services vocabulary terms'.
+  $permissions['administer services vocabulary terms'] = array(
+    'name' => 'administer services vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
+  // Exported permission: 'administer string overrides'.
+  $permissions['administer string overrides'] = array(
+    'name' => 'administer string overrides',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'stringoverrides',
+  );
+
+  // Exported permission: 'administer tempo vocabulary terms'.
+  $permissions['administer tempo vocabulary terms'] = array(
+    'name' => 'administer tempo vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
+  // Exported permission: 'administer theme vocabulary terms'.
+  $permissions['administer theme vocabulary terms'] = array(
+    'name' => 'administer theme vocabulary terms',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'vppr',
+  );
+
+  // Exported permission: 'administer user-menu menu items'.
+  $permissions['administer user-menu menu items'] = array(
+    'name' => 'administer user-menu menu items',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
+  // Exported permission: 'assign roles'.
+  $permissions['assign roles'] = array(
+    'name' => 'assign roles',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'roleassign',
+  );
+
+  // Exported permission: 'blocked node status'.
+  $permissions['blocked node status'] = array(
+    'name' => 'blocked node status',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'internal_nodes',
+  );
+
+  // Exported permission: 'configure all block body fields'.
+  $permissions['configure all block body fields'] = array(
+    'name' => 'configure all block body fields',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all block descriptions'.
+  $permissions['configure all block descriptions'] = array(
+    'name' => 'configure all block descriptions',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all block titles'.
+  $permissions['configure all block titles'] = array(
+    'name' => 'configure all block titles',
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all blocks'.
+  $permissions['configure all blocks'] = array(
+    'name' => 'configure all blocks',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all content type visibility settings'.
+  $permissions['configure all content type visibility settings'] = array(
+    'name' => 'configure all content type visibility settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all language settings'.
+  $permissions['configure all language settings'] = array(
+    'name' => 'configure all language settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all page visibility settings'.
+  $permissions['configure all page visibility settings'] = array(
+    'name' => 'configure all page visibility settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all region settings'.
+  $permissions['configure all region settings'] = array(
+    'name' => 'configure all region settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all role visibility settings'.
+  $permissions['configure all role visibility settings'] = array(
+    'name' => 'configure all role visibility settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all user visibility settings'.
+  $permissions['configure all user visibility settings'] = array(
+    'name' => 'configure all user visibility settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'configure all visibility settings'.
+  $permissions['configure all visibility settings'] = array(
+    'name' => 'configure all visibility settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'create blocks'.
+  $permissions['create blocks'] = array(
+    'name' => 'create blocks',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'delete all blocks'.
+  $permissions['delete all blocks'] = array(
+    'name' => 'delete all blocks',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'disable all blocks'.
+  $permissions['disable all blocks'] = array(
+    'name' => 'disable all blocks',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
+  // Exported permission: 'enable all blocks'.
+  $permissions['enable all blocks'] = array(
+    'name' => 'enable all blocks',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
+  );
+
   // Exported permission: 'flag new'.
   $permissions['flag new'] = array(
     'name' => 'flag new',
@@ -117,6 +524,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'flag',
+  );
+
+  // Exported permission: 'move all blocks'.
+  $permissions['move all blocks'] = array(
+    'name' => 'move all blocks',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
   );
 
   // Exported permission: 'oauth authorize any consumers'.
@@ -154,6 +570,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'flag',
+  );
+
+  // Exported permission: 'view all blocks'.
+  $permissions['view all blocks'] = array(
+    'name' => 'view all blocks',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'block_access',
   );
 
   return $permissions;

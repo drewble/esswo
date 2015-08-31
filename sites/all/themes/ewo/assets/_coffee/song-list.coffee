@@ -2,6 +2,12 @@
 (($) ->
 
 	Drupal.behaviors.songList = attach: (context, settings) ->
+
+		if $('#edit-flagged').val() == 'All'
+			$('#view-all').addClass 'active'
+		else
+			$('#view-new').addClass 'active'
+
 		# Sort Flagged/Un-flagged
 		$('#view-all', context).on 'click', ->
 			$('#edit-flagged').val('All')
@@ -15,6 +21,23 @@
 
   # Document.ready
   $ ->
+
+  	$('.audio-btn a:first-child').click (e) ->
+  		$('.play-audio.show').removeClass 'show'
+  		$('.audio-btn .open').removeClass 'open'
+  		$(this).addClass 'open'
+  		$(this).parent().siblings('.play-audio').addClass('show')
+  		e.preventDefault()
+		
+		$('.remove').click (e) ->
+  		$(this).prev().removeClass 'open'
+  		$(this).parent().siblings('.play-audio').removeClass('show')
+  		e.preventDefault()
+
+  	# Clear filters
+  	$('.clear-filters').click (e) ->
+  		$('#edit-reset').click()
+  		e.preventDefault()
 
   	# Song Exposed Filters Actions
 		$('.views-exposed-form select').each ->
@@ -36,15 +59,6 @@
 
   	$('#views-exposed-form-songs-page #edit-title-wrapper small').click ->
   		$('#edit-title').blur()
-
-  	$('.audio-btn a:first-child').click ->
-  		$(this).addClass 'open'
-  		$(this).parent().siblings('.play-audio').addClass('show')
-  		$('#remove').click ->
-	  		$(this).prev().removeClass 'open'
-	  		$(this).parent().siblings('.play-audio').removeClass('show')
-	  		return false
-	  	return false
 
 
 ) jQuery

@@ -20,21 +20,13 @@ if (!$page) {
   hide($content['field_tags']);
   hide($content['field_news_body']);
 }
-if ($content['field_header_image']) {
+if (isset($content['field_header_image'])) {
   $newsImgUrl = file_create_url($content['field_header_image'][0]['file']['#item']['uri']);
 }
 ?>
 
 <!-- node.tpl.php -->
 <article <?php print $id_node . $classes .  $attributes; ?> role="article">
-  <?php if ($content['field_header_image']): ?>
-  <style type="text/css">
-    .news-copy:before {
-      background: url(<?php print $newsImgUrl; ?>) no-repeat scroll center center;
-      background-size: cover;
-    }
-  </style>
-  <?php endif; ?>
   <?php print $mothership_poorthemers_helper; ?>
 
   <?php if ($display_submitted): ?>
@@ -52,9 +44,14 @@ if ($content['field_header_image']) {
   <div class="content">
     <?php if (!$page) { ?>
       <a class="news-copy" href="<?php print $node_url; ?>" rel="bookmark">
-        <span><?php echo trim(format_date($node->created, "custom", "F j, Y")); ?></span><?php print render($content['field_tags']);?>
-        <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-        <span class="author"><?php print t('posted by'); ?> <?php print $node->name; ?></span>
+        <?php if ($content['field_header_image']): ?>
+          <div class="cover" style="background: url(<?php print $newsImgUrl; ?>) no-repeat scroll center center; background-size: cover;"></div>
+        <?php endif; ?>
+        <div class="info">
+          <span><?php echo trim(format_date($node->created, "custom", "F j, Y")); ?></span><?php print render($content['field_tags']);?>
+          <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+          <span class="author"><?php print t('posted by'); ?> <?php print $node->name; ?></span>
+        </div>
       </a>
     <?php } else { ?>
       <?php print render($content);?>

@@ -4,6 +4,7 @@ html, body {
 body {
   color: $base;
   font-family: $font;
+  font-weight: 300;
   line-height: em(24);
 }
 
@@ -11,7 +12,7 @@ body {
 a {
   color: $red;
 
-  &:hover {
+  &:hover, &:focus {
     color: $gray;
     text-decoration: none;
   }

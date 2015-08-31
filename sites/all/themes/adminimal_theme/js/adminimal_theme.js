@@ -87,4 +87,12 @@ Drupal.behaviors.adminimal_move_active_primary_tab = {
 	}
 };
 
+Drupal.behaviors.adminimal_close_message = {
+	attach: function (context, settings) {
+		$('#better-messages-default .close').click(function() {
+      return $('#better-messages-default a.message-close').click();
+    });
+	}
+};
+
 })(jQuery);

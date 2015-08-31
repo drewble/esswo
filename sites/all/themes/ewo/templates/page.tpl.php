@@ -8,6 +8,7 @@
 if (!empty($bgImg)) {
   $bgImgUrl = file_create_url($bgImg['uri']);
 }
+$links = '';
 ?>
 <?php if( theme_get_setting('mothership_poorthemers_helper') ){ ?>
 <!-- page.tpl.php-->
@@ -27,7 +28,7 @@ if (!empty($bgImg)) {
 <header role="banner">
   <h1><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="icon icon-icons_logo">Essential Worship</a></h1>
 
-  <button>Menu</button>
+  <button class="icon icon-icons_menu" data-grunticon-embed></button>
   <?php if($page['header']): ?>
     <?php print render($page['header']); ?>
   <?php endif; ?>
@@ -48,19 +49,36 @@ if (!empty($bgImg)) {
   <?php print render($title_suffix); ?>
 
   <?php if(!empty($subtitle)): ?>
-    <h2><?php print $subtitle; ?></h2>
+    <h2><?php if(isset($node)): ?><?php if($node->type == 'song'): ?><span>Recorded by: </span><br /><?php endif; ?><?php endif; ?><?php print $subtitle; ?></h2>
   <?php endif; ?>
-  <?php if(!empty($resources)): ?>
-    <div class="btns">
-      <a class="icon-btn icon-icons_add" id="planning" href="/pc-api-sync-song/<?php print $node->nid; ?>">Add to Planning Center</a>
-      <a class="icon-btn icon-icons_download" href="<?php print $resources; ?>">Download Song Resources</a>
-    </div>
-  <?php endif; ?>
+  <?php if(isset($node)): ?>
+	  <?php if($node->type == 'song'): ?>
+	    <div class="btns">
+		    <?php if ($logged_in == TRUE) { ?>
+		      <a class="icon-btn icon-icons_add" id="planning" href="/pc-api-sync-song/<?php print $node->nid; ?>">Add to Planning Center</a>
+		      <?php if(!empty($resources)): ?>
+		      	<a class="icon-btn icon-embed" href="<?php print $resources; ?>"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
+		      <?php endif; ?>
+	      <?php } else { ?>
+	      	<a class="icon-btn icon-icons_add" href="/user/login">Add to Planning Center</a>
+	      	<?php if(!empty($resources)): ?>
+		      	<a class="icon-btn icon-embed" href="/user/login"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
+		      <?php endif; ?>
+	      <?php } ?>
+	    </div>
+	   <?php endif; ?>
+   <?php endif; ?>
 </div>
 
 <div class="page outer-container">
 
-  <div role="main" id="main-content<?php if ($page['sidebar']): ?> with-side<?php endif; ?>">
+  <div role="main" id="main-content" <?php if ($page['sidebar']): ?>class="with-side"<?php endif; ?>>
+
+    <?php if(isset($node)): ?>
+      <?php if($node->type == 'artist_worship_leader'): ?>
+      <a class="bread icon icon-icons_find_song" href="/worship-leaders">All Worship Leaders</a>
+      <?php endif; ?>
+    <?php endif; ?>
 
     <?php if ($action_links): ?>
       <ul class="action-links"><?php print render($action_links); ?></ul>
@@ -94,11 +112,14 @@ if (!empty($bgImg)) {
 
 </div><!-- /page-->
 
-<?php if ($page['pre_footer'] || isset($links) || $is_front): ?>
+<?php if ($page['pre_footer'] || !empty($links) || $is_front): ?>
   <div class="pre-footer">
     <?php print render($page['pre_footer']); ?>
-    <?php if (isset($links)): ?>
+    <?php if (!empty($links)): ?>
+      <div class="share-link">
+      <span class="icon icon-icons_share"></span>
       <?php print $links['addtoany']['title']; ?>
+      </div>
     <?php endif; ?>
     <?php if ($is_front): ?>
       <a href="/insights" class="icon-btn icon-icons_insights">View All Insights</a>
@@ -111,7 +132,7 @@ if (!empty($bgImg)) {
     <?php print render($page['footer']); ?>
     <div class="footer-btm">
       <span>&copy; <?php print date('Y'); ?> ESSENTIAL WORSHIP</span>
-      <span><a href="/">Terms of Use</a><a href="/">Privacy Policy</a></span>
+      <span><a href="http://providentcentral.com/Terms/" target="_blank">Terms of Use</a><a href="http://providentcentral.com/Privacy/" target="_blank">Privacy Policy</a></span>
     </div>
   </div>
 </footer>
@@ -147,3 +168,11 @@ if (!empty($bgImg)) {
       </div>
   </div>
 <?php endif; ?>
+<<<<<<< HEAD
+=======
+
+<?php if($page['outside_content']): ?>
+  <?php print render($page['outside_content']); ?>
+<?php endif; ?>
+
+>>>>>>> master

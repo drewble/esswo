@@ -14,7 +14,7 @@ function d7_advertisement_banners_field_default_field_instances() {
   $field_instances['node-banner-field_banner_image'] = array(
     'bundle' => 'banner',
     'deleted' => 0,
-    'description' => '',
+    'description' => '<em>At least 920x920 recommended, as this is shown larger on mobile/tablet sizes.</em>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -34,6 +34,7 @@ function d7_advertisement_banners_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div',
     'field_name' => 'field_banner_image',
     'label' => 'Banner Image',
     'required' => 1,
@@ -53,24 +54,21 @@ function d7_advertisement_banners_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 0,
           'public' => 'public',
-          'vimeo' => 0,
           'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
-          'default' => 0,
+          'document' => 0,
           'image' => 'image',
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'library' => 0,
           'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
           'upload' => 'upload',
         ),
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 1,
@@ -132,43 +130,6 @@ function d7_advertisement_banners_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-banner-field_banner_space'
-  $field_instances['node-banner-field_banner_space'] = array(
-    'bundle' => 'banner',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_banner_space',
-    'label' => 'Banner Space',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-banner-field_target'
   $field_instances['node-banner-field_target'] = array(
     'bundle' => 'banner',
@@ -214,9 +175,9 @@ function d7_advertisement_banners_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<em>At least 920x920 recommended, as this is shown larger on mobile/tablet sizes.</em>');
   t('Banner Image');
   t('Banner Link');
-  t('Banner Space');
   t('Open URL in New Window');
   t('Use the full url for offsite links (e.g., http://google.com) or for local links, you can also just use the local path (e.g., \'news\' for http://[yoursite]/news)');
 

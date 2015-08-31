@@ -89,12 +89,10 @@ function d7_advertisement_banners_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'banner' => 'banner',
   );
-  /* Filter criterion: Content: Banner Space (field_banner_space) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_banner_space_tid']['id'] = 'field_banner_space_tid';
   $handler->display->display_options['filters']['field_banner_space_tid']['table'] = 'field_data_field_banner_space';
   $handler->display->display_options['filters']['field_banner_space_tid']['field'] = 'field_banner_space_tid';
-  $handler->display->display_options['filters']['field_banner_space_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_banner_space_tid']['vocabulary'] = 'banner_space';
 
   /* Display: Homepage */
   $handler = $view->new_display('block', 'Homepage', 'banner_sidebar_top');
@@ -114,19 +112,11 @@ function d7_advertisement_banners_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'banner' => 'banner',
   );
-  /* Filter criterion: Content: Banner Space (field_banner_space) */
-  $handler->display->display_options['filters']['field_banner_space_tid']['id'] = 'field_banner_space_tid';
-  $handler->display->display_options['filters']['field_banner_space_tid']['table'] = 'field_data_field_banner_space';
-  $handler->display->display_options['filters']['field_banner_space_tid']['field'] = 'field_banner_space_tid';
-  $handler->display->display_options['filters']['field_banner_space_tid']['value'] = array(
-    192 => '192',
-  );
-  $handler->display->display_options['filters']['field_banner_space_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_banner_space_tid']['vocabulary'] = 'banner_space';
   $handler->display->display_options['block_description'] = 'Banners: Home';
 
   /* Display: Sidebar */
   $handler = $view->new_display('block', 'Sidebar', 'banner_sidebar_btm');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['block_description'] = 'Banners: Sidebar';
   $export['banners'] = $view;
 

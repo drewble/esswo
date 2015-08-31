@@ -91,7 +91,7 @@ function ew_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'addtoany_image_attributes';
-  $strongarm->value = 'alt="Share"';
+  $strongarm->value = 'alt="Share" class="icon-icons_share"';
   $export['addtoany_image_attributes'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -107,8 +107,10 @@ function ew_base_strongarm() {
   $strongarm->name = 'addtoany_nodetypes';
   $strongarm->value = array(
     'song' => 'song',
+    'banner' => 0,
     'artist_worship_leader' => 0,
     'page' => 0,
+    'homepage_feature' => 0,
     'news_article' => 0,
   );
   $export['addtoany_nodetypes'] = $strongarm;
@@ -119,6 +121,128 @@ function ew_base_strongarm() {
   $strongarm->name = 'addtoany_no_3p';
   $strongarm->value = 0;
   $export['addtoany_no_3p'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'adminimal_admin_menu_jquery';
+  $strongarm->value = 0;
+  $export['adminimal_admin_menu_jquery'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'adminimal_admin_menu_render';
+  $strongarm->value = 'collapsed';
+  $export['adminimal_admin_menu_render'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'adminimal_admin_menu_slicknav';
+  $strongarm->value = 1;
+  $export['adminimal_admin_menu_slicknav'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'better_messages';
+  $strongarm->value = array(
+    'position' => 'center',
+    'vertical' => '0',
+    'horizontal' => '10',
+    'fixed' => 1,
+    'width' => '400px',
+    'autoclose' => '0',
+    'opendelay' => '0.3',
+    'disable_autoclose' => 0,
+    'show_countdown' => 1,
+    'hover_autoclose' => 1,
+    'popin' => array(
+      'effect' => 'fadeIn',
+      'duration' => 'normal',
+    ),
+    'popout' => array(
+      'effect' => 'fadeIn',
+      'duration' => 'fast',
+    ),
+    'jquery_ui' => array(
+      'draggable' => 0,
+      'resizable' => 0,
+    ),
+    'extra' => array(
+      'pages' => '',
+      'visibility' => '0',
+      'admin' => 1,
+    ),
+  );
+  $export['better_messages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_compact_tag';
+  $strongarm->value = 1;
+  $export['google_tag_compact_tag'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_container_id';
+  $strongarm->value = 'GTM-WRHDNR';
+  $export['google_tag_container_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_path_list';
+  $strongarm->value = 'admin*
+batch*
+node/add*
+node/*/*
+user/*/*';
+  $export['google_tag_path_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_path_toggle';
+  $strongarm->value = '0';
+  $export['google_tag_path_toggle'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_role_list';
+  $strongarm->value = array(
+    3 => '3',
+    4 => '4',
+    1 => 0,
+    2 => 0,
+  );
+  $export['google_tag_role_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_role_toggle';
+  $strongarm->value = '0';
+  $export['google_tag_role_toggle'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_status_list';
+  $strongarm->value = '403 Forbidden
+404 Not Found';
+  $export['google_tag_status_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'google_tag_status_toggle';
+  $strongarm->value = 0;
+  $export['google_tag_status_toggle'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -149,8 +273,19 @@ function ew_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'locale_custom_strings_en';
+  $strongarm->value = array(
+    '' => array(
+      'A welcome message with further instructions has been sent to your e-mail address.' => 'A confirmation email has been sent to your e-mail address. Once you click the validation link you can login!',
+    ),
+  );
+  $export['locale_custom_strings_en'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'mailchimp_api_key';
-  $strongarm->value = '82bfd37ef37e7384e6f384969e8fe738-us5';
+  $strongarm->value = '12b310e749e515fd885ff1809eb6dabf-us10';
   $export['mailchimp_api_key'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -278,6 +413,52 @@ function ew_base_strongarm() {
   $strongarm->name = 'menu_attributes_title_enable';
   $strongarm->value = 0;
   $export['menu_attributes_title_enable'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'roleassign_roles';
+  $strongarm->value = array(
+    3 => '3',
+    4 => 0,
+  );
+  $export['roleassign_roles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_adminimal_settings';
+  $strongarm->value = array(
+    'toggle_logo' => 1,
+    'toggle_name' => 1,
+    'toggle_slogan' => 1,
+    'toggle_node_user_picture' => 1,
+    'toggle_comment_user_picture' => 1,
+    'toggle_comment_user_verification' => 1,
+    'toggle_favicon' => 1,
+    'toggle_main_menu' => 1,
+    'toggle_secondary_menu' => 1,
+    'default_logo' => 1,
+    'logo_path' => '',
+    'logo_upload' => '',
+    'default_favicon' => 1,
+    'favicon_path' => '',
+    'favicon_upload' => '',
+    'display_icons_config' => 1,
+    'use_custom_media_queries' => 0,
+    'media_query_mobile' => 'only screen and (max-width: 480px)',
+    'media_query_tablet' => 'only screen and (min-width : 481px) and (max-width : 1024px)',
+    'custom_css' => 0,
+    'jquery_update_jquery_version' => '1.8',
+  );
+  $export['theme_adminimal_settings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_registrationpassword_registration';
+  $strongarm->value = 'with-pass';
+  $export['user_registrationpassword_registration'] = $strongarm;
 
   return $export;
 }

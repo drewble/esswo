@@ -15,7 +15,7 @@
 		position: relative;
 
 		@media screen and (min-width: 620px) {
-			@include span-columns(4);
+			@include span-columns(6);
 		}
 
 		&:nth-child(2n) {
@@ -36,6 +36,7 @@
 		position: relative;
 
 		a {
+			background-color: #ccc;
 			color: #fff;
 			display: block;
 			font-size: 34px;
@@ -93,6 +94,29 @@
 }
 
 // Node Listing
+.node-type-artist-worship-leader {
+	.hero.with-img {
+
+		@include desk {
+			padding: 13% 0 6%;
+		}
+	}
+
+	.bread {
+		background-position: 0 -6px;
+	  background-size: 25px 25px;
+	  color: $base;
+	  float: none;
+	  margin: 20px 0;
+	  padding-left: 31px;
+	  width: auto;
+
+	  &:hover {
+	  	color: $red;
+	  }
+	}
+}
+
 .node-artist-worship-leader {
 	.field-type-text-with-summary {
 		@include desk {
@@ -103,9 +127,19 @@
 	}
 
 	.group-links {
-		border-left: 2px solid #bababb;
-		float: left;
-		padding-left:3%;
+		@include desk {
+			border-left: 2px solid #bababb;
+			float: left;
+			padding-left:3%;
+		}
+
+		.icon-btn {
+			width: 100%;
+
+			@include desk {
+				width: auto;
+			}
+		}
 	}
 
 	.field-type-link-field {
@@ -151,7 +185,7 @@
 	> ul li {
 		display: inline-block;
 		list-style:none;
-	  margin: 0 1%;
+	  margin: 0 2% 2% 0;
 	  position: relative;
 	}
 
@@ -171,11 +205,12 @@
 			}
 			&:after  {
 				@include white-btn;
-				content: "Purchase Album";
-				left: 26%;
-				padding: 2%;
+				content: "PURCHASE ALBUM";
+				left: 21%;
+				padding: 3%;
 			  position: absolute;
-			  top: 42%;
+			  text-transform: uppercase;
+			  top: 41%;
 			}
 		}
 	}

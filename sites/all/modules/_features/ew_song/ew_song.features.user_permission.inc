@@ -62,35 +62,50 @@ function ew_song_user_default_permissions() {
   // Exported permission: 'delete terms in bpm'.
   $permissions['delete terms in bpm'] = array(
     'name' => 'delete terms in bpm',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in church'.
   $permissions['delete terms in church'] = array(
     'name' => 'delete terms in church',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in key'.
   $permissions['delete terms in key'] = array(
     'name' => 'delete terms in key',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in tempo'.
   $permissions['delete terms in tempo'] = array(
     'name' => 'delete terms in tempo',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'delete terms in theme'.
   $permissions['delete terms in theme'] = array(
     'name' => 'delete terms in theme',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -117,35 +132,50 @@ function ew_song_user_default_permissions() {
   // Exported permission: 'edit terms in bpm'.
   $permissions['edit terms in bpm'] = array(
     'name' => 'edit terms in bpm',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in church'.
   $permissions['edit terms in church'] = array(
     'name' => 'edit terms in church',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in key'.
   $permissions['edit terms in key'] = array(
     'name' => 'edit terms in key',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in tempo'.
   $permissions['edit terms in tempo'] = array(
     'name' => 'edit terms in tempo',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: 'edit terms in theme'.
   $permissions['edit terms in theme'] = array(
     'name' => 'edit terms in theme',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'taxonomy',
   );
 

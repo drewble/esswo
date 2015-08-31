@@ -20,6 +20,7 @@
 
 		h1 {
 			@include border-btm;
+			color: #fff;
 			padding-bottom: 40px;
 
 			&:after {
@@ -30,6 +31,8 @@
 		}
 
 		h2 {
+			color: $light;
+			font-style: normal;
 			margin: 0 auto;
 		  text-transform: none;
 
@@ -47,25 +50,6 @@
 	.view-header {
 		p {
 			margin:0;
-		}
-
-		.clear-filters {
-			color: #9d9c9c;
-			font: em(12) $header;
-			position:absolute;
-			right: 0;
-			text-decoration: none;
-			text-transform: uppercase;
-			top:-25px;
-
-			span {
-				color: #cfd2d3;
-				font: 13px $font;
-			}
-
-			&:hover {
-				color: $base;
-			}
 		}
 	}
 	.view-empty {
@@ -102,8 +86,16 @@
 				padding:0 3px;
 			}
 
-			&:hover {
+			&.active {
 				color: $red;
+
+				&:before {
+					color: #ecf0f1;
+				}
+			}
+
+			&:hover {
+				color: #ccc;
 
 				&:before {
 					color: #ecf0f1;
@@ -118,6 +110,25 @@
 }
 
 #views-exposed-form-songs-page {
+	position:relative;
+
+	.clear-filters {
+		color: #9d9c9c;
+		float:right;
+		font: em(12) $header;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		span {
+			color: #cfd2d3;
+			font: 13px $font;
+		}
+
+		&:hover {
+			color: $base;
+		}
+	}
+
 	.views-exposed-widget {
 		padding:0;
 
@@ -134,13 +145,32 @@
 		padding-right:0;
 	}
 
-	// Submit
-	.views-submit-button {
+	input[type="submit"] {
 		height:0;
 		overflow:hidden;
 		position: absolute;
 		visibility:hidden;
 		z-index: -10;
+	}
+
+	// Ajax Throbber
+	.ajax-progress {
+		display: inline-block;
+	  height: 100%;
+	  left: 0;
+	  position: absolute;
+	  top: 0;
+	  width: 100%;
+	  z-index: 9;
+
+		.throbber {
+			background:url(../img/ajax.gif) no-repeat scroll center center rgba(255,255,255,.8);
+	    height: 100%;
+	    padding:8%;
+	    position: relative;
+	    left: -2px;
+	    width: 100%;
+		}
 	}
 }
 
@@ -172,7 +202,7 @@
 			margin:0;
 			position: absolute;
 			right: 20px;
-			top:20px;
+			top:26px;
 
 			span {
 				border-right:1px solid;
@@ -189,15 +219,11 @@
 			}
 
 			small {
-				color: #cfd2d3;
-				content: "X";
 				cursor: pointer;
 				display: inline-block;
-				font-size: 26px;
-				font-style: normal;
-				line-height:1.8em;
+				left: 0;
 				position:relative;
-				top:3px;
+				top:8px;
 
 				&:hover {
 					color: $base;
@@ -279,6 +305,14 @@
 		position: relative;
 		top:12px;
 	  text-transform: uppercase;
+	}
+
+	.chosen-container a.chosen-single {
+		text-transform: none;
+
+		&.chosen-default {
+      text-transform: uppercase;
+    }
 	}
 }
 
@@ -374,30 +408,45 @@
 				}
 			}
 
-			&.open + #remove {
-				display: block;
+			&.open + .remove {
+				height: 30px;
+				overflow: visible;
+				width: 30px;
+				visibility: visible;
 			}
 		}
 
-		#remove {
+		.remove {
 			background-color: $light;
 			color: $base;
-			display: none;
 			font-size: 28px;
+			height: 0;
 			left: 0;
-			padding: 4px 8px;
+			overflow: hidden;
+			padding: 3px 4px;
 			position: absolute;
 			text-decoration:none;
 			top:0;
+			visibility: hidden;
+			width: 30px;
 
 			&:hover {
-				color: $red;
+				polygon {
+					fill: $red;
+				}
 			}
 		}
 	}
 }
 
 // Title, Artist
+.node-song.node-teaser .field-type-text span {
+	float: left;
+	font-size: 12px;
+	line-height: 1.8em;
+	margin-right: 2px;
+}
+
 .song-listing {
 	.group-song-info {
 		padding-left:0;
@@ -405,10 +454,6 @@
 
 		@include tablet {
 			width: 35%;
-		}
-
-		@include desk {
-			width: auto;
 		}
 
 		h2 {
@@ -440,10 +485,20 @@
 		font-size: 18px;
 		text-align: center;
 
+		@include desk {
+			width: 12%;
+		}
+
 		.field-label {
 			color: #3d3738;
 			font-size: 12px;
 			text-transform: uppercase;
+		}
+	}
+
+	.group-tempo {
+		@include desk {
+			width: 14%;
 		}
 	}
 }
@@ -452,13 +507,15 @@
 .song-listing {
 	.group-song-categories {
 		font-size: 14px;
+		padding: 2% 4%;
 
 		@include tablet {
 			width:31%;
 		}
 
 		@include desk {
-			width: auto;
+			padding:3% 4%;
+			width: 31%;
 		}
 
 		.field-label {
@@ -475,6 +532,7 @@
 
 			@include desk {
 				clear: none;
+				width: 68%;
 			}
 		}
 

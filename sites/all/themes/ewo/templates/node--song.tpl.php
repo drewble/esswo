@@ -17,6 +17,19 @@ hide($content['comments']);
 hide($content['links']);
 hide($content['field_spotify']);
 hide($content['field_mp3']);
+
+// Hide fields (labels and all) if empty
+// Service
+if ($teaser) {
+	if ($content['group_song_categories']['field_services'][0]['#markup'] == '') {
+		hide($content['group_song_categories']['field_services']);
+	}
+	// Ministry
+	if ($content['group_song_categories']['field_church'][0]['#markup'] == '') {
+		hide($content['group_song_categories']['field_church']);
+	}
+}
+
 ?>
 
 <!-- node.tpl.php -->
@@ -36,14 +49,16 @@ hide($content['field_mp3']);
   <?php endif; ?>
 
   <div class="content">
-    <?php if (!$page): ?>
+    <?php if ($teaser): ?>
       <div class="audio-btn">
-        <a href="#">X</a>
-        <a href="#" id="remove">X</a>
-      </div>
+        <?php if (isset($content['field_spotify'][0]) || isset($content['field_mp3'][0])): ?>
+          <a href="#">X</a>
+        <?php endif; ?>
+        <a class="icon icon-icons_close remove" href="#" data-grunticon-embed></a>
+      </div> 
     <?php endif; ?>
     <?php print render($content);?>
-    <?php if (!$page): ?>
+    <?php if ($teaser): ?>
       <div class="play-audio">
         <?php print render($content['field_spotify']); ?>
         <?php if (!isset($content['field_spotify'][0])): ?>

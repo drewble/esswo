@@ -3,25 +3,30 @@
   Preprocess
 */
 
-/*
-function ewo_preprocess_html(&$vars) {
-  //  kpr($vars['content']);
-}
-*/
+
+// function ewo_preprocess_html(&$vars) {
+//   sdpm($vars);
+// }
+
 
 function ewo_preprocess_page(&$vars,$hook) {
   $path = drupal_get_path('theme', 'ewo');
   //googlefont
   drupal_add_css('http://fonts.googleapis.com/css?family=Ropa+Sans','external');
-  drupal_add_css('http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic','external');
+  drupal_add_css('http://fonts.googleapis.com/css?family=Titillium+Web:300,400,400italic','external');
   drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap-theme.min.css', array('group' => CSS_DEFAULT));
   drupal_add_css($path .'/assets/js/vendor/bootstrap/css/bootstrap.min.css', array('group' => CSS_DEFAULT));
   drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));
+
+  if ($vars['is_front'] == TRUE) {
+  	drupal_add_js($path .'/assets/js/front.js', array('group' => JS_THEME));
+  }
 
   // Variables set for fallback
   $vars['bgImg'] = '';
   $vars['subtitle'] = '';
   $vars['resources'] = '';
+  $vars['links'] = '';
   // if a node
   if (isset($vars['node'])) {
     $node = $vars['node'];
@@ -43,7 +48,11 @@ function ewo_preprocess_page(&$vars,$hook) {
       }
       
       // Link Changes
-      $vars['links'] = $vars['page']['content']['system_main']['nodes'][1]['links']['#links'];
+      foreach ($vars['page']['content']['system_main']['nodes'] as $key => &$value) {
+        if (is_array($value)) {
+          $vars['links'] = $value['links']['#links'];
+        }
+      }
     }
 
     // Worship Leader
@@ -56,19 +65,20 @@ function ewo_preprocess_page(&$vars,$hook) {
 
   // Song page
   if ($vars['theme_hook_suggestions'][0] == 'page__songs') {
-    $vars['subtitle'] = 'Browse our collection of worship songs for any key, tempo, theme,
+    $vars['subtitle'] = 'browse our collection of worship songs for any key, tempo, theme,
 ministry or service to find the perfect song.';
   }
+
+  // Spotify Callback Page
+  if ($vars['theme_hook_suggestions'][0] == 'page__spotify_callback') {
+    drupal_add_js($path .'/assets/js/spotify_add_to_playlist.js', array('group' => JS_THEME));
+  }
+
+  // If a Profile page
+  if (in_array('page__user__%', $vars['theme_hook_suggestions'])) {
+  	drupal_set_title($vars['page']['content']['system_main']['#account']->mail);
+  }
 }
-
-
-// function ewo_preprocess_node(&$vars,$hook) {
-//   if ($vars['type'] == 'song') {
-//     if ($vars['teaser'] == TRUE) {
-
-//     }
-//   }
-// }
 
 
 function ewo_form_alter(&$form, &$form_state, $form_id) {
@@ -80,7 +90,7 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
       drupal_add_js($path .'/assets/js/song-list.js', array('group' => JS_THEME));
 
       // Set Default Values
-      $form['title']['#prefix'] = '<span class="icon icon-icons_search"></span><p><span>press [enter] to submit</span><small>X</small></p>';
+      $form['title']['#prefix'] = '<span class="icon icon-icons_search"></span><p><span>press [enter] to submit</span><small class="icon icon-icons_close"></small></p>';
       $form['field_key_tid']['#prefix'] = '<span>Filter by</span>';
       $form['title']['#attributes']['placeholder'] = 'Find a Song...';
       $form['field_key_tid']['#options']['All'] = 'Key';

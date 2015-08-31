@@ -13,35 +13,50 @@ function ew_homepage_feature_user_default_permissions() {
   // Exported permission: 'create homepage_feature content'.
   $permissions['create homepage_feature content'] = array(
     'name' => 'create homepage_feature content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any homepage_feature content'.
   $permissions['delete any homepage_feature content'] = array(
     'name' => 'delete any homepage_feature content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own homepage_feature content'.
   $permissions['delete own homepage_feature content'] = array(
     'name' => 'delete own homepage_feature content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any homepage_feature content'.
   $permissions['edit any homepage_feature content'] = array(
     'name' => 'edit any homepage_feature content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own homepage_feature content'.
   $permissions['edit own homepage_feature content'] = array(
     'name' => 'edit own homepage_feature content',
-    'roles' => array(),
+    'roles' => array(
+      'client' => 'client',
+      'developer' => 'developer',
+    ),
     'module' => 'node',
   );
 

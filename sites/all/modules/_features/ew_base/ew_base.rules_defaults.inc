@@ -36,32 +36,57 @@ function ew_base_default_rules_configuration() {
       "LABEL" : "New Flag",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "flag", "rules_scheduler" ],
+      "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "node_insert" : [], "node_update" : [] },
       "IF" : [
-        { "entity_is_of_bundle" : {
-            "entity" : [ "node" ],
-            "type" : "node",
-            "bundle" : { "value" : { "artist_worship_leader" : "artist_worship_leader", "song" : "song" } }
+        { "node_is_of_type" : {
+            "node" : [ "node" ],
+            "type" : { "value" : { "artist_worship_leader" : "artist_worship_leader", "song" : "song" } }
           }
         }
       ],
       "DO" : [
-        { "flag_flagnode" : {
+        { "flag_unflagnode" : {
             "flag" : "new",
             "node" : [ "node" ],
             "flagging_user" : [ "node:author" ],
             "permission_check" : "1"
           }
         },
-        { "schedule" : {
-            "component" : "rules_unflag_song_leader",
-            "date" : "+30 days",
-            "identifier" : "node-[node:nid]-unflag-as-new",
-            "param_node" : [ "node" ]
+        { "flag_flagnode" : {
+            "flag" : "new",
+            "node" : [ "node" ],
+            "flagging_user" : [ "node:author" ],
+            "permission_check" : "1"
           }
         }
       ]
+    }
+  }');
+  $items['rules_once_flagged_schedule_unflagging'] = entity_import('rules_config', '{ "rules_once_flagged_schedule_unflagging" : {
+      "LABEL" : "Once Flagged, schedule unflagging",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_scheduler", "flag" ],
+      "ON" : { "flag_flagged_new" : [] },
+      "DO" : [
+        { "schedule" : {
+            "component" : "rules_unflag_song_leader",
+            "date" : "+60 days",
+            "identifier" : "node-[node:nid]-unflag-as-new",
+            "param_node" : [ "flagged-node" ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_redirect_to_user_page_on_user_save'] = entity_import('rules_config', '{ "rules_redirect_to_user_page_on_user_save" : {
+      "LABEL" : "Redirect to User Page on User Save",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_update" : [] },
+      "DO" : [ { "redirect" : { "url" : "user" } } ]
     }
   }');
   $items['rules_unflag_song_leader'] = entity_import('rules_config', '{ "rules_unflag_song_leader" : {

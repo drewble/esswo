@@ -30,6 +30,7 @@ input[type="text"], input[type="password"], input[type="email"] {
   &:focus {
     background-color:#fff;
     box-shadow:0 0 5px #aaa;
+    outline-width: 0;
   }
 }
 
@@ -45,8 +46,14 @@ input[type="submit"] {
   margin-top: 10px;
 }
 
-input[type="checkbox"] + label {
-  margin: 0 1%;
+input[type="checkbox"] {
+	float: left;
+  margin: 7px;
+
+	& + label {
+		color: $base;
+	  margin: 0 1%;
+	}
 }
 
 // Chosen Overrides
@@ -66,6 +73,18 @@ input[type="checkbox"] + label {
       right: 3px;
       top:13px;
       width: 16px;
+    }
+  }
+
+  a.chosen-single {
+    background-color:$gray;
+    color: #fff;
+    font-weight: 700;
+
+    &.chosen-default {
+      background-color:$light;
+      color: #999;
+      font-weight: 400;
     }
   }
 
@@ -90,7 +109,8 @@ input[type="checkbox"] + label {
 .placeholder {
   #views-exposed-form-songs-page,
   #block-user-login,
-  #block-formblock-user-register {
+  #block-formblock-user-register,
+  #block-mailchimp-signup-registration {
     label {
       display: none;
     }
@@ -103,9 +123,12 @@ input[type="checkbox"] + label {
 
 #block-user-login {
   ul, li {
-    float: right;
     margin: 10px 17px;
     padding:0;
+
+    @include tablet {
+      float: right;
+    }
   }
 
   li {
@@ -127,7 +150,16 @@ input[type="checkbox"] + label {
   }
 }
 
+#block-formblock-user-register {
+  margin-bottom: 70px;
+}
+
 // Mailchimp
+.logged-in {
+	#block-mailchimp-signup-registration {
+		display: none;
+	}
+}
 .field-type-mailchimp-lists-subscription {
   fieldset {
     border: none;
@@ -141,5 +173,26 @@ input[type="checkbox"] + label {
   }
 }
 
+.password-parent, .confirm-parent {
+	color:$red;
+	width:auto;
+
+	> div {
+		margin-right: 2em;
+		margin-top: 0;
+	}
+}
+
+.confirm-parent {
+	margin-bottom:0;
+}
+
+div.password-confirm {
+	text-align: right;
+
+	.ok {
+		color: #47C965;
+	}
+}
 
 

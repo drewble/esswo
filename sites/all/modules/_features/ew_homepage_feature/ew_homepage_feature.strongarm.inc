@@ -14,7 +14,7 @@ function ew_homepage_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_homepage_feature';
-  $strongarm->value = 'edit-scheduler';
+  $strongarm->value = 'edit-internal-nodes';
   $export['additional_settings__active_tab_homepage_feature'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -76,6 +76,27 @@ function ew_homepage_feature_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__homepage_feature'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'internal_nodes_action_homepage_feature';
+  $strongarm->value = '301';
+  $export['internal_nodes_action_homepage_feature'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'internal_nodes_nodes_homepage_feature';
+  $strongarm->value = 0;
+  $export['internal_nodes_nodes_homepage_feature'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'internal_nodes_url_homepage_feature';
+  $strongarm->value = '<front>';
+  $export['internal_nodes_url_homepage_feature'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

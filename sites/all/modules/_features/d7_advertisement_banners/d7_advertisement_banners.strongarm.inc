@@ -62,6 +62,27 @@ function d7_advertisement_banners_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'internal_nodes_action_banner';
+  $strongarm->value = '301';
+  $export['internal_nodes_action_banner'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'internal_nodes_nodes_banner';
+  $strongarm->value = 0;
+  $export['internal_nodes_nodes_banner'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'internal_nodes_url_banner';
+  $strongarm->value = '<front>';
+  $export['internal_nodes_url_banner'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_banner';
   $strongarm->value = array();
   $export['menu_options_banner'] = $strongarm;

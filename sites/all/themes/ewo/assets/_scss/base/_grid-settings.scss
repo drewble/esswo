@@ -3,16 +3,23 @@
 // Change the grid settings
 $column: 40px;
 $gutter: 20px;
-$grid-columns: 8;
+$grid-columns: 12;
 $max-width: 960px;
 
 // Define your breakpoints
 // Mobile First
-$tablet: new-breakpoint(min-width 768px 8);
-$desktop: new-breakpoint(min-width 1024px 8);
+$lgMobile: new-breakpoint(min-width 375px 12);
+$tablet: new-breakpoint(min-width 768px 12);
+$desktop: new-breakpoint(min-width 1024px 12);
 
 // Mobile Only
-$mobile: new-breakpoint(max-width 768px 8);
+$mobile: new-breakpoint(max-width 768px 12);
+
+@mixin lgMobile {
+  @include media($lgMobile) {
+    @content;
+  }
+}
 
 @mixin tablet {
   @include media($tablet) {

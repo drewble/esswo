@@ -15,6 +15,13 @@ function d7_csbase_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_SUGGESTED_ITEM,
   );
+  // Adds Spotify Callback page - see sites/all/themes/ewo/assets/coffee/spotify_add_to_playlist
+  $items['spotify-callback'] = array(
+    'title' => 'Spotify Callback',
+    'page callback' => 'get_homepage',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
 
   return $items;
 }
@@ -22,6 +29,18 @@ function d7_csbase_menu() {
 function get_homepage()
 {
   return '';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function d7_csbase_form_alter(&$form, &$form_state, $form_id) {
+  // Mailchimp forms
+  if (!empty($form_state['build_info']['base_form_id'])) {
+    if ($form_state['build_info']['base_form_id'] == 'mailchimp_signup_subscribe_form') {
+      $form['mergevars']['EMAIL']['#attributes']['placeholder'] = t('enter email address');
+    }
+  }
 }
 
 /**

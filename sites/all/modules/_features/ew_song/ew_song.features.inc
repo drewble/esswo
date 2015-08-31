@@ -49,13 +49,13 @@ function ew_song_image_default_styles() {
 
   // Exported image style: 571x428.
   $styles['571x428'] = array(
-    'label' => '571x428',
+    'label' => '1024x768',
     'effects' => array(
       1 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 571,
-          'height' => 428,
+          'width' => 1088,
+          'height' => 768,
         ),
         'weight' => 1,
       ),

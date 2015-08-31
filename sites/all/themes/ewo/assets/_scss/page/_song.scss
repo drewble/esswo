@@ -6,6 +6,14 @@
 .node-type-song {
   .hero {
     position: relative;
+
+    h2 {
+      text-transform: none;
+      span {
+        font-size: 13px;
+        text-transform: lowercase;
+      }
+    }
   }
 
   .bread {
@@ -28,6 +36,7 @@
   }
 
   .page {
+    margin-top: 0;
     max-width:none;
   }
 
@@ -75,13 +84,42 @@
       .vid-description {
         top:39%;
       }
+    }
+
+    &.total-3 {
+
+      @include tablet {
+        width: 50%;
+      }
 
       & + div {
-
         @include tablet {
-          float: left;
-          width: 49%;
+          width: 48%;
         }
+      }
+    }
+  }
+
+  .view-content {
+    > div {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Only 1 Video
+.node-song .view-empty {
+  .view-display-id-entity_view_2 {
+    .field-type-file {
+      overflow: hidden;
+      position: relative;
+
+      @include tablet {
+        height: 300px;
+      }
+
+      img {
+        margin-top: -22%;
       }
     }
   }
@@ -143,7 +181,8 @@
       margin-left: 2%;
     }
     .field-type-text-long {
-      font: em(14)/1.5em 'Roboto Mono', monospace;
+      font: em(14) 'Roboto Mono', monospace;
+      line-height: 1.5em;
       white-space: pre;
     }
   }
@@ -212,33 +251,35 @@
 
 #spotify-add {
   color: $base;
-  float: left;
+  float: right;
   font-size: em(12);
   line-height: 1.4em;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  width: 20%;
+  width: 17%;
 
   @include tablet {
-    width: 15%;
+    width: 13%;
   }
 
   @include desk {
-    width: 11%;
+    width: 9%;
   }
 
   span {
     border: 1px solid $base;
     display: block;
     font-size: 30px;
-    margin-bottom: 5%;
-    padding: 19% 0 28%;
+    line-height: 1em;
+    margin-bottom: 5px;
+    padding: 3px 0 8px;
   }
 
   &:hover {
     span {
-      background-color: $base;
+      background-color: $red;
+      border-color:$red;
       color: #fff;
     }
   }
@@ -261,6 +302,14 @@
         text-align: center;
         text-transform: uppercase;
         width: 43%;
+
+        &:first-child {
+          text-transform: none;
+
+          h4 {
+            text-transform: uppercase;
+          }
+        }
 
         @include tablet {
           width: 39%;
@@ -298,12 +347,15 @@
       }
 
       div {
+        display: table;
         margin: 10px 0;
+        width: 100%;
 
         span {
-          display: inline-block;
+          display: table-cell;
           font-size: 12px;
           text-transform: uppercase;
+          width: 37%;
 
           @include tablet {
               width: 133px;
@@ -314,11 +366,15 @@
 
     .song-info {
       background-color: #3d3738;
-      color: #fff;
+      color: $light;
 
       div {
-        font-size: 14px;
+        font-size: 13px;
         margin: 2px 0;
+
+        span {
+          font-size:12px;
+        }
       }
     }
   }
@@ -338,5 +394,60 @@
       width: 100%;
     }
   }
+}
+
+// Smart Filter
+.smart-filter {
+  margin-bottom: 70px;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin: 20px 0;
+  }
+  
+  h3 {
+    margin-bottom: 5px;
+  }
+
+  .field-type-text + .field-type-text {
+    font-size: 14px;
+    font-style: italic;
+
+    span {
+      font-size: 12px;
+      text-transform: lowercase;
+    }
+  }
+
+  span, .field-type-taxonomy-term-reference {
+    display: inline;
+    font-size: 12px;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+}
+
+// Spotify Callback Page
+.page-spotify-callback {
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  .btn:hover {
+    border-color:$red;
+  }
+}
+
+.site-wrapper {
+  margin: 0 auto;
+  padding: 150px 0;
 }
 

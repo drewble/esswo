@@ -54,6 +54,16 @@ module.exports = function(grunt) {
         }]
       }
     },
+    // svgmin: {
+    //   dist: {
+    //     files: [{
+    //         expand: true,
+    //         cwd: 'img/svg',
+    //         src: ['*.svg'],
+    //         dest: 'img/svg'
+    //     }]
+    //   }
+    // },
     grunticon: {
       myIcons: {
         files: [{
@@ -73,5 +83,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  // grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-grunticon');
 };
