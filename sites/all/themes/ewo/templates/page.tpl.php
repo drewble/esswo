@@ -55,7 +55,7 @@ $links = '';
 	  <?php if($node->type == 'song'): ?>
 	    <div class="btns">
 		    <?php if ($logged_in == TRUE) { ?>
-		      <a class="icon-btn icon-icons_add" id="planning">Add to Planning Center</a>
+		      <a class="icon-btn icon-icons_add" id="planning" href="/pc-api-sync-song/<?php print $node->nid; ?>">Add to Planning Center</a>
 		      <?php if(!empty($resources)): ?>
 		      	<a class="icon-btn icon-embed" href="<?php print $resources; ?>"><span class="icon-icons_download_opt" data-grunticon-embed></span>Download Song Resources</a>
 		      <?php endif; ?>
@@ -172,4 +172,3 @@ $links = '';
 <?php if($page['outside_content']): ?>
   <?php print render($page['outside_content']); ?>
 <?php endif; ?>
-
