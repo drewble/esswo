@@ -193,7 +193,7 @@ function ew_song_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_song_pattern';
-  $strongarm->value = 'songs/[node:title]';
+  $strongarm->value = 'songs/[node:field-artist-worship-leader]/[node:title]';
   $export['pathauto_node_song_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

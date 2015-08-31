@@ -1671,6 +1671,13 @@ footer nav {
   .node-song .view-display-id-entity_view_1 .view-content > div {
     margin-bottom: 20px; }
 
+.node-song .view-display-id-entity_view_7 > .video-row {
+  float: left;
+  width: 49%;
+  margin: 0 2% 20px 0; }
+  .node-song .view-display-id-entity_view_7 > .video-row:nth-child(3), .node-song .view-display-id-entity_view_7 > .video-row:nth-child(5) {
+    margin-right: 0; }
+
 .node-song .view-empty .view-display-id-entity_view_2 .field-type-file {
   overflow: hidden;
   position: relative; }

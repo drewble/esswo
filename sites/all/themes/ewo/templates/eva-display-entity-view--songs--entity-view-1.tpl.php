@@ -25,6 +25,7 @@
  *
  * @ingroup views_templates
  */
+$videos = count($view->result);
 ?>
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
@@ -34,9 +35,11 @@
   <?php print render($title_suffix); ?>
 
   <?php if (!empty($rows)): ?>
-    <div class="view-header<?php if (count($view->result) == '2'): ?> total-3<?php endif; ?>">
+  	<?php if ($videos < 3): ?>
+    <div class="view-header<?php if ($videos == 2): ?> total-3<?php endif; ?>">
       <?php print $header; ?>
     </div>
+    <?php endif; ?>
   <?php endif; ?>
 
   <?php if ($exposed && !$exposed_form_as_field): ?>
@@ -52,11 +55,16 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <?php if (count($view->result) == '2'): ?>
+  	<!-- if there are 4 videos total -->
+  	<?php if($videos == 3): ?>
+  		<?php print views_embed_view('songs','entity_view_7', $view->args[0]); ?>
+  	<!-- if there are 3 videos total -->
+    <?php elseif ($videos > 1 && $videos < 3): ?>
       <div class="view-content">
         <?php print $rows; ?>
       </div>
-    <?php elseif (count($view->result) == '1'): ?>
+      <!-- otherwise print the view that shows 2 large -->
+    <?php elseif($videos == 1): ?>
       <?php print views_embed_view('songs','entity_view_6', $view->args[0]); ?>
     <?php endif; ?>
   <?php elseif ($empty): ?>

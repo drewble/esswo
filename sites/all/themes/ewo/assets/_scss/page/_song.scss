@@ -107,6 +107,19 @@
   }
 }
 
+// 4 videos
+.node-song .view-display-id-entity_view_7 {
+	> .video-row {
+	  float: left;
+	  width: 49%;
+	  margin: 0 2% 20px 0;
+
+	  &:nth-child(3), &:nth-child(5) {
+	  	margin-right:0;
+	  }
+	}
+}
+
 // Only 1 Video
 .node-song .view-empty {
   .view-display-id-entity_view_2 {
