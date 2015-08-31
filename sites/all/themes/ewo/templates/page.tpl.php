@@ -168,11 +168,7 @@ $links = '';
       </div>
   </div>
 <?php endif; ?>
-<<<<<<< HEAD
-=======
 
 <?php if($page['outside_content']): ?>
   <?php print render($page['outside_content']); ?>
 <?php endif; ?>
-
->>>>>>> master
