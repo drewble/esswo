@@ -8,7 +8,6 @@
 if (!empty($bgImg)) {
   $bgImgUrl = file_create_url($bgImg['uri']);
 }
-$links = '';
 ?>
 <?php if( theme_get_setting('mothership_poorthemers_helper') ){ ?>
 <!-- page.tpl.php-->
