@@ -1678,9 +1678,9 @@ footer nav {
   .node-song .view-display-id-entity_view_7 > .video-row:nth-child(2), .node-song .view-display-id-entity_view_7 > .video-row:nth-child(4) {
     margin-right: 0; }
 
-.adminimal-menu .node-song .view-display-id-entity_view_7 > .video-row:nth-child(2), .adminimal-menu .node-song .view-display-id-entity_view_7 > .video-row:nth-child(4) {
+.node-song .view-display-id-entity_view_7.contextual-links-region > .video-row:nth-child(2), .node-song .view-display-id-entity_view_7.contextual-links-region > .video-row:nth-child(4) {
   margin-right: 2%; }
-.adminimal-menu .node-song .view-display-id-entity_view_7 > .video-row:nth-child(3), .adminimal-menu .node-song .view-display-id-entity_view_7 > .video-row:nth-child(5) {
+.node-song .view-display-id-entity_view_7.contextual-links-region > .video-row:nth-child(3), .node-song .view-display-id-entity_view_7.contextual-links-region > .video-row:nth-child(5) {
   margin-right: 0; }
 
 .node-song .view-empty .view-display-id-entity_view_2 .field-type-file {
