@@ -109,26 +109,32 @@
 
 // 4 videos
 .node-song .view-display-id-entity_view_7 {
-	> .video-row {
+	.video-row {
 	  float: left;
 	  width: 49%;
 	  margin: 0 2% 20px 0;
 
-	  &:nth-child(2), &:nth-child(4) {
+	  & + .video-row {
 	  	margin-right:0;
+	  }
+	  & + .video-row + .video-row {
+	  	margin-right: 2%;
+	  }
+	  & + .video-row + .video-row + .video-row {
+	  	margin-right: 0;
 	  }
 	}
 }
-.node-song .view-display-id-entity_view_7.contextual-links-region {
-	> .video-row {
-		&:nth-child(2), &:nth-child(4) {
-	  	margin-right:2%;
-	  }
-	  &:nth-child(3), &:nth-child(5) {
-	  	margin-right:0;
-	  }
-	}
-}
+// .node-song .view-display-id-entity_view_7.contextual-links-region {
+// 	> .video-row {
+// 		&:nth-child(2), &:nth-child(4) {
+// 	  	margin-right:2%;
+// 	  }
+// 	  &:nth-child(3), &:nth-child(5) {
+// 	  	margin-right:0;
+// 	  }
+// 	}
+// }
 
 // Only 1 Video
 .node-song .view-empty {
