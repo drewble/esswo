@@ -4,6 +4,11 @@
 */
 
 
+// function ewo_preprocess_html(&$vars) {
+//   sdpm($vars);
+// }
+
+
 function ewo_preprocess_page(&$vars,$hook) {
   $path = drupal_get_path('theme', 'ewo');
   //googlefont
@@ -100,9 +105,6 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_login_block') {
     $form['name']['#attributes']['placeholder'] = 'Email Address';
     $form['actions']['submit']['#value'] = 'Sign In';
-  }
-  if ($form_id == 'user_login') {
-  	$form['gacode']['#title'] = "2-Factor Auth Code";
   }
 
   // Register

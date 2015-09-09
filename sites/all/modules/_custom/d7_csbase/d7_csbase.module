@@ -53,6 +53,3 @@ function d7_csbase_form_song_node_form_alter(&$form, &$form_state, $form_id) {
   $form['field_praisecharts_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.praisecharts.com/detail/arrangement/';
   $form['field_loopcommunity_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://loopcommunity.com/';
 }
-
-// Set Failed Login window to 30 minutes per iNetU security requirements
-variable_set('user_failed_login_user_window', 1800);

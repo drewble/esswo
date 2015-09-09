@@ -15,7 +15,6 @@
     });
     $('.not-logged-in header nav .login a').click(function(e) {
       $('#myModal').modal('show');
-      $('#myModal .modal-body .password-suggestions').prependTo('#myModal .modal-body .confirm-parent');
       return e.preventDefault();
     });
     $('#better-messages-default .close').click(function() {
