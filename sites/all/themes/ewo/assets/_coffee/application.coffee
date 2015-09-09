@@ -20,6 +20,7 @@
   	# Modal - login/register
   	$('.not-logged-in header nav .login a').click (e) ->
   		$('#myModal').modal 'show'
+  		$('#myModal .modal-body .password-suggestions').prependTo('#myModal .modal-body .confirm-parent')
   		e.preventDefault()
 
   	# Close button
