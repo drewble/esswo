@@ -1,0 +1,14 @@
+name = cs_pantheon
+description = Pantheon-specific items for CS Profile
+core = 7.x
+package = Pantheon
+version = 7.x-1.2
+project = cs_pantheon
+dependencies[] = ctools
+dependencies[] = pantheon_api
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = node_admin_theme
+features[variable][] = theme_default
+features[variable][] = theme_ewo_settings

@@ -1,0 +1,675 @@
+<?php
+
+/**
+ * @file
+ * Spotify field for displaying artist, album and track information.
+ */
+
+/**
+ * Implementats hook_menu().
+ */
+function spotifyfield_menu() {
+  $items = array();
+
+  $items['admin/config/content/spotifyfield'] = array(
+    'title' => 'Spotify Field',
+    'description' => 'Settings for Spotify field.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('spotifyfield_settings'),
+    'access arguments' => array('administer site settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['spotify'] = array(
+    'title' => 'Spotify Autocomplete',
+    'page callback' => 'spotifyfield_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function spotifyfield_theme($existing, $type, $theme, $path) {
+  return array(
+    'spotifyfield_formatter_default' => array(
+      'variables' => array('element' => NULL),
+    ),
+    'spotifyfield_formatter_plain' => array(
+      'variables' => array('element' => NULL),
+    ),
+    'spotifyfield_formatter_extended' => array(
+      'variables' => array('element' => NULL),
+    ),
+    'spotifyfield_formatter_play_button' => array(
+      'variables' => array('element' => NULL, 'settings' => NULL),
+    ),
+    'spotify_album' => array(
+      'variables' => array('data' => NULL),
+    ),
+    'spotify_artist' => array(
+      'variables' => array('data' => NULL),
+    ),
+    'spotify_track' => array(
+      'variables' => array('data' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_info().
+ */
+function spotifyfield_field_info() {
+  return array(
+    'spotifyfield' => array(
+      'label' => t('Spotifyfield'),
+      'description' => t('Stores information on artists, albums and tracks.'),
+      'default_widget' => 'spotifyfield_widget',
+      'default_formatter' => 'spotifyfield_default',
+      'property_type' => 'text',
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function spotifyfield_field_formatter_info() {
+  return array(
+    'spotifyfield_default' => array(
+      'label' => t('Default'),
+      'field types' => array('spotifyfield'),
+    ),
+    'spotifyfield_plain' => array(
+      'label' => t('Plain text'),
+      'field types' => array('spotifyfield'),
+    ),
+    'spotifyfield_extended' => array(
+      'label' => t('Extended'),
+      'field types' => array('spotifyfield'),
+      'settings' => array(//Array of the settings we'll create
+        'style' => 'medium', //give a default value for when the form is first loaded
+      ),
+    ),
+    'spotifyfield_play_button' => array(
+      'label' => t('Spotify play button'),
+      'field types' => array('spotifyfield'),
+      'settings' => array(
+        'size' => 'large',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function spotifyfield_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $element = array();
+  if ($display['type'] == 'spotifyfield_extended') {
+    $element['style'] = array(
+      '#title' => t('Imagestyle'),
+      '#type' => 'select',
+      '#options' => image_style_options(FALSE, PASS_THROUGH),
+      '#default_value' => $settings['style'],
+      '#required' => TRUE,
+    );
+  }
+  if ($display['type'] == 'spotifyfield_play_button') {
+    $element['size'] = array(
+      '#title' => t('Size'),
+      '#type' => 'select',
+      '#options' => array(
+        'large' => t('Large (250x330)'),
+        'compact' => t('Compact (300x80)'),
+      ),
+      '#default_value' => $settings['size'],
+      '#required' => TRUE,
+    );
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function spotifyfield_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  $summary = '';
+  if ($display['type'] == 'spotifyfield_extended') {
+    $summary = t('Style: @style', array('@style' => $settings['style']));
+  }
+  if ($display['type'] == 'spotifyfield_play_button') {
+    $summary = t('Size: @size', array('@size' => $settings['size']));
+  }
+
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function spotifyfield_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  foreach ($items as $delta => $item) {
+    if ($item['spotifyfield']) {
+      $value = _spotifyfield_format_value($item['spotifyfield']);
+      switch ($display['type']) {
+        case 'spotifyfield_default':
+          $element[$delta]['#markup'] = theme('spotifyfield_formatter_default', array('element' => $value));
+          break;
+
+        case 'spotifyfield_plain':
+          $element[$delta]['#markup'] = theme('spotifyfield_formatter_plain', array('element' => $value));
+          break;
+
+        case 'spotifyfield_extended':
+          $settings = $display['settings']; // get the settings
+          $style = $settings['style'];
+          $element[$delta]['#markup'] = theme('spotifyfield_formatter_extended', array('element' => $value, 'settings' => $settings));
+          break;
+
+        case 'spotifyfield_play_button':
+          $settings = $display['settings'];
+          $element[$delta]['#markup'] = theme('spotifyfield_formatter_play_button', array('element' => $value, 'settings' => $settings));
+          break;
+      }
+    }
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_widget_form().
+ */
+function spotifyfield_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+  $reference_type = isset($instance['widget']['settings']['referenceable_type']) ? $instance['widget']['settings']['referenceable_type'] : NULL;
+  $field_name = $field['field_name'];
+  $field_type = $field['type'];
+  $default_value = isset($items[$delta]) ? $items[$delta] : '';
+
+  if (isset($form_state['input'][$field_name][$langcode][$field_type])) {
+    $default_value = array(
+      $field_type => $form_state['input'][$field_name][$langcode][$field_type],
+    );
+  }
+
+  switch ($instance['widget']['type']) {
+    case 'spotifyfield':
+      $element['spotifyfield'] = array(
+        '#type' => 'textfield',
+        '#title' => check_plain($element['#title']),
+        '#description' => check_plain($element['#description']),
+        '#default_value' => $default_value,
+        '#required' => $element['#required'],
+        '#delta' => $delta,
+        '#element_validate' => array('spotifyfield_validate'),
+        '#autocomplete_path' => 'spotify/' . $reference_type,
+      );
+      break;
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_field_widget_error().
+ */
+function spotifyfield_widget_error($element, $error, $form, &$form_state) {
+  switch ($error['error']) {
+    case 'spotifyfield_invalid':
+      form_error($element, $error['message']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_field_is_empty().
+ */
+function spotifyfield_field_is_empty($item, $field) {
+  if (empty($item['spotifyfield'])) {
+    return TRUE;
+  }
+}
+
+/**
+ * Implements hook_field_widget_info().
+ */
+function spotifyfield_field_widget_info() {
+  return array(
+    'spotifyfield' => array(
+      'label' => t('Autocomplete text field'),
+      'field types' => array('spotifyfield'),
+      'behaviors' => array(
+        'default value' => FIELD_BEHAVIOR_NONE,
+        'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_widget_settings_form().
+ */
+function spotifyfield_field_widget_settings_form($field, $instance) {
+  $widget = $instance['widget'];
+  $settings = $widget['settings'];
+  $form = array();
+
+  $default = isset($settings['referenceable_type']) ? $settings['referenceable_type'] : NULL;
+  $form['referenceable_type'] = array(
+    '#type' => 'radios',
+    '#title' => t('Referenceable type'),
+    '#description' => t('Check the type of information you want referenceable for this field.'),
+    '#default_value' => $default,
+    '#options' => array(
+      'artist' => t('Artists'),
+      'album' => t('Albums'),
+      'track' => t('Tracks'),
+    ),
+    '#required' => TRUE,
+  );
+
+  return $form;
+}
+
+/**
+ * Utility function which converts the 3 elements, month, day and year
+ * in to a unix timestamp (number of seconds)
+ */
+function spotifyfield_validate($element, &$form_state) {
+  if (isset($element['#value'])) {
+    $error_element = isset($item['_error_element']) ? $item['_error_element'] : '';
+//    if (is_array($item) && isset($item['_error_element'])) {
+//      unset($item['_error_element']);
+//    }
+    $value = $element['#value'];
+    $matches = array();
+    preg_match('/(([^[]+)\[([^]]+))/i', $value, $matches);
+    if (sizeof($matches) != 4) {
+      // form_set_error($error_element, t('%name: the value is not in a correct format, do not manually edit the returned value.', array('%name' => $element['#title'])));
+    }
+    else {
+      form_set_value($element, array('spotifyfield' => $value), $form_state);
+    }
+  }
+}
+
+/**
+ * Menu callback; Retrieve json formated string of matches.
+ */
+function spotifyfield_autocomplete($type, $query) {
+  $matches = array();
+  // Load API include file.
+  module_load_include('inc', 'spotify', 'spotify.api');
+
+  $function = "spotify_search_{$type}";
+
+  if (function_exists($function)) {
+    if ($results = $function(urlencode($query))) {
+      switch ($type) {
+        case 'album':
+          foreach ($results['albums'] as $row) {
+            $matches[$row['name'] . " [{$row['href']}]"] = check_plain($row['name']);
+          }
+          break;
+        case 'track':
+          foreach ($results['tracks'] as $row) {
+            $matches[$row['name'] . " [{$row['href']}]"] = check_plain($row['name']) . ' - ' . check_plain($row['artists'][0]['name']);
+          }
+          break;
+        case 'artist':
+          foreach ($results['artists'] as $row) {
+            $matches[$row['name'] . " [{$row['href']}]"] = check_plain($row['name']);
+          }
+          break;
+      }
+    }
+    return drupal_json_output($matches);
+  }
+}
+
+/**
+ * Theme function for 'default' spotifyfield field formatter.
+ */
+function theme_spotifyfield_formatter_default($variables) {
+  $element = $variables['element'];
+  $output = '';
+  $output = '<a href="' . $element['link'] . '">' . $element['title'] . '</a>';
+  return $output;
+}
+
+/**
+ * Theme function for 'plain' spotifyfield field formatter.
+ */
+function theme_spotifyfield_formatter_plain($variables) {
+  $element = $variables['element'];
+  return $element['title'];
+}
+
+/**
+ * Theme function for 'extended' spotifyfield field formatter.
+ */
+function theme_spotifyfield_formatter_extended($variables) {
+  $element = $variables['element'];
+
+  $settings = $variables['settings'];
+  // Get title and uri and type; artist, album or track.
+  $matches = array();
+  preg_match('/(([^[]+)\[(spotify:([^:]+):[^]]+))/i', $element['safe'], $matches);
+  list(, , $title, $uri, $type) = $matches;
+  // Include Spotify API.
+  module_load_include('inc', 'spotify', 'spotify.api');
+
+  // Different type of extra information depending on type.
+  $extras = NULL;
+  switch ($type) {
+    case 'album':
+      $extras = 'trackdetail';
+      break;
+    case 'artist':
+      $extras = 'albumdetail';
+      break;
+    case 'track':
+      $extras = NULL;
+      break;
+  }
+
+  // Try to fetch data from Spotify. On failure fall back on the default
+  // formatter.
+  if ($response = spotify_lookup($uri, $extras)) {
+    // Call the correct theme function.
+    switch ($type) {
+      case 'album':
+        return spotifyfield_get_album($response->data, $uri, $settings);
+        break;
+      case 'artist':
+        return spotifyfield_get_artist($response->data, $settings);
+        break;
+      case 'track':
+        return spotifyfield_get_track($response->data, $settings);
+        break;
+      default:
+        return theme('spotifyfield_formatter_default', $element);
+        break;
+    }
+  }
+  else {
+    return theme('spotifyfield_formatter_default', $element);
+  }
+}
+
+/**
+ * Theme function for 'play button' field formatter.
+ */
+function theme_spotifyfield_formatter_play_button($variables) {
+  $element = $variables['element'];
+  $settings = $variables['settings'];
+
+  // Get title and uri and type; artist, album or track.
+  $matches = array();
+  preg_match('/(([^[]+)\[(spotify:([^:]+):[^]]+))/i', $element['safe'], $matches);
+  list(, , $title, $uri, $type) = $matches;
+  if ($type == 'artist') {
+    return t('The field formatter <em>Spotify play button</em> is not supported for artists.');
+  }
+  if ($settings['size'] == 'large') {
+    $width = 250;
+    $height = 330;
+  }
+  else {
+    $width = 300;
+    $height = 80;
+  }
+  $markup = sprintf('<iframe src="https://embed.spotify.com/?uri=%s" width="%d" height="%d" frameborder="0" allowtransparency="true"></iframe>', $element['matches'][3], $width, $height);
+  return $markup;
+}
+
+/**
+ * Theme function for album.
+ */
+function theme_spotify_album($data) {
+  $output = "<div class=\"spotify-album-information\">\n";
+  $output .= "<h3>" . $data['album']['name'] . " - " . $data['album']['artist']
+      . " (" . $data['album']['released'] . ")</h3>\n";
+  $image = NULL;
+  if (variable_get('spotifyfield_display_cover', 1)) {
+    $image = spotifyfield_get_cover($data['uri']);
+  }
+  if (!is_null($image)) {
+    $spotifyimage = array(
+      'path' => spotifyfield_get_remote_image_from_url($image),
+      'style_name' => $data['settings']['style'],
+      'alt' => $data['album']['name']
+    );
+    $output .= '<a href="' . $data['uri'] . '">' . theme('image_style', $spotifyimage) . '</a>';
+  }
+
+  $output .= "<ol>\n";
+  foreach ($data['album']['tracks'] as $track) {
+    $output .= "<li><a href=\"{$track['href']}\">{$track['name']}</a></li>\n";
+  }
+  $output .= "</ol>\n</div>\n";
+
+  return $output;
+}
+
+/**
+ * Get album cover.
+ */
+function spotifyfield_get_cover($uri) {
+  // Generate cache key.
+  $key = md5($uri);
+  // Get cache for url
+  $match = cache_get($key, 'cache');
+  // If not cached, fetch image from remote.
+  if (!$match) {
+    $url = SPOTIFY_IMAGE . '?url=' . $uri;
+    $response = drupal_http_request($url, array(), 'GET', NULL, 3);
+    // Check response.
+    if ($response->code != 200) {
+      watchdog('spotify image', $response->error);
+      return FALSE;
+    }
+    else {
+      $cover_art = drupal_json_decode($response->data);
+      // Save to cache, so we could reuse url
+      cache_set($key, $cover_art['thumbnail_url'], 'cache');
+      return $cover_art['thumbnail_url'];
+    }
+  }
+  else {
+    $image = cache_get($key, 'cache');
+    return $image->data;
+  }
+}
+
+/**
+ * Theme function for artist.
+ */
+function theme_spotify_artist($data) {
+  $output = "<div class=\"spotify-artist-information\">\n";
+  $output .= "<h3>{$data['artist']['name']}</h3>\n";
+  $output .= "<ul>\n";
+  foreach ($data['artist']['albums'] as $album) {
+    $output .= "<li><a href=\"{$album['album']['href']}\">{$album['album']['name']}";
+    $output .=!empty($album['album']['released']) ? " ({$album['album']['released']})" : '';
+    $output .= '</a>';
+    $image = NULL;
+    // Check if we have defined on admin page to use images
+    if (variable_get('spotifyfield_display_cover', 1)) {
+      // Get image.
+      $image = spotifyfield_get_cover($album['album']['href']);
+    }
+    // If we get a result back
+    if (!is_null($image)) {
+      $spotifyimage = array(
+        'path' => spotifyfield_get_remote_image_from_url($image),
+        'style_name' => $data['settings']['style'],
+        'alt' => $album['album']['name']
+      );
+      $output .= '<a href="' . $album['album']['href'] . '">' . theme('image_style', $spotifyimage) . '</a><br />';
+    }
+    $output .= "</li>\n";
+  }
+  $output .= "</ul>\n</div>\n";
+  return $output;
+}
+
+/**
+ * Theme function for track.
+ */
+function theme_spotify_track($data) {
+  $output = "<div class=\"spotify-track-information\">\n";
+  $output .= "<h3>{$data['track']['name']}</h3>\n";
+  $image = NULL;
+  if (variable_get('spotifyfield_display_cover', 1)) {
+    $image = spotifyfield_get_cover($data['track']['href']);
+  }
+  if (!is_null($image)) {
+    $spotifyimage = array(
+      'path' => spotifyfield_get_remote_image_from_url($image),
+      'style_name' => $data['settings']['style'],
+      'alt' => $data['track']['album']['name']
+    );
+    $output .= '<a href="' . $data['track']['href'] . '">' . theme('image_style', $spotifyimage) . '</a>';
+  }
+  $output .= "<ul>\n";
+  $output .= "<li><a href=\"{$data['track']['album']['href']}\">{$data['track']['album']['name']}";
+  $output .=!empty($data['track']['album']['released']) ? " ({$data['track']['album']['released']})" : '';
+  $output .= "</a></li>\n";
+  $output .= "</ul>\n</div>\n";
+  return $output;
+}
+
+/**
+ * Module settings.
+ */
+function spotifyfield_settings() {
+  $form = array();
+
+  $form['spotifyfield_display_cover'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Display album cover'),
+    '#description' => t('Display album cover when using the extended formatter.'),
+    '#default_value' => variable_get('spotifyfield_display_cover', 0),
+  );
+
+  $form['spotifyfield_fetch_image_size'] = array(
+    '#type' => 'select',
+    '#title' => t('Fetch image size'),
+    '#description' => t('Which image size should we get from Spotify,
+      use wisely - dont download images bigger than you need'),
+    '#options' => array(
+      60 => 60,
+      85 => 85,
+      120 => 120,
+      300 => 300,
+      640 => 640,
+    ),
+    '#default_value' => variable_get('spotifyfield_fetch_image_size', 300),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Format
+ */
+function _spotifyfield_format_value($data) {
+  $output = array();
+  $output['safe'] = check_plain($data);
+  $output['matches'] = array();
+  preg_match('/(([^[]+)\[([^]]+))/i', $output['safe'], $output['matches']);
+  $output['title'] = $output['matches'][2];
+  $output['link'] = $output['matches'][3];
+  return $output;
+}
+
+/**
+ * Returns the album as an array.
+ * 
+ * @param object $data
+ * @param string $uri
+ * @return function
+ */
+function spotifyfield_get_album($data, $uri, $settings) {
+  // Result is json, se lets get that into an array.
+  $album = drupal_json_decode($data);
+  // Add the spotify uri to the array, we need it later
+  $album['uri'] = $uri;
+  $album['settings'] = $settings;
+  return theme('spotify_album', $album);
+}
+
+/**
+ * Returns the track as an array.
+ *
+ * @param object $data
+ * @param string $uri
+ * @return function
+ */
+function spotifyfield_get_track($data, $settings) {
+  // Result is json, se lets get that into an array.
+  $track = drupal_json_decode($data);
+  // Add the spotify uri to the array, we need it later
+  $track['settings'] = $settings;
+  return theme('spotify_track', $track);
+}
+
+/**
+ * Returns the arist as an array.
+ *
+ * @param object $data
+ * @param string $uri
+ * @return function
+ */
+function spotifyfield_get_artist($data, $settings) {
+  // Result is json, so lets get that into an array.
+  $track = drupal_json_decode($data);
+  // Add the spotify uri to the array, we need it later.
+  $track['settings'] = $settings;
+  return theme('spotify_artist', $track);
+}
+
+/**
+ * Download image from Spotify if needed, and store localy, or return local
+ * image.
+ * 
+ * @param type $url
+ * @return image
+ */
+function spotifyfield_get_remote_image_from_url($url) {
+  // Define which size to download.
+  $imagesize = variable_get('spotifyfield_fetch_image_size', 300);
+  $external_image_path = file_default_scheme() . '://external';
+  // Get the defined image size.
+  $url = preg_replace("/cover/", $imagesize, $url);
+  // Format the image name
+  $cut_url = str_ireplace("https://", "", $url);
+  $cut_url = preg_replace("/^[^\/]*\//", "", $cut_url);
+  $image_name = str_ireplace("/", "-", $cut_url);
+  $image_path = $external_image_path . '/' . $image_name . '.jpg';
+
+  /* Check if we allready have downloaded the image, return the image path if it exists. */
+  if (!file_destination($image_path, FILE_EXISTS_ERROR)) {
+    // Return existing file.
+    return ($image_path);
+  }
+  else {
+    // Fetch remote file.
+    $image = file_get_contents($url);
+    // Save file localy.
+    return file_unmanaged_save_data($image, $image_path, FILE_EXISTS_REPLACE);
+  }
+}

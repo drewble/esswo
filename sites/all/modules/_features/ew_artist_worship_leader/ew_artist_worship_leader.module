@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the EW Artist/Worship Leader feature.
+ */
+
+include_once 'ew_artist_worship_leader.features.inc';

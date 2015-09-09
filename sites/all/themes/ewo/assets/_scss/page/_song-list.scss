@@ -1,0 +1,574 @@
+//
+//  Song Listing
+//
+
+/////// Exposed Form
+
+// General
+
+.page-songs {
+	.hero {
+		background:url(../img/songs.jpg) no-repeat scroll center center;
+		background-size:cover;
+		color:#fff;
+		max-width: none;
+		padding: 111px 6% 50px;
+
+		@include tablet {
+			padding:14% 0 6%;
+		}
+
+		h1 {
+			@include border-btm;
+			color: #fff;
+			padding-bottom: 40px;
+
+			&:after {
+				margin-left: -67px;
+				bottom:20px;
+				width: 134px;
+			}
+		}
+
+		h2 {
+			color: $light;
+			font-style: normal;
+			margin: 0 auto;
+		  text-transform: none;
+
+		  @include tablet {
+			  width: 38%;
+			}
+		}
+	}
+}
+
+.song-listing {
+	margin-top: 60px;
+	position:relative;
+
+	.view-header {
+		p {
+			margin:0;
+		}
+	}
+	.view-empty {
+	  text-align: center;
+	  padding: 4%;
+	}
+}
+
+.song-listing {
+	.result-summary {
+		@include clearfix;
+		background-color: $gray;
+		margin: 2% 0;
+		padding:17px;
+
+		p {
+			color: #ecf0f1;
+			float: left;
+			font: 12px $header;
+			text-transform: uppercase;
+		}
+
+		a {
+			color: #ecf0f1;
+			display: inline-block;
+			font: 12px $header;
+			float: right;
+			text-decoration: none;
+
+			&:before {
+				content: "|";
+				display: inline-block;
+				margin:0 3px;
+				padding:0 3px;
+			}
+
+			&.active {
+				color: $red;
+
+				&:before {
+					color: #ecf0f1;
+				}
+			}
+
+			&:hover {
+				color: #ccc;
+
+				&:before {
+					color: #ecf0f1;
+				}
+			}
+
+			& + a:before {
+				content:"";
+			}
+		}
+	}
+}
+
+#views-exposed-form-songs-page {
+	position:relative;
+
+	.clear-filters {
+		color: #9d9c9c;
+		float:right;
+		font: em(12) $header;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		span {
+			color: #cfd2d3;
+			font: 13px $font;
+		}
+
+		&:hover {
+			color: $base;
+		}
+	}
+
+	.views-exposed-widget {
+		padding:0;
+
+		@include tablet {
+			padding:0 15px 0 0;
+		}
+
+		small {
+			display: none;
+		}
+	}
+
+	#edit-field-church-tid-wrapper {
+		padding-right:0;
+	}
+
+	input[type="submit"] {
+		height:0;
+		overflow:hidden;
+		position: absolute;
+		visibility:hidden;
+		z-index: -10;
+	}
+
+	// Ajax Throbber
+	.ajax-progress {
+		display: inline-block;
+	  height: 100%;
+	  left: 0;
+	  position: absolute;
+	  top: 0;
+	  width: 100%;
+	  z-index: 9;
+
+		.throbber {
+			background:url(../img/ajax.gif) no-repeat scroll center center rgba(255,255,255,.8);
+	    height: 100%;
+	    padding:8%;
+	    position: relative;
+	    left: -2px;
+	    width: 100%;
+		}
+	}
+}
+
+// Title
+#views-exposed-form-songs-page {
+	#edit-title-wrapper {
+		margin-bottom: 15px;
+		padding-right: 0;
+		position: relative;
+		width:100%;
+
+		input {
+			padding: 23px 61px;
+			width: 100%;
+		}
+
+		.icon {
+			left: 23px;
+			position: absolute;
+			top:35px;
+		}
+
+		p {
+			color: #9d9c9c;
+			display: none;
+			font-size: 14px;
+			font-style: italic;
+			line-height:3em;
+			margin:0;
+			position: absolute;
+			right: 20px;
+			top:26px;
+
+			span {
+				border-right:1px solid;
+				display: inline-block;
+				margin-right: 15px;
+				padding-right: 13px;
+			}
+		}
+
+		&.active p {
+
+			@include tablet {
+				display: block;
+			}
+
+			small {
+				cursor: pointer;
+				display: inline-block;
+				left: 0;
+				position:relative;
+				top:8px;
+
+				&:hover {
+					color: $base;
+				}
+			}
+		}
+	}
+
+	#edit-field-tempo-tid-wrapper {
+
+		@include tablet {
+		  border-right: 2px solid #ecf0f1;
+		  padding: 0 15px 0 0;
+		  margin-right: 15px;
+		}
+
+		@include desk {
+		  padding: 0 25px 0 0;
+		  margin-right: 20px;
+		}
+	}
+}
+
+// Key, Tempo
+#edit-field-key-tid,
+#edit-field-tempo-tid {
+	width:100px;
+
+	@include tablet {
+		width: 90px;
+	}
+
+	@include desk {
+		width: 100px;
+	}
+}
+
+// Theme, Services, Church
+#edit-field-theme-tid-wrapper,
+#edit-field-services-tid-wrapper,
+#edit-field-church-tid-wrapper {
+	margin-top:10px;
+
+	@include tablet {
+		margin-top: 0;
+	}
+}
+
+#edit-field-theme-tid,
+#edit-field-services-tid,
+#edit-field-church-tid {
+	width:290px;
+
+	@include tablet {
+		width:120px;
+	}
+
+	@include desk {
+		width:240px;
+	}
+}
+
+// Key (First)
+#edit-field-key-tid-wrapper {
+	width:190px;
+
+	@include tablet {
+		width:177px;
+	}
+
+	@include tablet {
+		width: 190px;
+	}
+
+	.views-widget > span {
+		float: left;
+		font-size: 12px;
+		margin-right: 20px;
+		position: relative;
+		top:12px;
+	  text-transform: uppercase;
+	}
+
+	.chosen-container a.chosen-single {
+		text-transform: none;
+
+		&.chosen-default {
+      text-transform: uppercase;
+    }
+	}
+}
+
+// Flag sort (hidden and checked in js)
+#edit-flagged-wrapper {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: -10;
+}
+/////// End exposed form
+
+
+/////// Listing
+
+// General
+.song-listing {
+	.view-content {
+		ul, li {
+			margin:0;
+			padding:0;
+		}
+	}
+
+	.view-content li {
+		border-bottom:1px dashed $light;
+		list-style:none;
+		overflow: hidden;
+		padding:3% 0 1%;
+		position: relative;
+
+		&:first-child {
+			padding-top:0;
+		}
+
+		&:last-child {
+			border-bottom:1px solid $base;
+		}
+	}
+
+	.audio-btn,
+	.field-group-div {
+		float: left;
+		padding:3% 4%;
+	}
+
+	.field-group-div {
+		& + div {
+			display: none;
+
+			@include tablet {
+				display: block;
+			}
+		}
+	}
+}
+
+// Play Button
+.song-listing {
+	.audio-btn {
+		margin: 4% 2%;
+		padding:0;
+		position: relative;
+		width: 35px;
+
+		a:first-child {
+			border:2px solid $base;
+			border-radius:30px;
+			display: inline-block;
+			height: 30px;
+			position: relative;
+			text-indent: -9999px;
+			width: 30px;
+
+			&:after {
+				border:10px solid $base;
+				border-bottom:6px solid transparent;
+				border-right:7px solid transparent;
+				border-top:6px solid transparent;
+				content: " ";
+				display: block;
+				left: 10px;
+				position: absolute;
+				top:7px;
+			}
+
+			&:hover {
+				border-color: $red;
+
+				&:after {
+					border-left-color:$red;
+				}
+			}
+
+			&.open + .remove {
+				height: 30px;
+				overflow: visible;
+				width: 30px;
+				visibility: visible;
+			}
+		}
+
+		.remove {
+			background-color: $light;
+			color: $base;
+			font-size: 28px;
+			height: 0;
+			left: 0;
+			overflow: hidden;
+			padding: 3px 4px;
+			position: absolute;
+			text-decoration:none;
+			top:0;
+			visibility: hidden;
+			width: 30px;
+
+			&:hover {
+				polygon {
+					fill: $red;
+				}
+			}
+		}
+	}
+}
+
+// Title, Artist
+.node-song.node-teaser .field-type-text span {
+	float: left;
+	font-size: 12px;
+	line-height: 1.8em;
+	margin-right: 2px;
+}
+
+.song-listing {
+	.group-song-info {
+		padding-left:0;
+		width: 80%;
+
+		@include tablet {
+			width: 35%;
+		}
+
+		h2 {
+			border:none;
+			color: $red;
+			margin-bottom: 0;
+			padding:0;
+			text-transform: none;
+			width: auto;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		h3 {
+			color: #3d3738;
+			font:em(14) $font;
+			font-style: italic;
+		}
+	}
+}
+
+// Title, Artist
+.song-listing {
+	.group-key,
+	.group-tempo {
+		border-right:1px solid $light;
+		font-size: 18px;
+		text-align: center;
+
+		@include desk {
+			width: 12%;
+		}
+
+		.field-label {
+			color: #3d3738;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+	}
+
+	.group-tempo {
+		@include desk {
+			width: 14%;
+		}
+	}
+}
+
+// Song Categories
+.song-listing {
+	.group-song-categories {
+		font-size: 14px;
+		padding: 2% 4%;
+
+		@include tablet {
+			width:31%;
+		}
+
+		@include desk {
+			padding:3% 4%;
+			width: 31%;
+		}
+
+		.field-label {
+			clear: left;
+			font-size: 12px;
+			float: left;
+			text-transform: uppercase;
+			width: 80px;
+		}
+
+		.field {
+			clear: left;
+			float: left;
+
+			@include desk {
+				clear: none;
+				width: 68%;
+			}
+		}
+
+		.field-type-taxonomy-term-reference + .field-type-taxonomy-term-reference {
+			&:before {
+
+				@include desk {
+					content: ", ";
+				}
+			}
+		}
+	}
+}
+
+// Spotify Player
+.play-audio {
+	background-color:$light;
+	height:0;
+	opacity:0;
+	overflow:hidden;
+	position:relative;
+	visibility:hidden;
+	width:100%;
+	z-index: -10;
+
+	&.show {
+		height: auto;
+		opacity: 1;
+		overflow: visible;
+		padding:2%;
+		position: static;
+		visibility: visible;
+	}
+
+	iframe {
+		width: 100%;
+	}
+}
+

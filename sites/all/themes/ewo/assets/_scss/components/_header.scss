@@ -1,0 +1,226 @@
+//
+//  Header
+//
+
+header {
+  background-color: rgba(0, 0, 0, .78);
+  height: auto;
+  left: 0;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 10;
+
+  // Logo
+  h1 {
+    float: left;
+    line-height: 1em;
+    margin: 29px 25px 16px;
+    width: 60%;
+
+    @include desk {
+      margin: 29px 25px;
+      width: 28%;
+    }
+
+    .icon {
+      height: 0;
+      overflow: hidden;
+      padding-top: 28px;
+      width: 100%;
+    }
+  }
+
+  // Mobile Menu Button
+  button.icon {
+    border: none;
+    color: #fff;
+    display: inline-block;
+    float: right;
+    margin: 26px 25px 22px;
+    min-width: 0;
+    padding: 0;
+
+    &:hover {
+      background-color:transparent;
+
+      path {
+        fill:#fff;
+      }
+    }
+
+    @include tablet {
+      margin: 30px;
+    }
+
+    @include desk {
+      display: none;
+    }
+  }
+}
+
+body.admin-menu {
+  header {
+  	top:46px;
+
+  	@include desk {
+	    top:29px;
+	  }
+  }
+}
+
+.slicknav_menu {
+  position: relative;
+  z-index: 11;
+}
+
+// Nav
+header {
+  nav {
+    background-color: rgba(0,0,0,.9);
+    height: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top:0;
+    width: 100%;
+    visibility: hidden;
+    z-index: -2;
+
+    @include desk {
+      background-color:transparent;
+      height: auto;
+      float: right;
+      opacity: 1;
+      position: static;
+      visibility: visible;
+      width: auto;
+    }
+
+    &.show {
+      height: 100%;
+      opacity: 1;
+      position: fixed;
+      visibility: visible;
+      z-index: 10;
+    }
+
+    .close-menu {
+      @include close-btn;
+      margin: 18px 20px;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      @include desk {
+        display: none;
+      }
+    }
+
+    ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: block;
+      list-style: none;
+
+      @include desk {
+        display: inline-block;
+      }
+    }
+
+    a {
+      color: #b5b5b6;
+      display: block;
+      padding: 28px 14px;
+      text-align: center;
+      text-decoration: none;
+
+      @include lgMobile {
+        padding:36px 14px;
+      }
+
+      @include desk {
+        display: inline-block;
+        padding: 31px 14px;
+        text-align: none;
+      }
+
+      &.active, &:hover {
+        background-color:$red;
+        color: #fff;
+
+        @include desk {
+          background-color:transparent;
+          @include border-btm;
+        }
+      }
+    }
+
+    .login {
+      a {
+        background-position: 0 5px;
+        background-size: 23px 23px;
+        color: #288899;
+        font-size: 12px;
+        height: 30px;
+        left: 13px;
+        line-height: 1.4em;
+        margin: 0 auto;
+        padding: 9px 29px;
+        position: relative;
+        top: 7px;
+        width: 150px;
+
+        @include lgMobile {
+          top:22px;
+        }
+
+        @include desk {
+          left: auto;
+          margin: 0;
+          padding: 0 29px;
+          top: 7px;
+          width: 102px;
+        }
+
+        &:hover {
+          background-color:transparent;
+          color: #fff;
+          
+          &:after {
+            display: none;
+          }
+        }
+      }
+      &.active-trail a {
+        color:#288899;
+
+        &:hover {
+          color: #fff;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Anonymous
+.not-logged-in {
+	header nav .logged-in {
+		display: none;
+	}
+}
+
+// Logged-in
+.logged-in {
+	header nav .logged-in a {
+		text-align: left;
+	}
+}
+

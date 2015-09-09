@@ -1,0 +1,74 @@
+/* Application Template
+ * -----------------------------------------------------------------------------
+ * Styling for the structure of the site. If your element doesn't show up on
+ * every page, it probably shouldn't be in this file.
+ * -----------------------------------------------------------------------------*/
+
+/* Things to place in separate files...
+ * ---------------------------------------------------------------------------
+ * /extends/            => Sass extends declarations
+ * /mixins/             => Sass mixins declarations
+ * _buttons.scss
+ * _fonts.scss          => Font imports
+ * _forms.scss
+ * _lists.scss
+ * _library.scss        => Custom classes used throughout the app.
+ * _tables.scss
+ * _typography.scss
+ * _utilities.scss
+ * _variables.scss
+ * _component_name.scss => Styles for a component of functionality (e.g. – modal).
+ * _page_name.scss      => Styles for page specific elements.
+ * ---------------------------------------------------------------------------
+ */
+
+.outer-container {
+  @include outer-container;
+}
+
+.page {
+  margin-bottom: 70px;
+  margin-top: 30px;
+  padding:0 4%;
+
+  @include desk {
+    padding:0;
+  }
+}
+
+.with-side {
+	@include span-columns(7.5);
+}
+
+.sidebar {
+	@include span-columns(4);
+	@include shift(.5);
+
+	nav {
+		background-color: $light;
+
+		> ul, > ul li {
+			list-style: none;
+			margin: 0;
+			padding:0;
+		}
+
+		> ul a {
+			background-color: $light;
+			display: block;
+			padding:20px;
+
+			&:hover {
+				background-color:$red;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.bread {
+  float: left;
+  font:em(12) $header;
+  text-decoration: none;
+  text-transform: uppercase;
+}

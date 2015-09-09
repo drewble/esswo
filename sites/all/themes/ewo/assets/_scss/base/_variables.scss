@@ -1,0 +1,68 @@
+// Colors
+$base: #3d3738;
+$gray:#322e2f;
+$lt-gray:#7c7a7a;
+$light:#ecf0f1;
+$red:#e44345;
+$blue:#288899;
+$btn:#524b4c;
+
+// Fonts
+$font:'Titillium Web', sans-serif;
+$header:'Ropa Sans', sans-serif;
+
+// Common Mixins
+@mixin sprite($pos) {
+  background: url(../img/sprite.png) no-repeat scroll 0 0;
+  background-position: $pos;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+@mixin border-top {
+  margin-top: 33px;
+  padding: 39px;
+  position: relative;
+
+  &:before {
+    background-color: $red;
+    content: " ";
+    display: block;
+    height: 4px;
+    left: 50%;
+    margin-left: -90px;
+    position: absolute;
+    top:0;
+    width: 180px;
+  }
+}
+
+@mixin border-btm {
+  position: relative;
+
+  &:after {
+    background-color: $red;
+    bottom: 0;
+    content: " ";
+    display: block;
+    height: 4px;
+    left: 50%;
+    margin-left: -17px;
+    position: absolute;
+    width: 34px;
+  }
+}
+
+@mixin new {
+  &:before {
+    border:2px solid $blue;
+    border-radius:20px;
+    content:" ";
+    display: block;
+    height: 9px;
+    float: left;
+    margin: 9px 7px 0 0;
+    width:9px;
+  }
+}

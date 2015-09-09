@@ -1,0 +1,55 @@
+<?php
+/**
+ * @file
+ * Module for defining custom hooks. Good place to add custom module code.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function d7_csbase_menu() {
+  // Adds Homepage
+  $items['home'] = array(
+    'title' => 'Home',
+    'page callback' => 'get_homepage',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+  // Adds Spotify Callback page - see sites/all/themes/ewo/assets/coffee/spotify_add_to_playlist
+  $items['spotify-callback'] = array(
+    'title' => 'Spotify Callback',
+    'page callback' => 'get_homepage',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  return $items;
+}
+
+function get_homepage()
+{
+  return '';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function d7_csbase_form_alter(&$form, &$form_state, $form_id) {
+  // Mailchimp forms
+  if (!empty($form_state['build_info']['base_form_id'])) {
+    if ($form_state['build_info']['base_form_id'] == 'mailchimp_signup_subscribe_form') {
+      $form['mergevars']['EMAIL']['#attributes']['placeholder'] = t('enter email address');
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORMID_alter().
+ */
+function d7_csbase_form_song_node_form_alter(&$form, &$form_state, $form_id) {
+  // Add Prefix text to link fields
+  $form['field_itunes_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'https://geo.itunes.apple.com/us/album/';
+  $form['field_multitracks_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.multitracks.com/afe/esstw/?t=/';
+  $form['field_praisecharts_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://www.praisecharts.com/detail/arrangement/';
+  $form['field_loopcommunity_link'][LANGUAGE_NONE][0]['#field_prefix'] = 'http://loopcommunity.com/';
+}

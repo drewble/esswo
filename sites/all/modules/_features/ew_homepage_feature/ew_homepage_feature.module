@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the EW Homepage Feature feature.
+ */
+
+include_once 'ew_homepage_feature.features.inc';

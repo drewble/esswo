@@ -1,0 +1,198 @@
+// Forms
+form small, form .description {
+  color: #5f5f5f;
+}
+
+label, label.required {
+  display: block;
+  font-weight: 700;
+}
+
+label.required:after {
+  content: "*";
+  color: #c41230;
+  margin-left: 3px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  background-color: $light;
+  border:none;
+  color: $base;
+  font: em(28) $header;
+  margin: 10px 0;
+  padding: 2% 3%;
+
+  @include placeholder {
+    color: #b9babb;
+    text-transform: uppercase;
+  }
+
+  &:focus {
+    background-color:#fff;
+    box-shadow:0 0 5px #aaa;
+    outline-width: 0;
+  }
+}
+
+textarea {
+  border:none;
+  border-radius:5px 5px 0 0;
+  padding: 9px;
+}
+
+input[type="submit"] {
+  @include btn;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="checkbox"] {
+	float: left;
+  margin: 7px;
+
+	& + label {
+		color: $base;
+	  margin: 0 1%;
+	}
+}
+
+// Chosen Overrides
+.chosen-container {
+  .chosen-single, &.chosen-with-drop .chosen-single {
+    background:$light;
+    border:none;
+    border-radius:0;
+    box-shadow: none;
+    font-size: em(12);
+    height: auto;
+    padding: 14px 16px;
+    text-transform: uppercase;
+
+    // Dropdown icon
+    div {
+      right: 3px;
+      top:13px;
+      width: 16px;
+    }
+  }
+
+  a.chosen-single {
+    background-color:$gray;
+    color: #fff;
+    font-weight: 700;
+
+    &.chosen-default {
+      background-color:$light;
+      color: #999;
+      font-weight: 400;
+    }
+  }
+
+  &.chosen-with-drop .chosen-single {
+    font-weight: bold;
+  }
+
+  .chosen-drop {
+    border: none;
+    background: $light;
+    box-shadow: 0;
+  }
+}
+
+.chosen-search {
+  input {
+    text-transform: none;
+  }
+}
+
+// Specific Placeholder Application (possibly make global?)
+.placeholder {
+  #views-exposed-form-songs-page,
+  #block-user-login,
+  #block-formblock-user-register,
+  #block-mailchimp-signup-registration {
+    label {
+      display: none;
+    }
+
+    input[type="checkbox"] + label {
+      display: inline;
+    }
+  }
+}
+
+#block-user-login {
+  ul, li {
+    margin: 10px 17px;
+    padding:0;
+
+    @include tablet {
+      float: right;
+    }
+  }
+
+  li {
+    list-style:none;
+
+    &:first-child {
+      display: none;
+    }
+  }
+
+  a {
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .form-actions {
+    margin: 0;
+  }
+}
+
+#block-formblock-user-register {
+  margin-bottom: 70px;
+}
+
+// Mailchimp
+.logged-in {
+	#block-mailchimp-signup-registration {
+		display: none;
+	}
+}
+.field-type-mailchimp-lists-subscription {
+  fieldset {
+    border: none;
+    color: #fff;
+    margin: 30px 5px;
+    padding: 0;
+  }
+
+  legend {
+    display: none;
+  }
+}
+
+.password-parent, .confirm-parent {
+	color:$red;
+	width:auto;
+
+	> div {
+		margin-right: 2em;
+		margin-top: 0;
+	}
+}
+
+.confirm-parent {
+	margin-bottom:0;
+}
+
+div.password-confirm {
+	text-align: right;
+
+	.ok {
+		color: #47C965;
+	}
+}
+
+

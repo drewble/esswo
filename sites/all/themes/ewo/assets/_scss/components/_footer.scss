@@ -1,0 +1,172 @@
+//
+//  Footer
+//
+
+footer {
+  background-color: $gray;
+  color: $light;
+  padding: 11% 4% 3%;
+
+  @include tablet {
+    padding: 5% 4% 3%;
+  }
+
+  @include desk {
+    padding:5% 0 3%;
+  }
+
+  .outer-container {
+    // Who We Are
+    & > div:first-child {
+      @include tablet {
+        float: left;
+        margin-right: 7%;
+        width: 49%;
+      }
+
+      @include desk {
+        width: 66%;
+      }
+    }
+  }
+}
+
+footer {
+  h2 {
+    @include border-btm;
+
+    &:after {
+      margin: 1.5% 0 4%;
+      position: static;
+      width: 200px;
+    }
+  }
+
+  p {
+    color: $lt-gray;
+    font-size:15px;
+    font-style: italic;
+    line-height: 1.5em;
+  }
+}
+
+footer {
+  nav {
+    margin-top:50px;
+
+    @include tablet {
+      float: left;
+      width: 44%;
+    }
+
+    @include desk {
+      margin-top: 0;
+      width: 27%;
+    }
+
+    > ul, > ul li {
+      margin: 0;
+      padding:0;
+    }
+
+    > ul {
+      li {
+        display: block;
+        float: left;
+        list-style: none;
+        text-align: center;
+        width: 20%;
+
+        &:first-child {
+          float: none;
+          width: 100%;
+
+          a {
+            background-size: 30px 30px;
+            background-position: center 27px;
+            border-bottom-color:transparent;
+            border-left-color:#4a4647;
+            float: none;
+            height: 113px;
+            text-decoration: none;
+            width: 100%;
+          }
+
+          & + li a {
+            border-left-color:#4a4647;
+          }
+        }
+      }
+
+      .icon {
+        background-position: center center;
+        background-size: 23px 23px;
+        border:1px solid #4a4647;
+        border-left-color:transparent;
+        color: $light;
+        display: block;
+        float: left;
+        font-size: 12px;
+        height: 0;
+        overflow: hidden;
+        padding-top:58px;
+        text-transform: uppercase;
+        width: 100%;
+
+        &:hover {
+          background-color:$red;
+          color: #fff;
+        }
+      }
+
+      .icon-icons_fbook {
+        background-size: 20px 20px;
+      }
+
+      .icon-icons_twitter {
+        background-size: 22px 22px;
+      }
+
+      .icon-icons_insta {
+        background-size: 20px 20px;
+      }
+    }
+  }
+}
+
+.footer-btm {
+  clear: both;
+  color: #7c7a7a;
+  font-size: 12px;
+  padding-top: 80px;
+
+  span {
+    display: block;
+    text-align: center;
+
+    @include tablet {
+      float: left;
+      text-align: left;
+    }
+
+    & + span {
+      @include tablet {
+        float: right;
+      }
+    }
+  }
+
+  a {
+    color: #7c7a7a;
+    margin: 0 6px;
+
+    @include tablet {
+      margin-left: 20px;
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}

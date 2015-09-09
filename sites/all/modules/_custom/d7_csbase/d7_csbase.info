@@ -1,0 +1,3 @@
+name = Drupal 7 CS Base Module
+description = Provides general custom functionality for the application
+core = 7.x

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the EW Song feature.
+ */
+
+include_once 'ew_song.features.inc';

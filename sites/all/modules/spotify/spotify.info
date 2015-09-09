@@ -1,0 +1,11 @@
+name = Spotify
+description = Provides integration with the Spotify Metadata API.
+core = 7.x
+
+files[] = spotify.api.inc
+; Information added by Drupal.org packaging script on 2014-03-27
+version = "7.x-2.0-beta1+2-dev"
+core = "7.x"
+project = "spotify"
+datestamp = "1395912243"
+

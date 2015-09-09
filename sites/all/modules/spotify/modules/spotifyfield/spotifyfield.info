@@ -1,0 +1,12 @@
+name = Spotify Field
+description = Spotify field for displaying artist, album and track information.
+core = 7.x
+
+dependencies[] = spotify
+
+; Information added by Drupal.org packaging script on 2014-03-27
+version = "7.x-2.0-beta1+2-dev"
+core = "7.x"
+project = "spotify"
+datestamp = "1395912243"
+

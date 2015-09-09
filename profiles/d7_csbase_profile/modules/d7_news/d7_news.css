@@ -1,0 +1,16 @@
+/* -------------------------
+  News
+------------------------- */
+/* Page View */
+.view-news .views-field-field-news-main-image {
+  float:left;
+  margin: 0 1.5% 0 0;
+}
+.view-news h2 {
+  margin-top: 0;
+}
+/* Node View */
+.node .field-name-field-news-main-image {
+  float: right;
+  margin: 0 0 1% 1.5%;
+}

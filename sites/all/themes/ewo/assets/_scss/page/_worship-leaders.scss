@@ -1,0 +1,223 @@
+//
+//  Worship Leaders
+//
+
+// Listing
+#block-views-worship-leaders-block-1 {
+	ul, li {
+		margin: 0;
+		padding:0;
+	}
+
+	li {
+		list-style:none;
+		margin-bottom: 3%;
+		position: relative;
+
+		@media screen and (min-width: 620px) {
+			@include span-columns(6);
+		}
+
+		&:nth-child(2n) {
+			@include omega;
+		}
+	}
+}
+
+.path-worship-leaders {
+	.field-type-image {
+		left: 0;
+		position: absolute;
+		top:0;
+	}
+
+	.node-artist-worship-leader h2 {
+		margin-bottom: 0;
+		position: relative;
+
+		a {
+			background-color: #ccc;
+			color: #fff;
+			display: block;
+			font-size: 34px;
+			padding:14.5% 0 10.2%;
+			text-align: center;
+			text-decoration: none;
+			@include border-btm;
+
+			@include desk {
+				padding: 17.5% 0 10.2%;
+			}
+
+			&:after {
+				margin: 17px auto;
+				position: static;
+				width: 150px;
+			}
+
+			.white-btn {
+				border: 2px solid;
+				bottom: 22px;
+				display: none;
+				font-size: 14px;
+				left: 50%;
+			  margin-left: -62px;
+			  position: absolute;
+			  width: 124px;
+			}
+
+			span {
+				position: relative;
+			}
+
+			&:hover {
+
+				&:before {
+					background: rgba(0,0,0,.4);
+					content: " ";
+					height: 100%;
+					left: 0;
+					position: absolute;
+					top:0;
+					width: 100%;
+				}
+
+				.white-btn {
+
+					@include desk {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Node Listing
+.node-type-artist-worship-leader {
+	.hero.with-img {
+
+		@include desk {
+			padding: 13% 0 6%;
+		}
+	}
+
+	.bread {
+		background-position: 0 -6px;
+	  background-size: 25px 25px;
+	  color: $base;
+	  float: none;
+	  margin: 20px 0;
+	  padding-left: 31px;
+	  width: auto;
+
+	  &:hover {
+	  	color: $red;
+	  }
+	}
+}
+
+.node-artist-worship-leader {
+	.field-type-text-with-summary {
+		@include desk {
+			float: left;
+			margin-right: 6%;
+			width: 65%;
+		}
+	}
+
+	.group-links {
+		@include desk {
+			border-left: 2px solid #bababb;
+			float: left;
+			padding-left:3%;
+		}
+
+		.icon-btn {
+			width: 100%;
+
+			@include desk {
+				width: auto;
+			}
+		}
+	}
+
+	.field-type-link-field {
+		margin-bottom:13px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Song Listing
+	.song-listing {
+		clear: left;
+		padding-top: 10px;
+	}
+}
+
+// Node Albums
+.node-type-artist-worship-leader {
+	.pre-footer {
+		padding:1.5% 0 2.5%;
+	}
+}
+#block-views-worship-leaders-block-2 {
+	h2 {
+		@include border-btm;
+	  position: relative;
+	  font-size: 14px;
+	  margin-bottom: 40px;
+	  padding: 10px 0;
+
+	  &:after {
+	  	background-color: $base;
+	  	margin-left: -50px;
+	  	width: 100px;
+	  }
+	}
+	> ul, > ul li {
+		margin: 0;
+		padding:0;
+	}
+
+	> ul li {
+		display: inline-block;
+		list-style:none;
+	  margin: 0 2% 2% 0;
+	  position: relative;
+	}
+
+	> ul a {
+		display: block;
+
+		&:hover {
+			&:before {
+				background: rgba(0,0,0,.4);
+				content: " ";
+				display: block;
+				height: 100%;
+				left: 0;
+				position:absolute;
+				top:0;
+				width: 100%;
+			}
+			&:after  {
+				@include white-btn;
+				content: "PURCHASE ALBUM";
+				left: 21%;
+				padding: 3%;
+			  position: absolute;
+			  text-transform: uppercase;
+			  top: 41%;
+			}
+		}
+	}
+
+	img {
+	  box-shadow: 0 0 4px rgba(0,0,0,.7);
+	  display: block;
+	}
+}
+

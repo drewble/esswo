@@ -1,0 +1,93 @@
+//
+//  Hero
+//
+
+.hero {
+  @include outer-container;
+  padding: 111px 6% 50px;
+  text-align: center;
+
+  @include tablet {
+    padding:20% 0 9%;
+  }
+
+  @include desk {
+    padding: 12% 0 4%;
+  }
+
+  h1 {
+    color: $red;
+    margin: 0 auto 13px;
+
+    @include tablet {
+      width: 74%;
+    }
+  }
+
+  h2 {
+    font:15px $font;
+    font-style: italic;
+  }
+
+  .btns {
+    @include border-top;
+    padding: 39px 0;
+
+    @include tablet {
+      padding:39px;
+    }
+
+    &:before {
+      background-color: $base;
+    }
+
+    a {
+      margin: 5px 0;
+
+      @include tablet {
+        margin: 0 15px;
+      }
+    }
+  }
+
+  &.with-img {
+    max-width: none;
+    padding: 111px 6% 50px;
+
+    @include tablet {
+      padding:20% 0 9%;
+    }
+
+    @include desk {
+      padding: 12% 0 4%;
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    h1 {
+      @include border-btm;
+      margin-bottom: 17px;
+      padding-bottom: 12px;
+
+      &:after {
+        margin-left: -75px;
+        width: 150px;
+      }
+    }
+
+    h2 {
+      color: $light;
+      font-style: normal;
+      text-transform: none;
+      margin: 0 auto;
+
+      @include tablet {
+        width: 50%;
+      }
+    }
+  }
+}
+
+

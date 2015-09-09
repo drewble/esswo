@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Advertisement Banners feature.
+ */
+
+include_once('d7_advertisement_banners.features.inc');

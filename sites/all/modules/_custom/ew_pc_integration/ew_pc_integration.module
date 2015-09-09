@@ -1,0 +1,337 @@
+<?php
+/**
+ * @file
+ * Module for integrating with Planning Center Online
+ *
+ * API credentials are set in pc-php-library/oauth_config.php
+ *
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ew_pc_integration_menu() {
+  // Callback url for planning center OAuth authorization
+  $items['pc-api-connect'] = array(
+    'title' => 'Planning Center Online',
+    'page callback' => 'ew_pc_integration_api_connect',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  // Callback url for planning center api callback
+  $items['pc-api-callback'] = array(
+    'title' => 'Planning Center Online',
+    'page callback' => 'ew_pc_integration_api_callback',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  // Callback url for syncing a song with a users planning center account
+  $items['pc-api-sync-song'] = array(
+    'title' => 'Planning Center Online',
+    'page callback' => 'ew_pc_integration_api_sync_song',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Callback to be used for connecting to planning center online via OAuth
+ */
+function ew_pc_integration_api_connect() {
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
+  module_load_include('php', 'oauth', 'lib/OAuth');
+
+  $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
+
+  $params = array("oauth_callback" => CALLBACK_URL);
+  $request_token_request = OAuthRequest::from_consumer_and_token($consumer, NULL, "GET", "https://services.planningcenteronline.com/oauth/request_token", $params);
+  $request_token_request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, NULL);
+  $request_token_response = run_curl($request_token_request->to_url(), "GET");
+
+  parse_str($request_token_response, $request_token);
+  $cookies = array('oauth_token' => $request_token["oauth_token"], 'oauth_token_secret' => $request_token["oauth_token_secret"]);
+  user_cookie_save($cookies);
+
+  $authorization_url = "https://services.planningcenteronline.com/oauth/authorize?oauth_token=" . $request_token["oauth_token"];
+  drupal_goto($authorization_url);
+}
+
+/**
+ * Callback for planning center online api integration
+ */
+function ew_pc_integration_api_callback() {
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
+  module_load_include('php', 'oauth', 'lib/OAuth');
+
+  $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
+  $request_token = new OAuthConsumer($_COOKIE["Drupal_visitor_oauth_token"], $_COOKIE["Drupal_visitor_oauth_token_secret"], NULL);
+
+  $params = array("oauth_verifier" => $_GET['oauth_verifier']);
+  $access_token_request = OAuthRequest::from_consumer_and_token($consumer, $request_token, "GET", "https://services.planningcenteronline.com/oauth/access_token", $params);
+
+  $access_token_request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $request_token);
+  $access_token_response = run_curl($access_token_request->to_url(), "GET");
+
+  parse_str($access_token_response, $access_token_request);
+  $cookies = array('oauth_token' => $access_token_request["oauth_token"], 'oauth_token_secret' => $access_token_request["oauth_token_secret"]);
+  user_cookie_save($cookies);
+
+  $intended_url = '';
+  if (!empty($_COOKIE['Drupal_visitor_pc_intended_path'])) {
+    $intended_url = $_COOKIE['Drupal_visitor_pc_intended_path'];
+  }
+
+  drupal_goto($intended_url);
+}
+
+/**
+ * Callback for syncing a song with a user's planning center account
+ * @param $nid - Song node id
+ */
+function ew_pc_integration_api_sync_song($nid) {
+  require_once(dirname(__FILE__) . '/pc-php-library/oauth_config.php');
+  require_once(dirname(__FILE__) . '/pc-php-library/helpers.php');
+  module_load_include('php', 'oauth', 'lib/OAuth');
+
+  $cookies = array('pc_intended_path' => 'pc-api-sync-song/'.$nid);
+  user_cookie_save($cookies);
+
+  $consumer = new OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET, NULL);
+  $access_token = new OAuthConsumer($_COOKIE['Drupal_visitor_oauth_token'], $_COOKIE['Drupal_visitor_oauth_token_secret'], NULL);
+
+  // Do a quick me test to see if we're authenticated
+  if (!ew_pc_integration_api_authenticated($consumer, $access_token)) {
+    ew_pc_integration_api_connect();
+  }
+
+  // Grab the song node
+  $song = node_load($nid);
+
+  // Grab artist
+  $artist_full_name = 'Unknown';
+  if (isset($song->field_artist_worship_leader[LANGUAGE_NONE][0]['target_id']) && $artist = node_load($song->field_artist_worship_leader[LANGUAGE_NONE][0]['target_id'])) {
+    $artist_full_name = trim($artist->title);
+  }
+  // Grab BPM (using taxonomy)
+  if (isset($song->field_bpm[LANGUAGE_NONE][0]['tid']) && $bpm_term = taxonomy_term_load($song->field_bpm[LANGUAGE_NONE][0]['tid'])) {
+    $bpm = $bpm_term->name;
+  }
+  // Grab key
+  if (isset($song->field_key[LANGUAGE_NONE][0]['tid']) && $key_term = taxonomy_term_load($song->field_key[LANGUAGE_NONE][0]['tid'])) {
+    $key = $key_term->name;
+  }
+  // Grab themes and format accordinly
+  $themes_arr = array();;
+  if (!empty($song->field_theme[LANGUAGE_NONE])) {
+    foreach($song->field_theme[LANGUAGE_NONE] as $theme_options) {
+      $theme_term = taxonomy_term_load($theme_options['tid']);
+      if (!empty($theme_term)) {
+        $themes_arr[] = $theme_term->name;
+      }
+    }
+  }
+  $themes = implode(', ', $themes_arr);
+
+  // Build our song object to sync with PC
+  $pc_song = array();
+  $pc_song['title'] = $song->title;
+  // Add CCLI Info
+  if (!empty($song->field_ccli_license[LANGUAGE_NONE][0]['value'])) {
+    $pc_song['ccli_id'] = $song->field_ccli_license[LANGUAGE_NONE][0]['value'];
+  }
+  // Add themes - logic set above
+  if ($themes) {
+    $pc_song['themes'] = $themes;
+  }
+  // Add songwriters
+  if (!empty($song->field_songwriters[LANGUAGE_NONE][0]['value'])) {
+    $pc_song['author'] = $song->field_songwriters[LANGUAGE_NONE][0]['value'];
+  }
+  // Add notes
+  if (!empty($song->field_scripture[LANGUAGE_NONE][0]['value'])) {
+    $pc_song['notes'] = $song->field_scripture[LANGUAGE_NONE][0]['value'].' - All song resources provided courtesy of Essential Worship – for more worship resources visit EssentialWorship.com';
+  }
+  else {
+    $pc_song['notes'] = 'All song resources provided courtesy of Essential Worship – for more worship resources visit EssentialWorship.com';
+  }
+  // Add song file
+  /*if (!empty($song->field_mp3[LANGUAGE_NONE][0]['uri'])) {
+    $pc_song['mp3_url'] = file_create_url($song->field_mp3[LANGUAGE_NONE][0]['uri']);
+  }*/
+
+
+  // Build our arrangement object to sync with PC
+  $pc_arrangement = array();
+  $pc_arrangement['name'] = 'Original Recording ('.$artist_full_name.')';
+  if (!empty($bpm)) {
+    $pc_arrangement['bpm'] = $bpm;
+  }
+  if (!empty($key)) {
+    $pc_arrangement['chord_chart_key'] = $key;
+  }
+  // Grab chord chart
+  if (!empty($song->field_lyrics_chords[LANGUAGE_NONE][0]['value'])) {
+    $pc_arrangement['chord_chart'] = $song->field_lyrics_chords[LANGUAGE_NONE][0]['value'];
+  }
+
+  // Build key
+  $key_arrangement = array();
+  if (!empty($key)) {
+    $key_arrangement['starting'] = $key;
+    $key_arrangement['name'] = "Default Key";
+  }
+
+  // Sync up this song with PC
+  if (ew_pc_integration_sync_song($pc_song, $pc_arrangement, $key_arrangement, $consumer, $access_token)) {
+    drupal_set_message('"'.$song->title.'" has been added to your Planning Center Online account.');
+  }
+  else {
+    drupal_set_message('There was a problem trying to add this song or you may not have permissions to add songs in your Planning Center Online account.', 'error');
+  }
+
+
+  //Testing - remove
+  /*$url = "https://services.planningcenteronline.com/songs.json?include_arrangements=true";
+  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
+  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+  $headers = array();
+  $headers[] = "Content-type: application/json";
+  $response = run_curl($request, "GET", $headers);
+  $test_song = json_decode($response);
+  dpm($test_song);*/
+
+
+  // Take us back to song page
+  drupal_goto('node/'.$song->nid);
+
+  //return '';
+}
+
+/**
+ * Syncs up a song with planning center online account
+ * @param array $song - An array of info to sync the song
+ * @param array $arrangement - An array of info to sync the arrangement for this song
+ * @param $consumer - OAuth consumer
+ * @param $access_token - OAuth access token
+ * @return boolean
+ */
+function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $key = array(), $consumer, $access_token) {
+  if (empty($song)) {
+    return FALSE;
+  }
+
+  // Try to upload song first
+  /*if (!empty($song['mp3_url'])) {
+
+    $url = "http://services.planningcenteronline.com/songs/import?ccli_number=".$song['ccli_id']."&files%5B%5D%5Burl%5D=".urlencode($song['mp3_url']);
+    $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
+    $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+    $headers = array();
+    $headers[] = "Content-type: application/json";
+    $response = run_curl($request, "GET", $headers);
+    $mp3_results = json_decode($response);
+  }*/
+
+  // Turn into json
+  $song_json = json_encode($song);
+  $arrangement_json = json_encode($arrangement);
+
+  // PC suggested trying to update theme with an update API call after create
+  $song_update = array();
+  $song_update['themes'] = $song['themes'];
+  $song_update_json = json_encode($song_update);
+
+  // Add song to pc
+  $url = "https://services.planningcenteronline.com/songs.json";
+  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
+  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+  $headers = array();
+  $headers[] = "Content-type: application/json";
+  $response = run_curl($request, "POST", $headers, $song_json);
+  $new_song = json_decode($response);
+
+  // Update the song real quick to see if we can override themes
+  $update_song_url = "https://services.planningcenteronline.com/songs/".$new_song->id.".json";
+  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "PUT", $update_song_url);
+  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+  $response = run_curl($request, "PUT", $headers, $song_update_json);
+  $updated_song = json_decode($response);
+
+  if (empty($new_song)) {
+    // Looks like user can't add songs
+    return FALSE;
+  }
+  else {
+    // Don't want to add duplicate arrangements to the same song
+    if (!_song_has_correct_arrangement($new_song, $arrangement['name'])) {
+      $url = "https://services.planningcenteronline.com/songs/".$new_song->id."/arrangements.json";
+      $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
+      $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+      $headers = array();
+      $headers[] = "Content-type: application/json";
+      $response = run_curl($request, "POST", $headers, $arrangement_json);
+      $new_arrangement = json_decode($response);
+
+      // Sync key
+      if (!empty($new_arrangement->id)) {
+        $key['arrangement_id'] = $new_arrangement->id;
+        $key_json = json_encode($key);
+        $url = "https://services.planningcenteronline.com/keys.json";
+        $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
+        $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+        $headers = array();
+        $headers[] = "Content-type: application/json";
+        $response = run_curl($request, "POST", $headers, $key_json);
+        $new_key = json_decode($response);
+      }
+
+    }
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Checks whether this song has the current arrangement
+ * @param $song_id - planning center song object
+ * @param $arrangement_name - name of arrangement we're looking for
+ * @return boolean
+ */
+function _song_has_correct_arrangement($song, $arrangement_name) {
+  if (!empty($song->arrangements)) {
+    foreach($song->arrangements as $arrangement) {
+      if ($arrangement->name === $arrangement_name) {
+        return TRUE;
+      }
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Make sure the api connection to planning center online  works
+ * @param $consumer - OAuth consumer
+ * @param $access_token - OAuth access token
+ * @return boolean
+ */
+function ew_pc_integration_api_authenticated($consumer, $access_token) {
+  $url = "https://services.planningcenteronline.com/me.json";
+  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url, NULL);
+  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+  $response = run_curl($request, "GET");
+  if (empty($response)) {
+    return FALSE;
+  }
+  return TRUE;
+}
+
+
+
