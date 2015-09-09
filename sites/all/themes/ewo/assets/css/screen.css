@@ -267,6 +267,10 @@ input[type="checkbox"] {
     color: #3d3738;
     margin: 0 1%; }
 
+input#edit-gacode {
+  padding: 6px;
+  min-width: 150px; }
+
 .chosen-container .chosen-single, .chosen-container.chosen-with-drop .chosen-single {
   background: #ecf0f1;
   border: none;
@@ -578,10 +582,19 @@ ul.primary {
     color: #ecf0f1; }
     #myModal .modal-body input[type="submit"]:hover {
       border-color: #e44345; }
+  #myModal .modal-body #user-login-form .form-required + .form-required + div {
+    display: none; }
   #myModal .modal-body small {
     display: none; }
   #myModal .modal-body .password-suggestions {
-    display: none !important; }
+    background-color: #232323;
+    color: #fff;
+    padding: 3%;
+    font-size: .85em;
+    margin-top: 10px; }
+    #myModal .modal-body .password-suggestions ul {
+      margin: 0;
+      padding: 0 35px; }
 
 .modal-message {
   background-color: #fff;
