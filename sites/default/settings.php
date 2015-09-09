@@ -210,15 +210,16 @@
  *   );
  * @endcode
  */
+require_once(sprintf("%s/.dbc.php",dirname($_SERVER['DOCUMENT_ROOT'])));
 $databases = array (
   'default' =>
   array (
     'default' =>
     array (
-      'database' => 'essential-worship',
-      'username' => 'root',
-      'password' => 'root',
-      'host' => '127.0.0.1',
+      'database' => DB_NAME,
+      'username' => DB_USER,
+      'password' => DB_PASSWORD,
+      'host' => DB_HOST,
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
