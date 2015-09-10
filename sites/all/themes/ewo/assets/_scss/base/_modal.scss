@@ -158,12 +158,25 @@
       }
     }
 
+    #user-login-form .form-required + .form-required + div {
+			display: none;
+		}
+
     small {
       display: none;
     }
 
     .password-suggestions {
-    	display: none !important;
+    	background-color: #232323;
+    	color: #fff;
+	    padding: 3%;
+	    font-size: .85em;
+	    margin-top: 10px;
+
+	    ul {
+		    margin: 0;
+		    padding: 0 35px;
+			}
     }
   }
 }

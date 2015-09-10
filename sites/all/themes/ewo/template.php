@@ -4,11 +4,6 @@
 */
 
 
-// function ewo_preprocess_html(&$vars) {
-//   sdpm($vars);
-// }
-
-
 function ewo_preprocess_page(&$vars,$hook) {
   $path = drupal_get_path('theme', 'ewo');
   //googlefont
@@ -99,6 +94,10 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
       $form['field_services_tid']['#options']['All'] = 'Services';
       $form['field_church_tid']['#options']['All'] = 'Ministry';
     }
+  }
+
+  if ($form_id == 'user_login') {
+  	$form['gacode']['#title'] = "2-Factor Auth Code";
   }
 
   // Login
