@@ -267,6 +267,10 @@ input[type="checkbox"] {
     color: #3d3738;
     margin: 0 1%; }
 
+input#edit-gacode {
+  padding: 6px;
+  min-width: 150px; }
+
 .chosen-container .chosen-single, .chosen-container.chosen-with-drop .chosen-single {
   background: #ecf0f1;
   border: none;
