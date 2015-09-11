@@ -32,6 +32,31 @@ function ew_base_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_delete_user_after_90_days_inactivity'] = entity_import('rules_config', '{ "rules_delete_user_after_90_days_inactivity" : {
+      "LABEL" : "Delete User after 90 days inactivity",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_login" : [] },
+      "IF" : [
+        { "user_has_role" : {
+            "account" : [ "account" ],
+            "roles" : { "value" : { "3" : "3", "4" : "4" } }
+          }
+        },
+        { "data_is" : {
+            "data" : [ "account:last-access" ],
+            "op" : "\\u003C",
+            "value" : { "select" : "site:current-date", "date_offset" : { "value" : -7776000 } }
+          }
+        }
+      ],
+      "DO" : [
+        { "user_block" : { "account" : [ "account" ] } },
+        { "drupal_message" : { "message" : "Accounts with inactivity longer than 3 months are automatically blocked. Your account can be re-instated by a site admin with access." } }
+      ]
+    }
+  }');
   $items['rules_new_flag'] = entity_import('rules_config', '{ "rules_new_flag" : {
       "LABEL" : "New Flag",
       "PLUGIN" : "reaction rule",
@@ -39,9 +64,10 @@ function ew_base_default_rules_configuration() {
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : { "node_insert" : [], "node_update" : [] },
       "IF" : [
-        { "node_is_of_type" : {
-            "node" : [ "node" ],
-            "type" : { "value" : { "artist_worship_leader" : "artist_worship_leader", "song" : "song" } }
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node" ],
+            "type" : "node",
+            "bundle" : { "value" : { "artist_worship_leader" : "artist_worship_leader", "song" : "song" } }
           }
         }
       ],
