@@ -215,22 +215,8 @@ function ew_pc_integration_api_sync_song($nid) {
     drupal_set_message('There was a problem trying to add this song or you may not have permissions to add songs in your Planning Center Online account.', 'error');
   }
 
-
-  //Testing - remove
-  /*$url = "https://services.planningcenteronline.com/songs.json?include_arrangements=true";
-  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
-  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
-  $headers = array();
-  $headers[] = "Content-type: application/json";
-  $response = run_curl($request, "GET", $headers);
-  $test_song = json_decode($response);
-  dpm($test_song);*/
-
-
   // Take us back to song page
   drupal_goto('node/'.$song->nid);
-
-  //return '';
 }
 
 /**
@@ -245,18 +231,6 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $k
   if (empty($song)) {
     return FALSE;
   }
-
-  // Try to upload song first
-  /*if (!empty($song['mp3_url'])) {
-
-    $url = "http://services.planningcenteronline.com/songs/import?ccli_number=".$song['ccli_id']."&files%5B%5D%5Burl%5D=".urlencode($song['mp3_url']);
-    $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
-    $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
-    $headers = array();
-    $headers[] = "Content-type: application/json";
-    $response = run_curl($request, "GET", $headers);
-    $mp3_results = json_decode($response);
-  }*/
 
   // Turn into json
   $song_json = json_encode($song);
@@ -347,7 +321,6 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $k
             $headers[] = "Content-type: application/json";
             $response = run_curl($request, "POST", $headers, $youtube_json);
             $new_youtube_attachment = json_decode($response);
-            dpm($new_youtube_attachment);
           }
         }
 
