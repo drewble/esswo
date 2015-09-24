@@ -210,26 +210,28 @@
  *   );
  * @endcode
  */
-if (file_exists('./' . conf_path() . '/local.settings.php')) {
-  require './' . conf_path() . '/local.settings.php';
-}
-else {
-	require_once(sprintf("%s/.dbc.php",dirname($_SERVER['DOCUMENT_ROOT'])));
-	$databases = array (
-	  'default' =>
-	  array (
-	    'default' =>
-	    array (
-	      'database' => DB_NAME,
-	      'username' => DB_USER,
-	      'password' => DB_PASSWORD,
-	      'host' => DB_HOST,
-	      'port' => '',
-	      'driver' => 'mysql',
-	      'prefix' => '',
-	    ),
-	  ),
-	);
+if (!defined('PANTHEON_ENVIRONMENT')) {
+	if (file_exists('./' . conf_path() . '/local.settings.php')) {
+	  require './' . conf_path() . '/local.settings.php';
+	}
+	else {
+		require_once(sprintf("%s/.dbc.php",dirname($_SERVER['DOCUMENT_ROOT'])));
+		$databases = array (
+		  'default' =>
+		  array (
+		    'default' =>
+		    array (
+		      'database' => DB_NAME,
+		      'username' => DB_USER,
+		      'password' => DB_PASSWORD,
+		      'host' => DB_HOST,
+		      'port' => '',
+		      'driver' => 'mysql',
+		      'prefix' => '',
+		    ),
+		  ),
+		);
+	}
 }
 
 /**
