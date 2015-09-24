@@ -96,6 +96,7 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
+
   if ($form_id == 'user_login') {
   	$form['gacode']['#title'] = "2-Factor Auth Code";
   }

@@ -334,4 +334,3 @@ function ew_pc_integration_api_authenticated($consumer, $access_token) {
 }
 
 
-
