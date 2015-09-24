@@ -43,3 +43,7 @@ Thumbs.db
 ##########
 .sass-cache
 node_modules
+
+# LOCAL DEV #
+##########
+sites/default/local.settings.php

@@ -181,6 +181,34 @@ function ew_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'encrypt_submissions_encrypt_msg';
+  $strongarm->value = 'Encrypting...';
+  $export['encrypt_submissions_encrypt_msg'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'encrypt_submissions_forms';
+  $strongarm->value = 'user_register_form';
+  $export['encrypt_submissions_forms'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'encrypt_submissions_jcryption_location';
+  $strongarm->value = 'sites/all/libraries/jcryption';
+  $export['encrypt_submissions_jcryption_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'encrypt_submissions_visibility';
+  $strongarm->value = 'only_listed';
+  $export['encrypt_submissions_visibility'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'google_tag_compact_tag';
   $strongarm->value = 1;
   $export['google_tag_compact_tag'] = $strongarm;
