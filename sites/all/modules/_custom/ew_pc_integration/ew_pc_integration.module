@@ -166,7 +166,6 @@ function ew_pc_integration_api_sync_song($nid) {
     $pc_song['mp3_url'] = file_create_url($song->field_mp3[LANGUAGE_NONE][0]['uri']);
   }*/
 
-
   // Build our arrangement object to sync with PC
   $pc_arrangement = array();
   $pc_arrangement['name'] = 'Original Recording ('.$artist_full_name.')';
@@ -179,6 +178,26 @@ function ew_pc_integration_api_sync_song($nid) {
   // Grab chord chart
   if (!empty($song->field_lyrics_chords[LANGUAGE_NONE][0]['value'])) {
     $pc_arrangement['chord_chart'] = $song->field_lyrics_chords[LANGUAGE_NONE][0]['value'];
+  }
+
+  // Spotify
+  if (!empty($song->field_spotify[LANGUAGE_NONE][0]['spotifyfield'])) {
+    module_load_include('module', 'spotifyfield');
+    $track_info = _spotifyfield_format_value($song->field_spotify[LANGUAGE_NONE][0]['spotifyfield']);
+    $track_id_parts = explode(':', $track_info['link']);
+    $track_id = end($track_id_parts);
+    $pc_arrangement['spotify_track_ids'][] = $track_id;
+  }
+
+  // Youtube
+  $pc_arrangement['youtube_urls'] = array();
+  if (!empty($song->field_videos[LANGUAGE_NONE])) {
+    foreach($song->field_videos[LANGUAGE_NONE] as $video_data) {
+      if ($video_data['filemime'] == 'video/youtube' && !empty($video_data['uri'])) {
+        $youtube_url = file_create_url($video_data['uri']);
+        $pc_arrangement['youtube_urls'][] = $youtube_url;
+      }
+    }
   }
 
   // Build key
@@ -196,22 +215,8 @@ function ew_pc_integration_api_sync_song($nid) {
     drupal_set_message('There was a problem trying to add this song or you may not have permissions to add songs in your Planning Center Online account.', 'error');
   }
 
-
-  //Testing - remove
-  /*$url = "https://services.planningcenteronline.com/songs.json?include_arrangements=true";
-  $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
-  $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
-  $headers = array();
-  $headers[] = "Content-type: application/json";
-  $response = run_curl($request, "GET", $headers);
-  $test_song = json_decode($response);
-  dpm($test_song);*/
-
-
   // Take us back to song page
   drupal_goto('node/'.$song->nid);
-
-  //return '';
 }
 
 /**
@@ -226,18 +231,6 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $k
   if (empty($song)) {
     return FALSE;
   }
-
-  // Try to upload song first
-  /*if (!empty($song['mp3_url'])) {
-
-    $url = "http://services.planningcenteronline.com/songs/import?ccli_number=".$song['ccli_id']."&files%5B%5D%5Burl%5D=".urlencode($song['mp3_url']);
-    $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "GET", $url);
-    $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
-    $headers = array();
-    $headers[] = "Content-type: application/json";
-    $response = run_curl($request, "GET", $headers);
-    $mp3_results = json_decode($response);
-  }*/
 
   // Turn into json
   $song_json = json_encode($song);
@@ -290,6 +283,47 @@ function ew_pc_integration_sync_song($song = array(), $arrangement = array(), $k
         $headers[] = "Content-type: application/json";
         $response = run_curl($request, "POST", $headers, $key_json);
         $new_key = json_decode($response);
+
+        // Add spotify
+        if (!empty($arrangement['spotify_track_ids'])) {
+          foreach ($arrangement['spotify_track_ids'] as $spotify_track_id) {
+            $spotify = array(
+              'item_type' => 'Arrangement',
+              'item_id' => $new_arrangement->id,
+              'spotify_track_id' => $spotify_track_id,
+            );
+            $spotify_json = json_encode($spotify);
+
+            $url = "https://services.planningcenteronline.com/attachments/spotify.json";
+            $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
+            $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+            $headers = array();
+            $headers[] = "Content-type: application/json";
+            $response = run_curl($request, "POST", $headers, $spotify_json);
+            $new_spotify_attachment = json_decode($response);
+          }
+        }
+
+        // Add youtube
+        if (!empty($arrangement['youtube_urls'])) {
+          foreach ($arrangement['youtube_urls'] as $youtube_url) {
+            $youtube = array(
+              'item_type' => 'Arrangement',
+              'item_id' => $new_arrangement->id,
+              'youtube_url' => $youtube_url,
+            );
+            $youtube_json = json_encode($youtube);
+
+            $url = "https://services.planningcenteronline.com/attachments/youtube.json";
+            $request = OAuthRequest::from_consumer_and_token($consumer, $access_token, "POST", $url);
+            $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $access_token);
+            $headers = array();
+            $headers[] = "Content-type: application/json";
+            $response = run_curl($request, "POST", $headers, $youtube_json);
+            $new_youtube_attachment = json_decode($response);
+          }
+        }
+
       }
 
     }
