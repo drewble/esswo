@@ -210,11 +210,16 @@
  *   );
  * @endcode
  */
+
+// If NOT Pantheon
 if (!defined('PANTHEON_ENVIRONMENT')) {
+	// If local (local.settings.php is gitignored)
 	if (file_exists('./' . conf_path() . '/local.settings.php')) {
 	  require './' . conf_path() . '/local.settings.php';
 	}
+	// Assumes iNetU (Sony)
 	else {
+		// DB Info
 		require_once(sprintf("%s/.dbc.php",dirname($_SERVER['DOCUMENT_ROOT'])));
 		$databases = array (
 		  'default' =>
@@ -286,7 +291,7 @@ $drupal_hash_salt = 'iJyUVyKMUpF_yyrxWCT2uJA9GFu8yarh7prKIT-PcPc';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-# $base_url = 'http://www.example.com';  // NO trailing slash!
+$base_url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
 
 /**
  * PHP settings:
