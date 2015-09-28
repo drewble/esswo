@@ -41,6 +41,11 @@ function d7_csbase_form_alter(&$form, &$form_state, $form_id) {
       $form['mergevars']['EMAIL']['#attributes']['placeholder'] = t('enter email address');
     }
   }
+
+  // Register form
+  if ($form_id  == 'user_register_form') {
+  	$form['#action'] = '';
+  }
 }
 
 /**
