@@ -39,16 +39,6 @@ function ew_base_user_default_permissions() {
     'module' => 'better_messages',
   );
 
-  // Exported permission: 'access encrypt submissions'.
-  $permissions['access encrypt submissions'] = array(
-    'name' => 'access encrypt submissions',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'developer' => 'developer',
-    ),
-    'module' => 'encrypt_submissions',
-  );
-
   // Exported permission: 'access homepage_feature node view'.
   $permissions['access homepage_feature node view'] = array(
     'name' => 'access homepage_feature node view',
@@ -185,15 +175,6 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'menu_admin_per_menu',
-  );
-
-  // Exported permission: 'administer encrypt submissions'.
-  $permissions['administer encrypt submissions'] = array(
-    'name' => 'administer encrypt submissions',
-    'roles' => array(
-      'developer' => 'developer',
-    ),
-    'module' => 'encrypt_submissions',
   );
 
   // Exported permission: 'administer flags'.
