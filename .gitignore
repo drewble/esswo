@@ -47,3 +47,14 @@ node_modules
 # LOCAL DEV #
 ##########
 sites/default/local.settings.php
+
+# iNetU file removal requirements #
+##########
+CHANGELOG.txt
+INSTALL.mysql.txt
+INSTALL.pgsql.txt
+install.php
+INSTALL.txt
+LICENSE.txt
+MAINTAINERS.txt
+UPGRADE.txt
