@@ -68,11 +68,6 @@ ministry or service to find the perfect song.';
   if ($vars['theme_hook_suggestions'][0] == 'page__spotify_callback') {
     drupal_add_js($path .'/assets/js/spotify_add_to_playlist.js', array('group' => JS_THEME));
   }
-
-  // If a Profile page
-  if (in_array('page__user__%', $vars['theme_hook_suggestions'])) {
-  	drupal_set_title($vars['page']['content']['system_main']['#account']->mail);
-  }
 }
 
 
