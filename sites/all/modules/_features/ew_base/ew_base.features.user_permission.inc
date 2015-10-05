@@ -112,6 +112,15 @@ function ew_base_user_default_permissions() {
     'module' => 'block_access',
   );
 
+  // Exported permission: 'administer CAPTCHA settings'.
+  $permissions['administer CAPTCHA settings'] = array(
+    'name' => 'administer CAPTCHA settings',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'captcha',
+  );
+
   // Exported permission: 'administer addtoany'.
   $permissions['administer addtoany'] = array(
     'name' => 'administer addtoany',
@@ -310,6 +319,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'administer recaptcha'.
+  $permissions['administer recaptcha'] = array(
+    'name' => 'administer recaptcha',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'recaptcha',
   );
 
   // Exported permission: 'administer services vocabulary terms'.
@@ -551,6 +569,15 @@ function ew_base_user_default_permissions() {
       'developer' => 'developer',
     ),
     'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'skip CAPTCHA'.
+  $permissions['skip CAPTCHA'] = array(
+    'name' => 'skip CAPTCHA',
+    'roles' => array(
+      'developer' => 'developer',
+    ),
+    'module' => 'captcha',
   );
 
   // Exported permission: 'unflag new'.
