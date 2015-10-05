@@ -365,6 +365,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'client' => 'client',
       'developer' => 'developer',
     ),
@@ -677,6 +678,7 @@ function d7_base_feature_user_default_permissions() {
   $permissions['select account cancellation method'] = array(
     'name' => 'select account cancellation method',
     'roles' => array(
+      'client' => 'client',
       'developer' => 'developer',
     ),
     'module' => 'user',
