@@ -518,14 +518,14 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_secret_key';
-  $strongarm->value = '6Ld9Ig4TAAAAAKaSIb_z-Rdew-N89T2qASKEL0Qv';
+  $strongarm->value = '6LcdIw4TAAAAAA7E9t2cNPTwuWUybGxUNG0wkeC0';
   $export['recaptcha_secret_key'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'recaptcha_site_key';
-  $strongarm->value = '6Ld9Ig4TAAAAAOHIJ-NLeTPTlc-SEume5_7GOvD3';
+  $strongarm->value = '6LcdIw4TAAAAAMomczGXil-yM5P0-8_uve3Yfnfd';
   $export['recaptcha_site_key'] = $strongarm;
 
   $strongarm = new stdClass();
