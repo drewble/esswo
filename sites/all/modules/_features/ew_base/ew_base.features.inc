@@ -85,7 +85,7 @@ function ew_base_default_mailchimp_signup() {
       "path" : "",
       "submit_button" : "Submit",
       "confirmation_message" : "You have been successfully subscribed.",
-      "destination" : "",
+      "destination" : "thanks-subscribing-newsletter",
       "mergefields" : {
         "EMAIL" : {
           "name" : "Email Address",

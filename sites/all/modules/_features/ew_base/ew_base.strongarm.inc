@@ -253,17 +253,7 @@ function ew_base_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'captcha_placement_map_cache';
   $strongarm->value = array(
-    'user_login_block' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
     'user_register_form' => array(
-      'path' => array(),
-      'key' => 'actions',
-      'weight' => 99,
-    ),
-    'user_login' => array(
       'path' => array(),
       'key' => 'actions',
       'weight' => 99,
