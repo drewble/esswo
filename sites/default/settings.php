@@ -236,6 +236,9 @@ if (!defined('PANTHEON_ENVIRONMENT')) {
 		    ),
 		  ),
 		);
+
+		// Set Base URL for https
+		$base_url = 'https://' . $_SERVER['HTTP_HOST'];
 	}
 }
 
@@ -291,12 +294,12 @@ $drupal_hash_salt = 'iJyUVyKMUpF_yyrxWCT2uJA9GFu8yarh7prKIT-PcPc';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-if (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') {
-  $base_url = 'https://' . $_SERVER['HTTP_HOST'];
-}
-else {
-  $base_url = 'http://' . $_SERVER['HTTP_HOST'];
-}
+// if (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') {
+  
+// }
+// else {
+//   $base_url = 'http://' . $_SERVER['HTTP_HOST'];
+// }
 
 /**
  * PHP settings:
