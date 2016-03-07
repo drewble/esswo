@@ -52,13 +52,13 @@
       $('.field-type-spotifyfield + div').remove()
 
     # anonymous header link clicks
-  	$('.not-logged-in .hero .btns a').click (e) ->
-  		if !$('.modal-message').length
-  			$('<p class="modal-message">You must be logged in to complete this action.</p>').prependTo('#myModal .modal-body')
-  		$('#myModal').modal 'show'
-  		e.preventDefault()
+    $('.not-logged-in .hero .btns a').click (e) ->
+      if !$('.modal-message').length
+        $('<p class="modal-message">You must be logged in to complete this action.</p>').prependTo('#myModal .modal-body')
+      $('#myModal').modal 'show'
+      e.preventDefault()
 
-  	$('#myModal button').on 'click', ->
+    $('#myModal button').on 'click', ->
       $('.modal-message').remove()
 
 ) jQuery

@@ -35,7 +35,7 @@ $videos = count($view->result);
   <?php print render($title_suffix); ?>
 
   <?php if (!empty($rows)): ?>
-  	<?php if ($videos < 3): ?>
+    <?php if ($videos < 3): ?>
     <div class="view-header<?php if ($videos == 2): ?> total-3<?php endif; ?>">
       <?php print $header; ?>
     </div>
@@ -55,10 +55,10 @@ $videos = count($view->result);
   <?php endif; ?>
 
   <?php if ($rows): ?>
-  	<!-- if there are 4 videos total -->
-  	<?php if($videos == 3): ?>
-  		<?php print views_embed_view('songs','entity_view_7', $view->args[0]); ?>
-  	<!-- if there are 3 videos total -->
+    <!-- if there are 4 videos total -->
+    <?php if($videos == 3): ?>
+      <?php print views_embed_view('songs','entity_view_7', $view->args[0]); ?>
+    <!-- if there are 3 videos total -->
     <?php elseif ($videos > 1 && $videos < 3): ?>
       <div class="view-content">
         <?php print $rows; ?>

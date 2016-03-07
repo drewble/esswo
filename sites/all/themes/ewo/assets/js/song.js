@@ -1,6 +1,6 @@
 (function() {
   (function($) {
-    $(function() {
+    return $(function() {
       var client_id, g_access_token, g_name, g_tracks, g_username, hash, redirect_uri, spotifyLogin;
       g_access_token = '';
       g_name = 'Essential Worship';
@@ -42,18 +42,18 @@
         $('.vid-description:contains("' + hash + '")').prev().click();
       }
       if ($('.field-type-spotifyfield').length) {
-        return $('.field-type-spotifyfield + div').remove();
+        $('.field-type-spotifyfield + div').remove();
       }
-    });
-    $('.not-logged-in .hero .btns a').click(function(e) {
-      if (!$('.modal-message').length) {
-        $('<p class="modal-message">You must be logged in to complete this action.</p>').prependTo('#myModal .modal-body');
-      }
-      $('#myModal').modal('show');
-      return e.preventDefault();
-    });
-    return $('#myModal button').on('click', function() {
-      return $('.modal-message').remove();
+      $('.not-logged-in .hero .btns a').click(function(e) {
+        if (!$('.modal-message').length) {
+          $('<p class="modal-message">You must be logged in to complete this action.</p>').prependTo('#myModal .modal-body');
+        }
+        $('#myModal').modal('show');
+        return e.preventDefault();
+      });
+      return $('#myModal button').on('click', function() {
+        return $('.modal-message').remove();
+      });
     });
   })(jQuery);
 
