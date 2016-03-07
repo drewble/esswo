@@ -61,11 +61,11 @@ header {
 
 body.admin-menu {
   header {
-  	top:46px;
+    top:46px;
 
-  	@include desk {
-	    top:29px;
-	  }
+    @include desk {
+      top:29px;
+    }
   }
 }
 
@@ -212,15 +212,15 @@ header {
 
 // Anonymous
 .not-logged-in {
-	header nav .logged-in {
-		display: none;
-	}
+  header nav .logged-in {
+    display: none;
+  }
 }
 
 // Logged-in
 .logged-in {
-	header nav .logged-in a {
-		text-align: left;
-	}
+  header nav .logged-in a {
+    text-align: left;
+  }
 }
 

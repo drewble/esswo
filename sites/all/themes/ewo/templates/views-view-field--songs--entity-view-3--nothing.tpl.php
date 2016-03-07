@@ -29,41 +29,41 @@ $scripture = '';
 $songwriters = '';
 $church = '';
 if (!empty($row->field_field_theme)) {
-	$theme = '<div><span>Theme:</span>' . $row->field_field_theme[0]['rendered']['#markup'] . '</div>';
+  $theme = '<div><span>Theme:</span>' . $row->field_field_theme[0]['rendered']['#markup'] . '</div>';
 }
 if (!empty($row->field_field_services)) {
-	$numServices = count($row->field_field_services);
-	$i = 0;
-	$services = '<div><span>Service:</span>';
-	foreach ($row->field_field_services as $key => $value) {
-		if(!(++$i === $numServices)) {
-			$services .= $row->field_field_services[$key]['rendered']['#markup'] . ' / ';
-		}
-		else {
-			$services .= $row->field_field_services[$key]['rendered']['#markup'];
-		}
-	} 
-	$services .= '</div>';
+  $numServices = count($row->field_field_services);
+  $i = 0;
+  $services = '<div><span>Service:</span>';
+  foreach ($row->field_field_services as $key => $value) {
+    if(!(++$i === $numServices)) {
+      $services .= $row->field_field_services[$key]['rendered']['#markup'] . ' / ';
+    }
+    else {
+      $services .= $row->field_field_services[$key]['rendered']['#markup'];
+    }
+  } 
+  $services .= '</div>';
 }
 if (!empty($row->field_field_scripture)) {
-	$scripture = '<div><span>Scripture:</span>' . $row->field_field_scripture[0]['rendered']['#markup'] . '</div>';
+  $scripture = '<div><span>Scripture:</span>' . $row->field_field_scripture[0]['rendered']['#markup'] . '</div>';
 }
 if (!empty($row->field_field_songwriters)) {
-	$songwriters = '<div><span>Songwriters</span>' . $row->field_field_songwriters[0]['rendered']['#markup'] . '</div>';
+  $songwriters = '<div><span>Songwriters</span>' . $row->field_field_songwriters[0]['rendered']['#markup'] . '</div>';
 }
 if (!empty($row->field_field_church)) {
-	$numChurch = count($row->field_field_church);
-	$i = 0;
-	$church = '<div><span>Ministry:</span>';
-	foreach ($row->field_field_church as $key => $value) {
-		if(!(++$i === $numChurch)) {
-			$church .= $row->field_field_church[$key]['rendered']['#markup'] . ' / ';
-		}
-		else {
-			$church .= $row->field_field_church[$key]['rendered']['#markup'];
-		}
-	} 
-	$church .= '</div>';
+  $numChurch = count($row->field_field_church);
+  $i = 0;
+  $church = '<div><span>Ministry:</span>';
+  foreach ($row->field_field_church as $key => $value) {
+    if(!(++$i === $numChurch)) {
+      $church .= $row->field_field_church[$key]['rendered']['#markup'] . ' / ';
+    }
+    else {
+      $church .= $row->field_field_church[$key]['rendered']['#markup'];
+    }
+  } 
+  $church .= '</div>';
 }
 ?>
 <div class="key-tempo">

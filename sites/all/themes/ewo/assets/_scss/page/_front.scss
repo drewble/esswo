@@ -4,353 +4,353 @@
 
 // Hero
 .front {
-	.hero {
-		@include clearfix;
-		max-width: none;
-		padding: 0;
+  .hero {
+    @include clearfix;
+    max-width: none;
+    padding: 0;
 
-		h1 {
-			display: none;
-		}
+    h1 {
+      display: none;
+    }
 
-		// Headline 1
-		h3 {
-			color: #fff;
-			font-size: 18px;
-			margin-bottom: 14px;
-			text-transform: uppercase;
-		}
+    // Headline 1
+    h3 {
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
 
-		// Headline 2
-		h2 {
-			color: $red;
-			font-style: normal;
-			font-size: 26px;
-			line-height: 1em;
-			margin-bottom: 5px;
-			text-transform: uppercase;
+    // Headline 2
+    h2 {
+      color: $red;
+      font-style: normal;
+      font-size: 26px;
+      line-height: 1em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
 
-			@include lgMobile {
-				font-size: 30px;
-			}
+      @include lgMobile {
+        font-size: 30px;
+      }
 
-			@include desk {
-				font-size: 38px;
-			}
-		}
+      @include desk {
+        font-size: 38px;
+      }
+    }
 
-		// Headline 3
-		h4 {
-			color: $light;
-			font: 13px $font;
-			font-style: italic;
-			margin: 0 0 30px;
-		}
-	}
+    // Headline 3
+    h4 {
+      color: $light;
+      font: 13px $font;
+      font-style: italic;
+      margin: 0 0 30px;
+    }
+  }
 
-	.feature {
-	  position: relative;
+  .feature {
+    position: relative;
 
-	  @include tablet {
-		  float: left;
-		  width: 50%;
-		}
+    @include tablet {
+      float: left;
+      width: 50%;
+    }
 
-		.content {
-			background-repeat:no-repeat;
-			background-size:cover;
-			display: table;
-			height: 404px;
-			width: 101%;
+    .content {
+      background-repeat:no-repeat;
+      background-size:cover;
+      display: table;
+      height: 404px;
+      width: 101%;
 
-			@include tablet {
-				height: 507px;
-			}
+      @include tablet {
+        height: 507px;
+      }
 
-			@include desk {
-				height: 609px;
-			}
-		}
-	}
+      @include desk {
+        height: 609px;
+      }
+    }
+  }
 
-	.file-image {
-		left: 0;
-		position: absolute;
-		top:0;
-		z-index: 0;
-	}
+  .file-image {
+    left: 0;
+    position: absolute;
+    top:0;
+    z-index: 0;
+  }
 
-	.group-info {
-		display: table-cell;
-		padding:0 5% 9%;
-	  position: relative;
-	  text-align: left;
-	  vertical-align: bottom;
-	  z-index: 1;
+  .group-info {
+    display: table-cell;
+    padding:0 5% 9%;
+    position: relative;
+    text-align: left;
+    vertical-align: bottom;
+    z-index: 1;
 
-	  @include tablet {
-	  	padding:0 5% 8%;
-	  }
+    @include tablet {
+      padding:0 5% 8%;
+    }
 
-	  @include desk {
-	  	padding:0 11% 9%;
-	  }
-	}
+    @include desk {
+      padding:0 11% 9%;
+    }
+  }
 }
 
 /////// Content
 
 // Song Search
 .front {
-	#views-exposed-form-songs-page {
-		height: 94px;
-		left: -2.5%;
-		margin: 20px 0 20px;
-	  overflow: hidden;
-	  padding: 0 2%;
-  	position: relative;
-	  width: 101%;
+  #views-exposed-form-songs-page {
+    height: 94px;
+    left: -2.5%;
+    margin: 20px 0 20px;
+    overflow: hidden;
+    padding: 0 2%;
+    position: relative;
+    width: 101%;
 
-	  @include tablet {
-	  	margin: 60px 0 50px;
-	  }
+    @include tablet {
+      margin: 60px 0 50px;
+    }
 
-	  .clear-filters {
-	  	display: none;
-	  }
-	}
+    .clear-filters {
+      display: none;
+    }
+  }
 }
 
 // 3 Across
 #block-views-popular-content-block,
 #block-views-new-content-block,
 #block-views-banners-banner-sidebar-top {
-	@include desk {
-		@include span-columns(3.95);
-	}
+  @include desk {
+    @include span-columns(3.95);
+  }
 
-	.title {
-		@include border-btm;
-		padding: 10px 0;
-		
-		&:after {
-			background-color: $base;
-			left: 0;
-			margin-left: 0;
-			width: 80%;
-		}
+  .title {
+    @include border-btm;
+    padding: 10px 0;
+    
+    &:after {
+      background-color: $base;
+      left: 0;
+      margin-left: 0;
+      width: 80%;
+    }
 
-		span {
-			float: left;
-		  margin-right: 7px;
-		}
-	}
+    span {
+      float: left;
+      margin-right: 7px;
+    }
+  }
 
 
 }
 
 .popular-content, .new-content, .news-listing {
-	> ul, > ul > li {
-		margin:0;
-		padding:0;
-	}
+  > ul, > ul > li {
+    margin:0;
+    padding:0;
+  }
 
-	> ul > li {
-		list-style:none;
-		margin: 20px 0;
+  > ul > li {
+    list-style:none;
+    margin: 20px 0;
 
-		h2 {
-			font-size: 20px;
-			margin-bottom: 5px;
-			text-transform: none;
+    h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      text-transform: none;
 
-			a {
-				text-decoration: none;
-			}
-		}
+      a {
+        text-decoration: none;
+      }
+    }
 
-		h3 {
-			color: #3d3738;
-			font-size: 14px;
-			font-style: italic;
-		}
-	}
+    h3 {
+      color: #3d3738;
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
 }
 
 #block-views-new-content-block {
-	margin: 40px 0;
+  margin: 40px 0;
 
-	@include desk {
-		margin: 0;
-	}
+  @include desk {
+    margin: 0;
+  }
 
-	.title {
-		@include new;
-	}
+  .title {
+    @include new;
+  }
 }
 
 #block-views-banners-banner-sidebar-top {
-	
-	@include desk {
-		@include omega;
-		float: left;
-		margin-top: 30px;
-	}
+  
+  @include desk {
+    @include omega;
+    float: left;
+    margin-top: 30px;
+  }
 
-	.views-field-field-banner-image {
-		a {
-			background-color:$light;
-			display: block;
-		}
+  .views-field-field-banner-image {
+    a {
+      background-color:$light;
+      display: block;
+    }
 
-		img {
-			display: block;
-			width: 100%;
+    img {
+      display: block;
+      width: 100%;
 
-			@include desk {
-				@include transform(scale(.92));
-			}
-			@include transition(all .3s);
+      @include desk {
+        @include transform(scale(.92));
+      }
+      @include transition(all .3s);
 
-			&:hover {
-				left:0;
-				@include transform(scale(1));
-				top:0;
-			}
-		}
-	}
+      &:hover {
+        left:0;
+        @include transform(scale(1));
+        top:0;
+      }
+    }
+  }
 }
 
 #block-views-news-news-front {
-	clear: both;
-	padding-top: 50px;
-	
-	> .title {
-		@include border-btm;
-		font-size: 14px;
-		margin:0 auto;
-		width: 100px;
+  clear: both;
+  padding-top: 50px;
+  
+  > .title {
+    @include border-btm;
+    font-size: 14px;
+    margin:0 auto;
+    width: 100px;
 
-		@include desk {
-			margin:0 auto 50px;
-		}
+    @include desk {
+      margin:0 auto 50px;
+    }
 
-		&:after {
-			background-color:$base;
-			bottom: -10px;
-			margin-left: -42px;
-			width: 84px;
-		}
-	}
+    &:after {
+      background-color:$base;
+      bottom: -10px;
+      margin-left: -42px;
+      width: 84px;
+    }
+  }
 }
 
 .news-listing {
-	clear:left;
-	padding: 40px 0;
-	width:100%;
+  clear:left;
+  padding: 40px 0;
+  width:100%;
 
-	> ul {
-		> li {
-			border-bottom:1px solid #c4c3c3;
-			margin: 0 0 20px;
-			overflow: hidden;
-			padding-bottom:20px;
-			position: relative;
+  > ul {
+    > li {
+      border-bottom:1px solid #c4c3c3;
+      margin: 0 0 20px;
+      overflow: hidden;
+      padding-bottom:20px;
+      position: relative;
 
-			@include desk {
-				margin-bottom: 0;
-				padding-bottom:0;
-			}
+      @include desk {
+        margin-bottom: 0;
+        padding-bottom:0;
+      }
 
-			&:first-child:last-child, &:last-child {
-				border-bottom:none;
-			}
+      &:first-child:last-child, &:last-child {
+        border-bottom:none;
+      }
 
-			a {
-				color: #fff;
-				text-decoration: none;
+      a {
+        color: #fff;
+        text-decoration: none;
 
-				@include desk {
-					color: $base;
-				}
+        @include desk {
+          color: $base;
+        }
 
-				&:hover {
-					color: #fff;
+        &:hover {
+          color: #fff;
 
-					h2 {
-						color: #fff;
-					}
+          h2 {
+            color: #fff;
+          }
 
-					.author {
-						color: #fff;
-					}
-				}
+          .author {
+            color: #fff;
+          }
+        }
 
-				.field-type-taxonomy-term-reference {
-					border-left:1px solid #3b3738;
-					display: inline-block;
-					line-height: .9em;
-					padding-left: 7px;
-					margin-left: 7px;
-				}
-			}
+        .field-type-taxonomy-term-reference {
+          border-left:1px solid #3b3738;
+          display: inline-block;
+          line-height: .9em;
+          padding-left: 7px;
+          margin-left: 7px;
+        }
+      }
 
-			h2 {
-				color: #fff;
-				font-size: 36px;
-				margin: 7px 0 2px;
-				text-transform: uppercase;
+      h2 {
+        color: #fff;
+        font-size: 36px;
+        margin: 7px 0 2px;
+        text-transform: uppercase;
 
-				@include desk {
-					color: $red;
-				}
-			}
-		}
+        @include desk {
+          color: $red;
+        }
+      }
+    }
 
-		.author {
-			color: #7c7a7a;
-			font-size:14px;
-			font-style: italic;
-		}
-	}
+    .author {
+      color: #7c7a7a;
+      font-size:14px;
+      font-style: italic;
+    }
+  }
 
-	.news-copy {
-		display: block;
-		overflow: hidden;
-		padding: 40px 0;
-		position:relative;
-		text-align: center;
-		z-index: 1;
-		
-		&:hover .cover {
-			visibility: visible;
-			@include transform(scale(1));
-		}
+  .news-copy {
+    display: block;
+    overflow: hidden;
+    padding: 40px 0;
+    position:relative;
+    text-align: center;
+    z-index: 1;
+    
+    &:hover .cover {
+      visibility: visible;
+      @include transform(scale(1));
+    }
 
-		.cover {
-			background-color: #fff;
-			content: " ";
-			height: 100%;
-			left: 0;
-			position: absolute;
-			top:0;
-			width: 100%;
-			z-index: 0;
+    .cover {
+      background-color: #fff;
+      content: " ";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top:0;
+      width: 100%;
+      z-index: 0;
 
-			@include desk {
-				visibility: hidden;
-				-webkit-backface-visibility: hidden;
-				@include transform(scale(1.1));
-				@include transition(transform .9s);
-			}
-		}
+      @include desk {
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        @include transform(scale(1.1));
+        @include transition(transform .9s);
+      }
+    }
 
-		.info {
-			position: relative;
-			z-index: 1;
-			-webkit-font-smoothing: antialiased
-		}
-	}
+    .info {
+      position: relative;
+      z-index: 1;
+      -webkit-font-smoothing: antialiased
+    }
+  }
 }
 
 
