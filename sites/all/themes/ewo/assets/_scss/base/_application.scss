@@ -37,33 +37,33 @@
 }
 
 .with-side {
-	@include span-columns(7.5);
+  @include span-columns(7.5);
 }
 
 .sidebar {
-	@include span-columns(4);
-	@include shift(.5);
+  @include span-columns(4);
+  @include shift(.5);
 
-	nav {
-		background-color: $light;
+  nav {
+    background-color: $light;
 
-		> ul, > ul li {
-			list-style: none;
-			margin: 0;
-			padding:0;
-		}
+    > ul, > ul li {
+      list-style: none;
+      margin: 0;
+      padding:0;
+    }
 
-		> ul a {
-			background-color: $light;
-			display: block;
-			padding:20px;
+    > ul a {
+      background-color: $light;
+      display: block;
+      padding:20px;
 
-			&:hover {
-				background-color:$red;
-				color: #fff;
-			}
-		}
-	}
+      &:hover {
+        background-color:$red;
+        color: #fff;
+      }
+    }
+  }
 }
 
 .bread {

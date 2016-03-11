@@ -47,13 +47,13 @@ input[type="submit"] {
 }
 
 input[type="checkbox"] {
-	float: left;
+  float: left;
   margin: 7px;
 
-	& + label {
-		color: $base;
-	  margin: 0 1%;
-	}
+  & + label {
+    color: $base;
+    margin: 0 1%;
+  }
 }
 
 input#edit-gacode {
@@ -161,9 +161,9 @@ input#edit-gacode {
 
 // Mailchimp
 .logged-in {
-	#block-mailchimp-signup-registration {
-		display: none;
-	}
+  #block-mailchimp-signup-registration {
+    display: none;
+  }
 }
 .field-type-mailchimp-lists-subscription {
   fieldset {
@@ -179,25 +179,25 @@ input#edit-gacode {
 }
 
 .password-parent, .confirm-parent {
-	color:$red;
-	width:auto;
+  color:$red;
+  width:auto;
 
-	> div {
-		margin-right: 2em;
-		margin-top: 0;
-	}
+  > div {
+    margin-right: 2em;
+    margin-top: 0;
+  }
 }
 
 .confirm-parent {
-	margin-bottom:0;
+  margin-bottom:0;
 }
 
 div.password-confirm {
-	text-align: right;
+  text-align: right;
 
-	.ok {
-		color: #47C965;
-	}
+  .ok {
+    color: #47C965;
+  }
 }
 
 

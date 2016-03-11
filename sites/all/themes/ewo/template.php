@@ -14,7 +14,7 @@ function ewo_preprocess_page(&$vars,$hook) {
   drupal_add_js($path .'/assets/js/vendor/bootstrap/js/bootstrap.min.js', array('group' => JS_LIBRARY));
 
   if ($vars['is_front'] == TRUE) {
-  	drupal_add_js($path .'/assets/js/front.js', array('group' => JS_THEME));
+    drupal_add_js($path .'/assets/js/front.js', array('group' => JS_THEME));
   }
 
   // Variables set for fallback
@@ -93,7 +93,7 @@ function ewo_form_alter(&$form, &$form_state, $form_id) {
 
 
   if ($form_id == 'user_login') {
-  	$form['gacode']['#title'] = "2-Factor Auth Code";
+    $form['gacode']['#title'] = "2-Factor Auth Code";
   }
 
   // Login

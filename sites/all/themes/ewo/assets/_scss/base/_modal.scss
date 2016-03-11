@@ -147,7 +147,7 @@
     }
 
     input[type="checkbox"] + label {
-    	color: #fff;
+      color: #fff;
     }
 
     input[type="submit"] {
@@ -159,24 +159,24 @@
     }
 
     #user-login-form .form-required + .form-required + div {
-			display: none;
-		}
+      display: none;
+    }
 
     small {
       display: none;
     }
 
     .password-suggestions {
-    	background-color: #232323;
-    	color: #fff;
-	    padding: 3%;
-	    font-size: .85em;
-	    margin-top: 10px;
+      background-color: #232323;
+      color: #fff;
+      padding: 3%;
+      font-size: .85em;
+      margin-top: 10px;
 
-	    ul {
-		    margin: 0;
-		    padding: 0 35px;
-			}
+      ul {
+        margin: 0;
+        padding: 0 35px;
+      }
     }
   }
 }
@@ -188,58 +188,58 @@
   width: 92%;
 
   @include tablet {
-  	margin: 0 0 20px;
+    margin: 0 0 20px;
   }
 }
 
 // Better Messages module
 #better-messages-wrapper {
-	max-width:270px;
+  max-width:270px;
 
-	@include tablet {
-  	max-width: none;
+  @include tablet {
+    max-width: none;
   }
 }
 
 #better-messages-default {
 
   .close {
-  	@include close-btn;
-  	background-color:$red;
-  	color: #fff;
-  	position: absolute;
+    @include close-btn;
+    background-color:$red;
+    color: #fff;
+    position: absolute;
     right: -18px;
     top: -17px;
 
     &:hover {
-    	background-color:tint($red, 20%);
-    	color: #fff;
+      background-color:tint($red, 20%);
+      color: #fff;
     }
   }
 
   .messages-label {
-  	background-color: rgba(0, 0, 0, 0.78);
-  	font-size: 14px;
-  	margin: 0;
-  	padding:10px;
+    background-color: rgba(0, 0, 0, 0.78);
+    font-size: 14px;
+    margin: 0;
+    padding:10px;
 
-  	&.error {
-  		background-color:tint($red, 30%);
-  	}
+    &.error {
+      background-color:tint($red, 30%);
+    }
   }
 
   div.messages {
-  	background: $light;
-  	border:none;
-  	margin: 0;
-  	padding: 19px 13px 30px;
+    background: $light;
+    border:none;
+    margin: 0;
+    padding: 19px 13px 30px;
   }
 
   .footer {
-  	border:none;
+    border:none;
   }
 
   a.message-close {
-  	height: 0;
+    height: 0;
   }
 }
