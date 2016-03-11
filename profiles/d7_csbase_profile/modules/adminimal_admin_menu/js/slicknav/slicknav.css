@@ -27,73 +27,73 @@
 */
 
 .slicknav_menu {
-	font-size:16px;
+  font-size:16px;
 }
 /* Button */
 .slicknav_btn {
-	margin: 5px 5px 6px;	
-	text-decoration:none;	
-	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);	
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;  
-	background-color: #222222;
+  margin: 5px 5px 6px;  
+  text-decoration:none; 
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); 
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;  
+  background-color: #222222;
 }
 /* Button Text */
-.slicknav_menu  .slicknav_menutxt {	
-	color: #FFF;
-	font-weight: bold;	
-	text-shadow: 0 1px 3px #000;	
+.slicknav_menu  .slicknav_menutxt { 
+  color: #FFF;
+  font-weight: bold;  
+  text-shadow: 0 1px 3px #000;  
 }
 /* Button Lines */
 .slicknav_menu .slicknav_icon-bar {
   background-color: #f5f5f5;
 }
 .slicknav_menu {
-	background:#4c4c4c;
-	padding:5px;
+  background:#4c4c4c;
+  padding:5px;
 }
 .slicknav_nav {
-	color:#fff;
-	margin:0;	
-	padding:0;
-	font-size:0.875em;
+  color:#fff;
+  margin:0; 
+  padding:0;
+  font-size:0.875em;
 }
 .slicknav_nav, .slicknav_nav ul {
-	list-style: none;
-	overflow:hidden;
+  list-style: none;
+  overflow:hidden;
 }
 .slicknav_nav ul {
-	padding:0;
-	margin:0 0 0 20px;
+  padding:0;
+  margin:0 0 0 20px;
 }
 .slicknav_nav .slicknav_item {
-	padding:5px 10px;
-	margin:2px 5px;
+  padding:5px 10px;
+  margin:2px 5px;
 }
 .slicknav_nav a{
-	padding:5px 10px;
-	margin:2px 5px;
-	text-decoration:none;
-	color:#fff;
+  padding:5px 10px;
+  margin:2px 5px;
+  text-decoration:none;
+  color:#fff;
 }
 .slicknav_nav .slicknav_item a {
-	padding:0;
-	margin:0;
+  padding:0;
+  margin:0;
 }
 .slicknav_nav .slicknav_item:hover {
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	background:#ccc;
-	color:#fff;	
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background:#ccc;
+  color:#fff; 
 }
 .slicknav_nav a:hover{
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	background:#ccc;
-	color:#222;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background:#ccc;
+  color:#222;
 }
 .slicknav_nav .slicknav_txtnode {
      margin-left:15px;   
@@ -101,61 +101,61 @@
 
 /* ADMiNiMAL MENU STYLING */
 .slicknav_menu {
-	display:none;
+  display:none;
 }
 
 #admin-menu-menu-responsive {
-	display: none;
+  display: none;
 }
 
 @media screen and (max-width: 1024px) {
-	body.admin-menu.adminimal-menu:before {
-		display: none;
-	}
-	#admin-menu-menu, a#edit-shortcuts, li.admin-menu-account, #admin-menu-search, #admin-menu-users, {
-		display:none;
-	}
+  body.admin-menu.adminimal-menu:before {
+    display: none;
+  }
+  #admin-menu-menu, a#edit-shortcuts, li.admin-menu-account, #admin-menu-search, #admin-menu-users, {
+    display:none;
+  }
 
-	#admin-menu {
-		display: none !important;
-	}
+  #admin-menu {
+    display: none !important;
+  }
 
-	body.admin-menu, body.admin-menu.adminimal-menu.adminimal-backend, body.admin-menu.adminimal-menu.adminimal-frontend {
-		margin-top: 0px !important;
-	}
+  body.admin-menu, body.admin-menu.adminimal-menu.adminimal-backend, body.admin-menu.adminimal-menu.adminimal-frontend {
+    margin-top: 0px !important;
+  }
 
-	.slicknav_menu {
-		display:block;
-	}
+  .slicknav_menu {
+    display:block;
+  }
 
-	#admin-menu-shortcuts-responsive {
-	    background: url("../../images/circledown.svg") no-repeat scroll 16px 50% transparent;
-	    float: right;
-	}
+  #admin-menu-shortcuts-responsive {
+      background: url("../../images/circledown.svg") no-repeat scroll 16px 50% transparent;
+      float: right;
+  }
 
-	#admin-menu-shortcuts-responsive select {
-	    -moz-appearance: none;
-	    -webkit-appearance: none;
-	    text-indent: 0.01px;
-	    text-overflow: '';
-	    border: none;
-	    font-size: 0px;
-	    background: transparent;
-	    height: 46px;
-	    width: 46px;
-	    display: block;
-	}
+  #admin-menu-shortcuts-responsive select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      text-indent: 0.01px;
+      text-overflow: '';
+      border: none;
+      font-size: 0px;
+      background: transparent;
+      height: 46px;
+      width: 46px;
+      display: block;
+  }
 
-	#admin-menu-shortcuts-responsive select option {
-	    font-size: 14px;
-	    background: #fff;
-	    color: #333;
-	}
+  #admin-menu-shortcuts-responsive select option {
+      font-size: 14px;
+      background: #fff;
+      color: #333;
+  }
 
 }
 
 .slicknav_btn {
-	float: left;
+  float: left;
 }
 
 .slicknav_menu {
@@ -166,8 +166,8 @@
 }
 
 .slicknav_menu a, .slicknav_menu a:link, .slicknav_menu a:active {
-	color: #fff !important;
-	text-decoration: none !important;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 .slicknav_menu:after {
@@ -183,24 +183,24 @@
 }
 
 .slicknav_icon {
-	display: none;
+  display: none;
 }
 
 .slicknav_menu .slicknav_menutxt {
-	text-shadow: none;
-	font-weight: normal;
+  text-shadow: none;
+  font-weight: normal;
 }
 
 .slicknav_nav a:hover, .slicknav_nav .slicknav_item:hover {
-	border-radius: 0;
+  border-radius: 0;
 }
 
 .slicknav_nav li.expandable, #admin-menu .slicknav_nav .dropdown li {
-	float: none !important;
+  float: none !important;
 }
 
 .slicknav_nav .slicknav_item {
-	
+  
 }
 
 .slicknav_btn {
@@ -230,22 +230,22 @@
 }
 
 .slicknav_open .slicknav_arrow i.open {
-	background: url("../../images/menu-arrows.svg") no-repeat scroll -37px 0 rgba(0, 0, 0, 0);
+  background: url("../../images/menu-arrows.svg") no-repeat scroll -37px 0 rgba(0, 0, 0, 0);
 }
 
 .slicknav_nav li.admin-menu-toolbar-home-menu {
-	background-color: #333;
+  background-color: #333;
 }
 
 li.admin-menu-icon.slicknav_parent > a {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 li.admin-menu-icon.slicknav_parent > a > span.slicknav_arrow {
-	position: absolute;
-	margin-top: 10px;
-	margin-left: -5px;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: -5px;
 }
 
 .slicknav_nav li.admin-menu-toolbar-home-menu span.admin-menu-home-icon {
