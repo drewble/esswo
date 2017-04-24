@@ -1,3 +1,22 @@
+(function ($) {
+
+/**
+ * Send click event to GA.
+ */
+Drupal.behaviors.ewoGAEvent = {
+  attach: function (context, settings) {
+    $('a').click(function(e) {
+      ga('send', 'event', {
+        eventCategory: 'Link',
+        eventAction: 'click',
+        eventLabel: event.target.innerHTML + ' - going to url: ' + event.target.href
+      });
+    });
+  }
+};
+
+})(jQuery);
+
 (function() {
   (function($) {
     return $(function() {
