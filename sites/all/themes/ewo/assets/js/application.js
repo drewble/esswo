@@ -7,9 +7,9 @@ Drupal.behaviors.ewoGAEvent = {
   attach: function (context, settings) {
     $('a').click(function(e) {
       ga('send', 'event', {
-        eventCategory: 'Link',
-        eventAction: 'click',
-        eventLabel: event.target.innerHTML + ' - going to url: ' + event.target.href
+        eventCategory: 'EWorship Click',
+        eventAction: 'Click from ' + window.location,
+        eventLabel: $(this).text() + ' - going to url: ' + $(this).attr('href')
       });
     });
   }
