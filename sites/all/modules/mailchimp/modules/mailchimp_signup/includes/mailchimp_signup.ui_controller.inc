@@ -29,7 +29,7 @@ class MailChimpSignupUIController extends EntityDefaultUIController {
    */
   public function overviewTable($conditions = array()) {
     $render = parent::overviewTable($conditions);
-    $mc_lists = mailchimp_get_lists(array(), FALSE);
+    $mc_lists = mailchimp_get_lists();
     foreach ($render['#rows'] as &$row) {
       $signup = $row[0]['data']['#url']['options']['entity'];
       $modes = NULL;
@@ -51,7 +51,7 @@ class MailChimpSignupUIController extends EntityDefaultUIController {
       }
       $list_labels = array();
       foreach ($signup->mc_lists as $list_id) {
-        $list_labels[] = l($mc_lists[$list_id]->name, 'https://admin.mailchimp.com/lists');
+        $list_labels[] = l($mc_lists[$list_id]['name'], 'https://admin.mailchimp.com/lists/dashboard/overview?id=' . $mc_lists[$list_id]['web_id']);
       }
       if ($block_only) {
         $access = t('N/A - this form only exists as a block');
